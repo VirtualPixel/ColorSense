@@ -3,35 +3,38 @@ import AVFoundation
 
 struct CameraPreview: UIViewRepresentable {
     let session: AVCaptureSession
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-    
-    func makeUIView(context: Context) -> UIView {
-        let view = UIView(frame: UIScreen.main.bounds)
-        view.clipsToBounds = true
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        let previewLayer = AVCaptureVideoPreviewLayer(session: session)
-        previewLayer.videoGravity = .resizeAspectFill
-        previewLayer.frame = view.bounds
-        view.layer.addSublayer(previewLayer)
-        
+
+    func makeUIView(context: Context) -> PreviewView {
+        let view = PreviewView()
+        view.session = session
         return view
     }
-    
-    func updateUIView(_ uiView: UIView, context: Context) {
+
+    func updateUIView(_ uiView: PreviewView, context: Context) {
         if let previewLayer = uiView.layer.sublayers?.first as? AVCaptureVideoPreviewLayer {
             previewLayer.frame = uiView.bounds
         }
     }
-    
-    class Coordinator: NSObject {
-        var parent: CameraPreview
-        
-        init(_ parent: CameraPreview) {
-            self.parent = parent
+}
+
+class PreviewView: UIView {
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer {
+        guard let layer = layer as? AVCaptureVideoPreviewLayer else {
+            fatalError("Expected `AVCaptureVideoPreviewLayer` type for layer. Check PreviewView.layerClass implementation.")
         }
+        return layer
+    }
+
+    var session: AVCaptureSession? {
+        get {
+            return videoPreviewLayer.session
+        }
+        set {
+            videoPreviewLayer.session = newValue
+        }
+    }
+
+    override class var layerClass: AnyClass {
+        return AVCaptureVideoPreviewLayer.self
     }
 }

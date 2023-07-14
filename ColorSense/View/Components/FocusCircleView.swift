@@ -67,7 +67,9 @@ struct FocusCircleView: View {
         if showingSizeSlider {
             return Slider(value: $cameraFeed.region, in: 5...300)
                 .padding([.horizontal, .bottom])
-                .onChange(of: cameraFeed.region, perform: sliderValueChanged)
+                .onChange(of: cameraFeed.region) {
+                    sliderValueChanged(nil)
+                }
                 .eraseToAnyView()
         } else {
             return EmptyView().eraseToAnyView()

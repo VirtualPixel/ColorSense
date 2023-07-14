@@ -16,7 +16,7 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 CameraPreview(session: cameraFeed.captureSession)
-                    .ignoresSafeArea()
+                    //.ignoresSafeArea()
                 
                 FocusCircleView(showingSizeSlider: $viewModel.showingSizeSlider, lastInteractionTime: $viewModel.lastInteractionTime)
                 
@@ -30,7 +30,7 @@ struct ContentView: View {
         }
         .onAppear(perform: cameraFeed.start)
         .onDisappear(perform: cameraFeed.stop)
-        .onChange(of: scenePhase) { _ in
+        .onChange(of: scenePhase) {
             if cameraFeed.isFlashOn {
                 cameraFeed.isFlashOn = false
             }

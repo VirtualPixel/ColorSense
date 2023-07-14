@@ -124,6 +124,7 @@ class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuff
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInUltraWideCamera, .builtInWideAngleCamera, .builtInTelephotoCamera], mediaType: .video, position: .unspecified)
         
         let devices = deviceDiscoverySession.devices
+
         var captureDevice: AVCaptureDevice?
         
         for device in devices {
@@ -162,7 +163,7 @@ class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuff
             print("Failed to get camera device")
             return
         }
-        
+                
         do {
             try camera.lockForConfiguration()
             
@@ -201,10 +202,7 @@ class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuff
         if captureSession.canAddOutput(videoOutput) {
             captureSession.addOutput(videoOutput)
         }
-        
-        let connection = videoOutput.connection(with: .video)
-        connection?.videoOrientation = .portrait
-        
+                
         captureSession.commitConfiguration()
     }
     
