@@ -16,7 +16,6 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 CameraPreview(session: cameraFeed.captureSession)
-                    //.ignoresSafeArea()
                 
                 FocusCircleView(showingSizeSlider: $viewModel.showingSizeSlider, lastInteractionTime: $viewModel.lastInteractionTime)
                 

@@ -48,7 +48,6 @@ struct FocusCircleView: View {
                     .frame(width: cameraFeed.region, height: cameraFeed.region)
             }
         }
-        .offset(x: 0, y: -12)
     }
     
     private func toggleSliderVisibility() {
