@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		572053FC2A68900F0072DE06 /* Pallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FB2A68900F0072DE06 /* Pallet.swift */; };
+		572053FE2A6893700072DE06 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
+		572054012A68961F0072DE06 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
+		572054032A689AE40072DE06 /* PantoneColorArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054022A689AE40072DE06 /* PantoneColorArrays.swift */; };
+		572054062A68A56D0072DE06 /* Pantone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054052A68A56D0072DE06 /* Pantone.swift */; };
 		575301662A0339C2006A68A5 /* colornames.json in Resources */ = {isa = PBXBuildFile; fileRef = 575301652A0339C2006A68A5 /* colornames.json */; };
 		5753016B2A033C9F006A68A5 /* CIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016A2A033C9F006A68A5 /* CIColor.swift */; };
 		5753016D2A033CC6006A68A5 /* CIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016C2A033CC6006A68A5 /* CIImage.swift */; };
@@ -35,6 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		572053FB2A68900F0072DE06 /* Pallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pallet.swift; sourceTree = "<group>"; };
+		572053FD2A6893700072DE06 /* ColorStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStructure.swift; sourceTree = "<group>"; };
+		572054002A68961F0072DE06 /* pantone-colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pantone-colors.json"; sourceTree = "<group>"; };
+		572054022A689AE40072DE06 /* PantoneColorArrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantoneColorArrays.swift; sourceTree = "<group>"; };
+		572054052A68A56D0072DE06 /* Pantone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pantone.swift; sourceTree = "<group>"; };
 		575301652A0339C2006A68A5 /* colornames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = colornames.json; sourceTree = "<group>"; };
 		5753016A2A033C9F006A68A5 /* CIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColor.swift; sourceTree = "<group>"; };
 		5753016C2A033CC6006A68A5 /* CIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImage.swift; sourceTree = "<group>"; };
@@ -74,12 +84,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		572053FF2A6896020072DE06 /* Pantone */ = {
+			isa = PBXGroup;
+			children = (
+				572054002A68961F0072DE06 /* pantone-colors.json */,
+				572054022A689AE40072DE06 /* PantoneColorArrays.swift */,
+				572054052A68A56D0072DE06 /* Pantone.swift */,
+			);
+			path = Pantone;
+			sourceTree = "<group>";
+		};
+		572054042A689B0F0072DE06 /* Normal Colors */ = {
+			isa = PBXGroup;
+			children = (
+				575301652A0339C2006A68A5 /* colornames.json */,
+				576338D52A09C03A0034AF9D /* ColorData.swift */,
+			);
+			path = "Normal Colors";
+			sourceTree = "<group>";
+		};
 		575301672A033C5E006A68A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				576338C32A09A36C0034AF9D /* Camera */,
-				576338D22A09BE870034AF9D /* Core Data */,
 				575301702A033D24006A68A5 /* Color Data */,
+				576338D22A09BE870034AF9D /* Data Persistance */,
 				575301692A033C93006A68A5 /* Extensions */,
 			);
 			path = Model;
@@ -103,8 +132,9 @@
 		575301702A033D24006A68A5 /* Color Data */ = {
 			isa = PBXGroup;
 			children = (
-				575301652A0339C2006A68A5 /* colornames.json */,
-				576338D52A09C03A0034AF9D /* ColorData.swift */,
+				572053FF2A6896020072DE06 /* Pantone */,
+				572054042A689B0F0072DE06 /* Normal Colors */,
+				572053FD2A6893700072DE06 /* ColorStructure.swift */,
 			);
 			path = "Color Data";
 			sourceTree = "<group>";
@@ -139,11 +169,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		576338D22A09BE870034AF9D /* Core Data */ = {
+		576338D22A09BE870034AF9D /* Data Persistance */ = {
 			isa = PBXGroup;
 			children = (
+				572053FB2A68900F0072DE06 /* Pallet.swift */,
 			);
-			path = "Core Data";
+			path = "Data Persistance";
 			sourceTree = "<group>";
 		};
 		576D8E8E2A031069003DE880 = {
@@ -255,6 +286,7 @@
 				575301662A0339C2006A68A5 /* colornames.json in Resources */,
 				576D8EA22A03106A003DE880 /* Preview Assets.xcassets in Resources */,
 				576D8E9F2A03106A003DE880 /* Assets.xcassets in Resources */,
+				572054012A68961F0072DE06 /* pantone-colors.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,12 +298,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				57DDCDFE2A08007000B53CB7 /* Color Lists.swift in Sources */,
+				572053FE2A6893700072DE06 /* ColorStructure.swift in Sources */,
 				5753016D2A033CC6006A68A5 /* CIImage.swift in Sources */,
+				572053FC2A68900F0072DE06 /* Pallet.swift in Sources */,
 				5753016F2A033CF0006A68A5 /* Calculate Colors.swift in Sources */,
 				576338C02A099C810034AF9D /* BottomBarView.swift in Sources */,
 				576338D12A09BD340034AF9D /* PalletView.swift in Sources */,
 				576338CF2A09BD280034AF9D /* PalletView-ViewModel.swift in Sources */,
 				576D8EAA2A0310AA003DE880 /* CameraPreview.swift in Sources */,
+				572054032A689AE40072DE06 /* PantoneColorArrays.swift in Sources */,
 				576338CB2A09A5D10034AF9D /* ColorDetailView-ViewModel.swift in Sources */,
 				576D8E9D2A031069003DE880 /* ContentView.swift in Sources */,
 				576338C92A09A5A00034AF9D /* ColorDetailView.swift in Sources */,
@@ -281,6 +316,7 @@
 				576338BC2A0999340034AF9D /* TopBarView.swift in Sources */,
 				576338CD2A09A8980034AF9D /* Color.swift in Sources */,
 				576338D62A09C03A0034AF9D /* ColorData.swift in Sources */,
+				572054062A68A56D0072DE06 /* Pantone.swift in Sources */,
 				576338B92A0997AA0034AF9D /* View.swift in Sources */,
 				576338BE2A099B690034AF9D /* ColorCardView.swift in Sources */,
 				5753016B2A033C9F006A68A5 /* CIColor.swift in Sources */,

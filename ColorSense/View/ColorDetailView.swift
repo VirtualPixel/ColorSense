@@ -13,24 +13,65 @@ struct ColorDetailView: View {
     
     var body: some View {
         VStack {
-            Circle()
-                .foregroundColor(viewModel.color)
-                .padding(.horizontal, 50)
-                .padding(.top)
-            Text("\(UIColor(viewModel.color).exactName)")
-                .font(.title)
-            Text("\(UIColor(viewModel.color).simpleName) Family")
-                .font(.title3)
-                .foregroundColor(.secondary)
-            Spacer()
-            Text("RGB: R: \(viewModel.rbg.red) G: \(viewModel.rbg.green) B: \(viewModel.rbg.blue)")
-                .padding()
-            Text("Hex: \(viewModel.hex)")
-                .padding()
-            Text("HSL: Hue: \(viewModel.hsl.hue) Saturation: \(viewModel.hsl.saturation) Lightness: \(viewModel.hsl.lightness)")
-                .padding()
-            Text("CMYK: Cyan: \(viewModel.cmyk.cyan) Magenta: \(viewModel.cmyk.magenta) Yellow: \(viewModel.cmyk.yellow) Key: \(viewModel.cmyk.key)")
             
+            VStack {
+                Circle()
+                    .foregroundColor(viewModel.color)
+                    .padding(.horizontal, 50)
+                    .padding(.top)
+                Text("\(UIColor(viewModel.color).exactName)")
+                    .font(.title)
+                Text("\(UIColor(viewModel.color).simpleName) Family")
+                    .font(.title3)
+                    .foregroundColor(.secondary)
+            }
+            .padding()
+            .background(
+                .ultraThinMaterial
+            )
+            
+            Spacer()
+            
+            VStack {
+                Text("RGB: R: \(viewModel.rbg.red) G: \(viewModel.rbg.green) B: \(viewModel.rbg.blue)")
+                    .padding()
+                Text("Hex: \(viewModel.hex)")
+                    .padding()
+                Text("HSL: Hue: \(viewModel.hsl.hue) Saturation: \(viewModel.hsl.saturation) Lightness: \(viewModel.hsl.lightness)")
+                    .padding()
+                Text("CMYK: Cyan: \(viewModel.cmyk.cyan) Magenta: \(viewModel.cmyk.magenta) Yellow: \(viewModel.cmyk.yellow) Key: \(viewModel.cmyk.key)")
+                    .padding(.bottom)
+            }
+            .padding()
+            .background(
+                .ultraThinMaterial
+            )
+            .padding(.horizontal)
+            
+            VStack {
+                Text("Pantone")
+                    .bold()
+                HStack {
+                    ForEach(viewModel.pantone) { color in
+                        VStack {
+                            Text(color.name)
+                            Spacer()
+                            Text(color.value)
+                        }
+                        .frame(width: 90, height: 90)
+                        .padding()
+                        .background (
+                            RoundedRectangle(cornerRadius: 12)
+                                .foregroundStyle(Color(hex: color.value))
+                        )
+                    }
+                }
+            }
+            .padding()
+            .background(
+                .ultraThinMaterial
+            )
+            .padding(.horizontal)
         }
         .onAppear {
             cameraFeed.stop()

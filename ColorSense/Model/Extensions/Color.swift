@@ -9,6 +9,39 @@ import SwiftUI
 
 // return color variations
 extension Color {
+    func toPantone() -> [Pantone] {
+        let url = Bundle.main.url(forResource: "pantone-colors", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        let colorArrays = try! decoder.decode(PantoneColorArrays.self, from: data)
+        
+        var pantoneColors: [String: String] = [:]
+        for (index, name) in colorArrays.names.enumerated() {
+            pantoneColors[name] = colorArrays.values[index]
+        }
+        
+        let rgb = self.toRGB()
+
+        // Store all colors and their distances in an array
+        var colorDistances: [(name: String, value: String, distance: Double)] = []
+        
+        for (name, hex) in pantoneColors {
+            let color = Color(hex: hex)
+            let rgb2 = color.toRGB()
+            let distance = sqrt(pow(Double(rgb.red - rgb2.red), 2) +
+                                pow(Double(rgb.green - rgb2.green), 2) +
+                                pow(Double(rgb.blue - rgb2.blue), 2))
+
+            colorDistances.append((name, hex, distance))
+        }
+        
+        // Sort the array by distance (ascending) and get the first 3 elements
+        let closestColors = Array(colorDistances.sorted { $0.distance < $1.distance }.prefix(3))
+        
+        // Return only the name and value of the closest colors
+        return closestColors.map { Pantone(name: $0.name.replacingOccurrences(of: "-", with: " ").capitalized, value: $0.value) }
+    }
+    
     func toHex() -> String {
         let components = toRGBComponents()
         return String(
@@ -157,5 +190,3 @@ extension Color {
         self.init(.sRGB, red: r + m, green: g + m, blue: b + m, opacity: a)
     }
 }
-
-

@@ -27,6 +27,10 @@ extension ColorDetailView {
             self.color.toCMYK()
         }
         
+        var pantone: [Pantone] {
+            self.color.toPantone()
+        }
+        
         init(color: Color) {
             self.color = color
         }
