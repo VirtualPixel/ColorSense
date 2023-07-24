@@ -17,7 +17,7 @@ struct ContentView: View {
             ZStack {
                 CameraPreview(session: cameraFeed.captureSession)
                 
-                FocusCircleView(showingSizeSlider: $viewModel.showingSizeSlider, lastInteractionTime: $viewModel.lastInteractionTime)
+                FocusCircleView()
                 
                 VStack {
                     TopBarView()
