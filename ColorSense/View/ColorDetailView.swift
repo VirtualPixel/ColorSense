@@ -12,66 +12,57 @@ struct ColorDetailView: View {
     @ObservedObject private var viewModel: ViewModel
     
     var body: some View {
-        VStack {
-            
+        ScrollView {
             VStack {
                 Circle()
                     .foregroundColor(viewModel.color)
-                    .padding(.horizontal, 50)
-                    .padding(.top)
+                    .frame(width: 150, height: 150)
+                    .padding(.top, 50)
+
                 Text("\(UIColor(viewModel.color).exactName)")
-                    .font(.title)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.top, 10)
+
                 Text("\(UIColor(viewModel.color).simpleName) Family")
-                    .font(.title3)
+                    .font(.title2)
                     .foregroundColor(.secondary)
-            }
-            .padding()
-            .background(
-                .ultraThinMaterial
-            )
-            
-            Spacer()
-            
-            VStack {
-                Text("RGB: R: \(viewModel.rbg.red) G: \(viewModel.rbg.green) B: \(viewModel.rbg.blue)")
-                    .padding()
-                Text("Hex: \(viewModel.hex)")
-                    .padding()
-                Text("HSL: Hue: \(viewModel.hsl.hue) Saturation: \(viewModel.hsl.saturation) Lightness: \(viewModel.hsl.lightness)")
-                    .padding()
-                Text("CMYK: Cyan: \(viewModel.cmyk.cyan) Magenta: \(viewModel.cmyk.magenta) Yellow: \(viewModel.cmyk.yellow) Key: \(viewModel.cmyk.key)")
-                    .padding(.bottom)
-            }
-            .padding()
-            .background(
-                .ultraThinMaterial
-            )
-            .padding(.horizontal)
-            
-            VStack {
-                Text("Pantone")
-                    .bold()
-                HStack {
-                    ForEach(viewModel.pantone) { color in
-                        VStack {
-                            Text(color.name)
-                            Spacer()
-                            Text(color.value)
-                        }
-                        .frame(width: 90, height: 90)
-                        .padding()
-                        .background (
-                            RoundedRectangle(cornerRadius: 12)
-                                .foregroundStyle(Color(hex: color.value))
-                        )
+                    .padding(.bottom, 20)
+                
+                GroupBox(label: Text("Color Details").font(.title2)) {
+                    VStack(alignment: .leading) {
+                        detailText(title: "RGB", value: "R: \(viewModel.rbg.red) G: \(viewModel.rbg.green) B: \(viewModel.rbg.blue)")
+                        detailText(title: "Hex", value: "\(viewModel.hex)")
+                        detailText(title: "HSL", value: "Hue: \(viewModel.hsl.hue) Saturation: \(viewModel.hsl.saturation) Lightness: \(viewModel.hsl.lightness)")
+                        detailText(title: "CMYK", value: "Cyan: \(viewModel.cmyk.cyan) Magenta: \(viewModel.cmyk.magenta) Yellow: \(viewModel.cmyk.yellow) Key: \(viewModel.cmyk.key)")
                     }
                 }
+                .padding(.horizontal)
+                .frame(maxWidth: 600)
+
+                GroupBox(label: Text("Pantone").font(.title2)) {
+                    HStack {
+                        ForEach(viewModel.pantone) { color in
+                            VStack(alignment: .center) {
+                                Text(color.name)
+                                    .bold()
+                                Spacer()
+                                Text(color.value)
+                                    .font(.footnote)
+                                    .foregroundColor(.secondary)
+                            }
+                            .padding()
+                            .frame(width: 110, height: 110)
+                            .background (
+                                RoundedRectangle(cornerRadius: 12)
+                                    .foregroundStyle(Color(hex: color.value))
+                            )
+                        }
+                    }
+                }
+                .padding()
+                .frame(maxWidth: 600)
             }
-            .padding()
-            .background(
-                .ultraThinMaterial
-            )
-            .padding(.horizontal)
         }
         .onAppear {
             cameraFeed.stop()
@@ -84,7 +75,20 @@ struct ColorDetailView: View {
     init(color: Color) {
         _viewModel = ObservedObject(initialValue: ViewModel(color: color))
     }
+
+    // Custom view for detail text
+    func detailText(title: String, value: String) -> some View {
+        HStack {
+            Text(title + ":")
+                .fontWeight(.bold)
+                .frame(width: 80, alignment: .leading)
+            Text(value)
+        }
+        .padding(.vertical, 4)
+    }
 }
+
+
 
 struct ColorDetailView_Previews: PreviewProvider {
     static let cameraFeed = CameraFeed()

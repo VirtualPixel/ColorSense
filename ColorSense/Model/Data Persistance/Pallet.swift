@@ -9,15 +9,14 @@ import SwiftUI
 import SwiftData
 /*
 @Model
-final class Pallet: Identifiable {
+final class Pallet {
     @Attribute(.unique) var id: UUID
     var name: String
-    //var colors: [ColorStructure]
+    var colors: [ColorStructure]
     
     init(id: UUID = UUID(), name: String, colors: [ColorStructure]) {
         self.id = id
         self.name = name
-        //self.colors = colors
+        self.colors = colors
     }
-}
-*/
+}*/
