@@ -14,7 +14,7 @@ struct ColorSenseApp: App {
             ContentView()
         }
         .modelContainer(
-            for: [Pallet.self]
+            for: [Pallet.self, ColorStructure.self]
         )
     }
 }

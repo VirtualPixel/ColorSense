@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
-struct ColorStructure: Codable {
-    let hex: String
+@Model
+class ColorStructure {
+    var id = UUID()
+    var hex: String
     
     var color: Color {
         Color.init(hex: hex)
     }
     
-    enum CodingKeys: String, CodingKey {
-        case hex
+    init(id: UUID = UUID(), hex: String) {
+        self.hex = hex
     }
 }
