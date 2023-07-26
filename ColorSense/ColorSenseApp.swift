@@ -13,5 +13,8 @@ struct ColorSenseApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(
+            for: [Pallet.self]
+        )
     }
 }

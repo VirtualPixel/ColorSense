@@ -10,7 +10,6 @@ import Observation
 
 extension PalletView {
     @MainActor class ViewModel: ObservableObject {
-        @Published var palletName = ""
-        @Published var showingAddPalletAlert = false
+
     }
 }

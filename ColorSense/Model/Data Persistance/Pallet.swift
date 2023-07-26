@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @Model
-final class Pallet {
+final class Pallet: Identifiable {
     @Attribute(.unique) var id: UUID
     var name: String
     var colors: [ColorStructure]

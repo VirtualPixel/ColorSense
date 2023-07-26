@@ -10,6 +10,8 @@ import SwiftUI
 struct PalletView: View {
     @ObservedObject private var viewModel = ViewModel()
     @Environment(\.modelContext) private var context
+    @State private var palletName = ""
+    @State private var showingAddPalletAlert = false
     
     let pallets: [Pallet]
     
@@ -27,25 +29,26 @@ struct PalletView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        viewModel.showingAddPalletAlert = true
+                        showingAddPalletAlert = true
                     } label: {
                         Image(systemName: "plus")
                     }
                 }
             }
-            .alert("Enter new Pallet name", isPresented: $viewModel.showingAddPalletAlert) {
-                TextField("Enter new Pallet name", text: $viewModel.palletName)
+            .alert("Enter new Pallet name", isPresented: $showingAddPalletAlert) {
+                TextField("Enter new Pallet name", text: $palletName)
                 Button("Okay", action: submit)
             } message: {
                 Text("This will create a new Pallet with your custom name.")
             }
+            .navigationTitle("Color Pallets")
         }
     }
     
     private func submit() {
-        guard viewModel.palletName != "" else { return }
+        guard !palletName.isEmpty else { return }
         
-        let pallet = Pallet(name: viewModel.palletName, colors: [])
+        let pallet = Pallet(name: palletName, colors: [])
         
         context.insert(pallet)
         
@@ -55,7 +58,7 @@ struct PalletView: View {
             print(error.localizedDescription)
         }
         
-        viewModel.palletName = ""
+        palletName = ""
     }
     
     private func deletePallet(indexSet: IndexSet) {
