@@ -88,8 +88,6 @@ struct ColorDetailView: View {
     }
 }
 
-
-
 struct ColorDetailView_Previews: PreviewProvider {
     static let cameraFeed = CameraFeed()
     

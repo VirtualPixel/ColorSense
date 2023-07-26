@@ -7,7 +7,7 @@
 
 import SwiftUI
 import SwiftData
-/*
+
 @Model
 final class Pallet {
     @Attribute(.unique) var id: UUID
@@ -19,4 +19,4 @@ final class Pallet {
         self.name = name
         self.colors = colors
     }
-}*/
+}

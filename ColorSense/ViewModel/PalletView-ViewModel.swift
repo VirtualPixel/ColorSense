@@ -5,10 +5,12 @@
 //  Created by Justin Wells on 5/8/23.
 //
 
-import Foundation
+import SwiftUI
+import Observation
 
 extension PalletView {
-    class ViewModel: ObservableObject {
-        
+    @MainActor class ViewModel: ObservableObject {
+        @Published var palletName = ""
+        @Published var showingAddPalletAlert = false
     }
 }

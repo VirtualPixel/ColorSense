@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Query var pallets: [Pallet]
     @Environment(\.scenePhase) var scenePhase
     @ObservedObject private var viewModel = ViewModel()
     @ObservedObject var cameraFeed = CameraFeed()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 CameraPreview(session: cameraFeed.captureSession)
                 
@@ -36,7 +38,7 @@ struct ContentView: View {
         }
         .environmentObject(cameraFeed)
         .sheet(isPresented: $viewModel.showingPalletView) {
-            PalletView()
+            PalletView(pallets: pallets)
                 .presentationDetents([.large])
         }
     }
