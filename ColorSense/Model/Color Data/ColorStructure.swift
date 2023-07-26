@@ -9,8 +9,8 @@ import SwiftUI
 import SwiftData
 
 @Model
-class ColorStructure {
-    var id = UUID()
+class ColorStructure: Identifiable {
+    @Attribute(.unique) var id: UUID
     var hex: String
     
     var color: Color {
@@ -18,6 +18,7 @@ class ColorStructure {
     }
     
     init(id: UUID = UUID(), hex: String) {
-        self.hex = hex
+        self.id = id
+        self.hex = hex.replacingOccurrences(of: "#", with: "")
     }
 }

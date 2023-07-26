@@ -36,7 +36,7 @@ struct ContentView: View {
         }
         .environmentObject(cameraFeed)
         .sheet(isPresented: $viewModel.showingPalletView) {
-            PalletView()
+            PalletListView()
                 .presentationDetents([.large])
         }
     }

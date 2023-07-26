@@ -8,7 +8,7 @@
 import SwiftUI
 import Observation
 
-extension PalletView {
+extension PalletListView {
     @MainActor class ViewModel: ObservableObject {
 
     }

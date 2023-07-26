@@ -12,6 +12,7 @@ struct ColorSenseApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            //PalletListView()
         }
         .modelContainer(
             for: [Pallet.self, ColorStructure.self]
