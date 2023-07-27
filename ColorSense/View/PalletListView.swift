@@ -195,7 +195,112 @@ struct PalletListView: View {
 }
 
 struct PalletView_Previews: PreviewProvider {
+    static let cameraFeed = CameraFeed()
+    
     static var previews: some View {
         PalletListView()
+            .environmentObject(cameraFeed)
     }
 }
+
+struct PalletList: View {
+    let pallets: [Pallet]
+    let maxColorsToShow: Int
+    let onAddColor: (Pallet) -> Void
+    let onDelete: (IndexSet) -> Void
+
+    var body: some View {
+        List {
+            ForEach(pallets, id: \.id) { pallet in
+                PalletRow(pallet: pallet, maxColorsToShow: maxColorsToShow, onAddColor: { onAddColor(pallet) })
+            }
+            .onDelete(perform: onDelete)
+            .listRowSeparator(.hidden)
+        }
+        .listStyle(.plain)
+    }
+}
+
+struct PalletRow: View {
+    let pallet: Pallet
+    let maxColorsToShow: Int
+    let onAddColor: () -> Void
+
+    var body: some View {
+        GroupBox {
+            VStack(alignment: .leading) {
+                Text(pallet.name)
+                    .font(.title3)
+                    .bold()
+                
+                PalletColorRow(colors: pallet.colors, maxColorsToShow: maxColorsToShow, onAddColor: onAddColor)
+            }
+        }
+    }
+}
+
+struct PalletColorRow: View {
+    let colors: [ColorStructure]
+    let maxColorsToShow: Int
+    let onAddColor: () -> Void
+
+    var body: some View {
+        HStack {
+            ForEach(colors.prefix(maxColorsToShow), id: \.id) { color in
+                ColorCell(color: color)
+            }
+            
+            if colors.count > maxColorsToShow {
+                OverflowCell(overflowCount: colors.count - maxColorsToShow)
+            }
+            
+            Spacer()
+            
+            Divider()
+            AddColorButton(onAddColor: onAddColor)
+        }
+    }
+}
+
+struct ColorCell: View {
+    let color: ColorStructure
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: 12)
+            .foregroundStyle(Color.init(hex: color.hex))
+            .frame(width: 50, height: 50)
+            .onTapGesture {
+                print(color.hex)
+            }
+    }
+}
+
+struct OverflowCell: View {
+    let overflowCount: Int
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: 12)
+            .foregroundStyle(.gray.opacity(0.2))
+            .frame(width: 50, height: 50)
+            .overlay(
+                Text("+\(overflowCount)")
+            )
+    }
+}
+
+struct AddColorButton: View {
+    let onAddColor: () -> Void
+
+    var body: some View {
+        Button(action: onAddColor) {
+            RoundedRectangle(cornerRadius: 12)
+                .foregroundStyle(.gray.opacity(0.2))
+                .frame(width: 50, height: 50)
+                .overlay(
+                    Image(systemName: "plus")
+                )
+        }
+    }
+}
+
+

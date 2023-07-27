@@ -34,6 +34,8 @@
 		576D8E9F2A03106A003DE880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576D8E9E2A03106A003DE880 /* Assets.xcassets */; };
 		576D8EA22A03106A003DE880 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576D8EA12A03106A003DE880 /* Preview Assets.xcassets */; };
 		576D8EAA2A0310AA003DE880 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D8EA92A0310AA003DE880 /* CameraPreview.swift */; };
+		577357572A73150600903F85 /* PalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357562A73150600903F85 /* PalletDetailView.swift */; };
+		577357592A73153800903F85 /* PalletDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */; };
 		57DDCDFC2A07F93600B53CB7 /* New Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFB2A07F93600B53CB7 /* New Colors.swift */; };
 		57DDCDFE2A08007000B53CB7 /* Color Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* Color Lists.swift */; };
 		57DDCE002A0806C100B53CB7 /* CameraFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFF2A0806C100B53CB7 /* CameraFeed.swift */; };
@@ -68,6 +70,8 @@
 		576D8E9E2A03106A003DE880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		576D8EA12A03106A003DE880 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		576D8EA92A0310AA003DE880 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		577357562A73150600903F85 /* PalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalletDetailView.swift; sourceTree = "<group>"; };
+		577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PalletDetailView-ViewModel.swift"; sourceTree = "<group>"; };
 		57DDCDFB2A07F93600B53CB7 /* New Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Colors.swift"; sourceTree = "<group>"; };
 		57DDCDFD2A08007000B53CB7 /* Color Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Lists.swift"; sourceTree = "<group>"; };
 		57DDCDFF2A0806C100B53CB7 /* CameraFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeed.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 			children = (
 				576338CA2A09A5D10034AF9D /* ColorDetailView-ViewModel.swift */,
 				576338C52A09A3C50034AF9D /* ContentView-ViewModel.swift */,
+				577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */,
 				576338CE2A09BD280034AF9D /* PalletView-ViewModel.swift */,
 			);
 			path = ViewModel;
@@ -220,6 +225,7 @@
 				576338BA2A0999240034AF9D /* Components */,
 				576338C82A09A5A00034AF9D /* ColorDetailView.swift */,
 				576D8E9C2A031069003DE880 /* ContentView.swift */,
+				577357562A73150600903F85 /* PalletDetailView.swift */,
 				576338D02A09BD340034AF9D /* PalletListView.swift */,
 			);
 			path = View;
@@ -314,12 +320,14 @@
 				576338C62A09A3C50034AF9D /* ContentView-ViewModel.swift in Sources */,
 				575301742A034529006A68A5 /* String.swift in Sources */,
 				576338BC2A0999340034AF9D /* TopBarView.swift in Sources */,
+				577357572A73150600903F85 /* PalletDetailView.swift in Sources */,
 				576338CD2A09A8980034AF9D /* Color.swift in Sources */,
 				576338D62A09C03A0034AF9D /* ColorData.swift in Sources */,
 				572054062A68A56D0072DE06 /* Pantone.swift in Sources */,
 				576338B92A0997AA0034AF9D /* View.swift in Sources */,
 				576338BE2A099B690034AF9D /* ColorCardView.swift in Sources */,
 				5753016B2A033C9F006A68A5 /* CIColor.swift in Sources */,
+				577357592A73153800903F85 /* PalletDetailView-ViewModel.swift in Sources */,
 				576338C22A099D240034AF9D /* FocusCircleView.swift in Sources */,
 				57DDCDFC2A07F93600B53CB7 /* New Colors.swift in Sources */,
 				57DDCE002A0806C100B53CB7 /* CameraFeed.swift in Sources */,
