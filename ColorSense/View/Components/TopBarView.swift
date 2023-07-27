@@ -34,7 +34,7 @@ struct TopBarView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: 50)
-        .background(.black.opacity(0.9))
+        .background(.black)//.opacity(0.9))
     }
 }
 

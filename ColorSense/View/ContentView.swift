@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
     @ObservedObject private var viewModel = ViewModel()
-    @ObservedObject var cameraFeed = CameraFeed()
+    @EnvironmentObject private var cameraFeed: CameraFeed
+    @State private var showingPalletView = false
     
     var body: some View {
         NavigationStack {
@@ -23,7 +24,7 @@ struct ContentView: View {
                     TopBarView()
                     ColorCardView()
                     Spacer()
-                    BottomBarView(showingSizeSlider: $viewModel.showingSizeSlider, showingPalletView: $viewModel.showingPalletView)
+                    BottomBarView(showingPalletView: $showingPalletView)
                 }
             }
         }
@@ -35,7 +36,7 @@ struct ContentView: View {
             }
         }
         .environmentObject(cameraFeed)
-        .sheet(isPresented: $viewModel.showingPalletView) {
+        .sheet(isPresented: $showingPalletView) {
             PalletListView()
                 .presentationDetents([.large])
         }

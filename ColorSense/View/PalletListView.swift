@@ -11,6 +11,7 @@ import SwiftData
 struct PalletListView: View {
     @Query var pallets: [Pallet]
     @ObservedObject private var viewModel = ViewModel()
+    @EnvironmentObject private var cameraFeed: CameraFeed
     @Environment(\.modelContext) private var context
     @State private var palletName = ""
     @State private var colorHex = ""
@@ -18,90 +19,114 @@ struct PalletListView: View {
     @State private var showingAddColorAlert = false
     @State private var selectedPallet: Pallet?
     @State private var showingInvalidHexAlert = false
-
-    private let maxColorsToShow = Int((UIScreen.main.bounds.width - 100) / 80)
+    
+    var colorToAdd: String?
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(pallets, id: \.id) { pallet in
-                    GroupBox {
-                        VStack(alignment: .leading) {
-                            Text(pallet.name)
-                                .font(.title3)
-                                .bold()
-                            
-                            HStack {
-                                // limit the colors shown
-                                ForEach(pallet.colors.prefix(maxColorsToShow), id: \.id) { color in
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .foregroundStyle(Color.init(hex: color.hex))
-                                        .frame(width: 50, height: 50)
-                                        .onTapGesture {
-                                            print(color.hex)
+        GeometryReader { geo in
+            let maxColorsToShow = max(0, Int((geo.size.width - 100) / 80))
+            NavigationStack {
+                Group {
+                    if pallets.isEmpty {
+                        Image("empty_pallet")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 250)
+                            .opacity(0.7)
+                    } else {
+                        List {
+                            ForEach(pallets, id: \.id) { pallet in
+                                GroupBox {
+                                    VStack(alignment: .leading) {
+                                        Text(pallet.name)
+                                            .font(.title3)
+                                            .bold()
+                                        
+                                        HStack {
+                                            // limit the colors shown
+                                            ForEach(pallet.colors.prefix(maxColorsToShow), id: \.id) { color in
+                                                RoundedRectangle(cornerRadius: 12)
+                                                    .foregroundStyle(Color.init(hex: color.hex))
+                                                    .frame(width: 50, height: 50)
+                                                    .onTapGesture {
+                                                        print(color.hex)
+                                                    }
+                                            }
+                                            
+                                            if pallet.colors.count > maxColorsToShow {
+                                                RoundedRectangle(cornerRadius: 12)
+                                                    .foregroundStyle(.gray.opacity(0.2))
+                                                    .frame(width: 50, height: 50)
+                                                    .overlay(
+                                                        Text("+\(pallet.colors.count - maxColorsToShow)")
+                                                    )
+                                            }
+                                            
+                                            Spacer()
+                                            
+                                            Divider()
+                                            Button {
+                                                selectedPallet = pallet
+                                                if let colorToHex = colorToAdd {
+                                                    colorHex = colorToHex
+                                                    submitColor()
+                                                    return
+                                                }
+                                                showingAddColorAlert = true
+                                            } label: {
+                                                RoundedRectangle(cornerRadius: 12)
+                                                    .foregroundStyle(.gray.opacity(0.2))
+                                                    .frame(width: 50, height: 50)
+                                                    .overlay(
+                                                        Image(systemName: "plus")
+                                                    )
+                                            }
                                         }
-                                }
-                                
-                                if pallet.colors.count > maxColorsToShow {
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .foregroundStyle(.gray.opacity(0.2))
-                                        .frame(width: 50, height: 50)
-                                        .overlay(
-                                            Text("+\(pallet.colors.count - maxColorsToShow)")
-                                        )
-                                }
-                                
-                                Spacer()
-                                
-                                Divider()
-                                Button {
-                                    selectedPallet = pallet
-                                    showingAddColorAlert = true
-                                } label: {
-                                    RoundedRectangle(cornerRadius: 12)
-                                        .foregroundStyle(.gray.opacity(0.2))
-                                        .frame(width: 50, height: 50)
-                                        .overlay(
-                                            Image(systemName: "plus")
-                                        )
+                                    }
                                 }
                             }
+                            .onDelete(perform: deletePallet)
+                            .listRowSeparator(.hidden)
+                        }
+                        .listStyle(.plain)
+                    }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showingAddPalletAlert = true
+                        } label: {
+                            Image(systemName: "plus")
                         }
                     }
                 }
-                .onDelete(perform: deletePallet)
-                .listRowSeparator(.hidden)
-            }
-            .listStyle(.plain)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showingAddPalletAlert = true
-                    } label: {
-                        Image(systemName: "plus")
+                .alert("Enter new Pallet name", isPresented: $showingAddPalletAlert) {
+                    TextField("Enter new Pallet name", text: $palletName)
+                    Button("Okay", action: submitPallet)
+                } message: {
+                    Text("This will create a new Pallet with your custom name.")
+                }
+                .alert("Enter new color Hex value", isPresented: $showingAddColorAlert) {
+                    TextField("Enter new color Hex value", text: $colorHex)
+                    Button("Okay", action: submitColor)
+                } message: {
+                    Text("This will add a new color to your chosen Pallet.")
+                }
+                .alert("Invalid color hex value", isPresented: $showingInvalidHexAlert) {
+                    Button("Okay") {
+                        showingInvalidHexAlert = false
                     }
+                } message: {
+                    Text("The color hex value you entered is not valid. It should be a 3- or 6-digit hexadecimal number, optionally starting with a '#'.")
+                }
+                .navigationTitle("Color Pallets")
+                .onAppear {
+                    cameraFeed.pauseProcessing = true
+                }
+                .onDisappear {
+                    cameraFeed.pauseProcessing = false
                 }
             }
-            .alert("Enter new Pallet name", isPresented: $showingAddPalletAlert) {
-                TextField("Enter new Pallet name", text: $palletName)
-                Button("Okay", action: submitPallet)
-            } message: {
-                Text("This will create a new Pallet with your custom name.")
-            }
-            .alert("Enter new color Hex value", isPresented: $showingAddColorAlert) {
-                TextField("Enter new color Hex value", text: $colorHex)
-                Button("Okay", action: submitColor)
-            } message: {
-                Text("This will add a new color to your chosen Pallet.")
-            }
-            .alert("Invalid color hex value", isPresented: $showingInvalidHexAlert) {
-                Button("Okay") {
-                    showingInvalidHexAlert = false
-                }
-            } message: {
-                Text("The color hex value you entered is not valid. It should be a 3- or 6-digit hexadecimal number, optionally starting with a '#'.")
-            }
-            .navigationTitle("Color Pallets")
         }
     }
     
@@ -109,6 +134,10 @@ struct PalletListView: View {
         guard !palletName.isEmpty else { return }
         
         let pallet = Pallet(name: palletName, colors: [])
+        
+        if let colorToHex = colorToAdd {
+            pallet.colors.append(ColorStructure(hex: colorToHex))
+        }
         
         context.insert(pallet)
         
@@ -132,7 +161,7 @@ struct PalletListView: View {
         }
         
         let newColor = ColorStructure(hex: colorHex)
-
+        
         if let index = pallets.firstIndex(where: { $0.id == selectedPallet.id }) {
             pallets[index].colors.append(newColor)
             do {
@@ -141,7 +170,7 @@ struct PalletListView: View {
                 print(error.localizedDescription)
             }
         }
-
+        
         colorHex = ""
     }
     

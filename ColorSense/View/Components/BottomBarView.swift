@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BottomBarView: View {
     @EnvironmentObject private var cameraFeed: CameraFeed
-    @Binding var showingSizeSlider: Bool
     @Binding var showingPalletView: Bool
 
     var body: some View {
@@ -23,7 +22,7 @@ struct BottomBarView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: 150)
-        .background(.black.opacity(0.9))
+        .background(.black)//.opacity(0.9))
     }
 
     private func swatchPaletteButton() -> some View {
@@ -41,7 +40,6 @@ struct BottomBarView: View {
     private func pauseProcessingButton() -> some View {
         Button {
             withAnimation {
-                showingSizeSlider = false
                 cameraFeed.pauseProcessing.toggle()
             }
         } label: {
@@ -90,7 +88,7 @@ struct BottomBarView_Previews: PreviewProvider {
     static let cameraFeed = CameraFeed()
     
     static var previews: some View {
-        BottomBarView(showingSizeSlider: .constant(false), showingPalletView: .constant(false))
+        BottomBarView(showingPalletView: .constant(false))
             .environmentObject(cameraFeed)
     }
 }
