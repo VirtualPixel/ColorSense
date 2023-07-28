@@ -36,47 +36,57 @@ struct PalletListView: View {
                     } else {
                         List {
                             ForEach(pallets, id: \.id) { pallet in
-                                GroupBox {
-                                    VStack(alignment: .leading) {
-                                        Text(pallet.name)
-                                            .font(.title3)
-                                            .bold()
-                                        
-                                        HStack {
-                                            // limit the colors shown
-                                            ForEach(pallet.colors.prefix(maxColorsToShow), id: \.id) { color in
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .foregroundStyle(Color.init(hex: color.hex))
-                                                    .frame(width: 50, height: 50)
-                                            }
+                                NavigationLink {
+                                    PalletDetailView(pallet: pallet)
+                                } label: {
+                                    GroupBox {
+                                        VStack(alignment: .leading) {
+                                            Text(pallet.name)
+                                                .font(.title3)
+                                                .bold()
                                             
-                                            if pallet.colors.count > maxColorsToShow {
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .foregroundStyle(.gray.opacity(0.2))
-                                                    .frame(width: 50, height: 50)
-                                                    .overlay(
-                                                        Text("+\(pallet.colors.count - maxColorsToShow)")
-                                                    )
-                                            }
-                                            
-                                            Spacer()
-                                            
-                                            Divider()
-                                            Button {
-                                                selectedPallet = pallet
-                                                if let colorToHex = colorToAdd {
-                                                    colorHex = colorToHex
-                                                    submitColor()
-                                                    return
+                                            HStack {
+                                                // limit the colors shown
+                                                ForEach(pallet.colors.sorted(by: { $0.creationDate > $1.creationDate }).prefix(maxColorsToShow), id: \.id) { color in
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .foregroundStyle(Color.init(hex: color.hex))
+                                                        .frame(width: 50, height: 50)
                                                 }
-                                                showingAddColorAlert = true
-                                            } label: {
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .foregroundStyle(.gray.opacity(0.2))
-                                                    .frame(width: 50, height: 50)
-                                                    .overlay(
-                                                        Image(systemName: "plus")
-                                                    )
+                                                
+                                                ForEach(Array(repeating: 0, count: max(maxColorsToShow - pallet.colors.count, 0)), id: \.self) { _ in
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .opacity(0)
+                                                        .frame(width: 50, height: 50)
+                                                }
+                                                
+                                                if pallet.colors.count > maxColorsToShow {
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .foregroundStyle(.gray.opacity(0.2))
+                                                        .frame(width: 50, height: 50)
+                                                        .overlay(
+                                                            Text("+\(pallet.colors.count - maxColorsToShow)")
+                                                        )
+                                                }
+                                                
+                                                Spacer()
+                                                
+                                                Divider()
+                                                Button {
+                                                    selectedPallet = pallet
+                                                    if let colorToHex = colorToAdd {
+                                                        colorHex = colorToHex
+                                                        submitColor()
+                                                        return
+                                                    }
+                                                    showingAddColorAlert = true
+                                                } label: {
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .foregroundStyle(.gray.opacity(0.2))
+                                                        .frame(width: 50, height: 50)
+                                                        .overlay(
+                                                            Image(systemName: "plus")
+                                                        )
+                                                }
                                             }
                                         }
                                     }

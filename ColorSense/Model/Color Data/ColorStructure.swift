@@ -12,13 +12,15 @@ import SwiftData
 class ColorStructure: Identifiable {
     @Attribute(.unique) var id: UUID
     var hex: String
+    var creationDate: Date
     
     var color: Color {
         Color.init(hex: hex)
     }
     
-    init(id: UUID = UUID(), hex: String) {
+    init(id: UUID = UUID(), hex: String, creationDate: Date = Date()) {
         self.id = id
         self.hex = hex.replacingOccurrences(of: "#", with: "")
+        self.creationDate = creationDate
     }
 }

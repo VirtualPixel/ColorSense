@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct ColorSenseApp: App {
     @StateObject var cameraFeed = CameraFeed()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

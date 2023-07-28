@@ -10,6 +10,7 @@ import SwiftUI
 extension ColorDetailView {
     class ViewModel: ObservableObject {
         let color: Color
+        let showAddToPallet: Bool
         
         var rbg: (red: Int, green: Int, blue: Int, alpha: Double) {
             self.color.toRGB()
@@ -31,8 +32,9 @@ extension ColorDetailView {
             self.color.toPantone()
         }
         
-        init(color: Color) {
+        init(color: Color, showAddToPallet: Bool = true) {
             self.color = color
+            self.showAddToPallet = showAddToPallet
         }
     }
 }

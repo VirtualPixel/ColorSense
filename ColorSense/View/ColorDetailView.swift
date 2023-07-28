@@ -86,40 +86,50 @@ struct ColorDetailView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Menu {
-                        NavigationLink {
-                            PalletListView(colorToAdd: viewModel.hex)
-                        } label: {
-                            HStack {
-                                Text("Add color to pallet")
-                                Spacer()
-                                Image(systemName: "plus")
+                    if viewModel.showAddToPallet {
+                        Menu {
+                            NavigationLink {
+                                PalletListView(colorToAdd: viewModel.hex)
+                            } label: {
+                                HStack {
+                                    Text("Add color to pallet")
+                                    Spacer()
+                                    Image(systemName: "plus")
+                                }
                             }
+                            
+                            ShareLink(item: Image(uiImage: createImage(color: UIColor(viewModel.color))),
+                                      subject: Text("Interesting color"),
+                                      message: Text("\(UIColor(viewModel.color).exactName)\nCheck out this color in ColorSense:\nColorSense://color?colorHex=\(viewModel.hex.replacingOccurrences(of: "#", with: ""))"),
+                                      preview: SharePreview("Shared from ColorSense",
+                                                            image: Image(uiImage: createImage(color: UIColor(viewModel.color))))) {
+                                HStack {
+                                    Text("Share Color")
+                                    Spacer()
+                                    Image(systemName: "square.and.arrow.up")
+                                }
+                            }
+                        } label: {
+                            Image(systemName: "ellipsis.circle")
                         }
-
+                    } else {
                         ShareLink(item: Image(uiImage: createImage(color: UIColor(viewModel.color))),
                                   subject: Text("Interesting color"),
                                   message: Text("\(UIColor(viewModel.color).exactName)\nCheck out this color in ColorSense:\nColorSense://color?colorHex=\(viewModel.hex.replacingOccurrences(of: "#", with: ""))"),
                                   preview: SharePreview("Shared from ColorSense",
                                                         image: Image(uiImage: createImage(color: UIColor(viewModel.color))))) {
-                            HStack {
-                                Text("Share Color")
-                                Spacer()
-                                Image(systemName: "square.and.arrow.up")
-                            }
+                            Image(systemName: "square.and.arrow.up")
                         }
-                    } label: {
-                        Image(systemName: "ellipsis.circle")
                     }
                 }
             }
         }
     }
     
-    init(color: Color) {
-        _viewModel = ObservedObject(initialValue: ViewModel(color: color))
+    init(color: Color, showAddToPallet: Bool = true) {
+        _viewModel = ObservedObject(initialValue: ViewModel(color: color, showAddToPallet: showAddToPallet))
     }
-
+    
     // Custom view for detail text
     func detailText(title: String, value: String) -> some View {
         HStack {
