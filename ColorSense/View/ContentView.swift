@@ -12,6 +12,7 @@ struct ContentView: View {
     @ObservedObject private var viewModel = ViewModel()
     @EnvironmentObject private var cameraFeed: CameraFeed
     @State private var showingPalletView = false
+    @State private var colorToDisplay: ColorStructure?
     
     var body: some View {
         NavigationStack {
@@ -39,6 +40,16 @@ struct ContentView: View {
         .sheet(isPresented: $showingPalletView) {
             PalletListView()
                 .presentationDetents([.large])
+        }
+        .onOpenURL { url in
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+            if let colorHex = components?.queryItems?.first(where: { $0.name == "colorHex" })?.value {
+                print("Hex: \(colorHex)")
+                self.colorToDisplay = ColorStructure(hex: colorHex)
+            }
+        }
+        .sheet(item: $colorToDisplay) { colorStructure in
+            ColorDetailView(color: colorStructure.color)
         }
     }
 }

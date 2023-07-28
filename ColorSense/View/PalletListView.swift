@@ -48,9 +48,6 @@ struct PalletListView: View {
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .foregroundStyle(Color.init(hex: color.hex))
                                                     .frame(width: 50, height: 50)
-                                                    .onTapGesture {
-                                                        print(color.hex)
-                                                    }
                                             }
                                             
                                             if pallet.colors.count > maxColorsToShow {
@@ -92,11 +89,11 @@ struct PalletListView: View {
                     }
                 }
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .primaryAction) {
                         Button {
                             showingAddPalletAlert = true
                         } label: {
-                            Image(systemName: "plus")
+                            Text("New Pallet")
                         }
                     }
                 }

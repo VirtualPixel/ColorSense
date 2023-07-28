@@ -64,6 +64,7 @@
 		576338CE2A09BD280034AF9D /* PalletView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PalletView-ViewModel.swift"; sourceTree = "<group>"; };
 		576338D02A09BD340034AF9D /* PalletListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalletListView.swift; sourceTree = "<group>"; };
 		576338D52A09C03A0034AF9D /* ColorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorData.swift; sourceTree = "<group>"; };
+		576A4EC22A742EF700452FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		576D8E972A031069003DE880 /* ColorSense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorSense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		576D8E9A2A031069003DE880 /* ColorSenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSenseApp.swift; sourceTree = "<group>"; };
 		576D8E9C2A031069003DE880 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 		576D8E992A031069003DE880 /* ColorSense */ = {
 			isa = PBXGroup;
 			children = (
+				576A4EC22A742EF700452FA5 /* Info.plist */,
 				576D8E9A2A031069003DE880 /* ColorSenseApp.swift */,
 				575301672A033C5E006A68A5 /* Model */,
 				576D8EA82A031079003DE880 /* View */,
@@ -464,6 +466,7 @@
 				DEVELOPMENT_TEAM = 3LPAZYKA42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ColorSense/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -495,6 +498,7 @@
 				DEVELOPMENT_TEAM = 3LPAZYKA42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ColorSense/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
