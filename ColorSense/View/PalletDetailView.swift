@@ -25,7 +25,7 @@ struct PalletDetailView: View {
                     NavigationLink {
                         ColorDetailView(color: color.color, showAddToPallet: false)
                     } label: {
-                        Text(color.hex)
+                        Text(UIColor(color.color).exactName)
                             .font(.title3)
                     }
                 }

@@ -23,7 +23,6 @@ struct ContentView: View {
                 
                 VStack {
                     TopBarView()
-                    ColorCardView()
                     Spacer()
                     BottomBarView(showingPalletView: $showingPalletView)
                 }

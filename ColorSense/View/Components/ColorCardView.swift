@@ -17,31 +17,33 @@ struct ColorCardView: View {
                 ColorDetailView(color: cameraFeed.dominantColor ?? .blue)
             } label: {
                 RoundedRectangle(cornerRadius: 12)
-                    .frame(width: 330, height: 110)
+                    .frame(width: 300, height: 90)
                     .overlay(
-                        HStack {
-                            createColorCircle()
-                            createColorText()
-                                .frame(width: 110, height: 100)
-                                .padding()
-                            
-                            Spacer()
-                            
-                            Button(action: { isAddingColor = true }) {
-                                Image(systemName: "plus")
+                        GeometryReader { geo in
+                            HStack {
+                                createColorCircle()
+                                createColorText(geometry: geo)
+                                    .frame(width: 110, height: 100)
                                     .padding()
-                                    .foregroundColor(.primary)
-                                    .background(.ultraThinMaterial.opacity(0.3))
-                                    .cornerRadius(6)
+                                
+                                Spacer()
+                                
+                                Button(action: { isAddingColor = true }) {
+                                    Image(systemName: "plus")
+                                        .padding()
+                                        .foregroundColor(.primary)
+                                        .background(.ultraThinMaterial.opacity(0.3))
+                                        .cornerRadius(6)
+                                }
+                                Spacer()
                             }
-                            Spacer()
+                            .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).midY)
                         }
                     )
                     .background(.thinMaterial)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
             }
             .buttonStyle(.plain)
-            .padding(.horizontal)
             .sheet(isPresented: $isAddingColor) {
                 PalletListView(colorToAdd: cameraFeed.dominantColor?.toHex())
             }
@@ -53,25 +55,20 @@ struct ColorCardView: View {
             Spacer()
             Circle()
                 .foregroundColor(cameraFeed.dominantColor ?? .black)
-                .frame(width: 65, height: 65)
             Divider()
-                .padding(.leading)
         }
     }
     
-    private func createColorText() -> some View {
-        VStack {
-            Text("\(cameraFeed.exactName ?? "")")
-                .font(.system(size: 500))
-                .minimumScaleFactor(0.01)
-                .padding(.top)
-            Text("\(cameraFeed.simpleName ?? "") Family")
-                .font(.system(size: 500).bold())
-                .minimumScaleFactor(0.01)
-                .padding(.bottom)
+    private func createColorText(geometry: GeometryProxy) -> some View {
+            VStack {
+                Text("\(cameraFeed.exactName ?? "The Geothermal blue")")
+                    .font(.system(size: geometry.size.width * 0.04))
+                    .minimumScaleFactor(0.5)
+                Text("\(cameraFeed.simpleName ?? "Blue") Family")
+                    .font(.system(size: geometry.size.width * 0.04).bold())  // Adjust as per your needs
+                    .minimumScaleFactor(0.5)  // Allows the text to scale down to 50% of its original size
+            }
         }
-        .padding(.vertical)
-    }
 }
 
 struct ColorCardView_Previews: PreviewProvider {

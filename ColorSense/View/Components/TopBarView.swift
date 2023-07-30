@@ -11,32 +11,44 @@ struct TopBarView: View {
     @EnvironmentObject private var cameraFeed: CameraFeed
     
     var body: some View {
-        HStack {
-            Button {
-                cameraFeed.isFlashOn.toggle()
-            } label: {
-                Image(systemName: "bolt.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .background(
-                        .yellow.opacity(cameraFeed.isFlashOn ? 1.0 : 0.0)
-                    )
-                    .background(
-                        .thinMaterial
-                    )
-                    .clipShape(Circle())
+        VStack {
+            GeometryReader { geo in
+                VStack {
+                    HStack {
+                        Button {
+                            cameraFeed.isFlashOn.toggle()
+                        } label: {
+                            Image(systemName: "bolt.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundColor(.white)
+                                .padding(6)
+                                .background(
+                                    .yellow.opacity(cameraFeed.isFlashOn ? 1.0 : 0.0)
+                                )
+                                .background(
+                                    .thinMaterial
+                                )
+                                .clipShape(Circle())
+                                .frame(width: 32, height: 32)
+                        }
+                        .padding(.leading, 30)
+                        
+                        Spacer()
+                    }
+                    .frame(width: geo.size.width, height: 40)
+                    .background(.black)
+                    .padding(.bottom, 5)
+                
+                    ColorCardView()
+                    Spacer()
+                }
             }
-            .frame(width: 32, height: 32)
-            .padding(.horizontal, 50)
-            
-            Spacer()
         }
-        .frame(maxWidth: .infinity, maxHeight: 50)
-        .background(.black)//.opacity(0.9))
     }
 }
+
+
 
 struct TopBarView_Previews: PreviewProvider {
     static let cameraFeed = CameraFeed()

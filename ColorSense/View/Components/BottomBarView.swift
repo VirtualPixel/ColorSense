@@ -21,8 +21,7 @@ struct BottomBarView: View {
             cameraSwapButton()
             Spacer()
         }
-        .frame(maxWidth: .infinity, maxHeight: 150)
-        .background(.black)//.opacity(0.9))
+        .background(.black)
     }
 
     private func swatchPaletteButton() -> some View {
@@ -63,7 +62,7 @@ struct BottomBarView: View {
                     )
             }
         }
-        .padding()
+        .padding(.vertical)
     }
 
     private func cameraSwapButton() -> some View {
