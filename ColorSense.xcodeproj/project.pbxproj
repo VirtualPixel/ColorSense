@@ -148,9 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				576338BD2A099B690034AF9D /* ColorCardView.swift */,
-				576338BF2A099C810034AF9D /* BottomBarView.swift */,
 				576338C12A099D240034AF9D /* FocusCircleView.swift */,
-				576338BB2A0999340034AF9D /* TopBarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -167,8 +165,8 @@
 		576338C42A09A3AB0034AF9D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				576338CA2A09A5D10034AF9D /* ColorDetailView-ViewModel.swift */,
 				576338C52A09A3C50034AF9D /* ContentView-ViewModel.swift */,
+				576338CA2A09A5D10034AF9D /* ColorDetailView-ViewModel.swift */,
 				577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */,
 				576338CE2A09BD280034AF9D /* PalletView-ViewModel.swift */,
 			);
@@ -181,6 +179,33 @@
 				572053FB2A68900F0072DE06 /* Pallet.swift */,
 			);
 			path = "Data Persistance";
+			sourceTree = "<group>";
+		};
+		576A4EC32A772C4400452FA5 /* iPhone Views */ = {
+			isa = PBXGroup;
+			children = (
+				576338BF2A099C810034AF9D /* BottomBarView.swift */,
+				576338BB2A0999340034AF9D /* TopBarView.swift */,
+			);
+			path = "iPhone Views";
+			sourceTree = "<group>";
+		};
+		576A4EC42A772C6C00452FA5 /* Detail Views */ = {
+			isa = PBXGroup;
+			children = (
+				576338C82A09A5A00034AF9D /* ColorDetailView.swift */,
+				577357562A73150600903F85 /* PalletDetailView.swift */,
+			);
+			path = "Detail Views";
+			sourceTree = "<group>";
+		};
+		576A4EC52A772CCB00452FA5 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				576A4EC42A772C6C00452FA5 /* Detail Views */,
+				576338D02A09BD340034AF9D /* PalletListView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		576D8E8E2A031069003DE880 = {
@@ -224,11 +249,10 @@
 		576D8EA82A031079003DE880 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				576338BA2A0999240034AF9D /* Components */,
-				576338C82A09A5A00034AF9D /* ColorDetailView.swift */,
 				576D8E9C2A031069003DE880 /* ContentView.swift */,
-				577357562A73150600903F85 /* PalletDetailView.swift */,
-				576338D02A09BD340034AF9D /* PalletListView.swift */,
+				576A4EC32A772C4400452FA5 /* iPhone Views */,
+				576338BA2A0999240034AF9D /* Components */,
+				576A4EC52A772CCB00452FA5 /* SubViews */,
 			);
 			path = View;
 			sourceTree = "<group>";
