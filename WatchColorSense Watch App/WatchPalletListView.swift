@@ -13,10 +13,10 @@ struct WatchPalletListView: View {
     @Environment(\.modelContext) private var context
     @State private var palletName = ""
     @State private var colorHex = ""
-    @State private var showingAddPalletAlert = false
-    @State private var showingAddColorAlert = false
     @State private var selectedPallet: Pallet?
     @State private var showingInvalidHexAlert = false
+    
+    var colorToAdd: String?
     
     var body: some View {
         GeometryReader { geo in
@@ -32,50 +32,53 @@ struct WatchPalletListView: View {
                     } else {
                         List {
                             ForEach(pallets, id: \.id) { pallet in
-                                NavigationLink {
-                                    WatchPalletDetailView(pallet: pallet)
-                                } label: {
-                                    VStack(alignment: .leading) {
-                                        Text(pallet.name)
-                                            .font(.title3)
-                                            .bold()
-                                        
-                                        HStack {
-                                            // limit the colors shown
-                                            ForEach(pallet.colors?.sorted(by: { $0.creationDate > $1.creationDate }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .foregroundStyle(Color.init(hex: color.hex))
-                                                    .frame(width: 50, height: 50)
-                                            }
+                                HStack {
+                                    NavigationLink {
+                                        WatchPalletDetailView(pallet: pallet)
+                                    } label: {
+                                        VStack(alignment: .leading) {
+                                            Text(pallet.name)
+                                                .font(.title3)
+                                                .bold()
                                             
-                                            ForEach(Array(repeating: 0, count: max(maxColorsToShow - (pallet.colors?.count ?? 0), 0)), id: \.self) { _ in
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .opacity(0)
-                                                    .frame(width: 50, height: 50)
-                                            }
-                                            
-                                            if (pallet.colors?.count ?? 0) > maxColorsToShow {
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .foregroundStyle(.gray.opacity(0.2))
-                                                    .frame(width: 50, height: 50)
-                                                    .overlay(
-                                                        Text("+\((pallet.colors?.count ?? 0) - maxColorsToShow)")
-                                                    )
-                                            }
-                                            
-                                            Spacer()
-                                            
-                                            Divider()
-                                            Button {
-                                                selectedPallet = pallet
-                                                showingAddColorAlert = true
-                                            } label: {
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .foregroundStyle(.gray.opacity(0.2))
-                                                    .frame(width: 50, height: 50)
-                                                    .overlay(
-                                                        Image(systemName: "plus")
-                                                    )
+                                            HStack {
+                                                // limit the colors shown
+                                                ForEach(pallet.colors?.sorted(by: { $0.creationDate > $1.creationDate }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .foregroundStyle(Color.init(hex: color.hex))
+                                                        .frame(width: 50, height: 50)
+                                                }
+                                                
+                                                ForEach(Array(repeating: 0, count: max(maxColorsToShow - (pallet.colors?.count ?? 0), 0)), id: \.self) { _ in
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .opacity(0)
+                                                        .frame(width: 50, height: 50)
+                                                }
+                                                
+                                                if (pallet.colors?.count ?? 0) > maxColorsToShow {
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .foregroundStyle(.gray.opacity(0.2))
+                                                        .frame(width: 50, height: 50)
+                                                        .overlay(
+                                                            Text("+\((pallet.colors?.count ?? 0) - maxColorsToShow)")
+                                                        )
+                                                }
+                                                
+                                                Spacer()
+                                                
+                                                Divider()
+                                                Button {
+                                                    selectedPallet = pallet
+                                                    showTextInputAlert()
+                                                } label: {
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .foregroundStyle(.gray.opacity(0.2))
+                                                        .frame(width: 50, height: 50)
+                                                        .overlay(
+                                                            Image(systemName: "plus")
+                                                        )
+                                                }
+                                                .buttonStyle(.plain)
                                             }
                                         }
                                     }
@@ -89,23 +92,11 @@ struct WatchPalletListView: View {
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Button {
-                            showingAddPalletAlert = true
+                            showNewPalletTextInputAlert()
                         } label: {
                             Text("New Pallet")
                         }
                     }
-                }
-                .alert("Enter new Pallet name", isPresented: $showingAddPalletAlert) {
-                    TextField("Enter new Pallet name", text: $palletName)
-                    Button("Okay", action: submitPallet)
-                } message: {
-                    Text("This will create a new Pallet with your custom name.")
-                }
-                .alert("Enter new color Hex value", isPresented: $showingAddColorAlert) {
-                    TextField("Enter new color Hex value", text: $colorHex)
-                    Button("Okay", action: submitColor)
-                } message: {
-                    Text("This will add a new color to your chosen Pallet.")
                 }
                 .alert("Invalid color hex value", isPresented: $showingInvalidHexAlert) {
                     Button("Okay") {
@@ -124,6 +115,14 @@ struct WatchPalletListView: View {
         
         let pallet = Pallet(name: palletName, colors: [])
         
+        if let colorToHex = colorToAdd {
+            if pallet.colors != nil {
+                pallet.colors?.append(ColorStructure(hex: colorToHex))
+            } else {
+                pallet.colors = [ColorStructure(hex: colorToHex)]
+            }
+        }
+        
         context.insert(pallet)
         
         do {
@@ -139,7 +138,7 @@ struct WatchPalletListView: View {
         guard !colorHex.isEmpty else { return }
         
         guard let selectedPallet = selectedPallet,
-              isValidHexColor(hex: colorHex)
+            isValidHexColor(hex: colorHex)
         else {
             showingInvalidHexAlert = true
             return
@@ -162,6 +161,26 @@ struct WatchPalletListView: View {
         }
         
         colorHex = ""
+    }
+
+    private func showTextInputAlert() {
+        guard let controller = WKExtension.shared().rootInterfaceController else { return }
+        controller.presentTextInputController(withSuggestions: nil, allowedInputMode: .plain) { results in
+            if let results = results as? [String], !results.isEmpty {
+                self.colorHex = results[0]
+                self.submitColor()
+            }
+        }
+    }
+    
+    private func showNewPalletTextInputAlert() {
+        guard let controller = WKExtension.shared().rootInterfaceController else { return }
+        controller.presentTextInputController(withSuggestions: nil, allowedInputMode: .plain) { results in
+            if let results = results as? [String], !results.isEmpty {
+                self.palletName = results[0]
+                self.submitPallet()
+            }
+        }
     }
     
     private func deletePallet(indexSet: IndexSet) {

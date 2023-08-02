@@ -23,7 +23,7 @@ struct WatchPalletDetailView: View {
                         .foregroundStyle(color.color)
                         .frame(width: 50, height: 50)
                     NavigationLink {
-                        ColorDetailView(color: color.color, showAddToPallet: false)
+                        WatchColorDetailView(color: color.color, showAddToPallet: false)
                     } label: {
                         Text(UIColor(color.color).exactName)
                             .font(.title3)

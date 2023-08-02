@@ -22,7 +22,7 @@ struct WatchColorSense_Watch_AppApp: App {
                     }
                 }
                 .sheet(item: $colorToDisplay) { colorStructure in
-                    ColorDetailView(color: colorStructure.color)
+                    WatchColorDetailView(color: colorStructure.color)
                 }
         }
         .modelContainer(

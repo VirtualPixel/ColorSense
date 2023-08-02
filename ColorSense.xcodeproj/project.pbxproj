@@ -47,7 +47,7 @@
 		576A4F2F2A782EE000452FA5 /* Calculate Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016E2A033CF0006A68A5 /* Calculate Colors.swift */; };
 		576A4F302A782EE000452FA5 /* Color Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* Color Lists.swift */; };
 		576A4F312A782EE000452FA5 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
-		576A4F332A782EFF00452FA5 /* ColorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F322A782EFF00452FA5 /* ColorDetailView.swift */; };
+		576A4F332A782EFF00452FA5 /* WatchColorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F322A782EFF00452FA5 /* WatchColorDetailView.swift */; };
 		576A4F352A782FB000452FA5 /* WatchPalletListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F342A782FB000452FA5 /* WatchPalletListView.swift */; };
 		576A4F372A782FBE00452FA5 /* WatchPalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F362A782FBE00452FA5 /* WatchPalletDetailView.swift */; };
 		576D8E9B2A031069003DE880 /* ColorSenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D8E9A2A031069003DE880 /* ColorSenseApp.swift */; };
@@ -57,6 +57,7 @@
 		576D8EAA2A0310AA003DE880 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D8EA92A0310AA003DE880 /* CameraPreview.swift */; };
 		577357572A73150600903F85 /* PalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357562A73150600903F85 /* PalletDetailView.swift */; };
 		577357592A73153800903F85 /* PalletDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */; };
+		57DAA12E2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */; };
 		57DDCDFC2A07F93600B53CB7 /* New Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFB2A07F93600B53CB7 /* New Colors.swift */; };
 		57DDCDFE2A08007000B53CB7 /* Color Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* Color Lists.swift */; };
 		57DDCE002A0806C100B53CB7 /* CameraFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFF2A0806C100B53CB7 /* CameraFeed.swift */; };
@@ -115,7 +116,7 @@
 		576A4F162A782E6F00452FA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		576A4F182A782E7200452FA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		576A4F1B2A782E7200452FA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		576A4F322A782EFF00452FA5 /* ColorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailView.swift; sourceTree = "<group>"; };
+		576A4F322A782EFF00452FA5 /* WatchColorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchColorDetailView.swift; sourceTree = "<group>"; };
 		576A4F342A782FB000452FA5 /* WatchPalletListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPalletListView.swift; sourceTree = "<group>"; };
 		576A4F362A782FBE00452FA5 /* WatchPalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPalletDetailView.swift; sourceTree = "<group>"; };
 		576A4F382A7857F300452FA5 /* WatchColorSense-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "WatchColorSense-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -129,6 +130,7 @@
 		576D8EA92A0310AA003DE880 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		577357562A73150600903F85 /* PalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalletDetailView.swift; sourceTree = "<group>"; };
 		577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PalletDetailView-ViewModel.swift"; sourceTree = "<group>"; };
+		57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchColorDetailview-ViewModel.swift"; sourceTree = "<group>"; };
 		57DDCDFB2A07F93600B53CB7 /* New Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Colors.swift"; sourceTree = "<group>"; };
 		57DDCDFD2A08007000B53CB7 /* Color Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Lists.swift"; sourceTree = "<group>"; };
 		57DDCDFF2A0806C100B53CB7 /* CameraFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeed.swift; sourceTree = "<group>"; };
@@ -280,7 +282,8 @@
 				576A4F162A782E6F00452FA5 /* ContentView.swift */,
 				576A4F182A782E7200452FA5 /* Assets.xcassets */,
 				576A4F1A2A782E7200452FA5 /* Preview Content */,
-				576A4F322A782EFF00452FA5 /* ColorDetailView.swift */,
+				576A4F322A782EFF00452FA5 /* WatchColorDetailView.swift */,
+				57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */,
 				576A4F342A782FB000452FA5 /* WatchPalletListView.swift */,
 				576A4F362A782FBE00452FA5 /* WatchPalletDetailView.swift */,
 			);
@@ -465,7 +468,8 @@
 				576A4F2A2A782EE000452FA5 /* Pantone.swift in Sources */,
 				576A4F302A782EE000452FA5 /* Color Lists.swift in Sources */,
 				576A4F152A782E6F00452FA5 /* WatchColorSenseApp.swift in Sources */,
-				576A4F332A782EFF00452FA5 /* ColorDetailView.swift in Sources */,
+				57DAA12E2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift in Sources */,
+				576A4F332A782EFF00452FA5 /* WatchColorDetailView.swift in Sources */,
 				576A4F352A782FB000452FA5 /* WatchPalletListView.swift in Sources */,
 				576A4F272A782EE000452FA5 /* Color.swift in Sources */,
 				576A4F292A782EE000452FA5 /* New Colors.swift in Sources */,
