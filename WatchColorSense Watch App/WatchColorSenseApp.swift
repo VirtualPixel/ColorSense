@@ -1,21 +1,19 @@
 //
-//  ColorSenseApp.swift
-//  ColorSense
+//  WatchColorSenseApp.swift
+//  WatchColorSense Watch App
 //
-//  Created by Justin Wells on 5/3/23.
+//  Created by Justin Wells on 7/31/23.
 //
 
 import SwiftUI
 
 @main
-struct ColorSenseApp: App {
-    @StateObject var cameraFeed = CameraFeed()
+struct WatchColorSense_Watch_AppApp: App {
     @State private var colorToDisplay: ColorStructure?
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(cameraFeed)
                 .onOpenURL { url in
                     let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
                     if let colorHex = components?.queryItems?.first(where: { $0.name == "colorHex" })?.value {
@@ -28,10 +26,7 @@ struct ColorSenseApp: App {
                 }
         }
         .modelContainer(
-            for: [
-                Pallet.self,
-                ColorStructure.self
-            ]
+            for: [Pallet.self, ColorStructure.self]
         )
     }
 }

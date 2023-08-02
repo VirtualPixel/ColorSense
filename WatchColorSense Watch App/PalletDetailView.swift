@@ -1,8 +1,8 @@
 //
 //  PalletDetailView.swift
-//  ColorSense
+//  WatchColorSense Watch App
 //
-//  Created by Justin Wells on 7/27/23.
+//  Created by Justin Wells on 7/31/23.
 //
 
 import SwiftUI
@@ -10,9 +10,9 @@ import SwiftUI
 struct PalletDetailView: View {
     @Environment(\.modelContext) private var context
     var pallet: Pallet
-
+    
     var sortedColors: [ColorStructure] {
-        return pallet.colors!.sorted(by: { $0.creationDate > $1.creationDate })
+        return pallet.colors?.sorted(by: { $0.creationDate > $1.creationDate }) ?? []
     }
     
     var body: some View {

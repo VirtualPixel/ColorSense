@@ -10,11 +10,12 @@ import SwiftData
 
 @Model
 final class Pallet: Identifiable {
-    @Attribute(.unique) var id: UUID
-    var name: String
-    @Relationship(.cascade, inverse: .none) var colors: [ColorStructure]
+    @Relationship(.cascade, inverse: \ColorStructure.pallet) var colors: [ColorStructure]?
+    var id: UUID = UUID()
+    var name: String = ""
+    var creationDate: Date = Date()
     
-    init(id: UUID = UUID(), name: String, colors: [ColorStructure] = []) {
+    init(id: UUID = UUID(), name: String, colors: [ColorStructure]?) {
         self.id = id
         self.name = name
         self.colors = colors

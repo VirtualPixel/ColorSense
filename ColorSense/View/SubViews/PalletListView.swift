@@ -20,6 +20,10 @@ struct PalletListView: View {
     @State private var selectedPallet: Pallet?
     @State private var showingInvalidHexAlert = false
     
+    var sortedPallets: [Pallet] {
+        pallets.sorted(by: { $0.creationDate > $1.creationDate })
+    }
+    
     var colorToAdd: String?
     
     var body: some View {
@@ -35,7 +39,7 @@ struct PalletListView: View {
                             .opacity(0.7)
                     } else {
                         List {
-                            ForEach(pallets, id: \.id) { pallet in
+                            ForEach(sortedPallets, id: \.id) { pallet in
                                 NavigationLink {
                                     PalletDetailView(pallet: pallet)
                                 } label: {
@@ -47,24 +51,24 @@ struct PalletListView: View {
                                             
                                             HStack {
                                                 // limit the colors shown
-                                                ForEach(pallet.colors.sorted(by: { $0.creationDate > $1.creationDate }).prefix(maxColorsToShow), id: \.id) { color in
+                                                ForEach(pallet.colors?.sorted(by: { $0.creationDate > $1.creationDate }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
                                                     RoundedRectangle(cornerRadius: 12)
                                                         .foregroundStyle(Color.init(hex: color.hex))
                                                         .frame(width: 50, height: 50)
                                                 }
                                                 
-                                                ForEach(Array(repeating: 0, count: max(maxColorsToShow - pallet.colors.count, 0)), id: \.self) { _ in
+                                                ForEach(Array(repeating: 0, count: max(maxColorsToShow - (pallet.colors?.count ?? 0), 0)), id: \.self) { _ in
                                                     RoundedRectangle(cornerRadius: 12)
                                                         .opacity(0)
                                                         .frame(width: 50, height: 50)
                                                 }
                                                 
-                                                if pallet.colors.count > maxColorsToShow {
+                                                if (pallet.colors?.count ?? 0) > maxColorsToShow {
                                                     RoundedRectangle(cornerRadius: 12)
                                                         .foregroundStyle(.gray.opacity(0.2))
                                                         .frame(width: 50, height: 50)
                                                         .overlay(
-                                                            Text("+\(pallet.colors.count - maxColorsToShow)")
+                                                            Text("+\((pallet.colors?.count ?? 0) - maxColorsToShow)")
                                                         )
                                                 }
                                                 
@@ -139,21 +143,25 @@ struct PalletListView: View {
     
     private func submitPallet() {
         guard !palletName.isEmpty else { return }
-        
+
         let pallet = Pallet(name: palletName, colors: [])
-        
+
         if let colorToHex = colorToAdd {
-            pallet.colors.append(ColorStructure(hex: colorToHex))
+            if pallet.colors != nil {
+                pallet.colors?.append(ColorStructure(hex: colorToHex))
+            } else {
+                pallet.colors = [ColorStructure(hex: colorToHex)]
+            }
         }
-        
+
         context.insert(pallet)
-        
+
         do {
             try context.save()
         } catch {
             print(error.localizedDescription)
         }
-        
+
         palletName = ""
     }
     
@@ -170,7 +178,12 @@ struct PalletListView: View {
         let newColor = ColorStructure(hex: colorHex)
         
         if let index = pallets.firstIndex(where: { $0.id == selectedPallet.id }) {
-            pallets[index].colors.append(newColor)
+            if pallets[index].colors != nil {
+                pallets[index].colors?.append(newColor)
+            } else {
+                pallets[index].colors = [newColor]
+            }
+
             do {
                 try context.save()
             } catch {
@@ -181,16 +194,15 @@ struct PalletListView: View {
         colorHex = ""
     }
     
-    private func deletePallet(indexSet: IndexSet) {
-        indexSet.forEach { index in
-            let pallet = pallets[index]
+    private func deletePallet(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let pallet = sortedPallets[index]
             context.delete(pallet)
-        }
-        
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     

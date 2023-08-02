@@ -10,17 +10,17 @@ import SwiftData
 
 @Model
 class ColorStructure: Identifiable {
-    @Attribute(.unique) var id: UUID
-    var hex: String
-    var creationDate: Date
+    @Relationship var pallet: Pallet?
+    var id: UUID = UUID()
+    var hex: String = "000000"
+    var creationDate: Date = Date()
     
     var color: Color {
         Color.init(hex: hex)
     }
     
-    init(id: UUID = UUID(), hex: String, creationDate: Date = Date()) {
+    init(id: UUID = UUID(), hex: String = "000000") {
         self.id = id
         self.hex = hex.replacingOccurrences(of: "#", with: "")
-        self.creationDate = creationDate
     }
 }
