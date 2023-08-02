@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PalletDetailView: View {
+struct WatchPalletDetailView: View {
     @Environment(\.modelContext) private var context
     var pallet: Pallet
     
@@ -52,5 +52,5 @@ struct PalletDetailView: View {
 }
 
 #Preview {
-    PalletDetailView(pallet: Pallet(name: "Test", colors: [ColorStructure(hex: "#ff0000"), ColorStructure(hex: "#00ff00"), ColorStructure(hex: "#0000ff")]))
+    WatchPalletDetailView(pallet: Pallet(name: "Test", colors: [ColorStructure(hex: "#ff0000"), ColorStructure(hex: "#00ff00"), ColorStructure(hex: "#0000ff")]))
 }

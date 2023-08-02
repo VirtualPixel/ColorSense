@@ -48,8 +48,8 @@
 		576A4F302A782EE000452FA5 /* Color Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* Color Lists.swift */; };
 		576A4F312A782EE000452FA5 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
 		576A4F332A782EFF00452FA5 /* ColorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F322A782EFF00452FA5 /* ColorDetailView.swift */; };
-		576A4F352A782FB000452FA5 /* PalletListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F342A782FB000452FA5 /* PalletListView.swift */; };
-		576A4F372A782FBE00452FA5 /* PalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F362A782FBE00452FA5 /* PalletDetailView.swift */; };
+		576A4F352A782FB000452FA5 /* WatchPalletListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F342A782FB000452FA5 /* WatchPalletListView.swift */; };
+		576A4F372A782FBE00452FA5 /* WatchPalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F362A782FBE00452FA5 /* WatchPalletDetailView.swift */; };
 		576D8E9B2A031069003DE880 /* ColorSenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D8E9A2A031069003DE880 /* ColorSenseApp.swift */; };
 		576D8E9D2A031069003DE880 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D8E9C2A031069003DE880 /* ContentView.swift */; };
 		576D8E9F2A03106A003DE880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576D8E9E2A03106A003DE880 /* Assets.xcassets */; };
@@ -116,8 +116,8 @@
 		576A4F182A782E7200452FA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		576A4F1B2A782E7200452FA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		576A4F322A782EFF00452FA5 /* ColorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailView.swift; sourceTree = "<group>"; };
-		576A4F342A782FB000452FA5 /* PalletListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalletListView.swift; sourceTree = "<group>"; };
-		576A4F362A782FBE00452FA5 /* PalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalletDetailView.swift; sourceTree = "<group>"; };
+		576A4F342A782FB000452FA5 /* WatchPalletListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPalletListView.swift; sourceTree = "<group>"; };
+		576A4F362A782FBE00452FA5 /* WatchPalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPalletDetailView.swift; sourceTree = "<group>"; };
 		576A4F382A7857F300452FA5 /* WatchColorSense-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "WatchColorSense-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		576A4F392A78580B00452FA5 /* ColorSense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ColorSense.entitlements; sourceTree = "<group>"; };
 		576A4F3A2A78586400452FA5 /* WatchColorSense Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchColorSense Watch App.entitlements"; sourceTree = "<group>"; };
@@ -281,8 +281,8 @@
 				576A4F182A782E7200452FA5 /* Assets.xcassets */,
 				576A4F1A2A782E7200452FA5 /* Preview Content */,
 				576A4F322A782EFF00452FA5 /* ColorDetailView.swift */,
-				576A4F342A782FB000452FA5 /* PalletListView.swift */,
-				576A4F362A782FBE00452FA5 /* PalletDetailView.swift */,
+				576A4F342A782FB000452FA5 /* WatchPalletListView.swift */,
+				576A4F362A782FBE00452FA5 /* WatchPalletDetailView.swift */,
 			);
 			path = "WatchColorSense Watch App";
 			sourceTree = "<group>";
@@ -454,7 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				576A4F282A782EE000452FA5 /* Pallet.swift in Sources */,
-				576A4F372A782FBE00452FA5 /* PalletDetailView.swift in Sources */,
+				576A4F372A782FBE00452FA5 /* WatchPalletDetailView.swift in Sources */,
 				576A4F172A782E6F00452FA5 /* ContentView.swift in Sources */,
 				576A4F2B2A782EE000452FA5 /* String.swift in Sources */,
 				576A4F2C2A782EE000452FA5 /* ColorData.swift in Sources */,
@@ -466,7 +466,7 @@
 				576A4F302A782EE000452FA5 /* Color Lists.swift in Sources */,
 				576A4F152A782E6F00452FA5 /* WatchColorSenseApp.swift in Sources */,
 				576A4F332A782EFF00452FA5 /* ColorDetailView.swift in Sources */,
-				576A4F352A782FB000452FA5 /* PalletListView.swift in Sources */,
+				576A4F352A782FB000452FA5 /* WatchPalletListView.swift in Sources */,
 				576A4F272A782EE000452FA5 /* Color.swift in Sources */,
 				576A4F292A782EE000452FA5 /* New Colors.swift in Sources */,
 			);

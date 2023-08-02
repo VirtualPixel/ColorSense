@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct PalletListView: View {
+struct WatchPalletListView: View {
     @Query var pallets: [Pallet]
     @Environment(\.modelContext) private var context
     @State private var palletName = ""
@@ -33,7 +33,7 @@ struct PalletListView: View {
                         List {
                             ForEach(pallets, id: \.id) { pallet in
                                 NavigationLink {
-                                    PalletDetailView(pallet: pallet)
+                                    WatchPalletDetailView(pallet: pallet)
                                 } label: {
                                     VStack(alignment: .leading) {
                                         Text(pallet.name)
@@ -185,5 +185,5 @@ struct PalletListView: View {
 }
 
 #Preview {
-    PalletListView()
+    WatchPalletListView()
 }
