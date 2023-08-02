@@ -537,7 +537,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WatchColorSense-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = WatchColorSense;
+				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.wells.justin.ColorSense;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -575,7 +575,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WatchColorSense-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = WatchColorSense;
+				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.wells.justin.ColorSense;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
