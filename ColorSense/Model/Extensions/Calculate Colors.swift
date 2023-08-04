@@ -5,7 +5,7 @@
 //  Created by Justin Wells on 5/3/23.
 //
 
-import UIKit
+import SwiftUI
 
 // Color names and difference calculation
 extension UIColor {

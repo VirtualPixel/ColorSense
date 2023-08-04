@@ -12,6 +12,22 @@
 		572054012A68961F0072DE06 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
 		572054032A689AE40072DE06 /* PantoneColorArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054022A689AE40072DE06 /* PantoneColorArrays.swift */; };
 		572054062A68A56D0072DE06 /* Pantone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054052A68A56D0072DE06 /* Pantone.swift */; };
+		5725C5A22A7BCAEC00933331 /* macOSColorSenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725C5A12A7BCAEC00933331 /* macOSColorSenseApp.swift */; };
+		5725C5A42A7BCAEC00933331 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725C5A32A7BCAEC00933331 /* ContentView.swift */; };
+		5725C5A82A7BCAEF00933331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5725C5A72A7BCAEF00933331 /* Assets.xcassets */; };
+		5725C5AB2A7BCAEF00933331 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5725C5AA2A7BCAEF00933331 /* Preview Assets.xcassets */; };
+		5725C5B02A7BCB6E00933331 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
+		5725C5B12A7BCB6E00933331 /* PantoneColorArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054022A689AE40072DE06 /* PantoneColorArrays.swift */; };
+		5725C5B22A7BCB6E00933331 /* Pantone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054052A68A56D0072DE06 /* Pantone.swift */; };
+		5725C5B32A7BCB6E00933331 /* colornames.json in Resources */ = {isa = PBXBuildFile; fileRef = 575301652A0339C2006A68A5 /* colornames.json */; };
+		5725C5B52A7BCB6E00933331 /* Pallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FB2A68900F0072DE06 /* Pallet.swift */; };
+		5725C5B82A7BCB6E00933331 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338D52A09C03A0034AF9D /* ColorData.swift */; };
+		5725C5BD2A7BCB6E00933331 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
+		5727200D2A7D43CA00BDA48B /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 5727200C2A7D43CA00BDA48B /* RealityKitContent */; };
+		5727200F2A7D43CA00BDA48B /* visionColorSenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5727200E2A7D43CA00BDA48B /* visionColorSenseApp.swift */; };
+		572720112A7D43CA00BDA48B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572720102A7D43CA00BDA48B /* ContentView.swift */; };
+		572720132A7D43CC00BDA48B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572720122A7D43CC00BDA48B /* Assets.xcassets */; };
+		572720162A7D43CC00BDA48B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572720152A7D43CC00BDA48B /* Preview Assets.xcassets */; };
 		575301662A0339C2006A68A5 /* colornames.json in Resources */ = {isa = PBXBuildFile; fileRef = 575301652A0339C2006A68A5 /* colornames.json */; };
 		5753016B2A033C9F006A68A5 /* CIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016A2A033C9F006A68A5 /* CIColor.swift */; };
 		5753016D2A033CC6006A68A5 /* CIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016C2A033CC6006A68A5 /* CIImage.swift */; };
@@ -55,6 +71,9 @@
 		576D8E9F2A03106A003DE880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576D8E9E2A03106A003DE880 /* Assets.xcassets */; };
 		576D8EA22A03106A003DE880 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576D8EA12A03106A003DE880 /* Preview Assets.xcassets */; };
 		576D8EAA2A0310AA003DE880 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D8EA92A0310AA003DE880 /* CameraPreview.swift */; };
+		57712DE42A7BD0D500B16DE9 /* ColorInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* ColorInit.swift */; };
+		57712DE52A7BD0D500B16DE9 /* ColorInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* ColorInit.swift */; };
+		57712DE62A7BD0D500B16DE9 /* ColorInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* ColorInit.swift */; };
 		577357572A73150600903F85 /* PalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357562A73150600903F85 /* PalletDetailView.swift */; };
 		577357592A73153800903F85 /* PalletDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */; };
 		57DAA12E2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */; };
@@ -93,6 +112,18 @@
 		572054002A68961F0072DE06 /* pantone-colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pantone-colors.json"; sourceTree = "<group>"; };
 		572054022A689AE40072DE06 /* PantoneColorArrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantoneColorArrays.swift; sourceTree = "<group>"; };
 		572054052A68A56D0072DE06 /* Pantone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pantone.swift; sourceTree = "<group>"; };
+		5725C59F2A7BCAEC00933331 /* macOSColorSense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOSColorSense.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5725C5A12A7BCAEC00933331 /* macOSColorSenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOSColorSenseApp.swift; sourceTree = "<group>"; };
+		5725C5A32A7BCAEC00933331 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5725C5A72A7BCAEF00933331 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5725C5AA2A7BCAEF00933331 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5725C5AC2A7BCAEF00933331 /* macOSColorSense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOSColorSense.entitlements; sourceTree = "<group>"; };
+		572720082A7D43CA00BDA48B /* visionColorSense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visionColorSense.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5727200B2A7D43CA00BDA48B /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		5727200E2A7D43CA00BDA48B /* visionColorSenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visionColorSenseApp.swift; sourceTree = "<group>"; };
+		572720102A7D43CA00BDA48B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		572720122A7D43CC00BDA48B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		572720152A7D43CC00BDA48B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		575301652A0339C2006A68A5 /* colornames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = colornames.json; sourceTree = "<group>"; };
 		5753016A2A033C9F006A68A5 /* CIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColor.swift; sourceTree = "<group>"; };
 		5753016C2A033CC6006A68A5 /* CIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImage.swift; sourceTree = "<group>"; };
@@ -128,6 +159,7 @@
 		576D8E9E2A03106A003DE880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		576D8EA12A03106A003DE880 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		576D8EA92A0310AA003DE880 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		57712DE32A7BD0D500B16DE9 /* ColorInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorInit.swift; sourceTree = "<group>"; };
 		577357562A73150600903F85 /* PalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalletDetailView.swift; sourceTree = "<group>"; };
 		577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PalletDetailView-ViewModel.swift"; sourceTree = "<group>"; };
 		57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchColorDetailview-ViewModel.swift"; sourceTree = "<group>"; };
@@ -137,6 +169,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5725C59C2A7BCAEC00933331 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		572720052A7D43CA00BDA48B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5727200D2A7D43CA00BDA48B /* RealityKitContent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		576A4F0F2A782E6F00452FA5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,6 +220,64 @@
 			path = "Normal Colors";
 			sourceTree = "<group>";
 		};
+		5725C59A2A7BCA1E00933331 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				576A4F322A782EFF00452FA5 /* WatchColorDetailView.swift */,
+				57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */,
+				576A4F342A782FB000452FA5 /* WatchPalletListView.swift */,
+				576A4F362A782FBE00452FA5 /* WatchPalletDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5725C5A02A7BCAEC00933331 /* macOSColorSense */ = {
+			isa = PBXGroup;
+			children = (
+				5725C5A12A7BCAEC00933331 /* macOSColorSenseApp.swift */,
+				5725C5A32A7BCAEC00933331 /* ContentView.swift */,
+				5725C5A72A7BCAEF00933331 /* Assets.xcassets */,
+				5725C5AC2A7BCAEF00933331 /* macOSColorSense.entitlements */,
+				5725C5A92A7BCAEF00933331 /* Preview Content */,
+			);
+			path = macOSColorSense;
+			sourceTree = "<group>";
+		};
+		5725C5A92A7BCAEF00933331 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5725C5AA2A7BCAEF00933331 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		572720092A7D43CA00BDA48B /* visionColorSense */ = {
+			isa = PBXGroup;
+			children = (
+				5727200E2A7D43CA00BDA48B /* visionColorSenseApp.swift */,
+				572720102A7D43CA00BDA48B /* ContentView.swift */,
+				572720122A7D43CC00BDA48B /* Assets.xcassets */,
+				572720142A7D43CC00BDA48B /* Preview Content */,
+			);
+			path = visionColorSense;
+			sourceTree = "<group>";
+		};
+		5727200A2A7D43CA00BDA48B /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				5727200B2A7D43CA00BDA48B /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		572720142A7D43CC00BDA48B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				572720152A7D43CC00BDA48B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		575301672A033C5E006A68A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +296,7 @@
 				5753016A2A033C9F006A68A5 /* CIColor.swift */,
 				5753016C2A033CC6006A68A5 /* CIImage.swift */,
 				576338CC2A09A8980034AF9D /* Color.swift */,
+				57712DE32A7BD0D500B16DE9 /* ColorInit.swift */,
 				57DDCDFD2A08007000B53CB7 /* Color Lists.swift */,
 				57DDCDFB2A07F93600B53CB7 /* New Colors.swift */,
 				575301732A034529006A68A5 /* String.swift */,
@@ -282,10 +388,7 @@
 				576A4F162A782E6F00452FA5 /* ContentView.swift */,
 				576A4F182A782E7200452FA5 /* Assets.xcassets */,
 				576A4F1A2A782E7200452FA5 /* Preview Content */,
-				576A4F322A782EFF00452FA5 /* WatchColorDetailView.swift */,
-				57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */,
-				576A4F342A782FB000452FA5 /* WatchPalletListView.swift */,
-				576A4F362A782FBE00452FA5 /* WatchPalletDetailView.swift */,
+				5725C59A2A7BCA1E00933331 /* View */,
 			);
 			path = "WatchColorSense Watch App";
 			sourceTree = "<group>";
@@ -303,6 +406,9 @@
 			children = (
 				576D8E992A031069003DE880 /* ColorSense */,
 				576A4F132A782E6F00452FA5 /* WatchColorSense Watch App */,
+				5725C5A02A7BCAEC00933331 /* macOSColorSense */,
+				572720092A7D43CA00BDA48B /* visionColorSense */,
+				5727200A2A7D43CA00BDA48B /* Packages */,
 				576D8E982A031069003DE880 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -312,6 +418,8 @@
 			children = (
 				576D8E972A031069003DE880 /* ColorSense.app */,
 				576A4F122A782E6F00452FA5 /* WatchColorSense Watch App.app */,
+				5725C59F2A7BCAEC00933331 /* macOSColorSense.app */,
+				572720082A7D43CA00BDA48B /* visionColorSense.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -353,6 +461,43 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5725C59E2A7BCAEC00933331 /* macOSColorSense */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5725C5AD2A7BCAEF00933331 /* Build configuration list for PBXNativeTarget "macOSColorSense" */;
+			buildPhases = (
+				5725C59B2A7BCAEC00933331 /* Sources */,
+				5725C59C2A7BCAEC00933331 /* Frameworks */,
+				5725C59D2A7BCAEC00933331 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = macOSColorSense;
+			productName = macOSColorSense;
+			productReference = 5725C59F2A7BCAEC00933331 /* macOSColorSense.app */;
+			productType = "com.apple.product-type.application";
+		};
+		572720072A7D43CA00BDA48B /* visionColorSense */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 572720172A7D43CC00BDA48B /* Build configuration list for PBXNativeTarget "visionColorSense" */;
+			buildPhases = (
+				572720042A7D43CA00BDA48B /* Sources */,
+				572720052A7D43CA00BDA48B /* Frameworks */,
+				572720062A7D43CA00BDA48B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = visionColorSense;
+			packageProductDependencies = (
+				5727200C2A7D43CA00BDA48B /* RealityKitContent */,
+			);
+			productName = visionColorSense;
+			productReference = 572720082A7D43CA00BDA48B /* visionColorSense.app */;
+			productType = "com.apple.product-type.application";
+		};
 		576A4F112A782E6F00452FA5 /* WatchColorSense Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 576A4F202A782E7200452FA5 /* Build configuration list for PBXNativeTarget "WatchColorSense Watch App" */;
@@ -399,6 +544,12 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					5725C59E2A7BCAEC00933331 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					572720072A7D43CA00BDA48B = {
+						CreatedOnToolsVersion = 15.0;
+					};
 					576A4F112A782E6F00452FA5 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -422,11 +573,33 @@
 			targets = (
 				576D8E962A031069003DE880 /* ColorSense */,
 				576A4F112A782E6F00452FA5 /* WatchColorSense Watch App */,
+				5725C59E2A7BCAEC00933331 /* macOSColorSense */,
+				572720072A7D43CA00BDA48B /* visionColorSense */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5725C59D2A7BCAEC00933331 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5725C5B32A7BCB6E00933331 /* colornames.json in Resources */,
+				5725C5AB2A7BCAEF00933331 /* Preview Assets.xcassets in Resources */,
+				5725C5A82A7BCAEF00933331 /* Assets.xcassets in Resources */,
+				5725C5BD2A7BCB6E00933331 /* pantone-colors.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		572720062A7D43CA00BDA48B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				572720162A7D43CC00BDA48B /* Preview Assets.xcassets in Resources */,
+				572720132A7D43CC00BDA48B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		576A4F102A782E6F00452FA5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,11 +625,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5725C59B2A7BCAEC00933331 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5725C5B52A7BCB6E00933331 /* Pallet.swift in Sources */,
+				5725C5B82A7BCB6E00933331 /* ColorData.swift in Sources */,
+				5725C5A42A7BCAEC00933331 /* ContentView.swift in Sources */,
+				5725C5B22A7BCB6E00933331 /* Pantone.swift in Sources */,
+				5725C5A22A7BCAEC00933331 /* macOSColorSenseApp.swift in Sources */,
+				57712DE62A7BD0D500B16DE9 /* ColorInit.swift in Sources */,
+				5725C5B02A7BCB6E00933331 /* ColorStructure.swift in Sources */,
+				5725C5B12A7BCB6E00933331 /* PantoneColorArrays.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		572720042A7D43CA00BDA48B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				572720112A7D43CA00BDA48B /* ContentView.swift in Sources */,
+				5727200F2A7D43CA00BDA48B /* visionColorSenseApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		576A4F0E2A782E6F00452FA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				576A4F282A782EE000452FA5 /* Pallet.swift in Sources */,
+				57712DE52A7BD0D500B16DE9 /* ColorInit.swift in Sources */,
 				576A4F372A782FBE00452FA5 /* WatchPalletDetailView.swift in Sources */,
 				576A4F172A782E6F00452FA5 /* ContentView.swift in Sources */,
 				576A4F2B2A782EE000452FA5 /* String.swift in Sources */,
@@ -502,6 +700,7 @@
 				576338D62A09C03A0034AF9D /* ColorData.swift in Sources */,
 				572054062A68A56D0072DE06 /* Pantone.swift in Sources */,
 				576338B92A0997AA0034AF9D /* View.swift in Sources */,
+				57712DE42A7BD0D500B16DE9 /* ColorInit.swift in Sources */,
 				576338BE2A099B690034AF9D /* ColorCardView.swift in Sources */,
 				5753016B2A033C9F006A68A5 /* CIColor.swift in Sources */,
 				577357592A73153800903F85 /* PalletDetailView-ViewModel.swift in Sources */,
@@ -522,6 +721,146 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		5725C5AE2A7BCAEF00933331 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOSColorSense/macOSColorSense.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"macOSColorSense/Preview Content\"";
+				DEVELOPMENT_TEAM = 3LPAZYKA42;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.macOSColorSense;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5725C5AF2A7BCAEF00933331 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOSColorSense/macOSColorSense.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"macOSColorSense/Preview Content\"";
+				DEVELOPMENT_TEAM = 3LPAZYKA42;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.macOSColorSense;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		572720182A7D43CC00BDA48B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"visionColorSense/Preview Content\"";
+				DEVELOPMENT_TEAM = 3LPAZYKA42;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.visionColorSense;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		572720192A7D43CC00BDA48B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"visionColorSense/Preview Content\"";
+				DEVELOPMENT_TEAM = 3LPAZYKA42;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.visionColorSense;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
 		576A4F212A782E7200452FA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -727,6 +1066,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ColorSense/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -741,6 +1082,10 @@
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.ColorSense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -761,6 +1106,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ColorSense/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to your camera.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -775,6 +1122,10 @@
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.ColorSense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -784,6 +1135,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5725C5AD2A7BCAEF00933331 /* Build configuration list for PBXNativeTarget "macOSColorSense" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5725C5AE2A7BCAEF00933331 /* Debug */,
+				5725C5AF2A7BCAEF00933331 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		572720172A7D43CC00BDA48B /* Build configuration list for PBXNativeTarget "visionColorSense" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				572720182A7D43CC00BDA48B /* Debug */,
+				572720192A7D43CC00BDA48B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		576A4F202A782E7200452FA5 /* Build configuration list for PBXNativeTarget "WatchColorSense Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -812,6 +1181,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5727200C2A7D43CA00BDA48B /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 576D8E8F2A031069003DE880 /* Project object */;
 }

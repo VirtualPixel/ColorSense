@@ -5,7 +5,7 @@
 //  Created by Justin Wells on 5/7/23.
 //
 
-import UIKit
+import SwiftUI
 
 extension UIColor {
     public static var lightBlue: UIColor {

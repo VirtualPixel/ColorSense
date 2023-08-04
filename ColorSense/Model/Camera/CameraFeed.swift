@@ -222,6 +222,52 @@ class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuff
             self.croppedUIImage = ciImage.croppedUIImage(region: self.region)
         }
     }
+    
+    // colorblind filters
+    private func applyDeuteranopiaFilter(to ciImage: CIImage) -> CIImage {
+        guard let filter = CIFilter(name: "CIColorMatrix") else { return ciImage }
+        // matrix values
+        let rVector = CIVector(x: 1.0, y: 0.0, z: 0.0, w: 0.0)
+        let gVector = CIVector(x: 0.494207, y: 0.0, z: 1.24827, w: 0.0)
+        let bVector = CIVector(x: 0.0, y: 0.0, z: 1.0, w: 0.0)
+        let aVector = CIVector(x: 0.0, y: 0.0, z: 0.0, w: 1.0)
+        filter.setValue(ciImage, forKey: kCIInputImageKey)
+        filter.setValue(rVector, forKey: "inputRVector")
+        filter.setValue(gVector, forKey: "inputGVector")
+        filter.setValue(bVector, forKey: "inputBVector")
+        filter.setValue(aVector, forKey: "inputAVector")
+        return filter.outputImage ?? ciImage
+    }
+
+    private func applyProtanopiaFilter(to ciImage: CIImage) -> CIImage {
+        guard let filter = CIFilter(name: "CIColorMatrix") else { return ciImage }
+        // matrix values
+        let rVector = CIVector(x: 0.0, y: 2.02344, z: -2.52581, w: 0.0)
+        let gVector = CIVector(x: 0.0, y: 1.0, z: 0.0, w: 0.0)
+        let bVector = CIVector(x: 0.0, y: 0.0, z: 1.0, w: 0.0)
+        let aVector = CIVector(x: 0.0, y: 0.0, z: 0.0, w: 1.0)
+        filter.setValue(ciImage, forKey: kCIInputImageKey)
+        filter.setValue(rVector, forKey: "inputRVector")
+        filter.setValue(gVector, forKey: "inputGVector")
+        filter.setValue(bVector, forKey: "inputBVector")
+        filter.setValue(aVector, forKey: "inputAVector")
+        return filter.outputImage ?? ciImage
+    }
+
+    private func applyTritanopiaFilter(to ciImage: CIImage) -> CIImage {
+        guard let filter = CIFilter(name: "CIColorMatrix") else { return ciImage }
+        // matrix values
+        let rVector = CIVector(x: 1.0, y: 0.0, z: 0.0, w: 0.0)
+        let gVector = CIVector(x: 0.0, y: 1.0, z: 0.0, w: 0.0)
+        let bVector = CIVector(x: -0.395913, y: 2.2857, z: 0.0, w: 0.0)
+        let aVector = CIVector(x: 0.0, y: 0.0, z: 0.0, w: 1.0)
+        filter.setValue(ciImage, forKey: kCIInputImageKey)
+        filter.setValue(rVector, forKey: "inputRVector")
+        filter.setValue(gVector, forKey: "inputGVector")
+        filter.setValue(bVector, forKey: "inputBVector")
+        filter.setValue(aVector, forKey: "inputAVector")
+        return filter.outputImage ?? ciImage
+    }
 }
 
 enum CameraPosition {
