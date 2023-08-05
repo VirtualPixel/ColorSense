@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         let contentView = ContentView()
-        popover.contentSize = NSSize(width: 360, height: 360)
+        popover.contentSize = NSSize(width: 512, height: 512)
         popover.behavior = .transient
         popover.contentViewController = NSHostingController(rootView: contentView)
 
@@ -51,6 +51,7 @@ class StatusBarController {
                 image.size = NSSize(width: 19, height: 19)
                 button.image = image
             }
+            button.target = self
             button.action = #selector(togglePopover(_:))
         }
     }
@@ -65,9 +66,15 @@ class StatusBarController {
 
     func showPopover(_ sender: AnyObject?) {
         if let button = statusBar.button {
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            let screenRect = button.window!.screen!.frame
+            let buttonRect = button.frame
+            let buttonWindowRect = button.window!.convertToScreen(buttonRect)
+            let posX = buttonWindowRect.origin.x + (buttonWindowRect.width / 2) - (popover.contentSize.width / 2)
+            let posY = screenRect.height - buttonWindowRect.origin.y - buttonWindowRect.height
+            popover.show(relativeTo: NSRect(x: posX, y: posY, width: 0, height: 0), of: button.window!.contentView!, preferredEdge: NSRectEdge.minY)
         }
     }
+
 
     func hidePopover(_ sender: AnyObject?) {
         popover.performClose(sender)

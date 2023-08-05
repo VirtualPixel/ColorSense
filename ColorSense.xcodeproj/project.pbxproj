@@ -107,6 +107,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		571272972A7DDB1B002F8720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		572053FB2A68900F0072DE06 /* Pallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pallet.swift; sourceTree = "<group>"; };
 		572053FD2A6893700072DE06 /* ColorStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStructure.swift; sourceTree = "<group>"; };
 		572054002A68961F0072DE06 /* pantone-colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pantone-colors.json"; sourceTree = "<group>"; };
@@ -234,6 +235,7 @@
 		5725C5A02A7BCAEC00933331 /* macOSColorSense */ = {
 			isa = PBXGroup;
 			children = (
+				571272972A7DDB1B002F8720 /* Info.plist */,
 				5725C5A12A7BCAEC00933331 /* macOSColorSenseApp.swift */,
 				5725C5A32A7BCAEC00933331 /* ContentView.swift */,
 				5725C5A72A7BCAEF00933331 /* Assets.xcassets */,
@@ -737,6 +739,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = macOSColorSense/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -773,6 +776,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = macOSColorSense/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -1079,7 +1083,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.ColorSense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1119,7 +1123,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.ColorSense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
