@@ -212,7 +212,7 @@ struct PalletListView: View {
         return hexColorPredicate.evaluate(with: hex)
     }
 }
-
+/*
 struct PalletView_Previews: PreviewProvider {
     static let cameraFeed = CameraFeed()
     
@@ -221,3 +221,4 @@ struct PalletView_Previews: PreviewProvider {
             .environmentObject(cameraFeed)
     }
 }
+*/

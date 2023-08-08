@@ -167,6 +167,8 @@
 		57DDCDFB2A07F93600B53CB7 /* New Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Colors.swift"; sourceTree = "<group>"; };
 		57DDCDFD2A08007000B53CB7 /* Color Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Lists.swift"; sourceTree = "<group>"; };
 		57DDCDFF2A0806C100B53CB7 /* CameraFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeed.swift; sourceTree = "<group>"; };
+		57E77E8C2A82601A0074D4C8 /* visionColorSense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visionColorSense.entitlements; sourceTree = "<group>"; };
+		57E77E8D2A8260240074D4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,8 @@
 		572720092A7D43CA00BDA48B /* visionColorSense */ = {
 			isa = PBXGroup;
 			children = (
+				57E77E8D2A8260240074D4C8 /* Info.plist */,
+				57E77E8C2A82601A0074D4C8 /* visionColorSense.entitlements */,
 				5727200E2A7D43CA00BDA48B /* visionColorSenseApp.swift */,
 				572720102A7D43CA00BDA48B /* ContentView.swift */,
 				572720122A7D43CC00BDA48B /* Assets.xcassets */,
@@ -802,6 +806,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = visionColorSense/visionColorSense.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"visionColorSense/Preview Content\"";
@@ -809,6 +814,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = visionColorSense/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -837,6 +843,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = visionColorSense/visionColorSense.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"visionColorSense/Preview Content\"";
@@ -844,6 +851,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = visionColorSense/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
