@@ -21,7 +21,7 @@ struct PalletListView: View {
     @State private var showingInvalidHexAlert = false
     
     var sortedPallets: [Pallet] {
-        pallets.sorted(by: { $0.creationDate > $1.creationDate })
+        pallets.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() })
     }
     
     var colorToAdd: String?
@@ -45,15 +45,15 @@ struct PalletListView: View {
                                 } label: {
                                     GroupBox {
                                         VStack(alignment: .leading) {
-                                            Text(pallet.name)
+                                            Text(pallet.name ?? "Pallet View")
                                                 .font(.title3)
                                                 .bold()
                                             
                                             HStack {
                                                 // limit the colors shown
-                                                ForEach(pallet.colors?.sorted(by: { $0.creationDate > $1.creationDate }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
+                                                ForEach(pallet.colors?.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
                                                     RoundedRectangle(cornerRadius: 12)
-                                                        .foregroundStyle(Color.init(hex: color.hex))
+                                                        .foregroundStyle(Color.init(hex: color.hex ?? "000000"))
                                                         .frame(width: 50, height: 50)
                                                 }
                                                 

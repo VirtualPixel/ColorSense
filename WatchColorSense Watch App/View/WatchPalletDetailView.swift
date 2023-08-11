@@ -12,7 +12,7 @@ struct WatchPalletDetailView: View {
     var pallet: Pallet
     
     var sortedColors: [ColorStructure] {
-        return pallet.colors?.sorted(by: { $0.creationDate > $1.creationDate }) ?? []
+        return pallet.colors?.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() }) ?? []
     }
     
     var body: some View {
@@ -32,7 +32,7 @@ struct WatchPalletDetailView: View {
             }
             .onDelete(perform: deleteColor)
         }
-        .navigationTitle(pallet.name)
+        .navigationTitle(pallet.name ?? "Pallet Detail")
     }
     
     private func deleteColor(at offsets: IndexSet) {

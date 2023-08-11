@@ -34,19 +34,21 @@ struct ContentView: View {
                 self.selectedColor = fetchColorAtMouse()
                 print("Selected Color: \(String(describing: self.selectedColor))")
             } label: {
-                Circle()
-                    .fill(.clear)
-                    .stroke(.white)
-                    .frame(width: 16, height: 16)
-                    .background(
-                        Circle()
-                            .frame(width: 2)
-                    )
+                Image(systemName: "eyedropper.full")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
             }
             .buttonStyle(.accessoryBar)
-            .padding()
+            .padding(10)
             
             Spacer()
+            
+            Button {
+                print("Creating new pallet")
+            } label: {
+                Text("New Pallet")
+            }
+            .padding(.horizontal)
         }
     }
     
@@ -133,10 +135,10 @@ struct ContentView: View {
                 Image(systemName: "power.circle")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 16, height: 16)
+                    .frame(width: 24, height: 24)
             }
             .buttonStyle(.accessoryBar)
-            .padding()
+            .padding(10)
         }
     }
     
