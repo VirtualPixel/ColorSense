@@ -14,7 +14,7 @@ struct ContentView: View {
     @State private var selectedColor: Color?
     
     var sortedPallets: [Pallet] {
-        pallets.sorted(by: { $0.creationDate > $1.creationDate })
+        pallets.sorted(by: { $0.wrappedCreationDate > $1.wrappedCreationDate })
     }
     
     var body: some View {
@@ -71,30 +71,30 @@ struct ContentView: View {
                             } label: {
                                 GroupBox {
                                     VStack(alignment: .leading) {
-                                        Text(pallet.name)
+                                        Text(pallet.wrappedName)
                                             .font(.title3)
                                             .bold()
                                         
                                         HStack {
                                             // limit the colors shown
-                                            ForEach(pallet.colors?.sorted(by: { $0.creationDate > $1.creationDate }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
+                                            ForEach(pallet.wrappedColors.prefix(maxColorsToShow), id: \.id) { color in
                                                 RoundedRectangle(cornerRadius: 12)
-                                                    .foregroundStyle(Color.init(hex: color.hex))
+                                                    .foregroundStyle(Color.init(hex: color.wrappedHex))
                                                     .frame(width: 50, height: 50)
                                             }
-                                            
-                                            ForEach(Array(repeating: 0, count: max(maxColorsToShow - (pallet.colors?.count ?? 0), 0)), id: \.self) { _ in
+
+                                            ForEach(Array(repeating: 0, count: max(maxColorsToShow - (pallet.wrappedColors.count), 0)), id: \.self) { _ in
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .opacity(0)
                                                     .frame(width: 50, height: 50)
                                             }
                                             
-                                            if (pallet.colors?.count ?? 0) > maxColorsToShow {
+                                            if (pallet.wrappedColors.count) > maxColorsToShow {
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .foregroundStyle(.gray.opacity(0.2))
                                                     .frame(width: 50, height: 50)
                                                     .overlay(
-                                                        Text("+\((pallet.colors?.count ?? 0) - maxColorsToShow)")
+                                                        Text("+\((pallet.wrappedColors.count) - maxColorsToShow)")
                                                     )
                                             }
                                             

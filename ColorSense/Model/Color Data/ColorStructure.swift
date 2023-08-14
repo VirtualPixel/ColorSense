@@ -18,6 +18,15 @@ class ColorStructure: Identifiable {
     var color: Color {
         Color.init(hex: hex ?? "000000")
     }
+    var wrappedId: UUID {
+        self.id ?? UUID()
+    }
+    var wrappedHex: String {
+        self.hex ?? "000000"
+    }
+    var wrappedCreationDate: Date {
+        self.creationDate ?? Date()
+    }
     
     init(id: UUID = UUID(), hex: String = "000000") {
         self.id = id

@@ -15,6 +15,19 @@ final class Pallet: Identifiable {
     var name: String?
     var creationDate: Date?
     
+    var wrappedId: UUID {
+        self.id ?? UUID()
+    }
+    var wrappedName: String {
+        self.name ?? "Pallet"
+    }
+    var wrappedCreationDate: Date {
+        self.creationDate ?? Date()
+    }
+    var wrappedColors: [ColorStructure] {
+        self.colors?.sorted(by: { $0.wrappedCreationDate > $1.wrappedCreationDate }) ?? []
+    }
+    
     init(id: UUID = UUID(), name: String = "", colors: [ColorStructure]?) {
         self.id = id
         self.name = name
