@@ -10,14 +10,11 @@ import SwiftData
 
 @Model
 final class Pallet: Identifiable {
-    @Relationship(.transient, inverse: \ColorStructure.pallet) var colors: [ColorStructure]?
+    @Relationship(inverse: \ColorStructure.pallet) var colors: [ColorStructure]?
     var id: UUID?
     var name: String?
     var creationDate: Date?
     
-    var wrappedId: UUID {
-        self.id ?? UUID()
-    }
     var wrappedName: String {
         self.name ?? "Pallet"
     }
