@@ -26,7 +26,7 @@ struct ColorSenseApp: App {
                 .sheet(item: $colorToDisplay) { colorStructure in
                     ColorDetailView(color: colorStructure.color)
                         .environmentObject(cameraFeed)
-                }
+                }//
         }
         .modelContainer(
             for: [
