@@ -31,7 +31,11 @@ struct ContentView: View {
     @ViewBuilder func topBar() -> some View {
         HStack {
             Button {
-                self.selectedColor = fetchColorAtMouse()
+                //self.selectedColor = fetchColorAtMouse()
+                fetchColorAtMouse { color in
+                    //self.selectedColor = color
+                    print(color)
+                }
                 print("Selected Color: \(String(describing: self.selectedColor))")
             } label: {
                 Image(systemName: "eyedropper.full")
@@ -44,7 +48,16 @@ struct ContentView: View {
             Spacer()
             
             Button {
-                print("Creating new pallet")
+                // create new pallet
+                let pallet = Pallet(name: "TestPallet", colors: [])
+                print(pallet)
+                context.insert(pallet)
+                
+                do {
+                    try context.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
             } label: {
                 Text("New Pallet")
             }
@@ -57,12 +70,14 @@ struct ContentView: View {
             let maxColorsToShow = max(0, Int((geo.size.width - 100) / 80))
             Group {
                 if pallets.isEmpty {
-                    Image("empty_pallet")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 300)
-                        .opacity(0.7)
-                        .padding(30)
+                    VStack {
+                        Image("empty_pallet")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 300)
+                            .opacity(0.7)
+                            .padding(30)
+                    }
                 } else {
                     List {
                         ForEach(sortedPallets, id: \.id) { pallet in
@@ -142,16 +157,14 @@ struct ContentView: View {
         }
     }
     
-    private func fetchColorAtMouse() -> Color {
-        guard let image = CGDisplayCreateImage(CGMainDisplayID(), rect: CGRect(x: NSEvent.mouseLocation.x, y: NSEvent.mouseLocation.y, width: 1, height: 1)) else {
-            return Color.black
+    private func fetchColorAtMouse(completion: @escaping (Color) -> Void) {
+        let picker = ColorPicker()
+        picker.activatePicker { color in
+            print(color)
+            completion(color)
         }
-        
-        let rep = NSBitmapImageRep(cgImage: image)
-        let color = rep.colorAt(x: 0, y: 0)
-        
-        return Color(color ?? NSColor.black)
     }
+    
     private func deletePallet(at offsets: IndexSet) {
         offsets.forEach { index in
             let pallet = sortedPallets[index]
@@ -167,4 +180,53 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+class ColorPicker {
+    var mouseMovedMonitor: Any?
+    var mouseClickMonitor: Any?
+    
+    func activatePicker(completion: @escaping (Color) -> Void) {
+        // Change the activation policy to regular
+        NSApp.setActivationPolicy(.regular)
+        
+        // Monitor mouse movements
+        mouseMovedMonitor = NSEvent.addGlobalMonitorForEvents(matching: .mouseMoved) { [weak self] _ in
+            _ = self?.fetchColorAtMouse()
+        }
+        
+        // Monitor mouse clicks
+        mouseClickMonitor = NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown) { [weak self] event in
+            if let color = self?.fetchColorAtMouse() {
+                completion(color)
+                self?.deactivatePicker()
+            }
+        }
+    }
+    
+    func deactivatePicker() {
+        // Revert the activation policy back to accessory
+        NSApp.setActivationPolicy(.accessory)
+        
+        if let monitor = mouseMovedMonitor {
+            NSEvent.removeMonitor(monitor)
+            mouseMovedMonitor = nil
+        }
+        
+        if let monitor = mouseClickMonitor {
+            NSEvent.removeMonitor(monitor)
+            mouseClickMonitor = nil
+        }
+    }
+    
+    private func fetchColorAtMouse() -> Color {
+        guard let image = CGDisplayCreateImage(CGMainDisplayID(), rect: CGRect(x: NSEvent.mouseLocation.x, y: NSEvent.mouseLocation.y, width: 1, height: 1)) else {
+            return Color.black
+        }
+        
+        let rep = NSBitmapImageRep(cgImage: image)
+        let color = rep.colorAt(x: 0, y: 0)
+        
+        return Color(color ?? NSColor.black)
+    }
 }

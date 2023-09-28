@@ -4,7 +4,5 @@
 <dict>
 	<key>CFBundleGetInfoString</key>
 	<string></string>
-	<key>LSUIElement</key>
-	<string>1</string>
 </dict>
 </plist>

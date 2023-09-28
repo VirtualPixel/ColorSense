@@ -76,10 +76,12 @@
 		57712DE62A7BD0D500B16DE9 /* ColorInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* ColorInit.swift */; };
 		577357572A73150600903F85 /* PalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357562A73150600903F85 /* PalletDetailView.swift */; };
 		577357592A73153800903F85 /* PalletDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */; };
+		577BEB5C2A9A54800071E977 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
 		57DAA12E2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */; };
 		57DDCDFC2A07F93600B53CB7 /* New Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFB2A07F93600B53CB7 /* New Colors.swift */; };
 		57DDCDFE2A08007000B53CB7 /* Color Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* Color Lists.swift */; };
 		57DDCE002A0806C100B53CB7 /* CameraFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFF2A0806C100B53CB7 /* CameraFeed.swift */; };
+		57ED35662AAAA5D000BAFD76 /* Pallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FB2A68900F0072DE06 /* Pallet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -651,6 +653,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				572720112A7D43CA00BDA48B /* ContentView.swift in Sources */,
+				57ED35662AAAA5D000BAFD76 /* Pallet.swift in Sources */,
+				577BEB5C2A9A54800071E977 /* ColorStructure.swift in Sources */,
 				5727200F2A7D43CA00BDA48B /* visionColorSenseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -746,6 +750,7 @@
 				INFOPLIST_FILE = macOSColorSense/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -755,7 +760,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.macOSColorSense;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.ColorSense.macOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -783,6 +788,7 @@
 				INFOPLIST_FILE = macOSColorSense/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -792,7 +798,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.macOSColorSense;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.ColorSense.macOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1000,12 +1006,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = No;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
 		};
@@ -1055,12 +1064,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = No;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
 		};
