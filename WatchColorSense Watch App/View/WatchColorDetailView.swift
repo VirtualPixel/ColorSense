@@ -70,13 +70,13 @@ struct WatchColorDetailView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
-                        if viewModel.showAddToPallet {
+                        if viewModel.showAddToPalette {
                             HStack {
                                 NavigationLink {
-                                    WatchPalletListView(colorToAdd: viewModel.hex)
+                                    WatchPaletteListView(colorToAdd: viewModel.hex)
                                 } label: {
                                     HStack {
-                                        Text("Add color to pallet")
+                                        Text("Add color to palette")
                                         Spacer()
                                         Image(systemName: "plus")
                                     }
@@ -109,8 +109,8 @@ struct WatchColorDetailView: View {
         }
     }
     
-    init(color: Color, showAddToPallet: Bool = true) {
-        _viewModel = ObservedObject(initialValue: ViewModel(color: color, showAddToPallet: showAddToPallet))
+    init(color: Color, showAddToPalette: Bool = true) {
+        _viewModel = ObservedObject(initialValue: ViewModel(color: color, showAddToPalette: showAddToPalette))
     }
     
     // Custom view for detail text

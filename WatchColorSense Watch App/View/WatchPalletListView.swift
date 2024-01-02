@@ -1,5 +1,5 @@
 //
-//  PalletListView.swift
+//  PaletteListView.swift
 //  WatchColorSense Watch App
 //
 //  Created by Justin Wells on 7/31/23.
@@ -8,12 +8,12 @@
 import SwiftUI
 import SwiftData
 
-struct WatchPalletListView: View {
-    @Query var pallets: [Pallet]
+struct WatchPaletteListView: View {
+    @Query var palettes: [Palette]
     @Environment(\.modelContext) private var context
-    @State private var palletName = ""
+    @State private var paletteName = ""
     @State private var colorHex = ""
-    @State private var selectedPallet: Pallet?
+    @State private var selectedPalette: Palette?
     @State private var showingInvalidHexAlert = false
     
     var colorToAdd: String?
@@ -23,44 +23,44 @@ struct WatchPalletListView: View {
             let maxColorsToShow = max(0, Int((geo.size.width - 100) / 80))
             NavigationStack {
                 Group {
-                    if pallets.isEmpty {
-                        Image("empty_pallet")
+                    if palettes.isEmpty {
+                        Image("empty_palette")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 250)
                             .opacity(0.7)
                     } else {
                         List {
-                            ForEach(pallets, id: \.id) { pallet in
+                            ForEach(palettes, id: \.id) { palette in
                                 HStack {
                                     NavigationLink {
-                                        WatchPalletDetailView(pallet: pallet)
+                                        WatchPaletteDetailView(palette: palette)
                                     } label: {
                                         VStack(alignment: .leading) {
-                                            Text(pallet.name ?? "Pallet")
+                                            Text(palette.name ?? "Palette")
                                                 .font(.title3)
                                                 .bold()
                                             
                                             HStack {
                                                 // limit the colors shown
-                                                ForEach(pallet.colors?.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
+                                                ForEach(palette.colors?.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
                                                     RoundedRectangle(cornerRadius: 12)
                                                         .foregroundStyle(Color.init(hex: color.hex ?? "000000"))
                                                         .frame(width: 50, height: 50)
                                                 }
                                                 
-                                                ForEach(Array(repeating: 0, count: max(maxColorsToShow - (pallet.colors?.count ?? 0), 0)), id: \.self) { _ in
+                                                ForEach(Array(repeating: 0, count: max(maxColorsToShow - (palette.colors?.count ?? 0), 0)), id: \.self) { _ in
                                                     RoundedRectangle(cornerRadius: 12)
                                                         .opacity(0)
                                                         .frame(width: 50, height: 50)
                                                 }
                                                 
-                                                if (pallet.colors?.count ?? 0) > maxColorsToShow {
+                                                if (palette.colors?.count ?? 0) > maxColorsToShow {
                                                     RoundedRectangle(cornerRadius: 12)
                                                         .foregroundStyle(.gray.opacity(0.2))
                                                         .frame(width: 50, height: 50)
                                                         .overlay(
-                                                            Text("+\((pallet.colors?.count ?? 0) - maxColorsToShow)")
+                                                            Text("+\((palette.colors?.count ?? 0) - maxColorsToShow)")
                                                         )
                                                 }
                                                 
@@ -68,7 +68,7 @@ struct WatchPalletListView: View {
                                                 
                                                 Divider()
                                                 Button {
-                                                    selectedPallet = pallet
+                                                    selectedPalette = palette
                                                     showTextInputAlert()
                                                 } label: {
                                                     RoundedRectangle(cornerRadius: 12)
@@ -84,7 +84,7 @@ struct WatchPalletListView: View {
                                     }
                                 }
                             }
-                            .onDelete(perform: deletePallet)
+                            .onDelete(perform: deletePalette)
                         }
                         .listStyle(.plain)
                     }
@@ -92,9 +92,9 @@ struct WatchPalletListView: View {
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Button {
-                            showNewPalletTextInputAlert()
+                            showNewPaletteTextInputAlert()
                         } label: {
-                            Text("New Pallet")
+                            Text("New Palette")
                         }
                     }
                 }
@@ -105,25 +105,25 @@ struct WatchPalletListView: View {
                 } message: {
                     Text("The color hex value you entered is not valid. It should be a 3- or 6-digit hexadecimal number, optionally starting with a '#'.")
                 }
-                .navigationTitle("Color Pallets")
+                .navigationTitle("Color Palettes")
             }
         }
     }
     
-    private func submitPallet() {
-        guard !palletName.isEmpty else { return }
+    private func submitPalette() {
+        guard !paletteName.isEmpty else { return }
         
-        let pallet = Pallet(name: palletName, colors: [])
+        let palette = Palette(name: paletteName, colors: [])
         
         if let colorToHex = colorToAdd {
-            if pallet.colors != nil {
-                pallet.colors?.append(ColorStructure(hex: colorToHex))
+            if palette.colors != nil {
+                palette.colors?.append(ColorStructure(hex: colorToHex))
             } else {
-                pallet.colors = [ColorStructure(hex: colorToHex)]
+                palette.colors = [ColorStructure(hex: colorToHex)]
             }
         }
         
-        context.insert(pallet)
+        context.insert(palette)
         
         do {
             try context.save()
@@ -131,13 +131,13 @@ struct WatchPalletListView: View {
             print(error.localizedDescription)
         }
         
-        palletName = ""
+        paletteName = ""
     }
     
     private func submitColor() {
         guard !colorHex.isEmpty else { return }
         
-        guard let selectedPallet = selectedPallet,
+        guard let selectedPalette = selectedPalette,
             isValidHexColor(hex: colorHex)
         else {
             showingInvalidHexAlert = true
@@ -146,11 +146,11 @@ struct WatchPalletListView: View {
         
         let newColor = ColorStructure(hex: colorHex)
         
-        if let index = pallets.firstIndex(where: { $0.id == selectedPallet.id }) {
-            if pallets[index].colors != nil {
-                pallets[index].colors?.append(newColor)
+        if let index = palettes.firstIndex(where: { $0.id == selectedPalette.id }) {
+            if palettes[index].colors != nil {
+                palettes[index].colors?.append(newColor)
             } else {
-                pallets[index].colors = [newColor]
+                palettes[index].colors = [newColor]
             }
 
             do {
@@ -173,20 +173,20 @@ struct WatchPalletListView: View {
         }
     }
     
-    private func showNewPalletTextInputAlert() {
+    private func showNewPaletteTextInputAlert() {
         guard let controller = WKExtension.shared().rootInterfaceController else { return }
         controller.presentTextInputController(withSuggestions: nil, allowedInputMode: .plain) { results in
             if let results = results as? [String], !results.isEmpty {
-                self.palletName = results[0]
-                self.submitPallet()
+                self.paletteName = results[0]
+                self.submitPalette()
             }
         }
     }
     
-    private func deletePallet(indexSet: IndexSet) {
+    private func deletePalette(indexSet: IndexSet) {
         indexSet.forEach { index in
-            let pallet = pallets[index]
-            context.delete(pallet)
+            let palette = palettes[index]
+            context.delete(palette)
         }
         
         do {
@@ -204,5 +204,5 @@ struct WatchPalletListView: View {
 }
 
 #Preview {
-    WatchPalletListView()
+    WatchPaletteListView()
 }

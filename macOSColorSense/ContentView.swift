@@ -7,14 +7,15 @@
 
 import SwiftUI
 import SwiftData
+import ScreenCaptureKit
 
 struct ContentView: View {
-    @Query var pallets: [Pallet]
+    @Query var palettes: [Palette]
     @Environment(\.modelContext) private var context
     @State private var selectedColor: Color?
     
-    var sortedPallets: [Pallet] {
-        pallets.sorted(by: { $0.wrappedCreationDate > $1.wrappedCreationDate })
+    var sortedPalettes: [Palette] {
+        palettes.sorted(by: { $0.wrappedCreationDate > $1.wrappedCreationDate })
     }
     
     var body: some View {
@@ -31,12 +32,7 @@ struct ContentView: View {
     @ViewBuilder func topBar() -> some View {
         HStack {
             Button {
-                //self.selectedColor = fetchColorAtMouse()
-                fetchColorAtMouse { color in
-                    //self.selectedColor = color
-                    print(color)
-                }
-                print("Selected Color: \(String(describing: self.selectedColor))")
+                pickColor()
             } label: {
                 Image(systemName: "eyedropper.full")
                     .resizable()
@@ -45,13 +41,19 @@ struct ContentView: View {
             .buttonStyle(.accessoryBar)
             .padding(10)
             
+            Button {
+                print("Selected Color: \(String(describing: selectedColor))")
+            } label: {
+                Text("Print")
+            }
+            
             Spacer()
             
             Button {
-                // create new pallet
-                let pallet = Pallet(name: "TestPallet", colors: [])
-                print(pallet)
-                context.insert(pallet)
+                // create new palette
+                let palette = Palette(name: "TestPalette", colors: [])
+                print(palette)
+                context.insert(palette)
                 
                 do {
                     try context.save()
@@ -59,7 +61,7 @@ struct ContentView: View {
                     print(error.localizedDescription)
                 }
             } label: {
-                Text("New Pallet")
+                Text("New Palette")
             }
             .padding(.horizontal)
         }
@@ -69,9 +71,9 @@ struct ContentView: View {
         GeometryReader { geo in
             let maxColorsToShow = max(0, Int((geo.size.width - 100) / 80))
             Group {
-                if pallets.isEmpty {
+                if palettes.isEmpty {
                     VStack {
-                        Image("empty_pallet")
+                        Image("empty_palette")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 300)
@@ -80,44 +82,45 @@ struct ContentView: View {
                     }
                 } else {
                     List {
-                        ForEach(sortedPallets, id: \.id) { pallet in
+                        ForEach(sortedPalettes, id: \.id) { palette in
                             NavigationLink {
-                                //PalletDetailView(pallet: pallet)
+                                //PaletteDetailView(palette: palette)
                             } label: {
                                 GroupBox {
                                     VStack(alignment: .leading) {
-                                        Text(pallet.wrappedName)
+                                        Text(palette.wrappedName)
                                             .font(.title3)
                                             .bold()
                                         
                                         HStack {
                                             // limit the colors shown
-                                            ForEach(pallet.wrappedColors.prefix(maxColorsToShow), id: \.id) { color in
+                                            ForEach(palette.wrappedColors.prefix(maxColorsToShow), id: \.id) { color in
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .foregroundStyle(Color.init(hex: color.wrappedHex))
                                                     .frame(width: 50, height: 50)
                                             }
 
-                                            ForEach(Array(repeating: 0, count: max(maxColorsToShow - (pallet.wrappedColors.count), 0)), id: \.self) { _ in
+                                            ForEach(Array(repeating: 0, count: max(maxColorsToShow - (palette.wrappedColors.count), 0)), id: \.self) { _ in
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .opacity(0)
                                                     .frame(width: 50, height: 50)
                                             }
                                             
-                                            if (pallet.wrappedColors.count) > maxColorsToShow {
+                                            if (palette.wrappedColors.count) > maxColorsToShow {
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .foregroundStyle(.gray.opacity(0.2))
                                                     .frame(width: 50, height: 50)
                                                     .overlay(
-                                                        Text("+\((pallet.wrappedColors.count) - maxColorsToShow)")
+                                                        Text("+\((palette.wrappedColors.count) - maxColorsToShow)")
                                                     )
                                             }
                                             
                                             Spacer()
                                             
                                             Divider()
+                                            
                                             Button {
-                                                // add pallet
+                                                print("Add color to palette")
                                             } label: {
                                                 RoundedRectangle(cornerRadius: 12)
                                                     .foregroundStyle(.gray.opacity(0.2))
@@ -126,12 +129,13 @@ struct ContentView: View {
                                                         Image(systemName: "plus")
                                                     )
                                             }
+                                            .buttonStyle(.plain)
                                         }
                                     }
                                 }
                             }
                         }
-                        .onDelete(perform: deletePallet)
+                        .onDelete(perform: deletePalette)
                         .listRowSeparator(.hidden)
                     }
                     .listStyle(.plain)
@@ -157,18 +161,10 @@ struct ContentView: View {
         }
     }
     
-    private func fetchColorAtMouse(completion: @escaping (Color) -> Void) {
-        let picker = ColorPicker()
-        picker.activatePicker { color in
-            print(color)
-            completion(color)
-        }
-    }
-    
-    private func deletePallet(at offsets: IndexSet) {
+    private func deletePalette(at offsets: IndexSet) {
         offsets.forEach { index in
-            let pallet = sortedPallets[index]
-            context.delete(pallet)
+            let palette = sortedPalettes[index]
+            context.delete(palette)
             do {
                 try context.save()
             } catch {
@@ -176,57 +172,24 @@ struct ContentView: View {
             }
         }
     }
+    
+    private func pickColor() {
+        Task {
+            guard let color = await NSColorSampler().sample() else {
+                return
+            }
+            
+            selectedColor = Color(nsColor: color)
+            //addToRecentlyPickedColor(color)
+            //requestReview()
+            
+            //if Defaults[.copyColorAfterPicking] {
+            //    color.stringRepresentation.copyToPasteboard()
+            //}
+        }
+    }
 }
 
 #Preview {
     ContentView()
-}
-
-class ColorPicker {
-    var mouseMovedMonitor: Any?
-    var mouseClickMonitor: Any?
-    
-    func activatePicker(completion: @escaping (Color) -> Void) {
-        // Change the activation policy to regular
-        NSApp.setActivationPolicy(.regular)
-        
-        // Monitor mouse movements
-        mouseMovedMonitor = NSEvent.addGlobalMonitorForEvents(matching: .mouseMoved) { [weak self] _ in
-            _ = self?.fetchColorAtMouse()
-        }
-        
-        // Monitor mouse clicks
-        mouseClickMonitor = NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown) { [weak self] event in
-            if let color = self?.fetchColorAtMouse() {
-                completion(color)
-                self?.deactivatePicker()
-            }
-        }
-    }
-    
-    func deactivatePicker() {
-        // Revert the activation policy back to accessory
-        NSApp.setActivationPolicy(.accessory)
-        
-        if let monitor = mouseMovedMonitor {
-            NSEvent.removeMonitor(monitor)
-            mouseMovedMonitor = nil
-        }
-        
-        if let monitor = mouseClickMonitor {
-            NSEvent.removeMonitor(monitor)
-            mouseClickMonitor = nil
-        }
-    }
-    
-    private func fetchColorAtMouse() -> Color {
-        guard let image = CGDisplayCreateImage(CGMainDisplayID(), rect: CGRect(x: NSEvent.mouseLocation.x, y: NSEvent.mouseLocation.y, width: 1, height: 1)) else {
-            return Color.black
-        }
-        
-        let rep = NSBitmapImageRep(cgImage: image)
-        let color = rep.colorAt(x: 0, y: 0)
-        
-        return Color(color ?? NSColor.black)
-    }
 }

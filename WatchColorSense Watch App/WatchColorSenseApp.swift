@@ -27,7 +27,7 @@ struct WatchColorSense_Watch_AppApp: App {
         }
         .modelContainer(
             for: [
-                Pallet.self,
+                Palette.self,
                 ColorStructure.self
             ]
         )

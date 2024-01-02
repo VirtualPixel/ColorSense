@@ -11,7 +11,7 @@ struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
     @ObservedObject private var viewModel = ViewModel()
     @EnvironmentObject private var cameraFeed: CameraFeed
-    @State private var showingPalletView = false
+    @State private var showingPaletteView = false
     
     var body: some View {
         NavigationStack {
@@ -23,7 +23,7 @@ struct ContentView: View {
                 VStack {
                     TopBarView()
                     Spacer()
-                    BottomBarView(showingPalletView: $showingPalletView)
+                    BottomBarView(showingPaletteView: $showingPaletteView)
                 }
             }
         }
@@ -35,8 +35,8 @@ struct ContentView: View {
             }
         }
         .environmentObject(cameraFeed)
-        .sheet(isPresented: $showingPalletView) {
-            PalletListView()
+        .sheet(isPresented: $showingPaletteView) {
+            PaletteListView()
                 .presentationDetents([.large])
         }
     }

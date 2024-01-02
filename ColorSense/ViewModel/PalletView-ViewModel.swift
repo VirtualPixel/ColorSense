@@ -1,5 +1,5 @@
 //
-//  PalletView-ViewModel.swift
+//  PaletteView-ViewModel.swift
 //  ColorSense
 //
 //  Created by Justin Wells on 5/8/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Observation
 
-extension PalletListView {
+extension PaletteListView {
     @MainActor class ViewModel: ObservableObject {
 
     }

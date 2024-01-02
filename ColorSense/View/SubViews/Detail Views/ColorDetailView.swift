@@ -77,6 +77,14 @@ struct ColorDetailView: View {
                         }
                         .padding(.horizontal, 30)
                         .frame(maxWidth: 700)
+                        
+                        GroupBox(label: Text("Matching Colors").font(.title2)) {
+                            HStack {
+                                
+                            }
+                        }
+                        .padding(.horizontal, 30)
+                        .frame(maxWidth: 700)
                          
                     }
                 }
@@ -88,13 +96,13 @@ struct ColorDetailView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
-                        if viewModel.showAddToPallet {
+                        if viewModel.showAddToPalette {
                             Menu {
                                 NavigationLink {
-                                    PalletListView(colorToAdd: viewModel.hex)
+                                    PaletteListView(colorToAdd: viewModel.hex)
                                 } label: {
                                     HStack {
-                                        Text("Add color to pallet")
+                                        Text("Add color to palette")
                                         Spacer()
                                         Image(systemName: "plus")
                                     }
@@ -129,8 +137,8 @@ struct ColorDetailView: View {
         }
     }
     
-    init(color: Color, showAddToPallet: Bool = true) {
-        _viewModel = ObservedObject(initialValue: ViewModel(color: color, showAddToPallet: showAddToPallet))
+    init(color: Color, showAddToPalette: Bool = true) {
+        _viewModel = ObservedObject(initialValue: ViewModel(color: color, showAddToPalette: showAddToPalette))
     }
     
     // Custom view for detail text

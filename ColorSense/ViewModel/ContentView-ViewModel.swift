@@ -11,6 +11,6 @@ extension ContentView {
     class ViewModel: ObservableObject {
         @Published var lastInteractionTime = Date()
         @Published var showingSizeSlider = false
-        @Published var showingPalletView = false
+        @Published var showingPaletteView = false
     }
 }

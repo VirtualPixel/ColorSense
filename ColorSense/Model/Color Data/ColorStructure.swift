@@ -10,7 +10,7 @@ import SwiftData
 
 @Model
 final class ColorStructure: Identifiable {
-    @Relationship var pallet: Pallet?
+    @Relationship var palette: Palette?
     var id: UUID?
     var hex: String?
     var creationDate: Date?

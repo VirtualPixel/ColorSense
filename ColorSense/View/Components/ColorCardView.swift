@@ -45,7 +45,7 @@ struct ColorCardView: View {
             }
             .buttonStyle(.plain)
             .sheet(isPresented: $isAddingColor) {
-                PalletListView(colorToAdd: cameraFeed.dominantColor?.toHex())
+                PaletteListView(colorToAdd: cameraFeed.dominantColor?.toHex())
             }
         }
     }

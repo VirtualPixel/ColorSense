@@ -9,14 +9,14 @@ import SwiftUI
 import SwiftData
 
 @Model
-final class Pallet: Identifiable {
-    @Relationship(inverse: \ColorStructure.pallet) var colors: [ColorStructure]?
+final class Palette: Identifiable {
+    @Relationship(inverse: \ColorStructure.palette) var colors: [ColorStructure]?
     var id: UUID?
     var name: String?
     var creationDate: Date?
     
     var wrappedName: String {
-        self.name ?? "Pallet"
+        self.name ?? "Palette"
     }
     var wrappedCreationDate: Date {
         self.creationDate ?? Date()

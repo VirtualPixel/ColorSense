@@ -30,7 +30,7 @@ struct ColorSenseApp: App {
         }
         .modelContainer(
             for: [
-                Pallet.self,
+                Palette.self,
                 ColorStructure.self
             ]
         )

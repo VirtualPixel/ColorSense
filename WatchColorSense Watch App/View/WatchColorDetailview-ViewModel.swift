@@ -10,7 +10,7 @@ import SwiftUI
 extension WatchColorDetailView {
     @MainActor class ViewModel: ObservableObject {
         let color: Color
-        let showAddToPallet: Bool
+        let showAddToPalette: Bool
         
         var rbg: (red: Int, green: Int, blue: Int, alpha: Double) {
             self.color.toRGB()
@@ -32,9 +32,9 @@ extension WatchColorDetailView {
             self.color.toPantone()
         }
         
-        init(color: Color, showAddToPallet: Bool = true) {
+        init(color: Color, showAddToPalette: Bool = true) {
             self.color = color
-            self.showAddToPallet = showAddToPallet
+            self.showAddToPalette = showAddToPalette
         }
     }
 }

@@ -15,7 +15,7 @@ struct macOSColorSenseApp: App {
             ContentView()
                 .modelContainer(
                     for: [
-                        Pallet.self,
+                        Palette.self,
                         ColorStructure.self
                     ]
                 )
