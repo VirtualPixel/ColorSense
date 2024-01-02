@@ -318,7 +318,6 @@
 			children = (
 				572053FF2A6896020072DE06 /* Pantone */,
 				572054042A689B0F0072DE06 /* Normal Colors */,
-				572053FD2A6893700072DE06 /* ColorStructure.swift */,
 			);
 			path = "Color Data";
 			sourceTree = "<group>";
@@ -355,6 +354,7 @@
 		576338D22A09BE870034AF9D /* Data Persistance */ = {
 			isa = PBXGroup;
 			children = (
+				572053FD2A6893700072DE06 /* ColorStructure.swift */,
 				572053FB2A68900F0072DE06 /* Pallet.swift */,
 			);
 			path = "Data Persistance";

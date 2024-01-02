@@ -78,9 +78,38 @@ struct ColorDetailView: View {
                         .padding(.horizontal, 30)
                         .frame(maxWidth: 700)
                         
-                        GroupBox(label: Text("Matching Colors").font(.title2)) {
-                            HStack {
-                                
+                        GroupBox(label: Text("Complimentary Colors").font(.title2)) {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach(viewModel.complimentaryColors) { color in
+                                        VStack(alignment: .center) {
+                                            Text(UIColor(color).simpleName)
+                                            Spacer()
+                                            Text(color.toHex())
+                                                .font(.footnote)
+                                                .background(
+                                                    Capsule()
+                                                        .foregroundStyle(.ultraThinMaterial)
+                                                        .padding(-3)
+                                                )
+                                        }
+                                        .padding(.vertical, 7)
+                                        .padding(.horizontal, 2)
+                                        .frame(width: 90, height: 90)
+                                        .background (
+                                            RoundedRectangle(cornerRadius: 12)
+                                                .foregroundStyle(color)
+                                        )
+                                        .contextMenu {
+                                            Button {
+                                                UIPasteboard.general.string = color.toHex()
+                                            } label: {
+                                                Text("Copy to clipboard")
+                                                Image(systemName: "doc.on.doc")
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                         .padding(.horizontal, 30)

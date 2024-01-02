@@ -29,7 +29,7 @@ struct ColorCardView: View {
                                 Spacer()
                                 
                                 Button(action: { isAddingColor = true }) {
-                                    Image(systemName: "plus")
+                                    Image(systemName: "bookmark")
                                         .padding()
                                         .foregroundColor(.primary)
                                         .background(.ultraThinMaterial.opacity(0.3))

@@ -8,7 +8,24 @@
 import SwiftUI
 
 // return color variations
-extension Color {
+extension Color: Identifiable {
+    public var id: UUID {
+        UUID()
+    }
+    
+    func complimentaryColors() -> [Color] {
+        let hsl = self.toHSL()
+        var complimentaryColors: [Color] = []
+        
+        for i in 0..<6 {
+            let adjustedHue = (hsl.hue + i * 60) % 360
+            let complimentaryColor = Color(hue: Double(adjustedHue) / 360.0, saturation: Double(hsl.saturation) / 100.0, brightness: Double(hsl.lightness) / 100.0)
+            complimentaryColors.append(complimentaryColor)
+        }
+        
+        return complimentaryColors
+    }
+    
     func toPantone() -> [Pantone] {
         let url = Bundle.main.url(forResource: "pantone-colors", withExtension: "json")!
         let data = try! Data(contentsOf: url)
@@ -122,5 +139,3 @@ extension Color {
         return (Double(r), Double(g), Double(b), Double(a))
     }
 }
-
-

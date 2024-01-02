@@ -32,6 +32,10 @@ extension WatchColorDetailView {
             self.color.toPantone()
         }
         
+        var complimentaryColors: [Color] {
+            self.color.complimentaryColors()
+        }
+        
         init(color: Color, showAddToPalette: Bool = true) {
             self.color = color
             self.showAddToPalette = showAddToPalette
