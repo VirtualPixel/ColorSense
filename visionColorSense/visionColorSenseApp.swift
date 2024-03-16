@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 @main
 struct visionColorSenseApp: App {
@@ -13,5 +14,10 @@ struct visionColorSenseApp: App {
         WindowGroup {
             ContentView()
         }
+    }
+    
+    init() {
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: "appl_GnDsCnYqxOLXrcgxaUGIQiEWWHc")
     }
 }

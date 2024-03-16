@@ -9,10 +9,11 @@ import SwiftUI
 
 extension ColorDetailView {
     class ViewModel: ObservableObject {
+        @Published var isProUser = false
         let color: Color
         let showAddToPalette: Bool
         
-        var rbg: (red: Int, green: Int, blue: Int, alpha: Double) {
+        var rgb: (red: Int, green: Int, blue: Int, alpha: Double) {
             self.color.toRGB()
         }
         

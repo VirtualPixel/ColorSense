@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import RevenueCat
+import RevenueCatUI
 
 @main
 struct ColorSenseApp: App {
@@ -26,7 +28,7 @@ struct ColorSenseApp: App {
                 .sheet(item: $colorToDisplay) { colorStructure in
                     ColorDetailView(color: colorStructure.color)
                         .environmentObject(cameraFeed)
-                }//
+                }
         }
         .modelContainer(
             for: [
@@ -34,5 +36,10 @@ struct ColorSenseApp: App {
                 ColorStructure.self
             ]
         )
+    }
+    
+    init() {
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: "appl_GnDsCnYqxOLXrcgxaUGIQiEWWHc")
     }
 }

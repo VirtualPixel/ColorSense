@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import RevenueCat
 
 @main
 struct macOSColorSenseApp: App {
@@ -27,6 +28,11 @@ struct macOSColorSenseApp: App {
                 .frame(width: 16, height: 16)
         }
         .menuBarExtraStyle(.window)
+    }
+    
+    init() {
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: "appl_GnDsCnYqxOLXrcgxaUGIQiEWWHc")
     }
 }
 
