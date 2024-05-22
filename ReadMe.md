@@ -13,13 +13,13 @@
 
 ## Screenshots
 
-![Color Capture](Preview_Images/colorgrab.png)
+<img src="Preview_Images/colorgrab.png" alt="Color Capture" width="300"/>
 *Capture Colors Instantly. Point your camera and tap to grab any color.*
 
-![Palette Management](Preview_Images/palettes.png)
+<img src="Preview_Images/palettes.png" alt="Palette Management" width="300"/>
 *Save and Organize Your Colors. Create custom palettes and sync across all devices.*
 
-![Detailed Color Info](Preview_Images/colordetail.png)
+<img src="Preview_Images/colordetail.png" alt="Detailed Color Info" width="300"/>
 *Get Detailed Color Info. HSL, Hex, CMYK, RGB, and more.*
 
 ## Installation
