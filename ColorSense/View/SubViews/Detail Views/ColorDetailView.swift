@@ -43,14 +43,9 @@ struct ColorDetailView: View {
     // MARK: - UI Components
     
     private func colorCircleView(geometry: GeometryProxy) -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 12)
-                .foregroundStyle(viewModel.complimentaryColors[3])
-                .frame(width: geometry.size.width * 0.8, height: geometry.size.width / 1.7)
-            Circle()
-                .foregroundColor(viewModel.color)
-                .frame(width: geometry.size.width / 2, height: geometry.size.width / 2)
-        }
+        Circle()
+            .foregroundColor(viewModel.color)
+            .frame(width: geometry.size.width / 2, height: geometry.size.width / 2)
     }
     
     private func colorNameView() -> some View {
