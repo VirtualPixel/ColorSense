@@ -77,53 +77,15 @@ struct ColorDetailView: View {
     }
     
     private func pantoneGroupBox() -> some View {
-        GroupBox(label: Text("Pantone").font(.title2)) {
-            HStack {
-                ForEach(viewModel.pantone) { color in
-                    VStack(alignment: .center) {
-                        Text(color.name)
-                            .foregroundStyle(Color(hex: color.value).isDark() ? .white : .black)
-                        Spacer()
-                        Text(color.value)
-                            .font(.footnote)
-                            .background(
-                                Capsule()
-                                    .foregroundStyle(.ultraThinMaterial)
-                                    .padding(-3)
-                            )
-                    }
-                    .padding(.vertical, 7)
-                    .padding(.horizontal, 2)
-                    .frame(width: 90, height: 90)
-                    .background (
-                        RoundedRectangle(cornerRadius: 12)
-                            .foregroundStyle(Color(hex: color.value))
-                    )
-                    .contextMenu {
-                        Button {
-                            UIPasteboard.general.string = color.value
-                        } label: {
-                            Text("Copy to clipboard")
-                            Image(systemName: "doc.on.doc")
-                        }
-                    }
-                }
-            }
-        }
-        .padding(.horizontal, 30)
-        .frame(maxWidth: 700)
-    }
-    
-    private func complimentaryColorsGroupBox() -> some View {
-        GroupBox(label: Text("Pair With Colors").font(.title2)) {
-            ScrollView(.horizontal, showsIndicators: false) {
+        ZStack {
+            GroupBox(label: Text("Pantone").font(.title2)) {
                 HStack {
-                    ForEach(viewModel.complimentaryColors) { color in
+                    ForEach(viewModel.pantone) { color in
                         VStack(alignment: .center) {
-                            Text(UIColor(color).simpleName)
-                                .foregroundStyle(color.isDark() ? .white : .black)
+                            Text(color.name)
+                                .foregroundStyle(Color(hex: color.value).isDark() ? .white : .black)
                             Spacer()
-                            Text(color.toHex())
+                            Text(color.value)
                                 .font(.footnote)
                                 .background(
                                     Capsule()
@@ -136,11 +98,11 @@ struct ColorDetailView: View {
                         .frame(width: 90, height: 90)
                         .background (
                             RoundedRectangle(cornerRadius: 12)
-                                .foregroundStyle(color)
+                                .foregroundStyle(Color(hex: color.value))
                         )
                         .contextMenu {
                             Button {
-                                UIPasteboard.general.string = color.toHex()
+                                UIPasteboard.general.string = color.value
                             } label: {
                                 Text("Copy to clipboard")
                                 Image(systemName: "doc.on.doc")
@@ -148,7 +110,70 @@ struct ColorDetailView: View {
                         }
                     }
                 }
+                
             }
+            .disabled(true)
+            .blur(radius: 12.0)
+            RoundedRectangle(cornerRadius: 12)
+                .foregroundStyle(.thinMaterial)
+                .padding()
+            Text("Pantone colors are coming in a future release")
+                .font(.title)
+                .padding()
+            
+        }
+        .padding(.horizontal, 30)
+        .frame(maxWidth: 700)
+    }
+    
+    private func complimentaryColorsGroupBox() -> some View {
+        ZStack {
+            
+            GroupBox(label: Text("Pair With Colors").font(.title2)) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(viewModel.complimentaryColors) { color in
+                            VStack(alignment: .center) {
+                                Text(UIColor(color).simpleName)
+                                    .foregroundStyle(color.isDark() ? .white : .black)
+                                Spacer()
+                                Text(color.toHex())
+                                    .font(.footnote)
+                                    .background(
+                                        Capsule()
+                                            .foregroundStyle(.ultraThinMaterial)
+                                            .padding(-3)
+                                    )
+                            }
+                            .padding(.vertical, 7)
+                            .padding(.horizontal, 2)
+                            .frame(width: 90, height: 90)
+                            .background (
+                                RoundedRectangle(cornerRadius: 12)
+                                    .foregroundStyle(color)
+                            )
+                            .contextMenu {
+                                Button {
+                                    UIPasteboard.general.string = color.toHex()
+                                } label: {
+                                    Text("Copy to clipboard")
+                                    Image(systemName: "doc.on.doc")
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            .disabled(true)
+            .blur(radius: 12.0)
+            RoundedRectangle(cornerRadius: 12)
+                .foregroundStyle(.thinMaterial)
+                .padding()
+            Text("Complimentary Colors are coming in a future release")
+                .font(.title)
+                .padding()
+
         }
         .padding(.horizontal, 30)
         .frame(maxWidth: 700)

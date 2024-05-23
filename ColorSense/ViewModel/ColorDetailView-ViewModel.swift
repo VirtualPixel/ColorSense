@@ -30,11 +30,13 @@ extension ColorDetailView {
         }
         
         var pantone: [Pantone] {
-            self.color.toPantone()
+            // self.color.toPantone() Commented out for future release
+            Pantone.examples
         }
         
         var complimentaryColors: [Color] {
-            self.color.complimentaryColors()
+            // self.color.complimentaryColors() Commented out for future release
+            [.blue, .yellow, .green, .red, .purple]
         }
         
         init(color: Color, showAddToPalette: Bool = true) {
