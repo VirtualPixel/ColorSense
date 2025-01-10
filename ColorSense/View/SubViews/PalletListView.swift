@@ -143,9 +143,9 @@ struct PaletteListView: View {
     
     private func submitPalette() {
         guard !paletteName.isEmpty else { return }
-
+        
         let palette = Palette(name: paletteName, colors: [])
-
+        
         if let colorToHex = colorToAdd {
             if palette.colors != nil {
                 palette.colors?.append(ColorStructure(hex: colorToHex))
@@ -153,15 +153,15 @@ struct PaletteListView: View {
                 palette.colors = [ColorStructure(hex: colorToHex)]
             }
         }
-
+        
         context.insert(palette)
-
+        
         do {
             try context.save()
         } catch {
             print(error.localizedDescription)
         }
-
+        
         paletteName = ""
     }
     
@@ -183,7 +183,7 @@ struct PaletteListView: View {
             } else {
                 palettes[index].colors = [newColor]
             }
-
+            
             do {
                 try context.save()
             } catch {
@@ -212,7 +212,7 @@ struct PaletteListView: View {
         return hexColorPredicate.evaluate(with: hex)
     }
 }
-/*
+
 struct PaletteView_Previews: PreviewProvider {
     static let cameraFeed = CameraFeed()
     
@@ -221,4 +221,3 @@ struct PaletteView_Previews: PreviewProvider {
             .environmentObject(cameraFeed)
     }
 }
-*/

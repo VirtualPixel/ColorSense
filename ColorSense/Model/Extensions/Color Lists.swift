@@ -9,27 +9,27 @@ import SwiftUI
 
 extension UIColor {
     static let colorNames: [String: UIColor] = {
-            if let url = Bundle.main.url(forResource: "colornames", withExtension: "json") {
-                do {
-                    let data = try Data(contentsOf: url)
-                    let decoder = JSONDecoder()
-                    let colorData = try decoder.decode([ColorData].self, from: data)
-                    var colorNames: [String: UIColor] = [:]
-                    
-                    for color in colorData {
-                        guard let colorValues = color.hex.hexValues else { continue }
-                        colorNames[color.name] = UIColor(red: colorValues.red, green: colorValues.green, blue: colorValues.blue, alpha: 1.0)
-                    }
-                    
-                    return colorNames
-                } catch {
-                    print("Error loading color names JSON: \(error)")
-                    return [:]
+        if let url = Bundle.main.url(forResource: "colornames", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let colorData = try decoder.decode([ColorData].self, from: data)
+                var colorNames: [String: UIColor] = [:]
+                
+                for color in colorData {
+                    guard let colorValues = color.hex.hexValues else { continue }
+                    colorNames[color.name] = UIColor(red: colorValues.red, green: colorValues.green, blue: colorValues.blue, alpha: 1.0)
                 }
+                
+                return colorNames
+            } catch {
+                print("Error loading color names JSON: \(error)")
+                return [:]
             }
-            
-            return [:]
-        }()
+        }
+        
+        return [:]
+    }()
     
     static let roundedColorNames: [String: UIColor] = [
         "Black": .black,

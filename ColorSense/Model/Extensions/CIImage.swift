@@ -41,6 +41,7 @@ extension CIImage {
         let region = CGRect(x: regionOriginX, y: regionOriginY, width: regionSize, height: regionSize)
         let croppedImage = self.cropped(to: region)
         let context = CIContext(options: nil)
+        
         if let cgImage = context.createCGImage(croppedImage, from: croppedImage.extent) {
             return UIImage(cgImage: cgImage)
         } else {

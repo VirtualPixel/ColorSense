@@ -8,7 +8,7 @@
 import SwiftUI
 
 // return color variations
-extension Color: Identifiable {
+extension Color: @retroactive Identifiable {
     public var id: UUID {
         UUID()
     }
