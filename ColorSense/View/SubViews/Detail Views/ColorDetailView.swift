@@ -110,16 +110,7 @@ struct ColorDetailView: View {
                         }
                     }
                 }
-                
             }
-            .disabled(true)
-            .blur(radius: 12.0)
-            RoundedRectangle(cornerRadius: 12)
-                .foregroundStyle(.thinMaterial)
-                .padding()
-            Text("Pantone colors are coming in a future release")
-                .font(.title)
-                .padding()
             
         }
         .padding(.horizontal, 30)
@@ -128,7 +119,6 @@ struct ColorDetailView: View {
     
     private func complimentaryColorsGroupBox() -> some View {
         ZStack {
-            
             GroupBox(label: Text("Pair With Colors").font(.title2)) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
@@ -165,14 +155,6 @@ struct ColorDetailView: View {
                 }
                 
             }
-            .disabled(true)
-            .blur(radius: 12.0)
-            RoundedRectangle(cornerRadius: 12)
-                .foregroundStyle(.thinMaterial)
-                .padding()
-            Text("Complimentary Colors are coming in a future release")
-                .font(.title)
-                .padding()
 
         }
         .padding(.horizontal, 30)

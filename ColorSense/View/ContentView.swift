@@ -21,7 +21,7 @@ struct ContentView: View {
                     flashButton
                 }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    // settingsButton
+                    settingsButton
                 }
             }
             .preferredColorScheme(.dark)
