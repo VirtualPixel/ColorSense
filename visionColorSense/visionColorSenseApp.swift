@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import RevenueCat
 
 @main
 struct visionColorSenseApp: App {

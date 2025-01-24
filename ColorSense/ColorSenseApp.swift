@@ -6,13 +6,12 @@
 //
 
 import SwiftUI
-import RevenueCat
-import RevenueCatUI
 
 @main
 struct ColorSenseApp: App {
     @StateObject var cameraFeed = CameraFeed()
     @State private var colorToDisplay: ColorStructure?
+    @State private var displayPaywall: Bool = false
     
     var body: some Scene {
         WindowGroup {
@@ -39,7 +38,6 @@ struct ColorSenseApp: App {
     }
     
     init() {
-        Purchases.logLevel = .debug
-        Purchases.configure(withAPIKey: "appl_GnDsCnYqxOLXrcgxaUGIQiEWWHc")
+        
     }
 }

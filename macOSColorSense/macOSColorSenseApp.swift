@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftData
-import RevenueCat
 
 @main
 struct macOSColorSenseApp: App {
@@ -31,8 +30,7 @@ struct macOSColorSenseApp: App {
     }
     
     init() {
-        Purchases.logLevel = .debug
-        Purchases.configure(withAPIKey: "appl_GnDsCnYqxOLXrcgxaUGIQiEWWHc")
+        
     }
 }
 

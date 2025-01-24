@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import RevenueCat
 
 struct ColorDetailView: View {
     @EnvironmentObject private var cameraFeed: CameraFeed
@@ -78,6 +77,7 @@ struct ColorDetailView: View {
     
     private func pantoneGroupBox() -> some View {
         ZStack {
+            
             GroupBox(label: Text("Pantone").font(.title2)) {
                 HStack {
                     ForEach(viewModel.pantone) { color in
@@ -110,8 +110,8 @@ struct ColorDetailView: View {
                         }
                     }
                 }
+                .isProFeature(viewModel.isProUser)
             }
-            
         }
         .padding(.horizontal, 30)
         .frame(maxWidth: 700)

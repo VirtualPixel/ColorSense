@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import RevenueCatUI
 
 struct SettingsView: View {
     @State private var isShowingPaywall = false
@@ -48,9 +47,6 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             //.listStyle(.plain)
             .buttonStyle(BorderedButtonStyle())
-        }
-        .sheet(isPresented: $isShowingPaywall) {
-            PaywallView()
         }
     }
 }

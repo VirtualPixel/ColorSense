@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import RevenueCat
 
 @main
 struct WatchColorSense_Watch_AppApp: App {
@@ -35,7 +34,6 @@ struct WatchColorSense_Watch_AppApp: App {
     }
     
     init() {
-        Purchases.logLevel = .debug
-        Purchases.configure(withAPIKey: "appl_GnDsCnYqxOLXrcgxaUGIQiEWWHc")
+
     }
 }

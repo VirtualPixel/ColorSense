@@ -9,7 +9,7 @@ import SwiftUI
 
 extension ColorDetailView {
     class ViewModel: ObservableObject {
-        @Published var isProUser = false
+        @Published var isProUser = true
         let color: Color
         let showAddToPalette: Bool
         

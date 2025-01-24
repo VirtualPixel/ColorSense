@@ -1,0 +1,143 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "15869175",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6503025327",
+    "_developerTeamID" : "3LPAZYKA42",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 759442190.07802904,
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21626257",
+      "localizations" : [
+
+      ],
+      "name" : "PremiumColors",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "49.99",
+          "familyShareable" : true,
+          "groupNumber" : 2,
+          "internalID" : "6740999474",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "This gives annual access to pro features.",
+              "displayName" : "Pro Plan - Annual",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "colorsenseproplanannual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pro Plan - Annual",
+          "subscriptionGroupID" : "21626257",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "6740999603",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "This gives access to all features for a month",
+              "displayName" : "Pro Plan - Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "colorsenseproplan",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pro Plan - Monthly",
+          "subscriptionGroupID" : "21626257",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}
