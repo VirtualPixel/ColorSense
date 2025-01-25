@@ -12,19 +12,7 @@ extension View {
         AnyView(self)
     }
     
-    func isProFeature(_ isProEnabled: Bool) -> some View {
-        Group {
-            if isProEnabled {
-                self
-            } else {
-                PaywallPrompt()
-            }
-        }
-    }
-}
-
-struct PaywallPrompt: View {
-    var body: some View {
-        Text("Hello")
+    func isProFeature() -> some View {
+        modifier(ProFeature())
     }
 }

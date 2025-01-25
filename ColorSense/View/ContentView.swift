@@ -6,31 +6,28 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
-    @ObservedObject private var viewModel = ViewModel()
-    @EnvironmentObject private var cameraFeed: CameraFeed
-    @State private var isShowingPaletteView = false
     
+    @EnvironmentObject private var entitlementManager: EntitlementManager
+    @EnvironmentObject private var subscriptionsManager: SubscriptionsManager
+    @EnvironmentObject private var cameraFeed: CameraFeed
+        
+    @ObservedObject private var viewModel = ViewModel()
+        
     var body: some View {
         NavigationStack {
             cameraView
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarLeading) {
-                    flashButton
-                }
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    settingsButton
+            .onAppear(perform: cameraFeed.start)
+            .onAppear {
+                Task {
+                    await subscriptionsManager.loadProducts()
                 }
             }
-            .preferredColorScheme(.dark)
-            .onAppear(perform: cameraFeed.start)
             .onDisappear(perform: cameraFeed.stop)
             .environmentObject(cameraFeed)
-            .sheet(isPresented: $isShowingPaletteView) {
-                PaletteListView().presentationDetents([.large])
-            }
             .onChange(of: scenePhase) {
                 handleScenePhaseChange()
             }
@@ -41,11 +38,26 @@ struct ContentView: View {
 private extension ContentView {
     @ViewBuilder
     var cameraView: some View {
-        ZStack {
-            CameraPreview(session: cameraFeed.captureSession)
-            FocusCircleView()
-            paletteAndBottomBar
+        VStack {
+            flashAndSettingsButtons
+
+            ZStack {
+                CameraPreview(session: cameraFeed.captureSession)
+                FocusCircleView()
+                paletteAndBottomBar
+            }
         }
+    }
+    
+    @ViewBuilder
+    var flashAndSettingsButtons: some View {
+        HStack {
+            flashButton
+            Spacer()
+            settingsButton
+        }
+        .padding(15)
+        .background(.black)
     }
     
     @ViewBuilder
@@ -53,7 +65,7 @@ private extension ContentView {
         VStack {
             ColorCardView().padding(.top, 20)
             Spacer()
-            BottomBarView(showingPaletteView: $isShowingPaletteView)
+            BottomBarView()
         }
     }
     
@@ -94,18 +106,22 @@ extension Image {
         self.resizable()
             .aspectRatio(contentMode: .fit)
             .foregroundColor(.white)
-            .padding(5)
-            .background(.thinMaterial)
+            .padding(3)
+            .background(.ultraThinMaterial)
             .clipShape(Circle())
             .frame(width: 32, height: 32)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let subscriptionsManager = SubscriptionsManager(entitlementManager: EntitlementManager())
+    static let entitlementManager = EntitlementManager()
     static let cameraFeed = CameraFeed()
     
     static var previews: some View {
         ContentView()
             .environmentObject(cameraFeed)
+            .environmentObject(subscriptionsManager)
+            .environmentObject(entitlementManager)
     }
 }

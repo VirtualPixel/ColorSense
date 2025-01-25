@@ -10,15 +10,18 @@ import SwiftData
 
 struct PaletteListView: View {
     @Query var palettes: [Palette]
+    
     @ObservedObject private var viewModel = ViewModel()
+
     @EnvironmentObject private var cameraFeed: CameraFeed
+    
     @Environment(\.modelContext) private var context
+    
     @State private var paletteName = ""
-    @State private var colorHex = ""
     @State private var showingAddPaletteAlert = false
     @State private var showingAddColorAlert = false
     @State private var selectedPalette: Palette?
-    @State private var showingInvalidHexAlert = false
+    @State private var colorHex = ""
     
     var sortedPalettes: [Palette] {
         palettes.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() })
@@ -117,28 +120,35 @@ struct PaletteListView: View {
                 } message: {
                     Text("This will create a new Palette with your custom name.")
                 }
-                .alert("Enter new color Hex value", isPresented: $showingAddColorAlert) {
-                    TextField("Enter new color Hex value", text: $colorHex)
-                    Button("Okay", action: submitColor)
-                } message: {
-                    Text("This will add a new color to your chosen Palette.")
-                }
-                .alert("Invalid color hex value", isPresented: $showingInvalidHexAlert) {
-                    Button("Okay") {
-                        showingInvalidHexAlert = false
-                    }
-                } message: {
-                    Text("The color hex value you entered is not valid. It should be a 3- or 6-digit hexadecimal number, optionally starting with a '#'.")
-                }
                 .navigationTitle("Color Palettes")
-                .onAppear {
-                    cameraFeed.pauseProcessing = true
-                }
-                .onDisappear {
-                    cameraFeed.pauseProcessing = false
-                }
             }
         }
+    }
+    
+    private func submitColor() {
+        guard !colorHex.isEmpty else { return }
+        
+        guard let selectedPalette = selectedPalette else {
+            return
+        }
+        
+        let newColor = ColorStructure(hex: colorHex)
+        
+        if let index = palettes.firstIndex(where: { $0.id == selectedPalette.id }) {
+            if palettes[index].colors != nil {
+                palettes[index].colors?.append(newColor)
+            } else {
+                palettes[index].colors = [newColor]
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        colorHex = ""
     }
     
     private func submitPalette() {
@@ -165,35 +175,6 @@ struct PaletteListView: View {
         paletteName = ""
     }
     
-    private func submitColor() {
-        guard !colorHex.isEmpty else { return }
-        
-        guard let selectedPalette = selectedPalette,
-              isValidHexColor(hex: colorHex)
-        else {
-            showingInvalidHexAlert = true
-            return
-        }
-        
-        let newColor = ColorStructure(hex: colorHex)
-        
-        if let index = palettes.firstIndex(where: { $0.id == selectedPalette.id }) {
-            if palettes[index].colors != nil {
-                palettes[index].colors?.append(newColor)
-            } else {
-                palettes[index].colors = [newColor]
-            }
-            
-            do {
-                try context.save()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        
-        colorHex = ""
-    }
-    
     private func deletePalette(at offsets: IndexSet) {
         offsets.forEach { index in
             let palette = sortedPalettes[index]
@@ -206,18 +187,12 @@ struct PaletteListView: View {
         }
     }
     
-    private func isValidHexColor(hex: String) -> Bool {
-        let hexColorPattern = "^#?([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
-        let hexColorPredicate = NSPredicate(format:"SELF MATCHES %@", hexColorPattern)
-        return hexColorPredicate.evaluate(with: hex)
-    }
+    
 }
 
-struct PaletteView_Previews: PreviewProvider {
-    static let cameraFeed = CameraFeed()
+#Preview {
+    let cameraFeed = CameraFeed()
     
-    static var previews: some View {
-        PaletteListView()
-            .environmentObject(cameraFeed)
-    }
+    PaletteListView(colorToAdd: "FFFFFF")
+        .environmentObject(cameraFeed)
 }

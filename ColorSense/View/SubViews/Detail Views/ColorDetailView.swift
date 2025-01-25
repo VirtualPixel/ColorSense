@@ -110,7 +110,7 @@ struct ColorDetailView: View {
                         }
                     }
                 }
-                .isProFeature(viewModel.isProUser)
+                .isProFeature()
             }
         }
         .padding(.horizontal, 30)
@@ -119,6 +119,7 @@ struct ColorDetailView: View {
     
     private func complimentaryColorsGroupBox() -> some View {
         ZStack {
+            
             GroupBox(label: Text("Pair With Colors").font(.title2)) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
@@ -153,9 +154,8 @@ struct ColorDetailView: View {
                         }
                     }
                 }
-                
             }
-
+            .isProFeature()
         }
         .padding(.horizontal, 30)
         .frame(maxWidth: 700)
@@ -232,10 +232,12 @@ struct ColorDetailView: View {
 }
 
 struct ColorDetailView_Previews: PreviewProvider {
+    static let entitlementsManager = EntitlementManager()
     static let cameraFeed = CameraFeed()
     
     static var previews: some View {
         ColorDetailView(color: Color.init(hex: "2A2A1A"))
             .environmentObject(cameraFeed)
+            .environmentObject(entitlementsManager)
     }
 }

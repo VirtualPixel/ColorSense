@@ -21,6 +21,8 @@
     "_developerTeamID" : "3LPAZYKA42",
     "_failTransactionsEnabled" : false,
     "_lastSynchronizedDate" : 759442190.07802904,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
     "_storeKitErrors" : [
       {
         "current" : null,

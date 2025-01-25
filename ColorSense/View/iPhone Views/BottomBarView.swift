@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BottomBarView: View {
     @EnvironmentObject private var cameraFeed: CameraFeed
-    @Binding var showingPaletteView: Bool
 
     var body: some View {
         HStack {
@@ -25,15 +24,13 @@ struct BottomBarView: View {
     }
 
     private func swatchPaletteButton() -> some View {
-        Button {
-            showingPaletteView = true
-        } label: {
+        NavigationLink(destination: PaletteListView(colorToAdd: cameraFeed.dominantColor?.toHex())) {
             Image(systemName: "swatchpalette.fill")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(.white)
+                .frame(width: 40, height: 40)
         }
-        .frame(width: 40, height: 40)
     }
 
     private func pauseProcessingButton() -> some View {
@@ -87,7 +84,7 @@ struct BottomBarView_Previews: PreviewProvider {
     static let cameraFeed = CameraFeed()
     
     static var previews: some View {
-        BottomBarView(showingPaletteView: .constant(false))
+        BottomBarView()
             .environmentObject(cameraFeed)
     }
 }
