@@ -28,12 +28,24 @@ extension ColorDetailView {
             self.color.toCMYK()
         }
         
+        var swiftUI: String {
+            self.color.toSwiftUI()
+        }
+        
+        var uiKit: String {
+            self.color.toUIKit()
+        }
+        
         var pantone: [Pantone] {
             self.color.toPantone()
         }
         
         var complimentaryColors: [Color] {
             self.color.complimentaryColors()
+        }
+        
+        var colorVisionsSimulations: [ColorVision] {
+            self.color.colorVisionSimulations()
         }
         
         init(color: Color, showAddToPalette: Bool = true) {

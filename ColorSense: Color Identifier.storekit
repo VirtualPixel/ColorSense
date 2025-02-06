@@ -20,7 +20,7 @@
     "_applicationInternalID" : "6503025327",
     "_developerTeamID" : "3LPAZYKA42",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 759442190.07802904,
+    "_lastSynchronizedDate" : 760476759.55754304,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -86,9 +86,9 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "49.99",
+          "displayPrice" : "29.99",
           "familyShareable" : true,
-          "groupNumber" : 2,
+          "groupNumber" : 1,
           "internalID" : "6740999474",
           "introductoryOffer" : null,
           "localizations" : [
@@ -114,7 +114,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "4.99",
+          "displayPrice" : "2.99",
           "familyShareable" : true,
           "groupNumber" : 1,
           "internalID" : "6740999603",

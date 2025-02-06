@@ -9,84 +9,118 @@ import Foundation
 import SwiftUICore
 import StoreKit
 
+enum SubscriptionError: LocalizedError {
+    case purchaseFailed
+    case verificationFailed
+    case noProductsAvailable
+    case restoreFailed
+    
+    var errorDescription: String? {
+        switch self {
+        case .purchaseFailed:
+            return "Unable to complete the purchase"
+        case .verificationFailed:
+            return "Purchase verification failed"
+        case .noProductsAvailable:
+            return "No subscription products available"
+        case .restoreFailed:
+            return "Unable to restore purchases"
+        }
+    }
+}
+
 @MainActor
 class SubscriptionsManager: ObservableObject {
-    let productIDs: [String] = ["colorsenseproplan", "colorsenseproplanannual"]
-    var purchasedProductIDs: Set<String> = []
-    
     @Published var products: [Product] = []
+    @Published var purchaseError: SubscriptionError?
+    @Published var isLoading = false
     
-    private var entitlementManager: EntitlementManager? = nil
-    private var updates: Task<Void, Never>? = nil
+    private var purchasedProductIDs: Set<String> = []
+    private let entitlementManager: EntitlementManager
+    private var updates: Task<Void, Never>?
     
     init(entitlementManager: EntitlementManager) {
         self.entitlementManager = entitlementManager
+        updates = observeTransactionUpdates()
     }
     
     deinit {
         updates?.cancel()
     }
     
-    func observeTransactionUpdates() -> Task<Void, Never> {
-        Task(priority: .background) { [unowned self] in
-            for await _ in Transaction.updates {
-                await self.updatePurchasedProducts()
-            }
-        }
-    }
-    
-    func updatePurchasedProducts() async {
-        for await result in Transaction.currentEntitlements {
-            guard case .verified(let transaction) = result else {
-                continue
-            }
-            if transaction.revocationDate == nil {
-                self.purchasedProductIDs.insert(transaction.productID)
-            } else {
-                self.purchasedProductIDs.remove(transaction.productID)
-            }
-        }
+    func loadProducts() async {
+        isLoading = true
+        defer { isLoading = false }
         
-        self.entitlementManager?.hasPro = !self.purchasedProductIDs.isEmpty
+        do {
+            let productIDs = ["colorsenseproplan", "colorsenseproplanannual"]
+            products = try await Product.products(for: productIDs)
+                .sorted(by: { $0.price < $1.price })
+        } catch {
+            purchaseError = .noProductsAvailable
+        }
     }
     
     func buyProduct(_ product: Product) async {
-        Task {
-            do {
-                let result = try await product.purchase()
-                
-                switch result {
-                case let .success(.verified(transaction)):
-                    // Successful purhcase
+        isLoading = true
+        defer { isLoading = false }
+        
+        do {
+            let result = try await product.purchase()
+            
+            switch result {
+            case .success(let verification):
+                switch verification {
+                case .verified(let transaction):
                     await transaction.finish()
-                case let .success(.unverified(_, error)):
-                    // Successful purchase but transaction/receipt can't be verified
-                    // Could be a jailbroken phone
-                    print("Unverified purchase. Might be jailbroken. Error: \(error)")
-                    break
-                case .pending:
-                    // Transaction waiting on SCA (Strong Customer Authentication) or
-                    // approval from Ask to Buy
-                    break
-                case .userCancelled:
-                    // ^^^
-                    print("User Cancelled!")
-                    break
-                @unknown default:
-                    print("Failed to purchase the product!")
-                    break
+                    await updatePurchasedProducts()
+                case .unverified:
+                    purchaseError = .verificationFailed
                 }
-            } catch {
-                print("Failed to purchase the product!")
+            case .userCancelled:
+                return
+            case .pending:
+                return
+            @unknown default:
+                purchaseError = .purchaseFailed
             }
+        } catch {
+            purchaseError = .purchaseFailed
         }
     }
     
     func restorePurchases() async {
+        isLoading = true
+        defer { isLoading = false }
+        
         do {
             try await AppStore.sync()
         } catch {
-            print(error)
+            purchaseError = .restoreFailed
         }
+    }
+    
+    private func observeTransactionUpdates() -> Task<Void, Never> {
+        Task(priority: .background) { [weak self] in
+            for await _ in Transaction.updates {
+                await self?.updatePurchasedProducts()
+            }
+        }
+    }
+    
+    private func updatePurchasedProducts() async {
+        for await result in Transaction.currentEntitlements {
+            guard case .verified(let transaction) = result else {
+                continue
+            }
+            
+            if transaction.revocationDate == nil {
+                purchasedProductIDs.insert(transaction.productID)
+            } else {
+                purchasedProductIDs.remove(transaction.productID)
+            }
+        }
+        
+        entitlementManager.hasPro = !purchasedProductIDs.isEmpty
     }
 }

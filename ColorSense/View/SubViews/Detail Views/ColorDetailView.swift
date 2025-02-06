@@ -20,8 +20,9 @@ struct ColorDetailView: View {
                         colorNameView()
                         colorFamilyView()
                         colorDetailsGroupBox()
-                        pantoneGroupBox()
                         complimentaryColorsGroupBox()
+                        accessibilityColorList()
+                        pantoneGroupBox()
                     }
                 }
                 .toolbar { toolbarContent() }
@@ -69,6 +70,9 @@ struct ColorDetailView: View {
                 detailText(title: "Hex", value: "\(viewModel.hex)")
                 detailText(title: "HSL", value: "Hue: \(viewModel.hsl.hue) Saturation: \(viewModel.hsl.saturation) Lightness: \(viewModel.hsl.lightness)")
                 detailText(title: "CMYK", value: "Cyan: \(viewModel.cmyk.cyan) Magenta: \(viewModel.cmyk.magenta) Yellow: \(viewModel.cmyk.yellow) Key: \(viewModel.cmyk.key)")
+                Divider()
+                detailText(title: "SwiftUI", value: viewModel.swiftUI)
+                detailText(title: "UIKit", value: viewModel.uiKit)
             }
         }
         .padding(.horizontal, 30)
@@ -154,8 +158,44 @@ struct ColorDetailView: View {
                         }
                     }
                 }
+                .isProFeature()
             }
-            .isProFeature()
+        }
+        .padding(.horizontal, 30)
+        .frame(maxWidth: 700)
+    }
+    
+    private func accessibilityColorList() -> some View {
+        ZStack {
+            
+            GroupBox(label: Text("Accessibility View").font(.title2)) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(viewModel.colorVisionsSimulations) { color in
+                            VStack(alignment: .center) {
+                                Text(color.type)
+                                    .foregroundStyle(color.color.isDark() ? .white : .black)
+                                Spacer()
+                                Text(color.color.toHex())
+                                    .font(.footnote)
+                                    .background(
+                                        Capsule()
+                                            .foregroundStyle(.ultraThinMaterial)
+                                            .padding(-3)
+                                    )
+                            }
+                            .padding(.vertical, 7)
+                            .padding(.horizontal, 2)
+                            .frame(width: 90, height: 90)
+                            .background (
+                                RoundedRectangle(cornerRadius: 12)
+                                    .foregroundStyle(color.color)
+                            )
+                        }
+                    }
+                }
+                .isProFeature()
+            }
         }
         .padding(.horizontal, 30)
         .frame(maxWidth: 700)
@@ -167,6 +207,7 @@ struct ColorDetailView: View {
                 .fontWeight(.bold)
                 .frame(width: 80, alignment: .leading)
             Text(value)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .padding(.vertical, 4)
         .contextMenu {

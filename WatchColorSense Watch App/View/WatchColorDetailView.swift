@@ -67,6 +67,7 @@ struct WatchColorDetailView: View {
                             }
                         }
                     }
+                    .isProFeature()
                     
                     Section(header: Text("Complimentary Colors").font(.title2)) {
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -94,6 +95,7 @@ struct WatchColorDetailView: View {
                             }
                         }
                     }
+                    .isProFeature()
                 }
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
