@@ -10,9 +10,12 @@ import SwiftUI
 struct PaletteDetailView: View {
     @Environment(\.modelContext) private var context
     
+    @EnvironmentObject private var entitlementManager: EntitlementManager
+    
     @State private var showingAddHexColorAlert = false
     @State private var colorHex = ""
     @State private var showingInvalidHexAlert = false
+    @State private var showingPaywall = false
     
     var palette: Palette
 
@@ -53,6 +56,11 @@ struct PaletteDetailView: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
+                    let colorCount = palette.colors?.count ?? 0
+                    if colorCount >= 5 {
+                        showingPaywall = true
+                        return
+                    }
                     showingAddHexColorAlert = true
                 } label: {
                     Text("New Color from Hex")
@@ -60,6 +68,11 @@ struct PaletteDetailView: View {
             }
         }
         .navigationTitle(palette.name ?? "Palette View")
+        .sheet(isPresented: $showingPaywall) {
+            #if !os(watchOS)
+            PaywallView()
+            #endif
+        }
     }
     
     private func deleteColor(at offsets: IndexSet) {
@@ -106,6 +119,7 @@ struct PaletteDetailView: View {
 }
 
 #Preview {
+    let entitlementManager = EntitlementManager()
     PaletteDetailView(
         palette: Palette(
             name: "Test",
@@ -116,4 +130,5 @@ struct PaletteDetailView: View {
             ]
         )
     )
+    .environmentObject(entitlementManager)
 }

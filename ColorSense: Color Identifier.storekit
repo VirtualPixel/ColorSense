@@ -18,24 +18,35 @@
   ],
   "settings" : {
     "_applicationInternalID" : "6503025327",
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : true,
     "_developerTeamID" : "3LPAZYKA42",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 760476759.55754304,
+    "_lastSynchronizedDate" : 760563453.398417,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
       {
-        "current" : null,
+        "current" : {
+          "index" : 2,
+          "type" : "generic"
+        },
         "enabled" : false,
         "name" : "Load Products"
       },
       {
-        "current" : null,
+        "current" : {
+          "index" : 1,
+          "type" : "purchase"
+        },
         "enabled" : false,
         "name" : "Purchase"
       },
       {
-        "current" : null,
+        "current" : {
+          "index" : 0,
+          "type" : "verification"
+        },
         "enabled" : false,
         "name" : "Verification"
       },

@@ -13,6 +13,12 @@ struct ProFeature: ViewModifier {
     @EnvironmentObject private var entitlementManager: EntitlementManager
     @State private var showPaywall = false
     
+    let shouldBlur: Bool
+    
+    init(shouldBlur: Bool = true) {
+        self.shouldBlur = shouldBlur
+    }
+    
     func body(content: Content) -> some View {
         Group {
             if entitlementManager.hasPro {
@@ -20,14 +26,14 @@ struct ProFeature: ViewModifier {
             } else {
                 content
                     .allowsHitTesting(false)
-                    .blur(radius: 10)
+                    .blur(radius: shouldBlur ? 10 : 0)
                     .overlay {
                         proOverlay
                     }
                     .sheet(isPresented: $showPaywall) {
-                        #if !os(watchOS)
+                    #if !os(watchOS)
                         PaywallView()
-                        #endif
+                    #endif
                     }
             }
         }

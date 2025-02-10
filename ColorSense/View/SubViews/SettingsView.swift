@@ -8,32 +8,35 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject private var entitlementManager: EntitlementManager
     @State private var isShowingPaywall = false
     
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    HStack {
-                        Spacer()
+                if !entitlementManager.hasPro {
+                    Section {
+                        HStack {
+                            Spacer()
+                            
+                            Image(systemName: "star")
+                                .bold()
+                            
+                            Text("Upgrade to Pro")
+                                .font(.headline)
+                            
+                            Spacer()
+                        }
+                        .frame(height: 60)
+                        .foregroundStyle(.white)
                         
-                        Image(systemName: "star")
-                            .bold()
-                        
-                        Text("Upgrade to Pro")
-                            .font(.headline)
-                        
-                        Spacer()
                     }
-                    .frame(height: 60)
-                    .foregroundStyle(.white)
-                    
-                }
-                .listRowSeparator(.hidden)
-                .background(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center))
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                .onTapGesture {
-                    isShowingPaywall = true
+                    .listRowSeparator(.hidden)
+                    .background(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center))
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    .onTapGesture {
+                        isShowingPaywall = true
+                    }
                 }
                 
                 Section {
@@ -45,12 +48,18 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
-            //.listStyle(.plain)
             .buttonStyle(BorderedButtonStyle())
+        }
+        .sheet(isPresented: $isShowingPaywall) {
+            #if !os(watchOS)
+            PaywallView()
+            #endif
         }
     }
 }
 
 #Preview {
+    let entitlementManager = EntitlementManager()
     SettingsView()
+        .environmentObject(entitlementManager)
 }

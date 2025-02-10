@@ -14,6 +14,7 @@ struct PaywallView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
     @State private var selectedPlan: Plan = .monthly
+    @State private var showError = false
     
     enum Plan {
         case monthly, yearly
@@ -27,11 +28,12 @@ struct PaywallView: View {
     }
     
     private let features = [
+        "Unlimited Colors & Palettes",
         "Pro Color Details",
-        "Advanced Color Naming",
-        "Unlimited Color Palettes",
+        "Color Pairing Suggestions",
         "Color Accessibility Tools",
-        "Export Palettes",
+        "Pantone Color Matching"
+        // "Export Palettes",
     ]
     
     var body: some View {
@@ -51,6 +53,24 @@ struct PaywallView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Close") { dismiss() }
+                }
+            }
+            .alert("Error", isPresented: $showError) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(subscriptionsManager.purchaseError?.localizedDescription ?? "Unknown error")
+            }
+            .alert("Thank You!", isPresented: $subscriptionsManager.showThankYouAlert) {
+                Button("Continue", role: .cancel) { dismiss() }
+            } message: {
+                Text("Thank you for subscribing to ColorSense Pro!")
+            }
+            .overlay {
+                if subscriptionsManager.isLoading {
+                    ProgressView()
+                        .padding()
+                        .background(.regularMaterial)
+                        .cornerRadius(8)
                 }
             }
         }
@@ -153,7 +173,11 @@ struct PaywallView: View {
         Button("Restore Purchases") {
             Task {
                 await subscriptionsManager.restorePurchases()
-                dismiss()
+                if subscriptionsManager.purchaseError != nil {
+                    showError = true
+                } else if entitlementManager.hasPro {
+                    dismiss()
+                }
             }
         }
         .foregroundColor(.secondary)
@@ -164,7 +188,6 @@ struct PaywallView: View {
         guard let product = subscriptionsManager.products.first(where: { $0.id == productId }) else { return }
         Task {
             await subscriptionsManager.buyProduct(product)
-            dismiss()
         }
     }
 }

@@ -12,7 +12,7 @@ extension View {
         AnyView(self)
     }
     
-    func isProFeature() -> some View {
-        modifier(ProFeature())
+    func isProFeature(shouldBlur: Bool = true) -> some View {
+        modifier(ProFeature(shouldBlur: shouldBlur))
     }
 }

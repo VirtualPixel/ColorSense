@@ -5,7 +5,6 @@
 //  Created by Justin Wells on 1/24/25.
 //
 
-import Foundation
 import SwiftUICore
 import StoreKit
 
@@ -30,33 +29,48 @@ enum SubscriptionError: LocalizedError {
 }
 
 @MainActor
-class SubscriptionsManager: ObservableObject {
+class SubscriptionsManager: NSObject, ObservableObject {
     @Published var products: [Product] = []
     @Published var purchaseError: SubscriptionError?
     @Published var isLoading = false
+    @Published var showThankYouAlert = false
+    
+    let productIDs = ["colorsenseproplan", "colorsenseproplanannual"]
     
     private var purchasedProductIDs: Set<String> = []
     private let entitlementManager: EntitlementManager
-    private var updates: Task<Void, Never>?
+    private var updates: Task<Void, Never>? = nil
     
     init(entitlementManager: EntitlementManager) {
         self.entitlementManager = entitlementManager
+        super.init()
         updates = observeTransactionUpdates()
+        SKPaymentQueue.default().add(self)
     }
     
     deinit {
         updates?.cancel()
     }
     
+    func observeTransactionUpdates() -> Task<Void, Never> {
+        Task(priority: .background) { [weak self] in
+            for await _ in Transaction.updates {
+                await self?.updatePurchasedProducts()
+            }
+        }
+    }
+}
+
+extension SubscriptionsManager {
     func loadProducts() async {
         isLoading = true
         defer { isLoading = false }
         
         do {
-            let productIDs = ["colorsenseproplan", "colorsenseproplanannual"]
-            products = try await Product.products(for: productIDs)
+            self.products = try await Product.products(for: productIDs)
                 .sorted(by: { $0.price < $1.price })
         } catch {
+            print("Failed to fetch products! Error: \(error)")
             purchaseError = .noProductsAvailable
         }
     }
@@ -69,24 +83,49 @@ class SubscriptionsManager: ObservableObject {
             let result = try await product.purchase()
             
             switch result {
-            case .success(let verification):
-                switch verification {
-                case .verified(let transaction):
-                    await transaction.finish()
-                    await updatePurchasedProducts()
-                case .unverified:
-                    purchaseError = .verificationFailed
-                }
-            case .userCancelled:
-                return
+            case let .success(.verified(transaction)):
+                // Successful purhcase
+                await transaction.finish()
+                await self.updatePurchasedProducts()
+            case let .success(.unverified(_, error)):
+                // Successful purchase but transaction/receipt can't be verified
+                // Could be a jailbroken phone
+                print("Unverified purchase. Might be jailbroken. Error: \(error)")
+                purchaseError = .verificationFailed
+                break
             case .pending:
-                return
+                // Transaction waiting on SCA (Strong Customer Authentication) or
+                // approval from Ask to Buy
+                break
+            case .userCancelled:
+                print("User cancelled!")
+                break
             @unknown default:
+                print("Failed to purchase the product!")
                 purchaseError = .purchaseFailed
+                break
             }
         } catch {
-            purchaseError = .purchaseFailed
+            print("Failed to purchase the product!")
         }
+    }
+    
+    private func updatePurchasedProducts() async {
+        purchasedProductIDs.removeAll()
+        
+        for await result in Transaction.currentEntitlements {
+            guard case .verified(let transaction) = result else {
+                continue
+            }
+                        
+            if let expirationDate = transaction.expirationDate {
+                if expirationDate > Date() {
+                    purchasedProductIDs.insert(transaction.productID)
+                }
+            }
+        }
+        
+        entitlementManager.hasPro = !purchasedProductIDs.isEmpty
     }
     
     func restorePurchases() async {
@@ -95,32 +134,31 @@ class SubscriptionsManager: ObservableObject {
         
         do {
             try await AppStore.sync()
+            var restoredCount = 0
+            
+            for await verification in Transaction.currentEntitlements {
+                if case .verified(let transaction) = verification {
+                    if !transaction.isUpgraded && transaction.revocationDate == nil {
+                        purchasedProductIDs.insert(transaction.productID)
+                        entitlementManager.hasPro = true
+                        restoredCount += 1
+                    }
+                }
+            }
+            
+            if restoredCount > 0 {
+                showThankYouAlert = true
+            } else {
+                purchaseError = .restoreFailed
+            }
         } catch {
             purchaseError = .restoreFailed
         }
     }
-    
-    private func observeTransactionUpdates() -> Task<Void, Never> {
-        Task(priority: .background) { [weak self] in
-            for await _ in Transaction.updates {
-                await self?.updatePurchasedProducts()
-            }
-        }
-    }
-    
-    private func updatePurchasedProducts() async {
-        for await result in Transaction.currentEntitlements {
-            guard case .verified(let transaction) = result else {
-                continue
-            }
-            
-            if transaction.revocationDate == nil {
-                purchasedProductIDs.insert(transaction.productID)
-            } else {
-                purchasedProductIDs.remove(transaction.productID)
-            }
-        }
+}
+
+extension SubscriptionsManager: @preconcurrency SKPaymentTransactionObserver {
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         
-        entitlementManager.hasPro = !purchasedProductIDs.isEmpty
     }
 }

@@ -79,6 +79,7 @@
 		577357572A73150600903F85 /* PalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357562A73150600903F85 /* PalletDetailView.swift */; };
 		577357592A73153800903F85 /* PalletDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */; };
 		577BEB5C2A9A54800071E977 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
+		57CC2DAF2D5549A000DF8603 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */; };
 		57DAA12E2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */; };
 		57DDCDFC2A07F93600B53CB7 /* New Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFB2A07F93600B53CB7 /* New Colors.swift */; };
 		57DDCDFE2A08007000B53CB7 /* Color Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* Color Lists.swift */; };
@@ -181,6 +182,7 @@
 		57712DE32A7BD0D500B16DE9 /* ColorInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorInit.swift; sourceTree = "<group>"; };
 		577357562A73150600903F85 /* PalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalletDetailView.swift; sourceTree = "<group>"; };
 		577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PalletDetailView-ViewModel.swift"; sourceTree = "<group>"; };
+		57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchColorDetailview-ViewModel.swift"; sourceTree = "<group>"; };
 		57DDCDFB2A07F93600B53CB7 /* New Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Colors.swift"; sourceTree = "<group>"; };
 		57DDCDFD2A08007000B53CB7 /* Color Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Lists.swift"; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				575FFF002D441E56005FD040 /* ColorSense: Color Identifier.storekit */,
+				57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */,
 				576D8E992A031069003DE880 /* ColorSense */,
 				576A4F132A782E6F00452FA5 /* WatchColorSense Watch App */,
 				5725C5A02A7BCAEC00933331 /* macOSColorSense */,
@@ -688,6 +691,7 @@
 				576D8E9F2A03106A003DE880 /* Assets.xcassets in Resources */,
 				575FFF012D441E56005FD040 /* ColorSense: Color Identifier.storekit in Resources */,
 				572054012A68961F0072DE06 /* pantone-colors.json in Resources */,
+				57CC2DAF2D5549A000DF8603 /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

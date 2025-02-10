@@ -14,6 +14,7 @@ struct PaletteListView: View {
     @ObservedObject private var viewModel = ViewModel()
 
     @EnvironmentObject private var cameraFeed: CameraFeed
+    @EnvironmentObject private var entitlementManager: EntitlementManager
     
     @Environment(\.modelContext) private var context
     
@@ -22,6 +23,7 @@ struct PaletteListView: View {
     @State private var showingAddColorAlert = false
     @State private var selectedPalette: Palette?
     @State private var colorHex = ""
+    @State private var showPaywall = false
     
     var sortedPalettes: [Palette] {
         palettes.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() })
@@ -40,6 +42,7 @@ struct PaletteListView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 250)
                             .opacity(0.7)
+                            .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).midY)
                     } else {
                         List {
                             ForEach(sortedPalettes, id: \.id) { palette in
@@ -80,11 +83,19 @@ struct PaletteListView: View {
                                                 Divider()
                                                 Button {
                                                     selectedPalette = palette
+                                                    let colorCount = selectedPalette?.colors?.count ?? 0
+                                                    
+                                                    if colorCount >= 5 && !entitlementManager.hasPro {
+                                                        showPaywall = true
+                                                        return
+                                                    }
+                                                    
                                                     if let colorToHex = colorToAdd {
                                                         colorHex = colorToHex
                                                         submitColor()
                                                         return
                                                     }
+                                                    
                                                     showingAddColorAlert = true
                                                 } label: {
                                                     RoundedRectangle(cornerRadius: 12)
@@ -108,7 +119,11 @@ struct PaletteListView: View {
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Button {
-                            showingAddPaletteAlert = true
+                            if palettes.count >= 2 {
+                                checkForProEntitlement(for: $showingAddPaletteAlert)
+                            } else {
+                                showingAddPaletteAlert = true
+                            }
                         } label: {
                             Text("New Palette")
                         }
@@ -121,6 +136,11 @@ struct PaletteListView: View {
                     Text("This will create a new Palette with your custom name.")
                 }
                 .navigationTitle("Color Palettes")
+                .sheet(isPresented: $showPaywall) {
+                    #if !os(watchOS)
+                    PaywallView()
+                    #endif
+                }
             }
         }
     }
@@ -187,12 +207,20 @@ struct PaletteListView: View {
         }
     }
     
-    
+    private func checkForProEntitlement(for feature: Binding<Bool>) {
+        if entitlementManager.hasPro {
+            feature.wrappedValue = true
+        } else {
+            showPaywall = true
+        }
+    }
 }
 
 #Preview {
     let cameraFeed = CameraFeed()
+    let entitlementManager = EntitlementManager()
     
     PaletteListView(colorToAdd: "FFFFFF")
         .environmentObject(cameraFeed)
+        .environmentObject(entitlementManager)
 }
