@@ -10,6 +10,7 @@ import SwiftUI
 struct ColorCardView: View {
     @EnvironmentObject private var cameraFeed: CameraFeed
     @State private var isAddingColor = false
+    let isDisabled: Bool
     
     var body: some View {
         HStack {
@@ -48,6 +49,11 @@ struct ColorCardView: View {
                 PaletteListView(colorToAdd: cameraFeed.dominantColor?.toHex())
             }
         }
+        .disabled(isDisabled)
+    }
+    
+    init(isDisabled: Bool = false) {
+        self.isDisabled = isDisabled
     }
     
     private func createColorCircle() -> some View {

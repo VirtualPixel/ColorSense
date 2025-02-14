@@ -13,7 +13,6 @@ struct ColorSenseApp: App {
     @StateObject private var entitlementManager: EntitlementManager
     @StateObject var subscriptionsManager: SubscriptionsManager
     @State private var colorToDisplay: ColorStructure?
-    @State private var displayPaywall: Bool = false
     
     var body: some Scene {
         WindowGroup {

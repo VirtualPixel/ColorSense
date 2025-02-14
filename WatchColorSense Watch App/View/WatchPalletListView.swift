@@ -11,6 +11,7 @@ import SwiftData
 struct WatchPaletteListView: View {
     @Query var palettes: [Palette]
     @Environment(\.modelContext) private var context
+    @EnvironmentObject private var entitlementManager: EntitlementManager
     @State private var paletteName = ""
     @State private var colorHex = ""
     @State private var selectedPalette: Palette?
@@ -205,4 +206,5 @@ struct WatchPaletteListView: View {
 
 #Preview {
     WatchPaletteListView()
+        .environmentObject(EntitlementManager())
 }

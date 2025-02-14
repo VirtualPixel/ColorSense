@@ -69,9 +69,7 @@ struct PaletteDetailView: View {
         }
         .navigationTitle(palette.name ?? "Palette View")
         .sheet(isPresented: $showingPaywall) {
-            #if !os(watchOS)
             PaywallView()
-            #endif
         }
     }
     

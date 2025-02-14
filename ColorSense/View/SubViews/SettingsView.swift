@@ -51,9 +51,7 @@ struct SettingsView: View {
             .buttonStyle(BorderedButtonStyle())
         }
         .sheet(isPresented: $isShowingPaywall) {
-            #if !os(watchOS)
             PaywallView()
-            #endif
         }
     }
 }

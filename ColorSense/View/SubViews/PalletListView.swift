@@ -137,9 +137,7 @@ struct PaletteListView: View {
                 }
                 .navigationTitle("Color Palettes")
                 .sheet(isPresented: $showPaywall) {
-                    #if !os(watchOS)
                     PaywallView()
-                    #endif
                 }
             }
         }

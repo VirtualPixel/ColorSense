@@ -16,6 +16,7 @@ struct ContentView: View {
     @EnvironmentObject private var cameraFeed: CameraFeed
         
     @ObservedObject private var viewModel = ViewModel()
+    @State private var isShowingPaywall: Bool = false
         
     var body: some View {
         NavigationStack {
@@ -31,6 +32,13 @@ struct ContentView: View {
             .onChange(of: scenePhase) {
                 handleScenePhaseChange()
             }
+        }
+        .sheet(isPresented: $isShowingPaywall) {
+            PaywallView()
+        }
+        .task {
+            self.isShowingPaywall = entitlementManager.shouldShowPaymentSheet
+            entitlementManager.isFirstLaunch = false
         }
     }
 }
