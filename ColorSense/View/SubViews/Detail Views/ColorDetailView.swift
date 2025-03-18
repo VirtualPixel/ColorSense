@@ -11,6 +11,13 @@ struct ColorDetailView: View {
     @EnvironmentObject private var cameraFeed: CameraFeed
     @ObservedObject private var viewModel: ViewModel
     
+    @AppStorage("showRgb") var showRgb = true
+    @AppStorage("showHex") var showHex = true
+    @AppStorage("showHsl") var showHsl = true
+    @AppStorage("showCmyk") var showCmyk = true
+    @AppStorage("showSwiftUI") var showSwiftUI = true
+    @AppStorage("showUIKit") var showUIKit = true
+    
     var body: some View {
         GeometryReader { geo in
             NavigationStack {
@@ -66,13 +73,13 @@ struct ColorDetailView: View {
     private func colorDetailsGroupBox() -> some View {
         GroupBox(label: Text("Color Details").font(.title2)) {
             VStack(alignment: .leading) {
-                detailText(title: "RGB", value: "R: \(viewModel.rgb.red) G: \(viewModel.rgb.green) B: \(viewModel.rgb.blue)")
-                detailText(title: "Hex", value: "\(viewModel.hex)")
-                detailText(title: "HSL", value: "Hue: \(viewModel.hsl.hue) Saturation: \(viewModel.hsl.saturation) Lightness: \(viewModel.hsl.lightness)")
-                detailText(title: "CMYK", value: "Cyan: \(viewModel.cmyk.cyan) Magenta: \(viewModel.cmyk.magenta) Yellow: \(viewModel.cmyk.yellow) Key: \(viewModel.cmyk.key)")
+                if (showRgb) { detailText(title: "RGB", value: "R: \(viewModel.rgb.red) G: \(viewModel.rgb.green) B: \(viewModel.rgb.blue)") }
+                if (showHex) { detailText(title: "Hex", value: "\(viewModel.hex)") }
+                if (showHsl) { detailText(title: "HSL", value: "Hue: \(viewModel.hsl.hue) Saturation: \(viewModel.hsl.saturation) Lightness: \(viewModel.hsl.lightness)") }
+                if (showCmyk) { detailText(title: "CMYK", value: "Cyan: \(viewModel.cmyk.cyan) Magenta: \(viewModel.cmyk.magenta) Yellow: \(viewModel.cmyk.yellow) Key: \(viewModel.cmyk.key)") }
                 Divider()
-                detailText(title: "SwiftUI", value: viewModel.swiftUI)
-                detailText(title: "UIKit", value: viewModel.uiKit)
+                if (showSwiftUI) { detailText(title: "SwiftUI", value: viewModel.swiftUI) }
+                if (showUIKit) { detailText(title: "UIKit", value: viewModel.uiKit) }
             }
         }
         .padding(.horizontal, 30)
