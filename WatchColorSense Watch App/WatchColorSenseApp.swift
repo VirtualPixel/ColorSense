@@ -10,7 +10,8 @@ import SwiftUI
 @main
 struct WatchColorSense_Watch_AppApp: App {
     @State private var colorToDisplay: ColorStructure?
-    
+    @StateObject private var entitlementManager = EntitlementManager()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -24,6 +25,7 @@ struct WatchColorSense_Watch_AppApp: App {
                 .sheet(item: $colorToDisplay) { colorStructure in
                     WatchColorDetailView(color: colorStructure.color)
                 }
+                .environmentObject(entitlementManager)
         }
         .modelContainer(
             for: [

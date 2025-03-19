@@ -10,14 +10,10 @@ import SwiftData
 
 struct PaletteListView: View {
     @Query var palettes: [Palette]
-    
+    @Environment(\.modelContext) private var context
     @ObservedObject private var viewModel = ViewModel()
-
     @EnvironmentObject private var cameraFeed: CameraFeed
     @EnvironmentObject private var entitlementManager: EntitlementManager
-    
-    @Environment(\.modelContext) private var context
-    
     @State private var paletteName = ""
     @State private var showingAddPaletteAlert = false
     @State private var showingAddColorAlert = false

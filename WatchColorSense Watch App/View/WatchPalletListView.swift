@@ -16,7 +16,8 @@ struct WatchPaletteListView: View {
     @State private var colorHex = ""
     @State private var selectedPalette: Palette?
     @State private var showingInvalidHexAlert = false
-    
+    @State private var showingPaywallAlert = false
+
     var colorToAdd: String?
     
     var body: some View {
@@ -69,6 +70,13 @@ struct WatchPaletteListView: View {
                                                 
                                                 Divider()
                                                 Button {
+                                                    let colorCount = selectedPalette?.colors?.count ?? 0
+
+                                                    if colorCount >= 5 && !entitlementManager.hasPro {
+                                                        showingPaywallAlert = true
+                                                        return
+                                                    }
+
                                                     selectedPalette = palette
                                                     showTextInputAlert()
                                                 } label: {
@@ -93,7 +101,11 @@ struct WatchPaletteListView: View {
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Button {
-                            showNewPaletteTextInputAlert()
+                            if palettes.count >= 2 && !entitlementManager.hasPro {
+                                showingPaywallAlert = true
+                            } else {
+                                showNewPaletteTextInputAlert()
+                            }
                         } label: {
                             Text("New Palette")
                         }
@@ -105,6 +117,13 @@ struct WatchPaletteListView: View {
                     }
                 } message: {
                     Text("The color hex value you entered is not valid. It should be a 3- or 6-digit hexadecimal number, optionally starting with a '#'.")
+                }
+                .alert("This is a pro feature", isPresented: $showingPaywallAlert) {
+                    Button("Okay") {
+                        showingPaywallAlert = false
+                    }
+                } message: {
+                    Text("Upgrade to the Pro version to access this feature from any iPhone, iPad, or macOS device.")
                 }
                 .navigationTitle("Color Palettes")
             }
