@@ -18,7 +18,7 @@ struct PaywallView: View {
     
     enum Plan {
         case monthly, yearly
-        
+
         var title: String {
             switch self {
             case .monthly: return "Monthly"

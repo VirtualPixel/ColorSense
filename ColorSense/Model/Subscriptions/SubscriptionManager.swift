@@ -147,11 +147,14 @@ extension SubscriptionsManager {
             }
             
             if restoredCount > 0 {
+                print("Restore successful")
                 showThankYouAlert = true
             } else {
+                print("Restore failed")
                 purchaseError = .restoreFailed
             }
         } catch {
+            print("Restore error: \(error)")
             purchaseError = .restoreFailed
         }
     }

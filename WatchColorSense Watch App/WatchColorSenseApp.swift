@@ -10,7 +10,8 @@ import SwiftUI
 @main
 struct WatchColorSense_Watch_AppApp: App {
     @State private var colorToDisplay: ColorStructure?
-    @StateObject private var entitlementManager = EntitlementManager()
+    @StateObject private var entitlementManager: EntitlementManager
+    @StateObject var subscriptionsManager: SubscriptionsManager
 
     var body: some Scene {
         WindowGroup {
@@ -26,6 +27,9 @@ struct WatchColorSense_Watch_AppApp: App {
                     WatchColorDetailView(color: colorStructure.color)
                 }
                 .environmentObject(entitlementManager)
+                .task {
+                    await subscriptionsManager.restorePurchases()
+                }
         }
         .modelContainer(
             for: [
@@ -36,6 +40,10 @@ struct WatchColorSense_Watch_AppApp: App {
     }
     
     init() {
+        let entitlementManager = EntitlementManager()
+        let subscriptionsManager = SubscriptionsManager(entitlementManager: entitlementManager)
 
+        self._entitlementManager = StateObject(wrappedValue: entitlementManager)
+        self._subscriptionsManager = StateObject(wrappedValue: subscriptionsManager)
     }
 }

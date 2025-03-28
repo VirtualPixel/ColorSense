@@ -39,7 +39,7 @@ struct WatchColorDetailView: View {
                             detailText(title: "CMYK", value: "Cyan: \(viewModel.cmyk.cyan) Magenta: \(viewModel.cmyk.magenta) Yellow: \(viewModel.cmyk.yellow) Key: \(viewModel.cmyk.key)")
                         }
                     }
-                    
+                    /*
                     Section(header: Text("Pantone").font(.title2)) {
                         ScrollView(.horizontal) {
                             HStack {
@@ -96,6 +96,7 @@ struct WatchColorDetailView: View {
                         }
                     }
                     .isProFeature()
+                     */
                 }
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
