@@ -24,21 +24,34 @@ struct PaletteDetailView: View {
     }
     
     var body: some View {
-        List {
-            ForEach(sortedColors, id: \.id) { color in
-                HStack {
-                    RoundedRectangle(cornerRadius: 12)
-                        .foregroundStyle(color.color)
-                        .frame(width: 50, height: 50)
-                    NavigationLink {
-                        ColorDetailView(color: color.color, showAddToPalette: false)
-                    } label: {
-                        Text(UIColor(color.color).exactName)
-                            .font(.title3)
+        Group {
+            if sortedColors.isEmpty {
+                VStack {
+                    Image("empty_palette")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250)
+                        .opacity(0.7)
+                    Text("It seems pretty empty here! Try adding a color or two.")
+                }
+            } else {
+                List {
+                    ForEach(sortedColors, id: \.id) { color in
+                        HStack {
+                            RoundedRectangle(cornerRadius: 12)
+                                .foregroundStyle(color.color)
+                                .frame(width: 50, height: 50)
+                            NavigationLink {
+                                ColorDetailView(color: color.color, showAddToPalette: false)
+                            } label: {
+                                Text(UIColor(color.color).exactName)
+                                    .font(.title3)
+                            }
+                        }
                     }
+                    .onDelete(perform: deleteColor)
                 }
             }
-            .onDelete(perform: deleteColor)
         }
         .alert("Enter new color Hex value", isPresented: $showingAddHexColorAlert) {
             TextField("Enter new color Hex value", text: $colorHex)

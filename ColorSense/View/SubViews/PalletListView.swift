@@ -20,7 +20,8 @@ struct PaletteListView: View {
     @State private var selectedPalette: Palette?
     @State private var colorHex = ""
     @State private var showPaywall = false
-    
+    let maxColorsToShow = max(0, Int(UIScreen.main.bounds.width - 100) / 80)
+
     var sortedPalettes: [Palette] {
         palettes.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() })
     }
@@ -28,113 +29,112 @@ struct PaletteListView: View {
     var colorToAdd: String?
     
     var body: some View {
-        GeometryReader { geo in
-            let maxColorsToShow = max(0, Int((geo.size.width - 100) / 80))
-            NavigationStack {
-                Group {
-                    if palettes.isEmpty {
+        NavigationStack {
+            Group {
+                if palettes.isEmpty {
+                    VStack {
                         Image("empty_palette")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 250)
                             .opacity(0.7)
-                            .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).midY)
-                    } else {
-                        List {
-                            ForEach(sortedPalettes, id: \.id) { palette in
-                                NavigationLink {
-                                    PaletteDetailView(palette: palette)
-                                } label: {
-                                    GroupBox {
-                                        VStack(alignment: .leading) {
-                                            Text(palette.name ?? "Palette View")
-                                                .font(.title3)
-                                                .bold()
-                                            
-                                            HStack {
-                                                // limit the colors shown
-                                                ForEach(palette.colors?.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
-                                                    RoundedRectangle(cornerRadius: 12)
-                                                        .foregroundStyle(Color.init(hex: color.hex ?? "000000"))
-                                                        .frame(width: 50, height: 50)
+                        Text("It seems pretty empty here! Try adding a palette or two.")
+                    }
+                } else {
+                    List {
+                        ForEach(sortedPalettes, id: \.id) { palette in
+                            NavigationLink {
+                                PaletteDetailView(palette: palette)
+                            } label: {
+                                GroupBox {
+                                    VStack(alignment: .leading) {
+                                        Text(palette.name ?? "Palette View")
+                                            .font(.title3)
+                                            .bold()
+
+                                        HStack {
+                                            // limit the colors shown
+                                            ForEach(palette.colors?.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
+                                                RoundedRectangle(cornerRadius: 12)
+                                                    .foregroundStyle(Color.init(hex: color.hex ?? "000000"))
+                                                    .frame(width: 50, height: 50)
+                                            }
+
+                                            ForEach(Array(repeating: 0, count: max(maxColorsToShow - (palette.colors?.count ?? 0), 0)), id: \.self) { _ in
+                                                RoundedRectangle(cornerRadius: 12)
+                                                    .opacity(0)
+                                                    .frame(width: 50, height: 50)
+                                            }
+
+                                            if (palette.colors?.count ?? 0) > maxColorsToShow {
+                                                RoundedRectangle(cornerRadius: 12)
+                                                    .foregroundStyle(.gray.opacity(0.2))
+                                                    .frame(width: 50, height: 50)
+                                                    .overlay(
+                                                        Text("+\((palette.colors?.count ?? 0) - maxColorsToShow)")
+                                                    )
+                                            }
+
+                                            Spacer()
+
+                                            Divider()
+                                            Button {
+                                                selectedPalette = palette
+                                                let colorCount = selectedPalette?.colors?.count ?? 0
+
+                                                if colorCount >= 5 && !entitlementManager.hasPro {
+                                                    showPaywall = true
+                                                    return
                                                 }
-                                                
-                                                ForEach(Array(repeating: 0, count: max(maxColorsToShow - (palette.colors?.count ?? 0), 0)), id: \.self) { _ in
-                                                    RoundedRectangle(cornerRadius: 12)
-                                                        .opacity(0)
-                                                        .frame(width: 50, height: 50)
+
+                                                if let colorToHex = colorToAdd {
+                                                    colorHex = colorToHex
+                                                    submitColor()
+                                                    return
                                                 }
-                                                
-                                                if (palette.colors?.count ?? 0) > maxColorsToShow {
-                                                    RoundedRectangle(cornerRadius: 12)
-                                                        .foregroundStyle(.gray.opacity(0.2))
-                                                        .frame(width: 50, height: 50)
-                                                        .overlay(
-                                                            Text("+\((palette.colors?.count ?? 0) - maxColorsToShow)")
-                                                        )
-                                                }
-                                                
-                                                Spacer()
-                                                
-                                                Divider()
-                                                Button {
-                                                    selectedPalette = palette
-                                                    let colorCount = selectedPalette?.colors?.count ?? 0
-                                                    
-                                                    if colorCount >= 5 && !entitlementManager.hasPro {
-                                                        showPaywall = true
-                                                        return
-                                                    }
-                                                    
-                                                    if let colorToHex = colorToAdd {
-                                                        colorHex = colorToHex
-                                                        submitColor()
-                                                        return
-                                                    }
-                                                    
-                                                    showingAddColorAlert = true
-                                                } label: {
-                                                    RoundedRectangle(cornerRadius: 12)
-                                                        .foregroundStyle(.gray.opacity(0.2))
-                                                        .frame(width: 50, height: 50)
-                                                        .overlay(
-                                                            Image(systemName: "plus")
-                                                        )
-                                                }
+
+                                                showingAddColorAlert = true
+                                            } label: {
+                                                RoundedRectangle(cornerRadius: 12)
+                                                    .foregroundStyle(.gray.opacity(0.2))
+                                                    .frame(width: 50, height: 50)
+                                                    .overlay(
+                                                        Image(systemName: "plus")
+                                                    )
                                             }
                                         }
                                     }
                                 }
                             }
-                            .onDelete(perform: deletePalette)
-                            .listRowSeparator(.hidden)
                         }
-                        .listStyle(.plain)
+                        .onDelete(perform: deletePalette)
+                        .listRowSeparator(.hidden)
+                    }
+                    .listStyle(.plain)
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        if palettes.count >= 2 {
+                            checkForProEntitlement(for: $showingAddPaletteAlert)
+                        } else {
+                            showingAddPaletteAlert = true
+                        }
+                    } label: {
+                        Text("New Palette")
                     }
                 }
-                .toolbar {
-                    ToolbarItem(placement: .primaryAction) {
-                        Button {
-                            if palettes.count >= 2 {
-                                checkForProEntitlement(for: $showingAddPaletteAlert)
-                            } else {
-                                showingAddPaletteAlert = true
-                            }
-                        } label: {
-                            Text("New Palette")
-                        }
-                    }
-                }
-                .alert("Enter new Palette name", isPresented: $showingAddPaletteAlert) {
-                    TextField("Enter new Palette name", text: $paletteName)
-                    Button("Okay", action: submitPalette)
-                } message: {
-                    Text("This will create a new Palette with your custom name.")
-                }
-                .navigationTitle("Color Palettes")
-                .sheet(isPresented: $showPaywall) {
-                    PaywallView()
-                }
+            }
+            .alert("Enter new Palette name", isPresented: $showingAddPaletteAlert) {
+                TextField("Enter new Palette name", text: $paletteName)
+                Button("Okay", action: submitPalette)
+            } message: {
+                Text("This will create a new Palette with your custom name.")
+            }
+            .navigationTitle("Color Palettes")
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
             }
         }
     }

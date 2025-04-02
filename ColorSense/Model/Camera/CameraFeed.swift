@@ -52,7 +52,7 @@ class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuff
         }
         
         let currentTime = Date().timeIntervalSince1970
-        if currentTime - lastProcessingTime < 0.35 {
+        if currentTime - lastProcessingTime < 0.5 {
             return
         }
         
