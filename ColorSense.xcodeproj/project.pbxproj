@@ -409,22 +409,14 @@
 			path = "iPhone Views";
 			sourceTree = "<group>";
 		};
-		576A4EC42A772C6C00452FA5 /* Detail Views */ = {
-			isa = PBXGroup;
-			children = (
-				576338C82A09A5A00034AF9D /* ColorDetailView.swift */,
-				577357562A73150600903F85 /* PalletDetailView.swift */,
-			);
-			path = "Detail Views";
-			sourceTree = "<group>";
-		};
 		576A4EC52A772CCB00452FA5 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				576A4EC42A772C6C00452FA5 /* Detail Views */,
 				576338D02A09BD340034AF9D /* PalletListView.swift */,
 				57E887162B465B1C0092B5ED /* SettingsView.swift */,
 				57FF640A2D446B78008BA8C3 /* PaywallView.swift */,
+				576338C82A09A5A00034AF9D /* ColorDetailView.swift */,
+				577357562A73150600903F85 /* PalletDetailView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";

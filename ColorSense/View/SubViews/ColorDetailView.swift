@@ -19,26 +19,24 @@ struct ColorDetailView: View {
     @AppStorage("showUIKit") var showUIKit = true
     
     var body: some View {
-        GeometryReader { geo in
-            NavigationStack {
-                ScrollView {
-                    VStack {
-                        colorCircleView(geometry: geo)
-                        colorNameView()
-                        colorFamilyView()
-                        colorDetailsGroupBox()
-                        complimentaryColorsGroupBox()
-                        accessibilityColorList()
-                        pantoneGroupBox()
-                    }
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    colorCircleView()
+                    colorNameView()
+                    colorFamilyView()
+                    colorDetailsGroupBox()
+                    complimentaryColorsGroupBox()
+                    accessibilityColorList()
+                    pantoneGroupBox()
                 }
-                .toolbar { toolbarContent() }
-                .onAppear {
-                    cameraFeed.stop()
-                }
-                .onDisappear {
-                    cameraFeed.start()
-                }
+            }
+            .toolbar { toolbarContent() }
+            .onAppear {
+                cameraFeed.stop()
+            }
+            .onDisappear {
+                cameraFeed.start()
             }
         }
     }
@@ -49,10 +47,10 @@ struct ColorDetailView: View {
     
     // MARK: - UI Components
     
-    private func colorCircleView(geometry: GeometryProxy) -> some View {
+    private func colorCircleView() -> some View {
         Circle()
             .foregroundColor(viewModel.color)
-            .frame(width: geometry.size.width / 2, height: geometry.size.width / 2)
+            .frame(width: UIScreen.main.bounds.width / 2.5, height: UIScreen.main.bounds.width / 2.5)
     }
     
     private func colorNameView() -> some View {

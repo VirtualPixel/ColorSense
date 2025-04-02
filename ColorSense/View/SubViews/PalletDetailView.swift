@@ -57,7 +57,7 @@ struct PaletteDetailView: View {
             ToolbarItem(placement: .primaryAction) {
                 Button {
                     let colorCount = palette.colors?.count ?? 0
-                    if colorCount >= 5 {
+                    if colorCount >= 5 && !entitlementManager.hasPro {
                         showingPaywall = true
                         return
                     }
