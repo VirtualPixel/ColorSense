@@ -43,8 +43,9 @@ struct PaywallView: View {
                     headerSection
                     planToggleSection
                     featuresSection
-                    purchaseButton
+                    termsAndPrivacyLink
                     restoreButton
+                    purchaseButton
                 }
                 .padding()
             }
@@ -188,6 +189,15 @@ struct PaywallView: View {
         guard let product = subscriptionsManager.products.first(where: { $0.id == productId }) else { return }
         Task {
             await subscriptionsManager.buyProduct(product)
+        }
+    }
+
+    private var termsAndPrivacyLink: some View {
+        HStack(spacing: 15) {
+            Link("Privacy Policy",
+                 destination: URL(string: "https://justinwells.dev/colorsense/privacy-policy.html")!)
+            Link("Terms of Use",
+                 destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
         }
     }
 }
