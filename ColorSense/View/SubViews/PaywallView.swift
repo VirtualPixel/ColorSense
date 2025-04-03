@@ -37,7 +37,7 @@ struct PaywallView: View {
     ]
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
                     headerSection
@@ -125,9 +125,15 @@ struct PaywallView: View {
     
     private func priceView(for product: Product) -> some View {
         VStack(spacing: 4) {
-            Text(product.displayPrice)
-                .font(.system(size: 48, weight: .bold))
-                .foregroundColor(.primary)
+            HStack {
+                Text("\(product.displayPrice)")
+                    .font(.system(size: 48, weight: .bold))
+                    .foregroundColor(.primary)
+                Text("/")
+                    .foregroundStyle(.secondary)
+            }
+            Text(selectedPlan == .yearly ? "year" : "month")
+                .foregroundStyle(.secondary)
             if selectedPlan == .yearly {
                 Text("Save 33%")
                     .font(.subheadline)
