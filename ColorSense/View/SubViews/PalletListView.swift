@@ -30,87 +30,93 @@ struct PaletteListView: View {
     
     var body: some View {
         NavigationStack {
-            Group {
-                if palettes.isEmpty {
-                    VStack {
-                        Image("empty_palette")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 250)
-                            .opacity(0.7)
-                        Text("It seems pretty empty here! Try adding a palette or two.")
-                    }
-                } else {
-                    List {
-                        ForEach(sortedPalettes, id: \.id) { palette in
-                            NavigationLink {
-                                PaletteDetailView(palette: palette)
-                            } label: {
-                                GroupBox {
-                                    VStack(alignment: .leading) {
-                                        Text(palette.name ?? "Palette View")
-                                            .font(.title3)
-                                            .bold()
+            ZStack {
+                Group {
+                    if palettes.isEmpty {
+                        VStack {
+                            Image("empty_palette")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 250)
+                                .opacity(0.7)
+                            Text("It seems pretty empty here! Try adding a palette or two.")
+                        }
+                    } else {
+                        List {
+                            ForEach(sortedPalettes, id: \.id) { palette in
+                                NavigationLink {
+                                    PaletteDetailView(palette: palette)
+                                } label: {
+                                    GroupBox {
+                                        VStack(alignment: .leading) {
+                                            Text(palette.name ?? "Palette View")
+                                                .font(.title3)
+                                                .bold()
 
-                                        HStack {
-                                            // limit the colors shown
-                                            ForEach(palette.colors?.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .foregroundStyle(Color.init(hex: color.hex ?? "000000"))
-                                                    .frame(width: 50, height: 50)
-                                            }
-
-                                            ForEach(Array(repeating: 0, count: max(maxColorsToShow - (palette.colors?.count ?? 0), 0)), id: \.self) { _ in
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .opacity(0)
-                                                    .frame(width: 50, height: 50)
-                                            }
-
-                                            if (palette.colors?.count ?? 0) > maxColorsToShow {
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .foregroundStyle(.gray.opacity(0.2))
-                                                    .frame(width: 50, height: 50)
-                                                    .overlay(
-                                                        Text("+\((palette.colors?.count ?? 0) - maxColorsToShow)")
-                                                    )
-                                            }
-
-                                            Spacer()
-
-                                            Divider()
-                                            Button {
-                                                selectedPalette = palette
-                                                let colorCount = selectedPalette?.colors?.count ?? 0
-
-                                                if colorCount >= 5 && !entitlementManager.hasPro {
-                                                    showPaywall = true
-                                                    return
+                                            HStack {
+                                                // limit the colors shown
+                                                ForEach(palette.colors?.sorted(by: { $0.creationDate ?? Date() > $1.creationDate ?? Date() }).prefix(maxColorsToShow) ?? [], id: \.id) { color in
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .foregroundStyle(Color.init(hex: color.hex ?? "000000"))
+                                                        .frame(width: 50, height: 50)
                                                 }
 
-                                                if let colorToHex = colorToAdd {
-                                                    colorHex = colorToHex
-                                                    submitColor()
-                                                    return
+                                                ForEach(Array(repeating: 0, count: max(maxColorsToShow - (palette.colors?.count ?? 0), 0)), id: \.self) { _ in
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .opacity(0)
+                                                        .frame(width: 50, height: 50)
                                                 }
 
-                                                showingAddColorAlert = true
-                                            } label: {
-                                                RoundedRectangle(cornerRadius: 12)
-                                                    .foregroundStyle(.gray.opacity(0.2))
-                                                    .frame(width: 50, height: 50)
-                                                    .overlay(
-                                                        Image(systemName: "plus")
-                                                    )
+                                                if (palette.colors?.count ?? 0) > maxColorsToShow {
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .foregroundStyle(.gray.opacity(0.2))
+                                                        .frame(width: 50, height: 50)
+                                                        .overlay(
+                                                            Text("+\((palette.colors?.count ?? 0) - maxColorsToShow)")
+                                                        )
+                                                }
+
+                                                Spacer()
+
+                                                Divider()
+                                                Button {
+                                                    selectedPalette = palette
+                                                    let colorCount = selectedPalette?.colors?.count ?? 0
+
+                                                    if colorCount >= 5 && !entitlementManager.hasPro {
+                                                        showPaywall = true
+                                                        return
+                                                    }
+
+                                                    if let colorToHex = colorToAdd {
+                                                        colorHex = colorToHex
+                                                        submitColor()
+                                                        return
+                                                    }
+
+                                                    showingAddColorAlert = true
+                                                } label: {
+                                                    RoundedRectangle(cornerRadius: 12)
+                                                        .foregroundStyle(.gray.opacity(0.2))
+                                                        .frame(width: 50, height: 50)
+                                                        .overlay(
+                                                            Image(systemName: "plus")
+                                                        )
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
+                            .onDelete(perform: deletePalette)
+                            .listRowSeparator(.hidden)
                         }
-                        .onDelete(perform: deletePalette)
-                        .listRowSeparator(.hidden)
+                        .listStyle(.plain)
                     }
-                    .listStyle(.plain)
+                }
+                VStack {
+                    Spacer()
+                    ColorCardView(isDisabled: true)
                 }
             }
             .toolbar {
@@ -135,6 +141,12 @@ struct PaletteListView: View {
             .navigationTitle("Color Palettes")
             .sheet(isPresented: $showPaywall) {
                 PaywallView()
+            }
+            .onAppear {
+                cameraFeed.stop()
+            }
+            .onDisappear {
+                cameraFeed.start()
             }
         }
     }

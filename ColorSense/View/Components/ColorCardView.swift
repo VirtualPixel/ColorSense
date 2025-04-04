@@ -28,20 +28,15 @@ struct ColorCardView: View {
                                     .padding()
                                 
                                 Spacer()
-                                
-                                Button(action: { isAddingColor = true }) {
-                                    Image(systemName: "bookmark")
-                                        .padding()
-                                        .foregroundColor(.primary)
-                                        .background(.ultraThinMaterial.opacity(0.3))
-                                        .cornerRadius(6)
-                                }
+
+                                rightThird()
+
                                 Spacer()
                             }
                             .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).midY)
                         }
                     )
-                    .background(.thinMaterial)
+                    .background(isDisabled ? .ultraThickMaterial : .thinMaterial)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
             }
             .buttonStyle(.plain)
@@ -64,17 +59,38 @@ struct ColorCardView: View {
             Divider()
         }
     }
-    
+
     private func createColorText(geometry: GeometryProxy) -> some View {
-            VStack {
-                Text("\(cameraFeed.exactName ?? "The Geothermal blue")")
-                    .font(.system(size: geometry.size.width * 0.04))
-                    .minimumScaleFactor(0.5)
-                Text("\(cameraFeed.simpleName ?? "Blue") Family")
-                    .font(.system(size: geometry.size.width * 0.04).bold())  // Adjust as per your needs
-                    .minimumScaleFactor(0.5)  // Allows the text to scale down to 50% of its original size
+        VStack {
+            Text("\(cameraFeed.exactName ?? "The Geothermal blue")")
+                .font(.system(size: geometry.size.width * 0.04))
+                .minimumScaleFactor(0.5)
+                .multilineTextAlignment(.center)
+            Text("\(cameraFeed.simpleName ?? "Blue") Family")
+                .font(.system(size: geometry.size.width * 0.04).bold())
+                .minimumScaleFactor(0.5)  // Allows the text to scale down to 50% of its original size
+        }
+    }
+
+    private func rightThird() -> some View {
+        Group {
+            if !isDisabled {
+                Button(action: { isAddingColor = true }) {
+                    Image(systemName: "bookmark")
+                        .padding()
+                        .foregroundColor(.primary)
+                        .background(.ultraThinMaterial.opacity(0.3))
+                        .cornerRadius(6)
+                }
+            } else {
+                Text("Selected\nColor")
+                    .minimumScaleFactor(0.2)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .bold()
             }
         }
+    }
 }
 
 struct ColorCardView_Previews: PreviewProvider {
