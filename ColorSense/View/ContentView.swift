@@ -44,9 +44,9 @@ struct ContentView: View {
 private extension ContentView {
     @ViewBuilder
     var cameraView: some View {
-        VStack {
+        VStack(spacing: 0) {
             flashAndSettingsButtons
-
+            
             ZStack {
                 CameraPreview(session: cameraFeed.captureSession)
                 FocusCircleView()
