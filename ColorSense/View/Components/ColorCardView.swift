@@ -55,7 +55,10 @@ struct ColorCardView: View {
         HStack {
             Spacer()
             Circle()
-                .foregroundColor(cameraFeed.dominantColor ?? .black)
+                .foregroundStyle(cameraFeed.dominantColor ?? .black)
+                .background(
+                    Circle().foregroundStyle(Color.black) // Fixes opacity issue
+                )
             Divider()
         }
     }
