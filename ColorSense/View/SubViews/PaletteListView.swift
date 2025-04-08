@@ -40,6 +40,8 @@ struct PaletteListView: View {
                                 .frame(width: 250)
                                 .opacity(0.7)
                             Text("It seems pretty empty here! Try adding a palette or two.")
+                                .frame(width: 300)
+                                .multilineTextAlignment(.center)
                         }
                     } else {
                         List {

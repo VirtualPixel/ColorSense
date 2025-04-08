@@ -33,6 +33,8 @@ struct PaletteDetailView: View {
                         .frame(width: 250)
                         .opacity(0.7)
                     Text("It seems pretty empty here! Try adding a color or two.")
+                        .frame(width: 300)
+                        .multilineTextAlignment(.center)
                 }
             } else {
                 List {

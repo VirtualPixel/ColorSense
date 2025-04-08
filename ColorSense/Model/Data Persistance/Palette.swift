@@ -30,4 +30,14 @@ final class Palette: Identifiable {
         self.name = name
         self.colors = colors
     }
+
+    static let defaultPalette = Palette(
+        name: "House",
+        colors: [
+            ColorStructure(hex: "3D8D7A"),
+            ColorStructure(hex: "B3D8A8"),
+            ColorStructure(hex: "FBFFE4"),
+            ColorStructure(hex: "A3D1C6")
+        ]
+    )
 }
