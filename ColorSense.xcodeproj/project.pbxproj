@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5711D7E22DA451F600F539AB /* PaletteEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7E12DA451F600F539AB /* PaletteEditView.swift */; };
 		5711D7E42DA4522B00F539AB /* PaletteEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7E32DA4522B00F539AB /* PaletteEditViewModel.swift */; };
+		5711D7E62DA5A16000F539AB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7E52DA5A16000F539AB /* ColorPickerView.swift */; };
 		572053FC2A68900F0072DE06 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FB2A68900F0072DE06 /* Palette.swift */; };
 		572053FE2A6893700072DE06 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
 		572054012A68961F0072DE06 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
@@ -129,6 +130,7 @@
 /* Begin PBXFileReference section */
 		5711D7E12DA451F600F539AB /* PaletteEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteEditView.swift; sourceTree = "<group>"; };
 		5711D7E32DA4522B00F539AB /* PaletteEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteEditViewModel.swift; sourceTree = "<group>"; };
+		5711D7E52DA5A16000F539AB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		571272972A7DDB1B002F8720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		572053FB2A68900F0072DE06 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		572053FD2A6893700072DE06 /* ColorStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStructure.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			children = (
 				576338BD2A099B690034AF9D /* ColorCardView.swift */,
 				576338C12A099D240034AF9D /* FocusCircleView.swift */,
+				5711D7E52DA5A16000F539AB /* ColorPickerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 				577357572A73150600903F85 /* PaletteDetailView.swift in Sources */,
 				576338CD2A09A8980034AF9D /* Color.swift in Sources */,
 				576338D62A09C03A0034AF9D /* ColorData.swift in Sources */,
+				5711D7E62DA5A16000F539AB /* ColorPickerView.swift in Sources */,
 				572054062A68A56D0072DE06 /* Pantone.swift in Sources */,
 				576338B92A0997AA0034AF9D /* View.swift in Sources */,
 				57712DE42A7BD0D500B16DE9 /* ColorInit.swift in Sources */,

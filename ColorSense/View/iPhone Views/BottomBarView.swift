@@ -24,7 +24,7 @@ struct BottomBarView: View {
     }
 
     private func swatchPaletteButton() -> some View {
-        NavigationLink(destination: PaletteListView(colorToAdd: cameraFeed.dominantColor?.toHex())) {
+        NavigationLink(destination: PaletteListView()) {
             Image(systemName: "swatchpalette.fill")
                 .resizable()
                 .aspectRatio(contentMode: .fit)

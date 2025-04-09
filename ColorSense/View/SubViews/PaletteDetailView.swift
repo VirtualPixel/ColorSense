@@ -133,15 +133,6 @@ struct PaletteDetailView: View {
 
 #Preview {
     let entitlementManager = EntitlementManager()
-    PaletteDetailView(
-        palette: Palette(
-            name: "Test",
-            colors: [
-                ColorStructure(hex: "#ff0000"),
-                ColorStructure(hex: "#00ff00"),
-                ColorStructure(hex: "#0000ff")
-            ]
-        )
-    )
+    PaletteDetailView(palette: Palette.defaultPalette)
     .environmentObject(entitlementManager)
 }

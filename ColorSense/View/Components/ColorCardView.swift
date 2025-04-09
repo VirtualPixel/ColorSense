@@ -14,37 +14,12 @@ struct ColorCardView: View {
     
     var body: some View {
         HStack {
-            NavigationLink {
-                ColorDetailView(color: cameraFeed.dominantColor ?? .blue)
-            } label: {
-                RoundedRectangle(cornerRadius: 12)
-                    .frame(width: 300, height: 90)
-                    .overlay(
-                        GeometryReader { geo in
-                            HStack {
-                                createColorCircle()
-                                createColorText(geometry: geo)
-                                    .frame(width: 110, height: 100)
-                                    .padding()
-                                
-                                Spacer()
-
-                                rightThird()
-
-                                Spacer()
-                            }
-                            .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).midY)
-                        }
-                    )
-                    .background(isDisabled ? .ultraThickMaterial : .thinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-            }
+            displayColorCard()
             .buttonStyle(.plain)
             .sheet(isPresented: $isAddingColor) {
                 PaletteListView(colorToAdd: cameraFeed.dominantColor?.toHex())
             }
         }
-        .disabled(isDisabled)
     }
     
     init(isDisabled: Bool = false) {
@@ -56,9 +31,6 @@ struct ColorCardView: View {
             Spacer()
             Circle()
                 .foregroundStyle(cameraFeed.dominantColor ?? .black)
-                .background(
-                    Circle().foregroundStyle(Color.black) // Fixes opacity issue
-                )
             Divider()
         }
     }
@@ -91,6 +63,44 @@ struct ColorCardView: View {
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .bold()
+            }
+        }
+    }
+
+    private func colorCard() -> some View {
+        RoundedRectangle(cornerRadius: 12)
+            .frame(width: 300, height: 90)
+            .overlay(
+                GeometryReader { geo in
+                    HStack {
+                        createColorCircle()
+                        createColorText(geometry: geo)
+                            .frame(width: 110, height: 100)
+                            .padding()
+
+                        Spacer()
+
+                        rightThird()
+
+                        Spacer()
+                    }
+                    .position(x: geo.frame(in: .local).midX, y: geo.frame(in: .local).midY)
+                }
+            )
+            .background(isDisabled ? .ultraThickMaterial : .thinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+    }
+
+    private func displayColorCard() -> some View {
+        Group {
+            if isDisabled {
+                colorCard()
+            } else {
+                NavigationLink {
+                    ColorDetailView(color: cameraFeed.dominantColor ?? .blue)
+                } label: {
+                    colorCard()
+                }
             }
         }
     }
