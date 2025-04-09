@@ -239,41 +239,14 @@ struct ColorDetailView: View {
                         }
                     }
                     
-                    ShareLink(item: Image(uiImage: createImage(color: UIColor(viewModel.color))),
-                              subject: Text("Interesting color"),
-                              message: Text("\(UIColor(viewModel.color).exactName)\nCheck out this color in ColorSense:\nColorSense://color?colorHex=\(viewModel.hex.replacingOccurrences(of: "#", with: ""))"),
-                              preview: SharePreview("Shared from ColorSense",
-                                                    image: Image(uiImage: createImage(color: UIColor(viewModel.color))))) {
-                        HStack {
-                            Text("Share Color")
-                            Spacer()
-                            Image(systemName: "square.and.arrow.up")
-                        }
-                    }
+                    ShareColor(color: viewModel.color, labelStyle: .withText)
                 } label: {
                     Image(systemName: "ellipsis.circle")
                 }
             } else {
-                ShareLink(item: Image(uiImage: createImage(color: UIColor(viewModel.color))),
-                          subject: Text("Interesting color"),
-                          message: Text("\(UIColor(viewModel.color).exactName)\nCheck out this color in ColorSense:\nColorSense://color?colorHex=\(viewModel.hex.replacingOccurrences(of: "#", with: ""))"),
-                          preview: SharePreview("Shared from ColorSense",
-                                                image: Image(uiImage: createImage(color: UIColor(viewModel.color))))) {
-                    Image(systemName: "square.and.arrow.up")
-                }
+                ShareColor(color: viewModel.color)
             }
-            
         }
-    }
-    
-    private func createImage(color: UIColor, size: CGSize = CGSize(width: 256, height: 256)) -> UIImage {
-        let rect = CGRect(origin: CGPoint(), size: size)
-        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-        color.setFill()
-        UIRectFill(rect)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
-        UIGraphicsEndImageContext()
-        return image
     }
 }
 

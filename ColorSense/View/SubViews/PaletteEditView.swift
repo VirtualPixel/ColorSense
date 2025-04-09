@@ -34,11 +34,6 @@ struct PaletteEditView: View {
             Section(header: Text("Colors")) {
                 ForEach(viewModel.colors, id: \.id) { color in
                     HStack {
-                        if editMode == .active {
-                            Image(systemName: "line.3.horizontal")
-                                .foregroundStyle(.gray)
-                        }
-
                         RoundedRectangle(cornerRadius: 12)
                             .fill(Color(hex: color.wrappedHex))
                             .frame(width: 40, height: 40)
@@ -55,12 +50,6 @@ struct PaletteEditView: View {
                         }
                     }
                     .contextMenu {
-                        Button(role: .destructive) {
-                            // viewModel.removeColor(color: color)
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                        }
-
                         Button {
                             UIPasteboard.general.string = color.wrappedHex
                         } label: {
@@ -109,16 +98,6 @@ struct PaletteEditView: View {
         }
         .navigationTitle(viewModel.isNewPalette ? "Create Pelette" : "Edit Palette")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    viewModel.savePalette()
-                    dismiss()
-                } label: {
-                    Text("Save")
-                }
-                .disabled(viewModel.paletteName.isEmpty)
-            }
-
             ToolbarItem(placement: .topBarTrailing) {
                 EditButton()
             }

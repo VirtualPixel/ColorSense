@@ -9,6 +9,10 @@ import SwiftUI
 
 // Color names and difference calculation
 extension UIColor {
+    var color: Color {
+        Color(uiColor: self)
+    }
+
     var exactName: String {
         let colorDiff = UIColor.colorNames.map { (name, color) -> (String, CGFloat) in
             let colorDiff = color.difference(to: self)

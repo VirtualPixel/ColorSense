@@ -56,7 +56,11 @@ extension Color: @retroactive Identifiable {
         [0.05, 1, 1.05],
         [-0.86744736, 1.86727089, 0]
     ]
-    
+
+    var uiColor: UIColor {
+        UIColor(self)
+    }
+
     // MARK: - Public Methods
     func colorVisionSimulations() -> [ColorVision] {
         let components = toRGBComponents()
@@ -94,7 +98,29 @@ extension Color: @retroactive Identifiable {
             )
         }
     }
-    
+
+    func toImage(width: Int = 256, height: Int = 256) -> Image {
+        // Create a 1x1 image with the color
+        let size = CGSize(width: 1, height: 1)
+        UIGraphicsBeginImageContext(size)
+        if let context = UIGraphicsGetCurrentContext() {
+            context.setFillColor(self.uiColor.cgColor)
+            context.fill(CGRect(origin: .zero, size: size))
+        }
+        let image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+        UIGraphicsEndImageContext()
+        
+        // Create a UIImage of the desired size by drawing the 1x1 image
+        let finalSize = CGSize(width: width, height: height)
+        UIGraphicsBeginImageContextWithOptions(finalSize, false, 0)
+        image.draw(in: CGRect(origin: .zero, size: finalSize))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext() ?? image
+        UIGraphicsEndImageContext()
+        
+        // Return a SwiftUI Image without modifiers
+        return Image(uiImage: resizedImage)
+    }
+
     func toPantone() -> [Pantone] {
         let url = Bundle.main.url(forResource: "pantone-colors", withExtension: "json")!
         let data = try! Data(contentsOf: url)
