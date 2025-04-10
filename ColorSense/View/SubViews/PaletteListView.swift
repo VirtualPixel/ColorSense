@@ -65,9 +65,9 @@ struct PaletteListView: View {
             }
             .sheet(isPresented: $showingAddNewPalette) {
                 if let selectedColor = colorToAdd {
-                    PaletteEditView(selectedColor: Color(hex: selectedColor))
+                    PaletteEditView(selectedColor: Color(hex: selectedColor), editMode: .active)
                 } else {
-                    PaletteEditView()
+                    PaletteEditView(editMode: .active)
                 }
             }
             .onAppear {

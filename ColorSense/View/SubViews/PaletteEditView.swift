@@ -17,7 +17,8 @@ struct PaletteEditView: View {
     @State private var showingColorPicker: Bool = false
     @State private var showingHexInput: Bool = false
     @State private var showingInvalidHexAlert: Bool = false
-    @State private var editMode: EditMode = .inactive
+    @State private var isShowingDeleteAlert: Bool = false
+    @State private var editMode: EditMode
 
     var body: some View {
         NavigationStack {
@@ -67,18 +68,8 @@ struct PaletteEditView: View {
                         viewModel.savePalette(context: context)
                     })
 
-                    Menu {
-                        Button {
-                            showingHexInput = true
-                        } label: {
-                            Label("Add from hex", systemImage: "number")
-                        }
-
-                        Button {
-                            showingColorPicker = true
-                        } label: {
-                            Label("Color Picker", systemImage: "eyedropper")
-                        }
+                    Button {
+                        showingColorPicker = true
                     } label: {
                         HStack {
                             Image(systemName: "plus.circle.fill")
@@ -90,8 +81,7 @@ struct PaletteEditView: View {
                 if !viewModel.isNewPalette {
                     Section {
                         Button(role: .destructive) {
-                            viewModel.deletePalette(context: context)
-                            dismiss()
+                            isShowingDeleteAlert = true
                         } label: {
                             HStack {
                                 Spacer()
@@ -107,6 +97,7 @@ struct PaletteEditView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     EditButton()
+                        .disabled(viewModel.paletteName.isEmpty && editMode == .active)
                 }
 
                 ToolbarItem(placement: .topBarTrailing) {
@@ -120,24 +111,6 @@ struct PaletteEditView: View {
                     viewModel.savePalette(context: context)
                 })
             }
-            .alert("Add Color from Hex", isPresented: $showingHexInput) {
-                TextField("e.g. #FF5500", text: $hexColorInput)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-
-                Button("Cancel", role: .cancel) {
-                    hexColorInput = ""
-                }
-
-                Button("Add") {
-                    if isValidHexColor(hex: hexColorInput) {
-                        viewModel.addColor(hex: hexColorInput)
-                        hexColorInput = ""
-                    } else {
-                        showingInvalidHexAlert = true
-                    }
-                }
-            }
             .alert("Invalid Hex Color", isPresented: $showingInvalidHexAlert) {
                 Button("OK", role: .cancel) {
                     hexColorInput = ""
@@ -145,8 +118,16 @@ struct PaletteEditView: View {
             } message: {
                 Text("Please enter a valid hex color code (e.g. #FF5500 or FF5500)")
             }
+            .alert("Are you sure you want to delete \(viewModel.paletteName.isEmpty ? "this palette" : viewModel.paletteName)?", isPresented: $isShowingDeleteAlert) {
+                Button("Cancel", role: .cancel){}
+                Button("Delete", role: .destructive) {
+                    viewModel.deletePalette(context: context)
+                    dismiss()
+                }
+            }
             .onChange(of: editMode) { oldValue, newValue in
                 if newValue == .inactive {
+                    print("Saved!")
                     viewModel.savePalette(context: context)
                 }
             }
@@ -159,8 +140,9 @@ struct PaletteEditView: View {
         return hexColorPredicate.evaluate(with: hex)
     }
 
-    init(palette: Palette? = nil, selectedColor: Color? = nil) {
+    init(palette: Palette? = nil, selectedColor: Color? = nil, editMode: EditMode = .inactive) {
         _viewModel = StateObject(wrappedValue: ViewModel(palette: palette, selectedColor: selectedColor))
+        self.editMode = editMode
     }
 }
 

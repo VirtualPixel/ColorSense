@@ -74,10 +74,12 @@ extension PaletteEditView {
         }
 
         func savePalette(context: ModelContext) {
+            guard !paletteName.isEmpty else { return }
+
             palette.name = paletteName
             palette.colors = colors
 
-            if isNewPalette && !colors.isEmpty {
+            if isNewPalette {
                 context.insert(palette)
             }
 

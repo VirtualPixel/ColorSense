@@ -48,6 +48,7 @@ private extension ContentView {
             flashAndSettingsButtons
             
             ZStack {
+                Color.black.ignoresSafeArea()
                 CameraPreview(session: cameraFeed.captureSession)
                 FocusCircleView()
                 paletteAndBottomBar
