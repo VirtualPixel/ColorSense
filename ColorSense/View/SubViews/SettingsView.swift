@@ -57,22 +57,25 @@ struct SettingsView: View {
                 }
 
                 Section("Contact Us") {
-                    Button {
-                        isShowingWishkitScreen = true
-                    } label: {
-                        Text("Feature request? Just a tap away!")
-                    }
-
-                    Button {
-                        if let url = URL(string: "https://justinwells.dev/colorsense/report") {
-                            UIApplication.shared.open(url)
+                    Group {
+                        Button {
+                            isShowingWishkitScreen = true
+                        } label: {
+                            Text("Feature request? Just a tap away!")
                         }
-                    } label: {
-                        Text("Report a problem")
+
+                        Button {
+                            if let url = URL(string: "https://justinwells.dev/colorsense/report") {
+                                UIApplication.shared.open(url)
+                            }
+                        } label: {
+                            Text("Report a problem")
+                        }
                     }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(.blue)
                 }
-                .buttonStyle(.plain)
-                .foregroundStyle(.blue)
+
 
                 Section {
                     Text("Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")")
