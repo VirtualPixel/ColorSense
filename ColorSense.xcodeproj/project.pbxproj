@@ -13,6 +13,8 @@
 		5711D7EA2DA6EAB200F539AB /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7E92DA6EAB200F539AB /* ShareColor.swift */; };
 		5711D7EB2DA6EAB200F539AB /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7E92DA6EAB200F539AB /* ShareColor.swift */; };
 		5711D7EC2DA6EAB200F539AB /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7E92DA6EAB200F539AB /* ShareColor.swift */; };
+		5711D7EE2DA6F82C00F539AB /* SharedPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */; };
+		5711D7F62DA6F94700F539AB /* SharePaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7F52DA6F94700F539AB /* SharePaletteView.swift */; };
 		572053FC2A68900F0072DE06 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FB2A68900F0072DE06 /* Palette.swift */; };
 		572053FE2A6893700072DE06 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
 		572054012A68961F0072DE06 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
@@ -135,6 +137,8 @@
 		5711D7E32DA4522B00F539AB /* PaletteEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteEditViewModel.swift; sourceTree = "<group>"; };
 		5711D7E52DA5A16000F539AB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		5711D7E92DA6EAB200F539AB /* ShareColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareColor.swift; sourceTree = "<group>"; };
+		5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPaletteView.swift; sourceTree = "<group>"; };
+		5711D7F52DA6F94700F539AB /* SharePaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePaletteView.swift; sourceTree = "<group>"; };
 		571272972A7DDB1B002F8720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		572053FB2A68900F0072DE06 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		572053FD2A6893700072DE06 /* ColorStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStructure.swift; sourceTree = "<group>"; };
@@ -380,6 +384,7 @@
 				576338C12A099D240034AF9D /* FocusCircleView.swift */,
 				5711D7E52DA5A16000F539AB /* ColorPickerView.swift */,
 				5711D7E92DA6EAB200F539AB /* ShareColor.swift */,
+				5711D7F52DA6F94700F539AB /* SharePaletteView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -431,6 +436,7 @@
 				57FF640A2D446B78008BA8C3 /* PaywallView.swift */,
 				576338C82A09A5A00034AF9D /* ColorDetailView.swift */,
 				577357562A73150600903F85 /* PaletteDetailView.swift */,
+				5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -767,6 +773,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5711D7EE2DA6F82C00F539AB /* SharedPaletteView.swift in Sources */,
 				57FF640F2D446C90008BA8C3 /* ProFeature.swift in Sources */,
 				57DDCDFE2A08007000B53CB7 /* Color Lists.swift in Sources */,
 				572053FE2A6893700072DE06 /* ColorStructure.swift in Sources */,
@@ -798,6 +805,7 @@
 				572054062A68A56D0072DE06 /* Pantone.swift in Sources */,
 				576338B92A0997AA0034AF9D /* View.swift in Sources */,
 				57712DE42A7BD0D500B16DE9 /* ColorInit.swift in Sources */,
+				5711D7F62DA6F94700F539AB /* SharePaletteView.swift in Sources */,
 				576338BE2A099B690034AF9D /* ColorCardView.swift in Sources */,
 				5711D7E42DA4522B00F539AB /* PaletteEditViewModel.swift in Sources */,
 				5753016B2A033C9F006A68A5 /* CIColor.swift in Sources */,

@@ -30,6 +30,10 @@ struct ColorSenseApp: App {
                         .environmentObject(entitlementManager)
                         .environmentObject(subscriptionsManager)
                 }
+                .sheet(item: $paletteToDisplay) { palette in
+                    SharedPaletteView(palette: palette)
+                        .environmentObject(cameraFeed)
+                }
         }
         .modelContainer(
             for: [

@@ -11,11 +11,12 @@ import SwiftData
 struct PaletteListView: View {
     @Query var palettes: [Palette]
     @Environment(\.modelContext) private var context
-    @ObservedObject private var viewModel = ViewModel()
+    @StateObject private var viewModel = ViewModel()
     @EnvironmentObject private var cameraFeed: CameraFeed
     @EnvironmentObject private var entitlementManager: EntitlementManager
+    @State private var editMode: EditMode = .inactive
     @State private var paletteName = ""
-    @State private var showingAddPaletteAlert = false
+    @State private var showingAddNewPalette = false
     @State private var showingAddColorAlert = false
     @State private var selectedPalette: Palette?
     @State private var colorHex = ""
@@ -43,26 +44,31 @@ struct PaletteListView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        if palettes.count >= 2 {
-                            checkForProEntitlement(for: $showingAddPaletteAlert)
-                        } else {
-                            showingAddPaletteAlert = true
+                    if editMode == .inactive {
+                        Button {
+                            if palettes.count >= 2 {
+                                checkForProEntitlement(for: $showingAddNewPalette)
+                            } else {
+                                showingAddNewPalette = true
+                            }
+                        } label: {
+                            Image(systemName: "plus")
                         }
-                    } label: {
-                        Text("New Palette")
+                    } else {
+                        EditButton()
                     }
                 }
-            }
-            .alert("Enter new Palette name", isPresented: $showingAddPaletteAlert) {
-                TextField("Enter new Palette name", text: $paletteName)
-                Button("Okay", action: submitPalette)
-            } message: {
-                Text("This will create a new Palette with your custom name.")
             }
             .navigationTitle("Color Palettes")
             .sheet(isPresented: $showPaywall) {
                 PaywallView()
+            }
+            .sheet(isPresented: $showingAddNewPalette) {
+                if let selectedColor = colorToAdd {
+                    PaletteEditView(selectedColor: Color(hex: selectedColor))
+                } else {
+                    PaletteEditView()
+                }
             }
             .onAppear {
                 cameraFeed.stop()
@@ -131,7 +137,7 @@ struct PaletteListView: View {
                             .frame(width: 50, height: 50)
                     }
 
-                    ForEach(Array(repeating: 0, count: max(maxColorsToShow - (palette.colors?.count ?? 0), 0)), id: \.self) { _ in
+                    ForEach(0..<max(maxColorsToShow - (palette.colors?.count ?? 0), 0), id: \.self) { index in
                         RoundedRectangle(cornerRadius: 12)
                             .opacity(0)
                             .frame(width: 50, height: 50)

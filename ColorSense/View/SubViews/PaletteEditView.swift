@@ -20,118 +20,136 @@ struct PaletteEditView: View {
     @State private var editMode: EditMode = .inactive
 
     var body: some View {
-        List {
-            Section(header: Text("Palette Information")) {
-                if (editMode == .active) {
-                    TextField("Palette Name", text: $viewModel.paletteName)
-                        .font(.title3)
-                } else {
-                    Text(viewModel.paletteName)
-                        .font(.title3)
+        NavigationStack {
+            List {
+                Section(header: Text("Palette Information")) {
+                    if (editMode == .active) {
+                        TextField("Palette Name", text: $viewModel.paletteName)
+                            .font(.title3)
+                    } else {
+                        Text(viewModel.paletteName)
+                            .font(.title3)
+                    }
                 }
-            }
 
-            Section(header: Text("Colors")) {
-                ForEach(viewModel.colors, id: \.id) { color in
-                    HStack {
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(Color(hex: color.wrappedHex))
-                            .frame(width: 40, height: 40)
+                Section(header: Text("Colors")) {
+                    ForEach(viewModel.colors, id: \.id) { color in
+                        HStack {
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(Color(hex: color.wrappedHex))
+                                .frame(width: 40, height: 40)
 
-                        NavigationLink {
-                            ColorDetailView(color: color.color, showAddToPalette: false)
-                        } label: {
-                            VStack(alignment: .leading) {
-                                Text(UIColor(hex: color.wrappedHex).exactName)
-                                    .font(.headline)
-                                Text(color.wrappedHex)
-                                    .font(.caption)
+                            NavigationLink {
+                                ColorDetailView(color: color.color, showAddToPalette: false)
+                            } label: {
+                                VStack(alignment: .leading) {
+                                    Text(UIColor(hex: color.wrappedHex).exactName)
+                                        .font(.headline)
+                                    Text(color.wrappedHex)
+                                        .font(.caption)
+                                }
+                            }
+                        }
+                        .contextMenu {
+                            Button {
+                                UIPasteboard.general.string = color.wrappedHex
+                            } label: {
+                                Label("Copy Hex", systemImage: "doc.on.doc")
                             }
                         }
                     }
-                    .contextMenu {
+                    .onDelete(perform: { indexSet in
+                        viewModel.removeColors(at: indexSet)
+                        viewModel.savePalette(context: context)
+                    })
+                    .onMove(perform: { source,destination in
+                        viewModel.moveColors(from: source, to: destination)
+                        viewModel.savePalette(context: context)
+                    })
+
+                    Menu {
                         Button {
-                            UIPasteboard.general.string = color.wrappedHex
+                            showingHexInput = true
                         } label: {
-                            Label("Copy Hex", systemImage: "doc.on.doc")
+                            Label("Add from hex", systemImage: "number")
                         }
-                    }
-                }
-                .onDelete(perform: viewModel.removeColors)
-                .onMove(perform: viewModel.moveColors)
 
-                Menu {
-                    Button {
-                        showingHexInput = true
-                    } label: {
-                        Label("Add from hex", systemImage: "number")
-                    }
-
-                    Button {
-                        showingColorPicker = true
-                    } label: {
-                        Label("Color Picker", systemImage: "eyedropper")
-                    }
-                } label: {
-                    HStack {
-                        Image(systemName: "plus.circle.fill")
-                        Text("Add Color")
-                    }
-                }
-            }
-
-            if !viewModel.isNewPalette {
-                Section {
-                    Button(role: .destructive) {
-                        viewModel.deletePalette()
-                        dismiss()
+                        Button {
+                            showingColorPicker = true
+                        } label: {
+                            Label("Color Picker", systemImage: "eyedropper")
+                        }
                     } label: {
                         HStack {
-                            Spacer()
-                            Text("Delete Palette")
-                                .foregroundStyle(.red)
-                            Spacer()
+                            Image(systemName: "plus.circle.fill")
+                            Text("Add Color")
+                        }
+                    }
+                }
+
+                if !viewModel.isNewPalette {
+                    Section {
+                        Button(role: .destructive) {
+                            viewModel.deletePalette(context: context)
+                            dismiss()
+                        } label: {
+                            HStack {
+                                Spacer()
+                                Text("Delete Palette")
+                                    .foregroundStyle(.red)
+                                Spacer()
+                            }
                         }
                     }
                 }
             }
-        }
-        .navigationTitle(viewModel.isNewPalette ? "Create Pelette" : "Edit Palette")
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                EditButton()
-            }
-        }
-        .environment(\.editMode, $editMode)
-        .sheet(isPresented: $showingColorPicker) {
-            ColorPickerView(onColorSelected: { color in
-                viewModel.addColor(hex: color.toHex())
-            })
-        }
-        .alert("Add Color from Hex", isPresented: $showingHexInput) {
-            TextField("e.g. #FF5500", text: $hexColorInput)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
+            .navigationTitle(viewModel.isNewPalette ? "Create Pelette" : "Edit Palette")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    EditButton()
+                }
 
-            Button("Cancel", role: .cancel) {
-                hexColorInput = ""
-            }
-
-            Button("Add") {
-                if isValidHexColor(hex: hexColorInput) {
-                    viewModel.addColor(hex: hexColorInput)
-                    hexColorInput = ""
-                } else {
-                    showingInvalidHexAlert = true
+                ToolbarItem(placement: .topBarTrailing) {
+                    SharePalette(palette: viewModel.palette)
                 }
             }
-        }
-        .alert("Invalid Hex Color", isPresented: $showingInvalidHexAlert) {
-            Button("OK", role: .cancel) {
-                hexColorInput = ""
+            .environment(\.editMode, $editMode)
+            .sheet(isPresented: $showingColorPicker) {
+                ColorPickerView(onColorSelected: { color in
+                    viewModel.addColor(hex: color.toHex())
+                    viewModel.savePalette(context: context)
+                })
             }
-        } message: {
-            Text("Please enter a valid hex color code (e.g. #FF5500 or FF5500)")
+            .alert("Add Color from Hex", isPresented: $showingHexInput) {
+                TextField("e.g. #FF5500", text: $hexColorInput)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+
+                Button("Cancel", role: .cancel) {
+                    hexColorInput = ""
+                }
+
+                Button("Add") {
+                    if isValidHexColor(hex: hexColorInput) {
+                        viewModel.addColor(hex: hexColorInput)
+                        hexColorInput = ""
+                    } else {
+                        showingInvalidHexAlert = true
+                    }
+                }
+            }
+            .alert("Invalid Hex Color", isPresented: $showingInvalidHexAlert) {
+                Button("OK", role: .cancel) {
+                    hexColorInput = ""
+                }
+            } message: {
+                Text("Please enter a valid hex color code (e.g. #FF5500 or FF5500)")
+            }
+            .onChange(of: editMode) { oldValue, newValue in
+                if newValue == .inactive {
+                    viewModel.savePalette(context: context)
+                }
+            }
         }
     }
 
@@ -141,8 +159,8 @@ struct PaletteEditView: View {
         return hexColorPredicate.evaluate(with: hex)
     }
 
-    init(palette: Palette? = nil) {
-        _viewModel = StateObject(wrappedValue: ViewModel(palette: palette))
+    init(palette: Palette? = nil, selectedColor: Color? = nil) {
+        _viewModel = StateObject(wrappedValue: ViewModel(palette: palette, selectedColor: selectedColor))
     }
 }
 
