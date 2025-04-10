@@ -33,10 +33,7 @@ struct ColorDetailView: View {
             }
             .toolbar { toolbarContent() }
             .onAppear {
-                cameraFeed.stop()
-            }
-            .onDisappear {
-                cameraFeed.start()
+                // cameraFeed.stop()
             }
         }
     }

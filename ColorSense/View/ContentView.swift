@@ -20,8 +20,8 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             cameraView
-            .onAppear(perform: cameraFeed.start)
             .onAppear {
+                cameraFeed.start()
                 Task {
                     await subscriptionsManager.loadProducts()
                 }
@@ -31,6 +31,7 @@ struct ContentView: View {
             .onChange(of: scenePhase) {
                 handleScenePhaseChange()
             }
+
         }
         .sheet(isPresented: .init(
             get: { entitlementManager.shouldShowPaymentSheet },

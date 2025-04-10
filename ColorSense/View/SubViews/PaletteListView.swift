@@ -71,10 +71,7 @@ struct PaletteListView: View {
                 }
             }
             .onAppear {
-                cameraFeed.stop()
-            }
-            .onDisappear {
-                cameraFeed.start()
+                // cameraFeed.stop()
             }
         }
     }

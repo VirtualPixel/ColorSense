@@ -36,12 +36,14 @@ class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuff
     
     func start() {
         DispatchQueue.global(qos: .userInitiated).async {
+            print("Started camera processing")
             self.captureSession.startRunning()
         }
     }
     
     func stop() {
         DispatchQueue.global(qos: .userInitiated).async {
+            print("Stopped camera processing")
             self.captureSession.stopRunning()
         }
     }
