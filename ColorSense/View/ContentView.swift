@@ -20,17 +20,17 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             cameraView
-            .onAppear {
-                cameraFeed.start()
-                Task {
-                    await subscriptionsManager.loadProducts()
+                .onAppear {
+                    cameraFeed.start()
+                    Task {
+                        await subscriptionsManager.loadProducts()
+                    }
                 }
-            }
-            .onDisappear(perform: cameraFeed.stop)
-            .environmentObject(cameraFeed)
-            .onChange(of: scenePhase) {
-                handleScenePhaseChange()
-            }
+                .onDisappear(perform: cameraFeed.stop)
+                .environmentObject(cameraFeed)
+                .onChange(of: scenePhase) {
+                    handleScenePhaseChange()
+                }
 
         }
         .sheet(isPresented: .init(
