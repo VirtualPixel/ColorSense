@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import WishKit
 
 struct SettingsView: View {
     @EnvironmentObject private var entitlementManager: EntitlementManager
     @State private var isShowingPaywall = false
-    
+    @State private var isShowingWishkitScreen = false
+
     @AppStorage("showRgb") var showRgb = true
     @AppStorage("showHex") var showHex = true
     @AppStorage("showHsl") var showHsl = true
@@ -54,6 +56,24 @@ struct SettingsView: View {
                     Toggle("Show UIKit", isOn: $showUIKit)
                 }
 
+                Section("Contact Us") {
+                    Button {
+                        isShowingWishkitScreen = true
+                    } label: {
+                        Text("Feature request? Just a tap away!")
+                    }
+
+                    Button {
+                        if let url = URL(string: "https://justinwells.dev/colorsense/report") {
+                            UIApplication.shared.open(url)
+                        }
+                    } label: {
+                        Text("Report a problem")
+                    }
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(.blue)
+
                 Section {
                     Text("Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")")
                 }
@@ -63,6 +83,9 @@ struct SettingsView: View {
         }
         .sheet(isPresented: $isShowingPaywall) {
             PaywallView()
+        }
+        .sheet(isPresented: $isShowingWishkitScreen) {
+            WishKit.FeedbackListView().withNavigation()
         }
     }
 }

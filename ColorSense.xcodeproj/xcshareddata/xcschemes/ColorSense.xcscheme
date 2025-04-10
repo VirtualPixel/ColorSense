@@ -59,6 +59,13 @@
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "WISHKIT_API_KEY"
+            value = "$(WISHKIT_API_KEY)"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <StoreKitConfigurationFileReference
          identifier = "../../ColorSense: Color Identifier.storekit">
       </StoreKitConfigurationFileReference>

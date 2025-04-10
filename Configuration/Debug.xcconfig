@@ -1,0 +1,11 @@
+//
+//  Debug.xcconfig
+//  ColorSense
+//
+//  Created by Justin Wells on 4/10/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+WISHKIT_API_KEY = $(WISHKIT_API_KEY)

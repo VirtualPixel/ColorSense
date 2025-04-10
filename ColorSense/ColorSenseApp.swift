@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WishKit
 
 @main
 struct ColorSenseApp: App {
@@ -72,6 +73,8 @@ struct ColorSenseApp: App {
     }
 
     init() {
+        WishKit.configure(with: EnvironmentValues.wishKitAPIKey)
+
         let entitlementManager = EntitlementManager()
         let subscriptionsManager = SubscriptionsManager(entitlementManager: entitlementManager)
         
