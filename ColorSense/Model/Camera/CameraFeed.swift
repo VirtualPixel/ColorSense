@@ -8,6 +8,31 @@
 import SwiftUI
 import AVFoundation
 
+
+enum CameraPosition {
+    case front, back
+}
+
+enum CameraType: Identifiable, CaseIterable {
+    case ultrawide, wide, telephoto
+
+    var id: String { self.hashValue.description }
+
+    var displayName: String {
+        switch self {
+        case .telephoto: return "3x"
+        case .ultrawide: return "0.5x"
+        case .wide: return "1x"
+        }
+    }
+}
+
+enum ProcessingSpeed: Double {
+    case slow = 1.5
+    case medium = 0.5
+    case fast = 0.25
+}
+
 class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     @Published var dominantColor: Color?
     @Published var exactName: String?
@@ -18,12 +43,13 @@ class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuff
     @Published var cameraPosition: CameraPosition = .back
     @Published var cameraType: CameraType = .wide
     @Published var availableCameraTypes: [CameraType] = []
+    @Published var processingSpeed: ProcessingSpeed = .medium
     @Published var isFlashOn = false {
         didSet {
             toggleFlash()
         }
     }
-    
+
     let captureSession = AVCaptureSession()
     private let videoOutput = AVCaptureVideoDataOutput()
     private var bufferQueue = DispatchQueue(label: "cameraBufferQueue")
@@ -52,7 +78,7 @@ class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuff
         }
         
         let currentTime = Date().timeIntervalSince1970
-        if currentTime - lastProcessingTime < 0.5 {
+        if currentTime - lastProcessingTime < processingSpeed.rawValue {
             return
         }
         
@@ -121,21 +147,23 @@ class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuff
     }
     
     private func setupCaptureSession(cameraType: CameraType? = nil, cameraPosition: CameraPosition) {
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInUltraWideCamera, .builtInWideAngleCamera, .builtInTelephotoCamera], mediaType: .video, position: .unspecified)
-        
+        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInUltraWideCamera, .builtInWideAngleCamera, .builtInTelephotoCamera, .builtInTripleCamera], mediaType: .video, position: .unspecified)
+
+        let ports = AVCaptureInput.Port.self
+
+        dump("Capture input: \(ports)")
+
         let devices = deviceDiscoverySession.devices
 
+        dump(devices)
+        print("Count Devices: \(devices.count)")
+
         var captureDevice: AVCaptureDevice?
-        
+
         for device in devices {
+            print(devices.count)
             DispatchQueue.main.async {
-                if device.deviceType == .builtInUltraWideCamera {
-                    self.availableCameraTypes.append(.ultrawide)
-                } else if device.deviceType == .builtInWideAngleCamera {
-                    self.availableCameraTypes.append(.wide)
-                } else if device.deviceType == .builtInTelephotoCamera {
-                    self.availableCameraTypes.append(.telephoto)
-                }
+                self.availableCameraTypes.append(.telephoto)
             }
             
             if cameraPosition == .front && device.position == .front {
@@ -268,12 +296,4 @@ class CameraFeed: NSObject, ObservableObject, AVCaptureVideoDataOutputSampleBuff
         filter.setValue(aVector, forKey: "inputAVector")
         return filter.outputImage ?? ciImage
     }
-}
-
-enum CameraPosition {
-    case front, back
-}
-
-enum CameraType {
-    case ultrawide, wide, telephoto
 }

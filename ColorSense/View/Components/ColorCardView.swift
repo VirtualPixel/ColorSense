@@ -18,6 +18,12 @@ struct ColorCardView: View {
             .buttonStyle(.plain)
             .sheet(isPresented: $isAddingColor) {
                 PaletteListView(colorToAdd: cameraFeed.dominantColor?.toHex())
+                    .onAppear {
+                        cameraFeed.stop()
+                    }
+                    .onDisappear {
+                        cameraFeed.start()
+                    }
             }
         }
     }
@@ -41,9 +47,11 @@ struct ColorCardView: View {
                 .font(.system(size: geometry.size.width * 0.04))
                 .minimumScaleFactor(0.5)
                 .multilineTextAlignment(.center)
+                .foregroundStyle(.white)
             Text("\(cameraFeed.simpleName ?? "Blue") Family")
                 .font(.system(size: geometry.size.width * 0.04).bold())
                 .minimumScaleFactor(0.5)  // Allows the text to scale down to 50% of its original size
+                .foregroundStyle(.white)
         }
     }
 
@@ -53,9 +61,9 @@ struct ColorCardView: View {
                 Button(action: { isAddingColor = true }) {
                     Image(systemName: "bookmark")
                         .padding()
-                        .foregroundColor(.primary)
                         .background(.ultraThinMaterial.opacity(0.3))
                         .cornerRadius(6)
+                        .foregroundStyle(.white)
                 }
             } else {
                 Text("Selected\nColor")
@@ -63,6 +71,7 @@ struct ColorCardView: View {
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                     .bold()
+                    .foregroundStyle(.white)
             }
         }
     }
