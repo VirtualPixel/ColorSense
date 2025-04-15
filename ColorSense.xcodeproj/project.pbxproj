@@ -37,22 +37,20 @@
 		572720132A7D43CC00BDA48B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572720122A7D43CC00BDA48B /* Assets.xcassets */; };
 		572720162A7D43CC00BDA48B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572720152A7D43CC00BDA48B /* Preview Assets.xcassets */; };
 		575301662A0339C2006A68A5 /* colornames.json in Resources */ = {isa = PBXBuildFile; fileRef = 575301652A0339C2006A68A5 /* colornames.json */; };
-		5753016B2A033C9F006A68A5 /* CIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016A2A033C9F006A68A5 /* CIColor.swift */; };
-		5753016D2A033CC6006A68A5 /* CIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016C2A033CC6006A68A5 /* CIImage.swift */; };
-		5753016F2A033CF0006A68A5 /* Calculate Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016E2A033CF0006A68A5 /* Calculate Colors.swift */; };
-		575301742A034529006A68A5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575301732A034529006A68A5 /* String.swift */; };
+		5753016B2A033C9F006A68A5 /* CIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016A2A033C9F006A68A5 /* CIColor+Extensions.swift */; };
+		5753016D2A033CC6006A68A5 /* CIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016C2A033CC6006A68A5 /* CIImage+Extensions.swift */; };
+		5753016F2A033CF0006A68A5 /* UIColor+ColorCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016E2A033CF0006A68A5 /* UIColor+ColorCalculation.swift */; };
+		575301742A034529006A68A5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575301732A034529006A68A5 /* String+Extensions.swift */; };
 		575FFF012D441E56005FD040 /* ColorSense: Color Identifier.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 575FFF002D441E56005FD040 /* ColorSense: Color Identifier.storekit */; };
-		575FFF032D446053005FD040 /* SubscriptionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575FFF022D446053005FD040 /* SubscriptionsManager.swift */; };
-		575FFF042D446053005FD040 /* SubscriptionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575FFF022D446053005FD040 /* SubscriptionsManager.swift */; };
-		576338B92A0997AA0034AF9D /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338B82A0997AA0034AF9D /* View.swift */; };
+		576338B92A0997AA0034AF9D /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338B82A0997AA0034AF9D /* View+Extensions.swift */; };
 		576338BE2A099B690034AF9D /* ColorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338BD2A099B690034AF9D /* ColorCardView.swift */; };
 		576338C02A099C810034AF9D /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338BF2A099C810034AF9D /* BottomBarView.swift */; };
 		576338C22A099D240034AF9D /* FocusCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338C12A099D240034AF9D /* FocusCircleView.swift */; };
 		576338C62A09A3C50034AF9D /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338C52A09A3C50034AF9D /* ContentView-ViewModel.swift */; };
 		576338C92A09A5A00034AF9D /* ColorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338C82A09A5A00034AF9D /* ColorDetailView.swift */; };
-		576338CB2A09A5D10034AF9D /* ColorDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338CA2A09A5D10034AF9D /* ColorDetailView-ViewModel.swift */; };
-		576338CD2A09A8980034AF9D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338CC2A09A8980034AF9D /* Color.swift */; };
-		576338CF2A09BD280034AF9D /* PalletView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338CE2A09BD280034AF9D /* PalletView-ViewModel.swift */; };
+		576338CB2A09A5D10034AF9D /* ColorDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338CA2A09A5D10034AF9D /* ColorDetailViewModel.swift */; };
+		576338CD2A09A8980034AF9D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338CC2A09A8980034AF9D /* Color+Extensions.swift */; };
+		576338CF2A09BD280034AF9D /* PaletteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338CE2A09BD280034AF9D /* PaletteListViewModel.swift */; };
 		576338D12A09BD340034AF9D /* PaletteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338D02A09BD340034AF9D /* PaletteListView.swift */; };
 		576338D62A09C03A0034AF9D /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338D52A09C03A0034AF9D /* ColorData.swift */; };
 		576A4F152A782E6F00452FA5 /* WatchColorSenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F142A782E6F00452FA5 /* WatchColorSenseApp.swift */; };
@@ -61,17 +59,17 @@
 		576A4F1C2A782E7200452FA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576A4F1B2A782E7200452FA5 /* Preview Assets.xcassets */; };
 		576A4F1F2A782E7200452FA5 /* WatchColorSense Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 576A4F122A782E6F00452FA5 /* WatchColorSense Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		576A4F232A782EE000452FA5 /* colornames.json in Resources */ = {isa = PBXBuildFile; fileRef = 575301652A0339C2006A68A5 /* colornames.json */; };
-		576A4F262A782EE000452FA5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338B82A0997AA0034AF9D /* View.swift */; };
-		576A4F272A782EE000452FA5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338CC2A09A8980034AF9D /* Color.swift */; };
+		576A4F262A782EE000452FA5 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338B82A0997AA0034AF9D /* View+Extensions.swift */; };
+		576A4F272A782EE000452FA5 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338CC2A09A8980034AF9D /* Color+Extensions.swift */; };
 		576A4F282A782EE000452FA5 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FB2A68900F0072DE06 /* Palette.swift */; };
-		576A4F292A782EE000452FA5 /* New Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFB2A07F93600B53CB7 /* New Colors.swift */; };
+		576A4F292A782EE000452FA5 /* UIColor+AdditionalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFB2A07F93600B53CB7 /* UIColor+AdditionalColors.swift */; };
 		576A4F2A2A782EE000452FA5 /* Pantone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054052A68A56D0072DE06 /* Pantone.swift */; };
-		576A4F2B2A782EE000452FA5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575301732A034529006A68A5 /* String.swift */; };
+		576A4F2B2A782EE000452FA5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575301732A034529006A68A5 /* String+Extensions.swift */; };
 		576A4F2C2A782EE000452FA5 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338D52A09C03A0034AF9D /* ColorData.swift */; };
 		576A4F2D2A782EE000452FA5 /* PantoneColorArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054022A689AE40072DE06 /* PantoneColorArrays.swift */; };
 		576A4F2E2A782EE000452FA5 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
-		576A4F2F2A782EE000452FA5 /* Calculate Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016E2A033CF0006A68A5 /* Calculate Colors.swift */; };
-		576A4F302A782EE000452FA5 /* Color Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* Color Lists.swift */; };
+		576A4F2F2A782EE000452FA5 /* UIColor+ColorCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016E2A033CF0006A68A5 /* UIColor+ColorCalculation.swift */; };
+		576A4F302A782EE000452FA5 /* UIColor+NamedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* UIColor+NamedColors.swift */; };
 		576A4F312A782EE000452FA5 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
 		576A4F332A782EFF00452FA5 /* WatchColorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F322A782EFF00452FA5 /* WatchColorDetailView.swift */; };
 		576A4F352A782FB000452FA5 /* WatchPaletteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576A4F342A782FB000452FA5 /* WatchPaletteListView.swift */; };
@@ -81,18 +79,18 @@
 		576D8E9F2A03106A003DE880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576D8E9E2A03106A003DE880 /* Assets.xcassets */; };
 		576D8EA22A03106A003DE880 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 576D8EA12A03106A003DE880 /* Preview Assets.xcassets */; };
 		576D8EAA2A0310AA003DE880 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D8EA92A0310AA003DE880 /* CameraPreview.swift */; };
-		57712DE42A7BD0D500B16DE9 /* ColorInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* ColorInit.swift */; };
-		57712DE52A7BD0D500B16DE9 /* ColorInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* ColorInit.swift */; };
-		57712DE62A7BD0D500B16DE9 /* ColorInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* ColorInit.swift */; };
+		57712DE42A7BD0D500B16DE9 /* Color+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* Color+Init.swift */; };
+		57712DE52A7BD0D500B16DE9 /* Color+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* Color+Init.swift */; };
+		57712DE62A7BD0D500B16DE9 /* Color+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* Color+Init.swift */; };
 		577357572A73150600903F85 /* PaletteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357562A73150600903F85 /* PaletteDetailView.swift */; };
-		577357592A73153800903F85 /* PalletDetailView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */; };
+		577357592A73153800903F85 /* PaletteDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577357582A73153800903F85 /* PaletteDetailViewModel.swift */; };
 		577BEB5C2A9A54800071E977 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
-		5797051F2DA9922D009AE8C5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797051E2DA9922D009AE8C5 /* Image.swift */; };
-		579705202DA9922D009AE8C5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797051E2DA9922D009AE8C5 /* Image.swift */; };
+		5797051F2DA9922D009AE8C5 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797051E2DA9922D009AE8C5 /* Image+Extensions.swift */; };
+		579705202DA9922D009AE8C5 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797051E2DA9922D009AE8C5 /* Image+Extensions.swift */; };
 		5797052E2DAD5DFC009AE8C5 /* PreviewCameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797052D2DAD5DFC009AE8C5 /* PreviewCameraModel.swift */; };
 		579705302DAD5FFF009AE8C5 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797052F2DAD5FFF009AE8C5 /* PreviewContainer.swift */; };
 		579705322DAD87E4009AE8C5 /* DeviceLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705312DAD87E4009AE8C5 /* DeviceLookup.swift */; };
-		579705342DAD89C0009AE8C5 /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705332DAD89C0009AE8C5 /* DataTypes.swift */; };
+		579705342DAD89C0009AE8C5 /* CameraTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705332DAD89C0009AE8C5 /* CameraTypes.swift */; };
 		579705362DAD8BB7009AE8C5 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705352DAD8BB7009AE8C5 /* Camera.swift */; };
 		579705392DAD92BD009AE8C5 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705382DAD92BD009AE8C5 /* CameraModel.swift */; };
 		5797053B2DAD94FE009AE8C5 /* MediaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797053A2DAD94FE009AE8C5 /* MediaLibrary.swift */; };
@@ -101,9 +99,9 @@
 		579705442DAD96AD009AE8C5 /* CaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705432DAD96AD009AE8C5 /* CaptureService.swift */; };
 		579705492DAD9708009AE8C5 /* PhotoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705462DAD9708009AE8C5 /* PhotoCapture.swift */; };
 		5797054A2DAD9708009AE8C5 /* MovieCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705472DAD9708009AE8C5 /* MovieCapture.swift */; };
-		5797054B2DAD9708009AE8C5 /* SPCObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705482DAD9708009AE8C5 /* SPCObserver.swift */; };
-		5797054E2DAD98E7009AE8C5 /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797054C2DAD98E7009AE8C5 /* Capture.swift */; };
-		579705502DAD9A56009AE8C5 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797054F2DAD9A56009AE8C5 /* URL.swift */; };
+		5797054B2DAD9708009AE8C5 /* SystemPreferredCameraObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705482DAD9708009AE8C5 /* SystemPreferredCameraObserver.swift */; };
+		5797054E2DAD98E7009AE8C5 /* AVCaptureDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797054C2DAD98E7009AE8C5 /* AVCaptureDevice+Extensions.swift */; };
+		579705502DAD9A56009AE8C5 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797054F2DAD9A56009AE8C5 /* URL+Extensions.swift */; };
 		579705532DADAB06009AE8C5 /* CameraUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705522DADAB06009AE8C5 /* CameraUI.swift */; };
 		579705572DADB5D4009AE8C5 /* ColorCaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705542DADB5D4009AE8C5 /* ColorCaptureService.swift */; };
 		57C7D4CD2DA83A470025AE20 /* WishKit in Frameworks */ = {isa = PBXBuildFile; productRef = 57C7D4CC2DA83A470025AE20 /* WishKit */; };
@@ -116,8 +114,8 @@
 		57C7D4DB2DA83E260025AE20 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 57C7D4D82DA83E260025AE20 /* Debug.xcconfig */; };
 		57CC2DAF2D5549A000DF8603 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */; };
 		57DAA12E2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */; };
-		57DDCDFC2A07F93600B53CB7 /* New Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFB2A07F93600B53CB7 /* New Colors.swift */; };
-		57DDCDFE2A08007000B53CB7 /* Color Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* Color Lists.swift */; };
+		57DDCDFC2A07F93600B53CB7 /* UIColor+AdditionalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFB2A07F93600B53CB7 /* UIColor+AdditionalColors.swift */; };
+		57DDCDFE2A08007000B53CB7 /* UIColor+NamedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* UIColor+NamedColors.swift */; };
 		57E887012B44C4C40092B5ED /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E887002B44C4C40092B5ED /* StoreKit.framework */; };
 		57E887032B44C4D00092B5ED /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E887022B44C4D00092B5ED /* StoreKit.framework */; };
 		57E887052B44C4D80092B5ED /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E887042B44C4D80092B5ED /* StoreKit.framework */; };
@@ -184,21 +182,20 @@
 		572720122A7D43CC00BDA48B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		572720152A7D43CC00BDA48B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		575301652A0339C2006A68A5 /* colornames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = colornames.json; sourceTree = "<group>"; };
-		5753016A2A033C9F006A68A5 /* CIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColor.swift; sourceTree = "<group>"; };
-		5753016C2A033CC6006A68A5 /* CIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImage.swift; sourceTree = "<group>"; };
-		5753016E2A033CF0006A68A5 /* Calculate Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calculate Colors.swift"; sourceTree = "<group>"; };
-		575301732A034529006A68A5 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5753016A2A033C9F006A68A5 /* CIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIColor+Extensions.swift"; sourceTree = "<group>"; };
+		5753016C2A033CC6006A68A5 /* CIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extensions.swift"; sourceTree = "<group>"; };
+		5753016E2A033CF0006A68A5 /* UIColor+ColorCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorCalculation.swift"; sourceTree = "<group>"; };
+		575301732A034529006A68A5 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		575FFF002D441E56005FD040 /* ColorSense: Color Identifier.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ColorSense: Color Identifier.storekit"; sourceTree = "<group>"; };
-		575FFF022D446053005FD040 /* SubscriptionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsManager.swift; sourceTree = "<group>"; };
-		576338B82A0997AA0034AF9D /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		576338B82A0997AA0034AF9D /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		576338BD2A099B690034AF9D /* ColorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCardView.swift; sourceTree = "<group>"; };
 		576338BF2A099C810034AF9D /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		576338C12A099D240034AF9D /* FocusCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusCircleView.swift; sourceTree = "<group>"; };
 		576338C52A09A3C50034AF9D /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 		576338C82A09A5A00034AF9D /* ColorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailView.swift; sourceTree = "<group>"; };
-		576338CA2A09A5D10034AF9D /* ColorDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorDetailView-ViewModel.swift"; sourceTree = "<group>"; };
-		576338CC2A09A8980034AF9D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		576338CE2A09BD280034AF9D /* PalletView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PalletView-ViewModel.swift"; sourceTree = "<group>"; };
+		576338CA2A09A5D10034AF9D /* ColorDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewModel.swift; sourceTree = "<group>"; };
+		576338CC2A09A8980034AF9D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		576338CE2A09BD280034AF9D /* PaletteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteListViewModel.swift; sourceTree = "<group>"; };
 		576338D02A09BD340034AF9D /* PaletteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteListView.swift; sourceTree = "<group>"; };
 		576338D52A09C03A0034AF9D /* ColorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorData.swift; sourceTree = "<group>"; };
 		576A4EC22A742EF700452FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -219,14 +216,14 @@
 		576D8E9E2A03106A003DE880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		576D8EA12A03106A003DE880 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		576D8EA92A0310AA003DE880 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
-		57712DE32A7BD0D500B16DE9 /* ColorInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorInit.swift; sourceTree = "<group>"; };
+		57712DE32A7BD0D500B16DE9 /* Color+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Init.swift"; sourceTree = "<group>"; };
 		577357562A73150600903F85 /* PaletteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteDetailView.swift; sourceTree = "<group>"; };
-		577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PalletDetailView-ViewModel.swift"; sourceTree = "<group>"; };
-		5797051E2DA9922D009AE8C5 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		577357582A73153800903F85 /* PaletteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteDetailViewModel.swift; sourceTree = "<group>"; };
+		5797051E2DA9922D009AE8C5 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		5797052D2DAD5DFC009AE8C5 /* PreviewCameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCameraModel.swift; sourceTree = "<group>"; };
 		5797052F2DAD5FFF009AE8C5 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		579705312DAD87E4009AE8C5 /* DeviceLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceLookup.swift; sourceTree = "<group>"; };
-		579705332DAD89C0009AE8C5 /* DataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
+		579705332DAD89C0009AE8C5 /* CameraTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTypes.swift; sourceTree = "<group>"; };
 		579705352DAD8BB7009AE8C5 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		579705382DAD92BD009AE8C5 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
 		5797053A2DAD94FE009AE8C5 /* MediaLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaLibrary.swift; sourceTree = "<group>"; };
@@ -235,9 +232,9 @@
 		579705432DAD96AD009AE8C5 /* CaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureService.swift; sourceTree = "<group>"; };
 		579705462DAD9708009AE8C5 /* PhotoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCapture.swift; sourceTree = "<group>"; };
 		579705472DAD9708009AE8C5 /* MovieCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCapture.swift; sourceTree = "<group>"; };
-		579705482DAD9708009AE8C5 /* SPCObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPCObserver.swift; sourceTree = "<group>"; };
-		5797054C2DAD98E7009AE8C5 /* Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capture.swift; sourceTree = "<group>"; };
-		5797054F2DAD9A56009AE8C5 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		579705482DAD9708009AE8C5 /* SystemPreferredCameraObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemPreferredCameraObserver.swift; sourceTree = "<group>"; };
+		5797054C2DAD98E7009AE8C5 /* AVCaptureDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extensions.swift"; sourceTree = "<group>"; };
+		5797054F2DAD9A56009AE8C5 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		579705522DADAB06009AE8C5 /* CameraUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUI.swift; sourceTree = "<group>"; };
 		579705542DADB5D4009AE8C5 /* ColorCaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCaptureService.swift; sourceTree = "<group>"; };
 		57C7D4D02DA83B970025AE20 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
@@ -245,8 +242,8 @@
 		57C7D4D82DA83E260025AE20 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchColorDetailview-ViewModel.swift"; sourceTree = "<group>"; };
-		57DDCDFB2A07F93600B53CB7 /* New Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Colors.swift"; sourceTree = "<group>"; };
-		57DDCDFD2A08007000B53CB7 /* Color Lists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Lists.swift"; sourceTree = "<group>"; };
+		57DDCDFB2A07F93600B53CB7 /* UIColor+AdditionalColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AdditionalColors.swift"; sourceTree = "<group>"; };
+		57DDCDFD2A08007000B53CB7 /* UIColor+NamedColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+NamedColors.swift"; sourceTree = "<group>"; };
 		57E77E8C2A82601A0074D4C8 /* visionColorSense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visionColorSense.entitlements; sourceTree = "<group>"; };
 		57E77E8D2A8260240074D4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		57E887002B44C4C40092B5ED /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -296,25 +293,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		572053FF2A6896020072DE06 /* Pantone */ = {
-			isa = PBXGroup;
-			children = (
-				572054002A68961F0072DE06 /* pantone-colors.json */,
-				572054022A689AE40072DE06 /* PantoneColorArrays.swift */,
-				572054052A68A56D0072DE06 /* Pantone.swift */,
-			);
-			path = Pantone;
-			sourceTree = "<group>";
-		};
-		572054042A689B0F0072DE06 /* Normal Colors */ = {
-			isa = PBXGroup;
-			children = (
-				575301652A0339C2006A68A5 /* colornames.json */,
-				576338D52A09C03A0034AF9D /* ColorData.swift */,
-			);
-			path = "Normal Colors";
-			sourceTree = "<group>";
-		};
 		5725C59A2A7BCA1E00933331 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,127 +354,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		575301672A033C5E006A68A5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5797053A2DAD94FE009AE8C5 /* MediaLibrary.swift */,
-				5797053F2DAD9590009AE8C5 /* Intent */,
-				575FFF052D4460A9005FD040 /* Subscriptions */,
-				576338C32A09A36C0034AF9D /* Camera */,
-				575301702A033D24006A68A5 /* Color  */,
-				576338D22A09BE870034AF9D /* Data Persistance */,
-				575301692A033C93006A68A5 /* Extensions */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		575301692A033C93006A68A5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				5753016E2A033CF0006A68A5 /* Calculate Colors.swift */,
-				5753016A2A033C9F006A68A5 /* CIColor.swift */,
-				5753016C2A033CC6006A68A5 /* CIImage.swift */,
-				576338CC2A09A8980034AF9D /* Color.swift */,
-				57712DE32A7BD0D500B16DE9 /* ColorInit.swift */,
-				57DDCDFD2A08007000B53CB7 /* Color Lists.swift */,
-				57DDCDFB2A07F93600B53CB7 /* New Colors.swift */,
-				575301732A034529006A68A5 /* String.swift */,
-				576338B82A0997AA0034AF9D /* View.swift */,
-				575FFF022D446053005FD040 /* SubscriptionsManager.swift */,
-				5797051E2DA9922D009AE8C5 /* Image.swift */,
-				5797054C2DAD98E7009AE8C5 /* Capture.swift */,
-				5797054F2DAD9A56009AE8C5 /* URL.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		575301702A033D24006A68A5 /* Color  */ = {
-			isa = PBXGroup;
-			children = (
-				579705542DADB5D4009AE8C5 /* ColorCaptureService.swift */,
-				572053FF2A6896020072DE06 /* Pantone */,
-				572054042A689B0F0072DE06 /* Normal Colors */,
-			);
-			path = "Color ";
-			sourceTree = "<group>";
-		};
-		575FFF052D4460A9005FD040 /* Subscriptions */ = {
-			isa = PBXGroup;
-			children = (
-				57FF64042D4460ED008BA8C3 /* SubscriptionManager.swift */,
-				57FF64072D446418008BA8C3 /* EntitlementsManager.swift */,
-				57FF640D2D446C90008BA8C3 /* ProFeature.swift */,
-			);
-			path = Subscriptions;
-			sourceTree = "<group>";
-		};
-		576338BA2A0999240034AF9D /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				576338BD2A099B690034AF9D /* ColorCardView.swift */,
-				576338C12A099D240034AF9D /* FocusCircleView.swift */,
-				5711D7E52DA5A16000F539AB /* ColorPickerView.swift */,
-				5711D7E92DA6EAB200F539AB /* ShareColor.swift */,
-				5711D7F52DA6F94700F539AB /* SharePaletteView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		576338C32A09A36C0034AF9D /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				579705432DAD96AD009AE8C5 /* CaptureService.swift */,
-				579705332DAD89C0009AE8C5 /* DataTypes.swift */,
-				579705352DAD8BB7009AE8C5 /* Camera.swift */,
-				579705382DAD92BD009AE8C5 /* CameraModel.swift */,
-				5797053D2DAD9548009AE8C5 /* CameraState.swift */,
-			);
-			path = Camera;
-			sourceTree = "<group>";
-		};
-		576338C42A09A3AB0034AF9D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				576338C52A09A3C50034AF9D /* ContentView-ViewModel.swift */,
-				576338CA2A09A5D10034AF9D /* ColorDetailView-ViewModel.swift */,
-				577357582A73153800903F85 /* PalletDetailView-ViewModel.swift */,
-				576338CE2A09BD280034AF9D /* PalletView-ViewModel.swift */,
-				5711D7E32DA4522B00F539AB /* PaletteEditViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		576338D22A09BE870034AF9D /* Data Persistance */ = {
-			isa = PBXGroup;
-			children = (
-				572053FD2A6893700072DE06 /* ColorStructure.swift */,
-				572053FB2A68900F0072DE06 /* Palette.swift */,
-			);
-			path = "Data Persistance";
-			sourceTree = "<group>";
-		};
-		576A4EC32A772C4400452FA5 /* iPhone Views */ = {
-			isa = PBXGroup;
-			children = (
-				576338BF2A099C810034AF9D /* BottomBarView.swift */,
-			);
-			path = "iPhone Views";
-			sourceTree = "<group>";
-		};
-		576A4EC52A772CCB00452FA5 /* SubViews */ = {
-			isa = PBXGroup;
-			children = (
-				576338D02A09BD340034AF9D /* PaletteListView.swift */,
-				5711D7E12DA451F600F539AB /* PaletteEditView.swift */,
-				57E887162B465B1C0092B5ED /* SettingsView.swift */,
-				57FF640A2D446B78008BA8C3 /* PaywallView.swift */,
-				576338C82A09A5A00034AF9D /* ColorDetailView.swift */,
-				577357562A73150600903F85 /* PaletteDetailView.swift */,
-				5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */,
-			);
-			path = SubViews;
-			sourceTree = "<group>";
-		};
 		576A4F132A782E6F00452FA5 /* WatchColorSense Watch App */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,9 +379,6 @@
 		576D8E8E2A031069003DE880 = {
 			isa = PBXGroup;
 			children = (
-				57C7D4D22DA83BB10025AE20 /* Configuration */,
-				575FFF002D441E56005FD040 /* ColorSense: Color Identifier.storekit */,
-				57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */,
 				576D8E992A031069003DE880 /* ColorSense */,
 				576A4F132A782E6F00452FA5 /* WatchColorSense Watch App */,
 				5725C5A02A7BCAEC00933331 /* macOSColorSense */,
@@ -549,13 +403,12 @@
 		576D8E992A031069003DE880 /* ColorSense */ = {
 			isa = PBXGroup;
 			children = (
+				576EC8C92DAEDC540038E232 /* App */,
+				576EC8CC2DAEDC7E0038E232 /* Features */,
+				576EC8CA2DAEDC590038E232 /* Core */,
+				576EC8CB2DAEDC670038E232 /* Resources */,
 				576A4F392A78580B00452FA5 /* ColorSense.entitlements */,
 				576A4EC22A742EF700452FA5 /* Info.plist */,
-				576D8E9A2A031069003DE880 /* ColorSenseApp.swift */,
-				579705452DAD96CB009AE8C5 /* Capture */,
-				575301672A033C5E006A68A5 /* Model */,
-				576D8EA82A031079003DE880 /* View */,
-				576338C42A09A3AB0034AF9D /* ViewModel */,
 				576D8E9E2A03106A003DE880 /* Assets.xcassets */,
 				576D8EA02A03106A003DE880 /* Preview Content */,
 			);
@@ -571,53 +424,284 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		576D8EA82A031079003DE880 /* View */ = {
+		576EC8C92DAEDC540038E232 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				576D8E9C2A031069003DE880 /* ContentView.swift */,
-				579705372DAD91B7009AE8C5 /* Camera */,
-				576A4EC32A772C4400452FA5 /* iPhone Views */,
-				576338BA2A0999240034AF9D /* Components */,
-				576A4EC52A772CCB00452FA5 /* SubViews */,
+				57C7D4D22DA83BB10025AE20 /* Configuration */,
+				576D8E9A2A031069003DE880 /* ColorSenseApp.swift */,
+				576EC8E32DAEE5F70038E232 /* Main */,
 			);
-			path = View;
+			path = App;
 			sourceTree = "<group>";
 		};
-		579705372DAD91B7009AE8C5 /* Camera */ = {
+		576EC8CA2DAEDC590038E232 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				576D8EA92A0310AA003DE880 /* CameraPreview.swift */,
-				5797052F2DAD5FFF009AE8C5 /* PreviewContainer.swift */,
+				576EC8D42DAEDD640038E232 /* Extensions */,
+				576EC8D32DAEDD510038E232 /* Services */,
+				576EC8D22DAEDD460038E232 /* Persistence */,
+				576EC8D12DAEDD400038E232 /* UI */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		576EC8CB2DAEDC670038E232 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				576EC8E22DAEE57E0038E232 /* Data */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		576EC8CC2DAEDC7E0038E232 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				576EC8D02DAEDD320038E232 /* ColorCapture */,
+				576EC8CF2DAEDD2A0038E232 /* Palettes */,
+				576EC8CE2DAEDD0B0038E232 /* ColorDetails */,
+				576EC8CD2DAEDD060038E232 /* Subscriptions */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		576EC8CD2DAEDD060038E232 /* Subscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				576EC8DB2DAEE1A30038E232 /* Views */,
+				576EC8DA2DAEE19B0038E232 /* ViewModels */,
+				576EC8DC2DAEE1D20038E232 /* UI */,
+				57FF64042D4460ED008BA8C3 /* SubscriptionManager.swift */,
+				57FF64072D446418008BA8C3 /* EntitlementsManager.swift */,
+			);
+			path = Subscriptions;
+			sourceTree = "<group>";
+		};
+		576EC8CE2DAEDD0B0038E232 /* ColorDetails */ = {
+			isa = PBXGroup;
+			children = (
+				576EC8D92DAEE1290038E232 /* Views */,
+				576EC8D82DAEE1210038E232 /* ViewModels */,
+			);
+			path = ColorDetails;
+			sourceTree = "<group>";
+		};
+		576EC8CF2DAEDD2A0038E232 /* Palettes */ = {
+			isa = PBXGroup;
+			children = (
+				576EC8D62DAEDF6C0038E232 /* Views */,
+				576EC8D72DAEDF720038E232 /* ViewModels */,
+			);
+			path = Palettes;
+			sourceTree = "<group>";
+		};
+		576EC8D02DAEDD320038E232 /* ColorCapture */ = {
+			isa = PBXGroup;
+			children = (
+				576EC8D52DAEDF0F0038E232 /* Views */,
+				579705382DAD92BD009AE8C5 /* CameraModel.swift */,
+				579705352DAD8BB7009AE8C5 /* Camera.swift */,
+			);
+			path = ColorCapture;
+			sourceTree = "<group>";
+		};
+		576EC8D12DAEDD400038E232 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				576EC8E12DAEE52D0038E232 /* Settings */,
+				5797053D2DAD9548009AE8C5 /* CameraState.swift */,
+				579705332DAD89C0009AE8C5 /* CameraTypes.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		576EC8D22DAEDD460038E232 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				576EC8E02DAEE4E90038E232 /* Models */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		576EC8D32DAEDD510038E232 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				576EC8DD2DAEE37F0038E232 /* Camera */,
+				576EC8DE2DAEE3890038E232 /* Media */,
+				576EC8DF2DAEE3960038E232 /* App */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		576EC8D42DAEDD640038E232 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5753016A2A033C9F006A68A5 /* CIColor+Extensions.swift */,
+				5753016C2A033CC6006A68A5 /* CIImage+Extensions.swift */,
+				576338CC2A09A8980034AF9D /* Color+Extensions.swift */,
+				57712DE32A7BD0D500B16DE9 /* Color+Init.swift */,
+				5753016E2A033CF0006A68A5 /* UIColor+ColorCalculation.swift */,
+				57DDCDFD2A08007000B53CB7 /* UIColor+NamedColors.swift */,
+				57DDCDFB2A07F93600B53CB7 /* UIColor+AdditionalColors.swift */,
+				575301732A034529006A68A5 /* String+Extensions.swift */,
+				576338B82A0997AA0034AF9D /* View+Extensions.swift */,
+				5797051E2DA9922D009AE8C5 /* Image+Extensions.swift */,
+				5797054C2DAD98E7009AE8C5 /* AVCaptureDevice+Extensions.swift */,
+				5797054F2DAD9A56009AE8C5 /* URL+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		576EC8D52DAEDF0F0038E232 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				579705522DADAB06009AE8C5 /* CameraUI.swift */,
+				576338BD2A099B690034AF9D /* ColorCardView.swift */,
+				576338C12A099D240034AF9D /* FocusCircleView.swift */,
+				5797052F2DAD5FFF009AE8C5 /* PreviewContainer.swift */,
+				576D8EA92A0310AA003DE880 /* CameraPreview.swift */,
+				576338BF2A099C810034AF9D /* BottomBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		576EC8D62DAEDF6C0038E232 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				576338D02A09BD340034AF9D /* PaletteListView.swift */,
+				5711D7E12DA451F600F539AB /* PaletteEditView.swift */,
+				577357562A73150600903F85 /* PaletteDetailView.swift */,
+				5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */,
+				5711D7F52DA6F94700F539AB /* SharePaletteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		576EC8D72DAEDF720038E232 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5711D7E32DA4522B00F539AB /* PaletteEditViewModel.swift */,
+				576338CE2A09BD280034AF9D /* PaletteListViewModel.swift */,
+				577357582A73153800903F85 /* PaletteDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		576EC8D82DAEE1210038E232 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				576338CA2A09A5D10034AF9D /* ColorDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		576EC8D92DAEE1290038E232 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				576338C82A09A5A00034AF9D /* ColorDetailView.swift */,
+				5711D7E52DA5A16000F539AB /* ColorPickerView.swift */,
+				5711D7E92DA6EAB200F539AB /* ShareColor.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		576EC8DA2DAEE19B0038E232 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		576EC8DB2DAEE1A30038E232 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57FF640A2D446B78008BA8C3 /* PaywallView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		576EC8DC2DAEE1D20038E232 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				57FF640D2D446C90008BA8C3 /* ProFeature.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		576EC8DD2DAEE37F0038E232 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				579705432DAD96AD009AE8C5 /* CaptureService.swift */,
+				579705542DADB5D4009AE8C5 /* ColorCaptureService.swift */,
+				579705462DAD9708009AE8C5 /* PhotoCapture.swift */,
+				579705472DAD9708009AE8C5 /* MovieCapture.swift */,
+				579705482DAD9708009AE8C5 /* SystemPreferredCameraObserver.swift */,
+				579705312DAD87E4009AE8C5 /* DeviceLookup.swift */,
+				579705402DAD95A1009AE8C5 /* AVCamCaptureIntent.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
 		};
-		5797053F2DAD9590009AE8C5 /* Intent */ = {
+		576EC8DE2DAEE3890038E232 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				579705402DAD95A1009AE8C5 /* AVCamCaptureIntent.swift */,
+				5797053A2DAD94FE009AE8C5 /* MediaLibrary.swift */,
 			);
-			path = Intent;
+			path = Media;
 			sourceTree = "<group>";
 		};
-		579705452DAD96CB009AE8C5 /* Capture */ = {
+		576EC8DF2DAEE3960038E232 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				579705462DAD9708009AE8C5 /* PhotoCapture.swift */,
-				579705472DAD9708009AE8C5 /* MovieCapture.swift */,
-				579705482DAD9708009AE8C5 /* SPCObserver.swift */,
-				579705312DAD87E4009AE8C5 /* DeviceLookup.swift */,
 			);
-			path = Capture;
+			path = App;
+			sourceTree = "<group>";
+		};
+		576EC8E02DAEE4E90038E232 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				572053FD2A6893700072DE06 /* ColorStructure.swift */,
+				572053FB2A68900F0072DE06 /* Palette.swift */,
+				576338D52A09C03A0034AF9D /* ColorData.swift */,
+				572054052A68A56D0072DE06 /* Pantone.swift */,
+				572054022A689AE40072DE06 /* PantoneColorArrays.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		576EC8E12DAEE52D0038E232 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				57E887162B465B1C0092B5ED /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		576EC8E22DAEE57E0038E232 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				575301652A0339C2006A68A5 /* colornames.json */,
+				572054002A68961F0072DE06 /* pantone-colors.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		576EC8E32DAEE5F70038E232 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				576D8E9C2A031069003DE880 /* ContentView.swift */,
+				576338C52A09A3C50034AF9D /* ContentView-ViewModel.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		57C7D4D22DA83BB10025AE20 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
 				57C7D4D02DA83B970025AE20 /* .env */,
-				57C7D4D42DA83C3E0025AE20 /* EnvironmentValues.swift */,
 				57C7D4D82DA83E260025AE20 /* Debug.xcconfig */,
+				57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */,
+				575FFF002D441E56005FD040 /* ColorSense: Color Identifier.storekit */,
+				57C7D4D42DA83C3E0025AE20 /* EnvironmentValues.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -849,7 +933,7 @@
 				5711D7EC2DA6EAB200F539AB /* ShareColor.swift in Sources */,
 				5725C5B22A7BCB6E00933331 /* Pantone.swift in Sources */,
 				5725C5A22A7BCAEC00933331 /* macOSColorSenseApp.swift in Sources */,
-				57712DE62A7BD0D500B16DE9 /* ColorInit.swift in Sources */,
+				57712DE62A7BD0D500B16DE9 /* Color+Init.swift in Sources */,
 				57FF640C2D446B78008BA8C3 /* PaywallView.swift in Sources */,
 				5725C5B02A7BCB6E00933331 /* ColorStructure.swift in Sources */,
 				5725C5B12A7BCB6E00933331 /* PantoneColorArrays.swift in Sources */,
@@ -874,28 +958,27 @@
 				576A4F282A782EE000452FA5 /* Palette.swift in Sources */,
 				57C7D4D62DA83C3E0025AE20 /* EnvironmentValues.swift in Sources */,
 				5711D7EB2DA6EAB200F539AB /* ShareColor.swift in Sources */,
-				57712DE52A7BD0D500B16DE9 /* ColorInit.swift in Sources */,
+				57712DE52A7BD0D500B16DE9 /* Color+Init.swift in Sources */,
 				576A4F372A782FBE00452FA5 /* WatchPaletteDetailView.swift in Sources */,
 				576A4F172A782E6F00452FA5 /* ContentView.swift in Sources */,
 				57FF640E2D446C90008BA8C3 /* ProFeature.swift in Sources */,
-				576A4F2B2A782EE000452FA5 /* String.swift in Sources */,
+				576A4F2B2A782EE000452FA5 /* String+Extensions.swift in Sources */,
 				576A4F2C2A782EE000452FA5 /* ColorData.swift in Sources */,
 				576A4F2D2A782EE000452FA5 /* PantoneColorArrays.swift in Sources */,
 				576A4F2E2A782EE000452FA5 /* ColorStructure.swift in Sources */,
-				576A4F2F2A782EE000452FA5 /* Calculate Colors.swift in Sources */,
+				576A4F2F2A782EE000452FA5 /* UIColor+ColorCalculation.swift in Sources */,
 				57FF64092D446418008BA8C3 /* EntitlementsManager.swift in Sources */,
-				575FFF032D446053005FD040 /* SubscriptionsManager.swift in Sources */,
-				576A4F262A782EE000452FA5 /* View.swift in Sources */,
+				576A4F262A782EE000452FA5 /* View+Extensions.swift in Sources */,
 				576A4F2A2A782EE000452FA5 /* Pantone.swift in Sources */,
-				576A4F302A782EE000452FA5 /* Color Lists.swift in Sources */,
+				576A4F302A782EE000452FA5 /* UIColor+NamedColors.swift in Sources */,
 				576A4F152A782E6F00452FA5 /* WatchColorSenseApp.swift in Sources */,
 				57DAA12E2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift in Sources */,
 				576A4F332A782EFF00452FA5 /* WatchColorDetailView.swift in Sources */,
 				57FF64062D4460ED008BA8C3 /* SubscriptionManager.swift in Sources */,
 				576A4F352A782FB000452FA5 /* WatchPaletteListView.swift in Sources */,
-				576A4F272A782EE000452FA5 /* Color.swift in Sources */,
-				576A4F292A782EE000452FA5 /* New Colors.swift in Sources */,
-				5797051F2DA9922D009AE8C5 /* Image.swift in Sources */,
+				576A4F272A782EE000452FA5 /* Color+Extensions.swift in Sources */,
+				576A4F292A782EE000452FA5 /* UIColor+AdditionalColors.swift in Sources */,
+				5797051F2DA9922D009AE8C5 /* Image+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -905,24 +988,24 @@
 			files = (
 				5711D7EE2DA6F82C00F539AB /* SharedPaletteView.swift in Sources */,
 				57FF640F2D446C90008BA8C3 /* ProFeature.swift in Sources */,
-				57DDCDFE2A08007000B53CB7 /* Color Lists.swift in Sources */,
+				57DDCDFE2A08007000B53CB7 /* UIColor+NamedColors.swift in Sources */,
 				572053FE2A6893700072DE06 /* ColorStructure.swift in Sources */,
-				5797054E2DAD98E7009AE8C5 /* Capture.swift in Sources */,
+				5797054E2DAD98E7009AE8C5 /* AVCaptureDevice+Extensions.swift in Sources */,
 				5711D7EA2DA6EAB200F539AB /* ShareColor.swift in Sources */,
-				5753016D2A033CC6006A68A5 /* CIImage.swift in Sources */,
+				5753016D2A033CC6006A68A5 /* CIImage+Extensions.swift in Sources */,
 				5797052E2DAD5DFC009AE8C5 /* PreviewCameraModel.swift in Sources */,
 				572053FC2A68900F0072DE06 /* Palette.swift in Sources */,
-				579705202DA9922D009AE8C5 /* Image.swift in Sources */,
-				5753016F2A033CF0006A68A5 /* Calculate Colors.swift in Sources */,
+				579705202DA9922D009AE8C5 /* Image+Extensions.swift in Sources */,
+				5753016F2A033CF0006A68A5 /* UIColor+ColorCalculation.swift in Sources */,
 				576338C02A099C810034AF9D /* BottomBarView.swift in Sources */,
 				576338D12A09BD340034AF9D /* PaletteListView.swift in Sources */,
-				576338CF2A09BD280034AF9D /* PalletView-ViewModel.swift in Sources */,
+				576338CF2A09BD280034AF9D /* PaletteListViewModel.swift in Sources */,
 				579705532DADAB06009AE8C5 /* CameraUI.swift in Sources */,
 				576D8EAA2A0310AA003DE880 /* CameraPreview.swift in Sources */,
 				57FF64052D4460ED008BA8C3 /* SubscriptionManager.swift in Sources */,
 				572054032A689AE40072DE06 /* PantoneColorArrays.swift in Sources */,
 				57FF64082D446418008BA8C3 /* EntitlementsManager.swift in Sources */,
-				576338CB2A09A5D10034AF9D /* ColorDetailView-ViewModel.swift in Sources */,
+				576338CB2A09A5D10034AF9D /* ColorDetailViewModel.swift in Sources */,
 				576D8E9D2A031069003DE880 /* ContentView.swift in Sources */,
 				576338C92A09A5A00034AF9D /* ColorDetailView.swift in Sources */,
 				579705442DAD96AD009AE8C5 /* CaptureService.swift in Sources */,
@@ -930,36 +1013,35 @@
 				576D8E9B2A031069003DE880 /* ColorSenseApp.swift in Sources */,
 				5797053E2DAD9548009AE8C5 /* CameraState.swift in Sources */,
 				579705302DAD5FFF009AE8C5 /* PreviewContainer.swift in Sources */,
-				579705342DAD89C0009AE8C5 /* DataTypes.swift in Sources */,
+				579705342DAD89C0009AE8C5 /* CameraTypes.swift in Sources */,
 				57FF640B2D446B78008BA8C3 /* PaywallView.swift in Sources */,
-				575FFF042D446053005FD040 /* SubscriptionsManager.swift in Sources */,
 				576338C62A09A3C50034AF9D /* ContentView-ViewModel.swift in Sources */,
 				57E887172B465B1C0092B5ED /* SettingsView.swift in Sources */,
 				5797053B2DAD94FE009AE8C5 /* MediaLibrary.swift in Sources */,
-				575301742A034529006A68A5 /* String.swift in Sources */,
+				575301742A034529006A68A5 /* String+Extensions.swift in Sources */,
 				579705492DAD9708009AE8C5 /* PhotoCapture.swift in Sources */,
 				5797054A2DAD9708009AE8C5 /* MovieCapture.swift in Sources */,
-				5797054B2DAD9708009AE8C5 /* SPCObserver.swift in Sources */,
+				5797054B2DAD9708009AE8C5 /* SystemPreferredCameraObserver.swift in Sources */,
 				577357572A73150600903F85 /* PaletteDetailView.swift in Sources */,
-				576338CD2A09A8980034AF9D /* Color.swift in Sources */,
+				576338CD2A09A8980034AF9D /* Color+Extensions.swift in Sources */,
 				576338D62A09C03A0034AF9D /* ColorData.swift in Sources */,
 				5711D7E62DA5A16000F539AB /* ColorPickerView.swift in Sources */,
 				572054062A68A56D0072DE06 /* Pantone.swift in Sources */,
 				579705572DADB5D4009AE8C5 /* ColorCaptureService.swift in Sources */,
-				576338B92A0997AA0034AF9D /* View.swift in Sources */,
-				57712DE42A7BD0D500B16DE9 /* ColorInit.swift in Sources */,
+				576338B92A0997AA0034AF9D /* View+Extensions.swift in Sources */,
+				57712DE42A7BD0D500B16DE9 /* Color+Init.swift in Sources */,
 				5711D7F62DA6F94700F539AB /* SharePaletteView.swift in Sources */,
-				579705502DAD9A56009AE8C5 /* URL.swift in Sources */,
+				579705502DAD9A56009AE8C5 /* URL+Extensions.swift in Sources */,
 				576338BE2A099B690034AF9D /* ColorCardView.swift in Sources */,
 				579705392DAD92BD009AE8C5 /* CameraModel.swift in Sources */,
 				579705322DAD87E4009AE8C5 /* DeviceLookup.swift in Sources */,
 				5711D7E42DA4522B00F539AB /* PaletteEditViewModel.swift in Sources */,
-				5753016B2A033C9F006A68A5 /* CIColor.swift in Sources */,
+				5753016B2A033C9F006A68A5 /* CIColor+Extensions.swift in Sources */,
 				579705422DAD95A1009AE8C5 /* AVCamCaptureIntent.swift in Sources */,
 				57C7D4D52DA83C3E0025AE20 /* EnvironmentValues.swift in Sources */,
-				577357592A73153800903F85 /* PalletDetailView-ViewModel.swift in Sources */,
+				577357592A73153800903F85 /* PaletteDetailViewModel.swift in Sources */,
 				576338C22A099D240034AF9D /* FocusCircleView.swift in Sources */,
-				57DDCDFC2A07F93600B53CB7 /* New Colors.swift in Sources */,
+				57DDCDFC2A07F93600B53CB7 /* UIColor+AdditionalColors.swift in Sources */,
 				579705362DAD8BB7009AE8C5 /* Camera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
