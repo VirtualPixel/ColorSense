@@ -8,24 +8,20 @@
 import SwiftUI
 
 struct FocusCircleView: View {
-    @EnvironmentObject private var cameraFeed: CameraFeed
-    
+    @EnvironmentObject var camera: CameraModel
+    var bounds: CGRect
+
     var body: some View {
-        createFocusButton()
-    }
-    
-    private func createFocusButton() -> some View {
         Circle()
-            .strokeBorder(.white, lineWidth: (cameraFeed.region > 20 ? 3 : cameraFeed.region * 0.15))
-            .frame(width: cameraFeed.region, height: cameraFeed.region)
+            .strokeBorder(.white, lineWidth: camera.colorRegion * 0.15)
+            .frame(width: camera.colorRegion, height: camera.colorRegion)
+            .position(x: bounds.midX, y: bounds.midY)
     }
 }
 
 struct FocusCircleView_Previews: PreviewProvider {
-    static let cameraFeed = CameraFeed()
-    
     static var previews: some View {
-        FocusCircleView()
-            .environmentObject(cameraFeed)
+        FocusCircleView(bounds: CGRect(x: 0, y: 0, width: 0, height: 0))
+            .environmentObject(PreviewCameraModel())
     }
 }

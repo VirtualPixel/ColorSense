@@ -9,14 +9,14 @@ import SwiftUI
 
 struct PaletteDetailView: View {
     @Environment(\.modelContext) private var context
-    
     @EnvironmentObject private var entitlementManager: EntitlementManager
-    
+    @EnvironmentObject var camera: CameraModel
+
     @State private var showingAddHexColorAlert = false
     @State private var colorHex = ""
     @State private var showingInvalidHexAlert = false
     @State private var showingPaywall = false
-    
+
     var palette: Palette
 
     var sortedColors: [ColorStructure] {
@@ -132,7 +132,7 @@ struct PaletteDetailView: View {
 }
 
 #Preview {
-    let entitlementManager = EntitlementManager()
     PaletteDetailView(palette: Palette.defaultPalette)
-    .environmentObject(entitlementManager)
+        .environmentObject(PreviewCameraModel())
+        .environmentObject(EntitlementManager())
 }

@@ -39,24 +39,43 @@ class SubscriptionsManager: NSObject, ObservableObject {
     
     private var purchasedProductIDs: Set<String> = []
     private let entitlementManager: EntitlementManager
-    private var updates: Task<Void, Never>? = nil
-    
+    private var transactionListenerTask: Task<Void, Never>?
+
     init(entitlementManager: EntitlementManager) {
         self.entitlementManager = entitlementManager
         super.init()
-        updates = observeTransactionUpdates()
-        SKPaymentQueue.default().add(self)
+        self.transactionListenerTask = observeTransactionUpdates()
     }
     
     deinit {
-        updates?.cancel()
+        transactionListenerTask?.cancel()
     }
     
     func observeTransactionUpdates() -> Task<Void, Never> {
         Task(priority: .background) { [weak self] in
-            for await _ in Transaction.updates {
+            for await verificationResult in Transaction.updates {
+                if case .verified(let transaction) = verificationResult {
+                    await self?.handleVerifiedTransaction(transaction)
+
+                    await transaction.finish()
+                }
                 await self?.updatePurchasedProducts()
             }
+        }
+    }
+
+    private func handleVerifiedTransaction(_ transaction: StoreKit.Transaction) async {
+        // Process the transaction
+        if transaction.revocationDate == nil {
+            if let expirationDate = transaction.expirationDate, expirationDate > Date() {
+                purchasedProductIDs.insert(transaction.productID)
+                entitlementManager.hasPro = true
+            }
+        } else {
+            // Transaction was revoked
+            purchasedProductIDs.remove(transaction.productID)
+            // Check if any active subscriptions remain
+            entitlementManager.hasPro = !purchasedProductIDs.isEmpty
         }
     }
 }
@@ -87,26 +106,26 @@ extension SubscriptionsManager {
                 // Successful purhcase
                 await transaction.finish()
                 await self.updatePurchasedProducts()
+                showThankYouAlert = true
             case let .success(.unverified(_, error)):
                 // Successful purchase but transaction/receipt can't be verified
                 // Could be a jailbroken phone
                 print("Unverified purchase. Might be jailbroken. Error: \(error)")
                 purchaseError = .verificationFailed
-                break
             case .pending:
                 // Transaction waiting on SCA (Strong Customer Authentication) or
                 // approval from Ask to Buy
-                break
+                print("Purchase pending approval")
             case .userCancelled:
                 print("User cancelled!")
                 break
             @unknown default:
                 print("Failed to purchase the product!")
                 purchaseError = .purchaseFailed
-                break
             }
         } catch {
             print("Failed to purchase the product!")
+            purchaseError = .purchaseFailed
         }
     }
     
@@ -157,11 +176,5 @@ extension SubscriptionsManager {
             print("Restore error: \(error)")
             purchaseError = .restoreFailed
         }
-    }
-}
-
-extension SubscriptionsManager: @preconcurrency SKPaymentTransactionObserver {
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        
     }
 }

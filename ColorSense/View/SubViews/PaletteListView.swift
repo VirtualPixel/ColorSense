@@ -12,8 +12,8 @@ struct PaletteListView: View {
     @Query var palettes: [Palette]
     @Environment(\.modelContext) private var context
     @StateObject private var viewModel = ViewModel()
-    @EnvironmentObject private var cameraFeed: CameraFeed
     @EnvironmentObject private var entitlementManager: EntitlementManager
+    @EnvironmentObject var camera: CameraModel
     @State private var editMode: EditMode = .inactive
     @State private var paletteName = ""
     @State private var showingAddNewPalette = false
@@ -71,7 +71,7 @@ struct PaletteListView: View {
                 }
             }
             .onAppear {
-                // cameraFeed.stop()
+                camera.isPausingColorProcessing = true
             }
         }
     }
@@ -256,11 +256,8 @@ struct PaletteListView: View {
     }
 }
 
-#Preview {
-    let cameraFeed = CameraFeed()
-    let entitlementManager = EntitlementManager()
-    
+#Preview {    
     PaletteListView()
-        .environmentObject(cameraFeed)
-        .environmentObject(entitlementManager)
+        .environmentObject(PreviewCameraModel())
+        .environmentObject(EntitlementManager())
 }

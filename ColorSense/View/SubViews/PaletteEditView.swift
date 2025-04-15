@@ -11,6 +11,7 @@ import SwiftData
 struct PaletteEditView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var camera: CameraModel
 
     @StateObject private var viewModel: ViewModel
     @State private var hexColorInput: String = ""
@@ -149,5 +150,6 @@ struct PaletteEditView: View {
 #Preview {
     NavigationStack {
         PaletteEditView(palette: Palette.defaultPalette)
+            .environmentObject(PreviewCameraModel())
     }
 }

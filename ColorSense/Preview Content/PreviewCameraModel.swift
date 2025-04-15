@@ -4,12 +4,12 @@ See the LICENSE.txt file for this sample’s licensing information.
 Abstract:
 A Camera implementation to use when working with SwiftUI previews.
 */
-/*
+
 import Foundation
 import SwiftUI
 
 @Observable
-class PreviewCameraModel: Camera {
+class PreviewCameraModel: Camera, ObservableObject {
 
     var isLivePhotoEnabled = true
     var prefersMinimizedUI = false
@@ -17,6 +17,7 @@ class PreviewCameraModel: Camera {
     var shouldFlashScreen = false
     var isHDRVideoSupported = false
     var isHDRVideoEnabled = false
+    var isTorchEnabled = false
 
     struct PreviewSourceStub: PreviewSource {
         // Stubbed out for test purposes.
@@ -41,6 +42,11 @@ class PreviewCameraModel: Camera {
     private(set) var isVideoDeviceSwitchable = true
     private(set) var isSwitchingVideoDevices = false
     private(set) var thumbnail: CGImage?
+    private(set) var dominantColor: Color? = .blue
+    private(set) var exactColorName: String? = "Azure Blue"
+    private(set) var simpleColorName: String? = "Blue"
+    var colorRegion: CGFloat = 20
+    var isPausingColorProcessing: Bool = false
 
     var error: Error?
 
@@ -56,19 +62,19 @@ class PreviewCameraModel: Camera {
     }
 
     func switchVideoDevices() {
-        logger.debug("Device switching isn't implemented in PreviewCamera.")
+        print("Device switching isn't implemented in PreviewCamera.")
     }
 
     func capturePhoto() {
-        logger.debug("Photo capture isn't implemented in PreviewCamera.")
+        print("Photo capture isn't implemented in PreviewCamera.")
     }
 
     func toggleRecording() {
-        logger.debug("Moving capture isn't implemented in PreviewCamera.")
+        print("Moving capture isn't implemented in PreviewCamera.")
     }
 
     func focusAndExpose(at point: CGPoint) {
-        logger.debug("Focus and expose isn't implemented in PreviewCamera.")
+        print("Focus and expose isn't implemented in PreviewCamera.")
     }
 
     var recordingTime: TimeInterval { .zero }
@@ -76,15 +82,16 @@ class PreviewCameraModel: Camera {
     private func capabilities(for mode: CaptureMode) -> CaptureCapabilities {
         switch mode {
         case .photo:
-            return CaptureCapabilities(isLivePhotoCaptureSupported: true)
+            return CaptureCapabilities(isLiveCaptureSupported: true,
+                                       isTorchSupported: true)
         case .video:
-            return CaptureCapabilities(isLivePhotoCaptureSupported: false,
-                                       isHDRSupported: true)
+            return CaptureCapabilities(isLiveCaptureSupported: false,
+                                       isHDRSupported: true,
+                                       isTorchSupported: true)
         }
     }
 
     func syncState() async {
-        logger.debug("Syncing state isn't implemented in PreviewCamera.")
+        print("Syncing state isn't implemented in PreviewCamera.")
     }
 }
-*/

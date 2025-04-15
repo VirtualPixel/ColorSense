@@ -13,7 +13,6 @@ import SwiftData
 struct SharedPaletteView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var cameraFeed: CameraFeed
 
     let palette: Palette
     @State private var paletteName: String

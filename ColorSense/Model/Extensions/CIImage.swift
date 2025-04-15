@@ -16,10 +16,10 @@ extension CIImage {
         let regionOriginX = centerX - regionSize / 2
         let regionOriginY = centerY - regionSize / 2
         let region = CGRect(x: regionOriginX, y: regionOriginY, width: regionSize, height: regionSize)
-        
+
         // Crop the CIImage to the middle region
         let croppedImage = self.cropped(to: region)
-        
+
         let extentVector = CIVector(x: croppedImage.extent.origin.x, y: croppedImage.extent.origin.y, z: croppedImage.extent.size.width, w: croppedImage.extent.size.height)
         
         guard let filter = CIFilter(name: "CIAreaAverage", parameters: [kCIInputImageKey: croppedImage, kCIInputExtentKey: extentVector]) else { return nil }

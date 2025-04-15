@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ColorDetailView: View {
-    @EnvironmentObject private var cameraFeed: CameraFeed
+    @EnvironmentObject private var camera: CameraModel
     @ObservedObject private var viewModel: ViewModel
     
     @AppStorage("showRgb") var showRgb = true
@@ -17,7 +17,7 @@ struct ColorDetailView: View {
     @AppStorage("showCmyk") var showCmyk = true
     @AppStorage("showSwiftUI") var showSwiftUI = true
     @AppStorage("showUIKit") var showUIKit = true
-    
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -33,7 +33,7 @@ struct ColorDetailView: View {
             }
             .toolbar { toolbarContent() }
             .onAppear {
-                // cameraFeed.stop()
+                camera.isPausingColorProcessing = true
             }
         }
     }
@@ -248,12 +248,9 @@ struct ColorDetailView: View {
 }
 
 struct ColorDetailView_Previews: PreviewProvider {
-    static let entitlementsManager = EntitlementManager()
-    static let cameraFeed = CameraFeed()
-    
     static var previews: some View {
         ColorDetailView(color: Color.init(hex: "2A2A1A"))
-            .environmentObject(cameraFeed)
-            .environmentObject(entitlementsManager)
+            .environmentObject(PreviewCameraModel())
+            .environmentObject(EntitlementManager())
     }
 }

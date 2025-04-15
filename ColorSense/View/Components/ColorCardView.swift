@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ColorCardView: View {
-    @EnvironmentObject private var cameraFeed: CameraFeed
+    @EnvironmentObject private var camera: CameraModel
     @State private var isAddingColor = false
     let isDisabled: Bool
     
@@ -17,12 +17,9 @@ struct ColorCardView: View {
             displayColorCard()
             .buttonStyle(.plain)
             .sheet(isPresented: $isAddingColor) {
-                PaletteListView(colorToAdd: cameraFeed.dominantColor?.toHex())
+                PaletteListView(colorToAdd: camera.dominantColor?.toHex())
                     .onAppear {
-                        cameraFeed.stop()
-                    }
-                    .onDisappear {
-                        cameraFeed.start()
+                        camera.isPausingColorProcessing = true
                     }
             }
         }
@@ -36,21 +33,22 @@ struct ColorCardView: View {
         HStack {
             Spacer()
             Circle()
-                .foregroundStyle(cameraFeed.dominantColor ?? .black)
+                .foregroundStyle(camera.dominantColor ?? .black)
             Divider()
         }
     }
 
     private func createColorText(geometry: GeometryProxy) -> some View {
         VStack {
-            Text("\(cameraFeed.exactName ?? "The Geothermal blue")")
+            Text("\(camera.exactColorName ?? "The Geothermal blue")")
                 .font(.system(size: geometry.size.width * 0.04))
                 .minimumScaleFactor(0.5)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.white)
-            Text("\(cameraFeed.simpleName ?? "Blue") Family")
+            Text("\(camera.simpleColorName ?? "Blue") Family")
                 .font(.system(size: geometry.size.width * 0.04).bold())
                 .minimumScaleFactor(0.5)  // Allows the text to scale down to 50% of its original size
+                .multilineTextAlignment(.center)
                 .foregroundStyle(.white)
         }
     }
@@ -106,7 +104,7 @@ struct ColorCardView: View {
                 colorCard()
             } else {
                 NavigationLink {
-                    ColorDetailView(color: cameraFeed.dominantColor ?? .blue)
+                    ColorDetailView(color: camera.dominantColor ?? .blue)
                 } label: {
                     colorCard()
                 }
@@ -116,10 +114,8 @@ struct ColorCardView: View {
 }
 
 struct ColorCardView_Previews: PreviewProvider {
-    static let cameraFeed = CameraFeed()
-    
     static var previews: some View {
         ColorCardView()
-            .environmentObject(cameraFeed)
+            .environmentObject(PreviewCameraModel())
     }
 }

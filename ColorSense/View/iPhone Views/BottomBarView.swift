@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BottomBarView: View {
-    @EnvironmentObject private var cameraFeed: CameraFeed
+    @EnvironmentObject private var camera: CameraModel
 
     var body: some View {
         HStack {
@@ -36,7 +36,7 @@ struct BottomBarView: View {
     private func pauseProcessingButton() -> some View {
         Button {
             withAnimation {
-                cameraFeed.pauseProcessing.toggle()
+                camera.isPausingColorProcessing.toggle()
             }
         } label: {
             ZStack {
@@ -53,7 +53,7 @@ struct BottomBarView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50)
-                            .opacity(cameraFeed.pauseProcessing ? 1.0 : 0.0)
+                            .opacity(camera.isPausingColorProcessing ? 1.0 : 0.0)
                             .foregroundColor(.black)
                             .padding()
                     )
@@ -64,7 +64,9 @@ struct BottomBarView: View {
 
     private func cameraSwapButton() -> some View {
         Button {
-            cameraFeed.swapCamera()
+            Task {
+                await camera.switchVideoDevices()
+            }
         } label: {
             Image(systemName: "arrow.triangle.2.circlepath")
                 .resizable()
@@ -81,10 +83,8 @@ struct BottomBarView: View {
 }
 
 struct BottomBarView_Previews: PreviewProvider {
-    static let cameraFeed = CameraFeed()
-    
     static var previews: some View {
         BottomBarView()
-            .environmentObject(cameraFeed)
+            .environmentObject(PreviewCameraModel())
     }
 }
