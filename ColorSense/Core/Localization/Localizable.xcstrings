@@ -6,6 +6,12 @@
     },
     "/" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24,7 +30,61 @@
             "value" : "/"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
         "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/"
+          }
+        },
+        "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "/"
@@ -46,6 +106,12 @@
     },
     "%@" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -64,7 +130,61 @@
             "value" : "%@"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
         "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@"
@@ -86,6 +206,12 @@
     },
     "%@\nCheck out this color in ColorSense:\nColorSense://color?colorHex=%@" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nTjek denne farve i ColorSense:\nColorSense://color?colorHex=%2$@"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -110,10 +236,64 @@
             "value" : "%1$@\nDécouvrez cette couleur dans ColorSense:\nColorSense://color?colorHex=%2$@"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nDécouvrez cette couleur dans ColorSense:\nColorSense://color?colorHex=%2$@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nइस रंग को ColorSense में देखें:\nColorSense://color?colorHex=%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nGuarda questo colore in ColorSense:\nColorSense://color?colorHex=%2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nColorSenseでこの色をチェックしてください:\nColorSense://color?colorHex=%2$@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\n이 색상을 ColorSense에서 확인하세요:\nColorSense://color?colorHex=%2$@"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@\nLihat warna ini dalam ColorSense:\nColorSense://color?colorHex=%2$@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nSprawdź ten kolor w ColorSense:\nColorSense://color?colorHex=%2$@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nConfira esta cor no ColorSense:\nColorSense://color?colorHex=%2$@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nПосмотрите на этот цвет в ColorSense:\nColorSense://color?colorHex=%2$@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nBu rengi ColorSense'te kontrol et:\nColorSense://color?colorHex=%2$@"
           }
         },
         "zh-Hans" : {
@@ -132,6 +312,12 @@
     },
     "%@\nCheck out this palette in ColorSense:\n%@" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nTjek denne palette i ColorSense:\n%2$@"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -156,10 +342,64 @@
             "value" : "%1$@\nDécouvrez cette palette dans ColorSense:\n%2$@"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nDécouvrez cette palette dans ColorSense:\n%2$@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nइस पैलेट को ColorSense में देखें:\n%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nGuarda questa palette in ColorSense:\n%2$@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nColorSenseでこのパレットをチェックしてください:\n%2$@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\n이 팔레트를 ColorSense에서 확인하세요:\n%2$@"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@\nLihat palet ini dalam ColorSense:\n%2$@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nSprawdź tę paletę w ColorSense:\n%2$@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nConfira esta paleta no ColorSense:\n%2$@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nПосмотрите на эту палитру в ColorSense:\n%2$@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\nBu paleti ColorSense'te kontrol et:\n%2$@"
           }
         },
         "zh-Hans" : {
@@ -178,6 +418,12 @@
     },
     "%@ Family" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Familie"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -196,10 +442,64 @@
             "value" : "Famille de %@"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Famille de %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ परिवार"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Famiglia"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ファミリー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 패밀리"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Keluarga"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Rodzina"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Família %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Семейство"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Ailesi"
           }
         },
         "zh-Hans" : {
@@ -218,6 +518,12 @@
     },
     "+%lld" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -236,7 +542,61 @@
             "value" : "+%lld"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
         "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+%lld"
+          }
+        },
+        "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "+%lld"
@@ -258,6 +618,12 @@
     },
     "A wild color has appeared!" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En vild farve er dukket op!"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -276,10 +642,64 @@
             "value" : "Une couleur sauvage est apparue!"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une couleur sauvage est apparue!"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एक जंगली रंग प्रकट हुआ है!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "È apparso un colore selvaggio!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "野生の色が現れました！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "야생 색상이 나타났습니다!"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Warna liar telah muncul!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pojawił się dziki kolor!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma cor selvagem apareceu!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Появился новый цвет!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vahşi bir renk belirdi!"
           }
         },
         "zh-Hans" : {
@@ -298,6 +718,12 @@
     },
     "Accessibility View" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tilgængelighedsvisning"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -316,10 +742,64 @@
             "value" : "Vue d'accessibilité"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vue d'accessibilité"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एक्सेसिबिलिटी व्यू"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista Accessibilità"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクセシビリティビュー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "접근성 보기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Paparan Kebolehcapaian"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widok dostępności"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualização de Acessibilidade"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Просмотр доступности"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erişilebilirlik Görünümü"
           }
         },
         "zh-Hans" : {
@@ -338,6 +818,12 @@
     },
     "Add Color" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tilføj farve"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -356,10 +842,64 @@
             "value" : "Ajouter une couleur"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter une couleur"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग जोड़ें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi Colore"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色を追加"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색상 추가"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tambah Warna"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj kolor"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar Cor"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавить цвет"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renk Ekle"
           }
         },
         "zh-Hans" : {
@@ -378,6 +918,12 @@
     },
     "Add color to palette" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tilføj farve til palet"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -396,10 +942,64 @@
             "value" : "Ajouter la couleur à la palette"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter la couleur à la palette"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पैलेट में रंग जोड़ें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi colore alla palette"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パレットに色を追加"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "팔레트에 색상 추가"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tambah warna ke palet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj kolor do palety"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar cor à paleta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добавить цвет в палитру"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palete renk ekle"
           }
         },
         "zh-Hans" : {
@@ -418,6 +1018,12 @@
     },
     "Apply" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anvend"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -436,10 +1042,64 @@
             "value" : "Appliquer"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appliquer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लागू करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiorna"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "適用"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "적용"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guna"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zastosuj"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplicar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Применить"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygula"
           }
         },
         "zh-Hans" : {
@@ -458,6 +1118,12 @@
     },
     "Are you sure you want to delete %@?" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Er du sikker på, at du vil slette %@?"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -476,10 +1142,64 @@
             "value" : "Voulez-vous vraiment supprimer %@ ?"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voulez-vous vraiment supprimer %@?"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "क्या आप निश्चित हैं कि आप %@ को डिलीट करना चाहते हैं?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confermi di voler eliminare %@?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%[tt]@を削除してもよろしいですか?"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@을(를) 삭제하겠습니까?"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Adakah anda pasti mahu memadamkan %@?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czy na pewno chcesz usunąć %@?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você tem certeza de que quer apagar %@?"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы действительно хотите удалить %@?"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ uygulamasını silmek istediğinizden emin misiniz?"
           }
         },
         "zh-Hans" : {
@@ -498,6 +1218,12 @@
     },
     "AVCamCaptureIntent" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamCaptureIntent"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -516,7 +1242,61 @@
             "value" : "AVCamCaptureIntent"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamCaptureIntent"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamCaptureIntent"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamCaptureIntent"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamCaptureIntent"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamCaptureIntent"
+          }
+        },
         "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamCaptureIntent"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamCaptureIntent"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamCaptureIntent"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamCaptureIntent"
+          }
+        },
+        "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "AVCamCaptureIntent"
@@ -538,6 +1318,12 @@
     },
     "Cancel" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuller"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -556,10 +1342,64 @@
             "value" : "Annuler"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रद्द करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "취소"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Batal"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отменить"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vazgeç"
           }
         },
         "zh-Hans" : {
@@ -578,6 +1418,12 @@
     },
     "Capture photos and videos with AVCam." : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optag fotos og videoer med AVCam."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -596,10 +1442,64 @@
             "value" : "Capturez des photos et des vidéos avec AVCam."
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capturez des photos et des vidéos avec AVCam."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCam के साथ फोटो और वीडियो कैप्चर करें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cattura foto e video con AVCam."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCamで写真やビデオを撮影します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCam으로 사진과 비디오를 캡처하세요."
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tangkap foto dan video dengan AVCam."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rób zdjęcia i nagrywaj filmy za pomocą AVCam."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capture fotos e vídeos com o AVCam."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Снимайте фото и видео с помощью AVCam."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVCam ile fotoğraf ve video çekin."
           }
         },
         "zh-Hans" : {
@@ -618,6 +1518,12 @@
     },
     "Check out this color palette!" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tjek denne farvepalette!"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -636,10 +1542,64 @@
             "value" : "Découvrez cette palette de couleurs!"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Découvrez cette palette de couleurs!"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इस रंग पैलेट को देखें!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarda questa palette di colori!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このカラーパレットをチェックしてください！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 색상 팔레트를 확인하세요!"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lihat palet warna ini!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprawdź tę paletę kolorów!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confira esta paleta de cores!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Посмотрите на эту цветовую палитру!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu renk paletine göz atın!"
           }
         },
         "zh-Hans" : {
@@ -658,6 +1618,12 @@
     },
     "Close" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luk"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -676,10 +1642,64 @@
             "value" : "Fermer"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermés"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बंद करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiudi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "閉じる"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "닫기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tutup"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamknij"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрыть"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kapat"
           }
         },
         "zh-Hans" : {
@@ -698,6 +1718,12 @@
     },
     "Color accessibility details will appear here" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farvetilgængelighedsdetaljer vil blive vist her"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -716,10 +1742,64 @@
             "value" : "Les détails d'accessibilité des couleurs apparaîtront ici"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les détails d'accessibilité des couleurs apparaîtront ici"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग एक्सेसिबिलिटी विवरण यहाँ दिखाई देंगे"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I dettagli di accessibilità del colore appariranno qui"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここに色のアクセシビリティの詳細が表示されます"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색상 접근성 세부정보가 여기에 나타납니다"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Butiran kebolehcapaian warna akan muncul di sini"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szczegóły dostępności kolorów pojawią się tutaj"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os detalhes de acessibilidade de cores aparecerão aqui"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Детали доступности цвета появятся здесь"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renk erişilebilirlik detayları burada görünecek"
           }
         },
         "zh-Hans" : {
@@ -738,6 +1818,12 @@
     },
     "Color Details" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farvedetaljer"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -756,10 +1842,64 @@
             "value" : "Détails de la couleur"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détails de la couleur"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग विवरण"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dettagli Colore"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色の詳細"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색상 세부정보"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Butiran Warna"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szczegóły koloru"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalhes da Cor"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Детали цвета"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renk Detayları"
           }
         },
         "zh-Hans" : {
@@ -778,6 +1918,12 @@
     },
     "Color Palettes" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farvepaletter"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -796,10 +1942,64 @@
             "value" : "Palettes de couleurs"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palettes de couleurs"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग पैलेट्स"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palette di Colori"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カラーパレット"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색상 팔레트"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Palet Warna"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palety kolorów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paletas de Cores"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цветовые палитры"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renk Paletleri"
           }
         },
         "zh-Hans" : {
@@ -818,6 +2018,12 @@
     },
     "Color Picker" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farvevælger"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -836,10 +2042,64 @@
             "value" : "Sélecteur de couleurs"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélecteur de couleurs"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग चयनकर्ता"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selettore di Colori"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カラーピッカー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색상 선택기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pemilih Warna"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybór koloru"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seletor de Cores"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбор цвета"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renk Seçici"
           }
         },
         "zh-Hans" : {
@@ -858,6 +2118,12 @@
     },
     "Color Wheel" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farvehjul"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -876,10 +2142,64 @@
             "value" : "Roue des couleurs"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roue de couleur"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग चक्र"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruota colori"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カラーホイール"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색상 원판"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Roda Warna"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koło kolorów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disco de Cores"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цветовой круг"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renk Tekeri"
           }
         },
         "zh-Hans" : {
@@ -898,6 +2218,12 @@
     },
     "Colors" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Farver"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -916,10 +2242,64 @@
             "value" : "Couleurs"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleurs"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colori"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색상"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Warna"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolory"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cores"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цвета"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renkler"
           }
         },
         "zh-Hans" : {
@@ -938,6 +2318,12 @@
     },
     "Contact Us" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontakt os"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -956,10 +2342,64 @@
             "value" : "Contactez-nous"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contactez-nous"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हमसे संपर्क करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contattaci"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お問い合わせ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "문의하기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hubungi Kami"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skontaktuj się z nami"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contate-Nos"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Свяжитесь с нами"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bize Ulaşın"
           }
         },
         "zh-Hans" : {
@@ -978,6 +2418,12 @@
     },
     "Continue" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortsæt"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -996,10 +2442,64 @@
             "value" : "Continuer"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "जारी रखें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continua"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "許可する"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "계속"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Teruskan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dalej"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Продолжить"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sürdür"
           }
         },
         "zh-Hans" : {
@@ -1018,6 +2518,12 @@
     },
     "Copy Hex" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiér Hex"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1036,10 +2542,64 @@
             "value" : "Copier le code Hex"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copier le code Hex"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेक्स कॉपी करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copia Hex"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hexをコピー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hex 복사"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salin Hex"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiuj Hex"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiar Hex"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Копировать Hex"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hex Kopyala"
           }
         },
         "zh-Hans" : {
@@ -1058,6 +2618,12 @@
     },
     "Copy to clipboard" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiér til udklipsholder"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1076,10 +2642,64 @@
             "value" : "Copier dans le presse-papiers"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copier dans le presse-papiers"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "क्लिपबोर्ड पर कॉपी करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copia negli appunti"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クリップボードにコピー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "클립보드에 복사"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salin ke papan klip"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopiuj do schowka"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiar para a área de transferência"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Копировать в буфер обмена"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panoya kopyala"
           }
         },
         "zh-Hans" : {
@@ -1098,6 +2718,12 @@
     },
     "Create Pelette" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opret palet"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1116,10 +2742,64 @@
             "value" : "Créer une palette"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer une palette"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पैलेट बनाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea Palette"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パレットを作成"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "팔레트 생성"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cipta Palet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utwórz paletę"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criar Paleta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Создать палитру"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palet Oluştur"
           }
         },
         "zh-Hans" : {
@@ -1138,6 +2818,12 @@
     },
     "Delete" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1156,10 +2842,64 @@
             "value" : "Supprimer"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिलीट करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "삭제"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Padam"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apagar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sil"
           }
         },
         "zh-Hans" : {
@@ -1178,6 +2918,12 @@
     },
     "Delete Palette" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slet palette"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1196,10 +2942,64 @@
             "value" : "Supprimer la palette"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer la palette"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पैलेट हटाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina Palette"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パレットを削除"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "팔레트 삭제"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Padam Palet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń paletę"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir Paleta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить палитру"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleti Sil"
           }
         },
         "zh-Hans" : {
@@ -1218,6 +3018,12 @@
     },
     "Done" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1236,10 +3042,64 @@
             "value" : "OK"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पूर्ण"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fine"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "완료"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selesai"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gotowe"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готово"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitti"
           }
         },
         "zh-Hans" : {
@@ -1258,6 +3118,12 @@
     },
     "e.g. #FF5500" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "f.eks. #FF5500"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1276,10 +3142,64 @@
             "value" : "par exemple #FF5500"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "par exemple, #FF5500"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उदाहरण के लिए, #FF5500"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "es. #FF5500"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "例: #FF5500"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "예: #FF5500"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "cth. #FF5500"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "np. #FF5500"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "por exemplo, #FF5500"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "например, #FF5500"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ör. #FF5500"
           }
         },
         "zh-Hans" : {
@@ -1298,6 +3218,12 @@
     },
     "Edit Palette" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rediger palette"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1316,10 +3242,64 @@
             "value" : "Modifier la palette"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier la palette"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पैलेट संपादित करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifica Palette"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パレットを編集"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "팔레트 편집"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Edit Palet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edytuj paletę"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar Paleta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактировать палитру"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleti Düzenle"
           }
         },
         "zh-Hans" : {
@@ -1338,6 +3318,12 @@
     },
     "Enter new color Hex value" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indtast ny farve Hex-værdi"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1356,10 +3342,64 @@
             "value" : "Entrez une nouvelle valeur Hex de couleur"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrez une nouvelle valeur Hex de couleur"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नया रंग हेक्स मान दर्ज करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci nuovo valore esadecimale del colore"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しい色の16進数値を入力"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새로운 색상 Hex 값을 입력하세요"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Masukkan nilai Hex warna baru"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wprowadź nową wartość koloru Hex"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insira o novo valor Hex da cor"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите новое значение цвета в формате Hex"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni renk Hex değerini girin"
           }
         },
         "zh-Hans" : {
@@ -1378,6 +3418,12 @@
     },
     "Error" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fejl"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1396,10 +3442,64 @@
             "value" : "Erreur"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "त्रुटि"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Errore"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エラー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오류"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ralat"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Błąd"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erro"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hata"
           }
         },
         "zh-Hans" : {
@@ -1418,6 +3518,12 @@
     },
     "Feature request? Just a tap away!" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funktionsanmodning? Bare et tryk væk!"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1436,10 +3542,64 @@
             "value" : "Demande de fonctionnalité ? Juste à un tap !"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demande de fonctionnalité ? Juste à un tap !"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फीचर अनुरोध? बस एक टैप दूर!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Richiesta di funzionalità? Basta un tocco!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "機能のリクエスト？タップするだけで！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기능 요청? 한 번의 탭으로 가능합니다!"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Permintaan ciri? Hanya satu ketukan sahaja!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prośba o funkcję? Wystarczy jedno stuknięcie!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solicitação de recurso? Apenas um toque de distância!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Есть предложение по улучшению? Всего один тап!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Özellik isteği mi? Sadece bir dokunuş uzağınızda!"
           }
         },
         "zh-Hans" : {
@@ -1458,6 +3618,12 @@
     },
     "Hex Code" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hex-kode"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1476,10 +3642,64 @@
             "value" : "Code Hex"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code Hex"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेक्स कोड"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Codice Hex"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "16進コード"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hex 코드"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kod Hex"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kod Hex"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código Hex"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Код Hex"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hex Kodu"
           }
         },
         "zh-Hans" : {
@@ -1498,6 +3718,12 @@
     },
     "Interesting color" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interessant farve"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1516,10 +3742,64 @@
             "value" : "Couleur intéressante"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur intéressante"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दिलचस्प रंग"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colore interessante"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "興味深い色"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "흥미로운 색상"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Warna Menarik"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interesujący kolor"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cor interessante"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Интересный цвет"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İlginç renk"
           }
         },
         "zh-Hans" : {
@@ -1538,6 +3818,12 @@
     },
     "Invalid color hex value" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ugyldig farve hex-værdi"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1556,10 +3842,64 @@
             "value" : "Valeur hex de couleur invalide"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valeur Hex de couleur invalide"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अमान्य रंग हेक्स मान"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valore esadecimale del colore non valido"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無効な色の16進数値"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "잘못된 색상 hex 값"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nilai hex warna tidak sah"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieprawidłowa wartość koloru Hex"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valor de cor hex inválido"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Недопустимое значение цвета в формате Hex"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geçersiz renk hex değeri"
           }
         },
         "zh-Hans" : {
@@ -1578,6 +3918,12 @@
     },
     "Invalid Hex Code" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ugyldig Hex-kode"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1596,10 +3942,64 @@
             "value" : "Code Hex invalide"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code Hex invalide"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अमान्य हेक्स कोड"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Codice Hex non valido"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無効な16進コード"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "잘못된 Hex 코드"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kod Hex Tidak Sah"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieprawidłowy kod Hex"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código Hex Inválido"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Недопустимый код Hex"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geçersiz Hex Kodu"
           }
         },
         "zh-Hans" : {
@@ -1618,6 +4018,12 @@
     },
     "Invalid Hex Color" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ugyldig Hex-farve"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1636,10 +4042,64 @@
             "value" : "Couleur Hex invalide"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur Hex invalide"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अमान्य हेक्स रंग"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colore Hex non valido"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無効な16進カラー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "잘못된 Hex 색상"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Warna Hex Tidak Sah"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieprawidłowy kolor Hex"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cor Hex Inválida"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Недопустимый цвет Hex"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geçersiz Hex Rengi"
           }
         },
         "zh-Hans" : {
@@ -1658,6 +4118,12 @@
     },
     "It seems pretty empty here! Try adding a color or two." : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det ser ret tomt ud her! Prøv at tilføje en farve eller to."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1676,10 +4142,64 @@
             "value" : "Il semble assez vide ici ! Essayez d'ajouter une couleur ou deux."
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il semble assez vide ici ! Essayez d'ajouter une couleur ou deux."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यहाँ काफी खाली लगता है! एक या दो रंग जोड़ने का प्रयास करें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sembra piuttosto vuoto qui! Prova ad aggiungere un colore o due."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここはかなり空っぽのようです！色を1つか2つ追加してみてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여기가 꽤 비어 있는 것 같아요! 색상을 하나 또는 두 개 추가해 보세요."
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nampaknya agak kosong di sini! Cuba tambah satu atau dua warna."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wydaje się tu dość pusto! Spróbuj dodać jeden lub dwa kolory."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parece bem vazio aqui! Tente adicionar uma cor ou duas."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Здесь довольно пусто! Попробуйте добавить один или два цвета."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Burası oldukça boş görünüyor! Bir veya iki renk eklemeyi deneyin."
           }
         },
         "zh-Hans" : {
@@ -1698,6 +4218,12 @@
     },
     "It seems pretty empty here! Try adding a palette or two." : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det ser ret tomt ud her! Prøv at tilføje en palette eller to."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1716,10 +4242,64 @@
             "value" : "Il semble assez vide ici ! Essayez d'ajouter une palette ou deux."
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il semble assez vide ici ! Essayez d'ajouter une palette ou deux."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यहाँ काफी खाली लगता है! एक या दो पैलेट जोड़ने का प्रयास करें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sembra piuttosto vuoto qui! Prova ad aggiungere una palette o due."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここはかなり空っぽのようです！パレットを1つか2つ追加してみてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여기가 꽤 비어 있는 것 같아요! 팔레트를 하나 또는 두 개 추가해 보세요."
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nampaknya agak kosong di sini! Cuba tambah satu atau dua palet."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wydaje się tu dość pusto! Spróbuj dodać jedną lub dwie palety."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parece bem vazio aqui! Tente adicionar uma paleta ou duas."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Здесь довольно пусто! Попробуйте добавить одну или две палитры."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Burası oldukça boş görünüyor! Bir veya iki palet eklemeyi deneyin."
           }
         },
         "zh-Hans" : {
@@ -1738,6 +4318,12 @@
     },
     "Match Mode" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Matchtilstand"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1756,10 +4342,64 @@
             "value" : "Mode correspondance"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mode de correspondance"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मैच मोड"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modalità Corrispondenza"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マッチモード"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "매치 모드"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mod Padanan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryb dopasowania"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo de Correspondência"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Режим соответствия"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eşleştirme Modu"
           }
         },
         "zh-Hans" : {
@@ -1778,6 +4418,12 @@
     },
     "month" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "måned"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1796,10 +4442,64 @@
             "value" : "mois"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mois"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "महीना"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mese"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "月"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "달"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "bulan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "miesiąc"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mês"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "месяц"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ay"
           }
         },
         "zh-Hans" : {
@@ -1818,6 +4518,12 @@
     },
     "New Color from Hex" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ny farve fra Hex"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1836,10 +4542,64 @@
             "value" : "Nouvelle couleur à partir de Hex"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouvelle couleur à partir de Hex"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेक्स से नया रंग"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuovo Colore da Hex"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "16進から新しい色"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hex에서 새로운 색상"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Warna Baru dari Hex"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nowy kolor z Hex"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova Cor a partir do Hex"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новый цвет из Hex"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hex'ten Yeni Renk"
           }
         },
         "zh-Hans" : {
@@ -1858,6 +4618,12 @@
     },
     "New Palette" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ny palette"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1876,10 +4642,64 @@
             "value" : "Nouvelle palette"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouvelle palette"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नया पैलेट"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuova Palette"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいパレット"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새로운 팔레트"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Palet Baru"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nowa paleta"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova Paleta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новая палитра"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni Palet"
           }
         },
         "zh-Hans" : {
@@ -1898,6 +4718,12 @@
     },
     "OK" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1916,10 +4742,64 @@
             "value" : "OK"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ठीक"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "확인"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ОК"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamam"
           }
         },
         "zh-Hans" : {
@@ -1938,6 +4818,12 @@
     },
     "Okay" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1956,10 +4842,64 @@
             "value" : "OK"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ठीक"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "확인"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Okey"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ОК"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamam"
           }
         },
         "zh-Hans" : {
@@ -1978,6 +4918,12 @@
     },
     "Pair With Colors" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par med farver"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1996,10 +4942,64 @@
             "value" : "Associer avec des couleurs"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Associer avec des couleurs"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंगों के साथ जोड़ी बनाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbina con Colori"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "色とペアリング"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색상과 짝짓기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Padankan Dengan Warna"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Połącz z kolorami"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Combinar com Cores"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сочетать с цветами"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renklerle Eşleştir"
           }
         },
         "zh-Hans" : {
@@ -2018,6 +5018,12 @@
     },
     "Palette Information" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paletteinformation"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2036,10 +5042,64 @@
             "value" : "Informations sur la palette"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informations sur la palette"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पैलेट जानकारी"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informazioni sulla Palette"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パレット情報"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "팔레트 정보"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Maklumat Palet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informacje o palecie"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informações da Paleta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Информация о палитре"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palet Bilgisi"
           }
         },
         "zh-Hans" : {
@@ -2058,6 +5118,12 @@
     },
     "Palette Name" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palettenavn"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2076,10 +5142,64 @@
             "value" : "Nom de la palette"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de la palette"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पैलेट नाम"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome della Palette"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パレット名"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "팔레트 이름"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nama Palet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nazwa palety"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome da Paleta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Название палитры"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palet Adı"
           }
         },
         "zh-Hans" : {
@@ -2098,6 +5218,12 @@
     },
     "Palette: %@" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palette: %@"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2116,7 +5242,61 @@
             "value" : "Palette : %@"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palette : %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पैलेट: %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palette: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パレット: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "팔레트: %@"
+          }
+        },
         "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palet: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleta: %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleta: %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Палитра: %@"
+          }
+        },
+        "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Palet: %@"
@@ -2138,6 +5318,12 @@
     },
     "Pantone" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantone"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2156,7 +5342,61 @@
             "value" : "Pantone"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantone"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पैनटोन"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantone"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パントン"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "팬톤"
+          }
+        },
         "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantone"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantone"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pantone"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пантон"
+          }
+        },
+        "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pantone"
@@ -2178,6 +5418,12 @@
     },
     "Please enter a valid hex color code (e.g. #FF5500 or FF5500)" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indtast venligst en gyldig hex-farvekode (f.eks. #FF5500 eller FF5500)"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2196,10 +5442,64 @@
             "value" : "Veuillez entrer un code couleur hex valide (par exemple, #FF5500 ou FF5500)"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veuillez entrer un code couleur hexadécimal valide (par exemple, #FF5500 ou FF5500)"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कृपया एक मान्य हेक्स रंग कोड दर्ज करें (जैसे #FF5500 या FF5500)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci un codice colore esadecimale valido (es. #FF5500 o FF5500)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有効な16進カラーコードを入力してください（例: #FF5500 または FF5500）"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "유효한 hex 색상 코드를 입력하세요 (예: #FF5500 또는 FF5500)"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sila masukkan kod warna hex yang sah (contohnya #FF5500 atau FF5500)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proszę wprowadzić prawidłowy kod koloru hex (np. #FF5500 lub FF5500)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por favor, insira um código de cor hex válido (por exemplo, #FF5500 ou FF5500)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пожалуйста, введите допустимый код цвета в формате hex (например, #FF5500 или FF5500)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lütfen geçerli bir hex renk kodu girin (ör. #FF5500 veya FF5500)"
           }
         },
         "zh-Hans" : {
@@ -2218,6 +5518,12 @@
     },
     "Preset Colors" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forudindstillede farver"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2236,10 +5542,64 @@
             "value" : "Couleurs Prédéfinies"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleurs prédéfinies"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पूर्वनिर्धारित रंग"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colori preimpostati"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリセットカラー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "프리셋 색상"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Warna Prasetetap"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolory wstępne"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cores Predefinidas"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предустановленные цвета"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hazır Renkler"
           }
         },
         "zh-Hans" : {
@@ -2258,6 +5618,12 @@
     },
     "Print" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udskriv"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2276,10 +5642,64 @@
             "value" : "Imprimer"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रिंट करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stampa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プリント"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "프린트"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cetak"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drukuj"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimir"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Печать"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yazdır"
           }
         },
         "zh-Hans" : {
@@ -2298,6 +5718,12 @@
     },
     "Privacy Policy" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anonymitetspolitik"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2316,10 +5742,64 @@
             "value" : "Confidentialité"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confidentialité"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "गोपनीयता नीति"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informativa privacy"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プライバシーポリシー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "개인정보 처리방침"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dasar Privasi"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ochrona prywatności"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Política de Privacidade"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Конфиденциальность"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gizlilik Politikası"
           }
         },
         "zh-Hans" : {
@@ -2338,6 +5818,12 @@
     },
     "Pro Feature" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro-funktion"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2356,10 +5842,64 @@
             "value" : "Fonctionnalité Pro"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fonctionnalité Pro"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रो फीचर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funzione Pro"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プロ機能"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "프로 기능"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ciri Pro"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funkcja Pro"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recurso Pro"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Платная функция"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro Özellik"
           }
         },
         "zh-Hans" : {
@@ -2378,6 +5918,12 @@
     },
     "Report a problem" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapportér et problem"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2396,10 +5942,64 @@
             "value" : "Signaler un problème"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signaler un problème"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "समस्या की रिपोर्ट करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segnala un problema"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "問題を報告"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "문제 보고"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Laporkan masalah"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zgłoś problem"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relatar um problema"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сообщить о проблеме"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir sorunu bildir"
           }
         },
         "zh-Hans" : {
@@ -2418,6 +6018,12 @@
     },
     "Restore Purchases" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gendan køb"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2436,10 +6042,64 @@
             "value" : "Restaurer les achats"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer les achats"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खरीदारी पुनर्स्थापित करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ripristina acquisti"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "購入を復元"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "구매 복원"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pulihkan Pembelian"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przywróć zakupy"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar Compras"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Восстановить покупки"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satın Alımları Geri Yükle"
           }
         },
         "zh-Hans" : {
@@ -2458,6 +6118,12 @@
     },
     "RGB Values" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RGB-værdier"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2476,10 +6142,64 @@
             "value" : "Valeurs RVB"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valeurs RVB"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आरजीबी मान"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valori RGB"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RGB値"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RGB 값"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nilai RGB"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wartości RGB"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valores RGB"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Значения RGB"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RGB Değerleri"
           }
         },
         "zh-Hans" : {
@@ -2498,6 +6218,12 @@
     },
     "Save" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2516,10 +6242,64 @@
             "value" : "Enregistrer"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सहेजें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "저장"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Simpan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zachowaj"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaydet"
           }
         },
         "zh-Hans" : {
@@ -2538,6 +6318,12 @@
     },
     "Save 33%" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spar 33%"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2556,10 +6342,64 @@
             "value" : "Économisez 33%"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Économisez 33%"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "33% बचाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Risparmia 33%"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "33%節約"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "33% 절약"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jimat 33%"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oszczędź 33%"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Economize 33%"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сэкономить 33%"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%33 Tasarruf Et"
           }
         },
         "zh-Hans" : {
@@ -2578,6 +6418,12 @@
     },
     "Save Palette?" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem palet?"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2596,10 +6442,64 @@
             "value" : "Enregistrer la palette ?"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer la palette?"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पैलेट सहेजें?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvare la tavolozza?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パレットを保存しますか？"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "팔레트를 저장하시겠습니까?"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Simpan Palet?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zachować paletę?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar Paleta?"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить палитру?"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleti Kaydet?"
           }
         },
         "zh-Hans" : {
@@ -2618,6 +6518,12 @@
     },
     "Save this palette as '%@'?" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem denne palet som '%@'?"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2636,10 +6542,64 @@
             "value" : "Enregistrer cette palette sous '%@' ?"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer cette palette sous '%@'?"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इस पैलेट को '%@' के रूप में सहेजें?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvare questa tavolozza come '%@'?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このパレットを「%@」として保存しますか？"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 팔레트를 '%@'로 저장하시겠습니까?"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Simpan palet ini sebagai '%@'?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zachować tę paletę jako '%@'?"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar esta paleta como '%@'?"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить эту палитру как '%@'?"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu paleti '%@' olarak kaydet?"
           }
         },
         "zh-Hans" : {
@@ -2658,6 +6618,12 @@
     },
     "Save to My Palettes" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gem til Mine paletter"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2676,10 +6642,64 @@
             "value" : "Enregistrer dans Mes Palettes"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer dans Mes Palettes"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मेरे पैलेट्स में सहेजें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva nelle mie tavolozze"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "マイパレットに保存"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "내 팔레트에 저장"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Simpan ke Palet Saya"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz do Moich Palet"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar em Minhas Paletas"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить в Мои палитры"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paletlerime Kaydet"
           }
         },
         "zh-Hans" : {
@@ -2698,6 +6718,12 @@
     },
     "Select" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vælg"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2716,10 +6742,64 @@
             "value" : "Sélectionner"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionner"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चुनें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleziona"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "선택"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pilih"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaznacz"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecionar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбрать"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seç"
           }
         },
         "zh-Hans" : {
@@ -2738,6 +6818,12 @@
     },
     "Selected\nColor" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valgt\nFarve"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2756,10 +6842,64 @@
             "value" : "Couleur\nSélectionnée"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur\nsélectionnée"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चयनित\nरंग"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colore\nselezionato"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択された\nカラー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "선택된\n색상"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Warna\nTerpilih"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybrany\nKolor"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cor\nSelecionada"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбранный\nЦвет"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seçilen\nRenk"
           }
         },
         "zh-Hans" : {
@@ -2778,6 +6918,12 @@
     },
     "Settings" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indstillinger"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2796,10 +6942,64 @@
             "value" : "Réglages"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सेटिंग्ज़"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seting"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustawienia"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Настройки"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar"
           }
         },
         "zh-Hans" : {
@@ -2818,6 +7018,12 @@
     },
     "Share Color" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Del farve"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2836,10 +7042,64 @@
             "value" : "Partager la couleur"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partager la couleur"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग साझा करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividi colore"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カラーを共有"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "색상 공유"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kongsi Warna"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udostępnij kolor"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhar Cor"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поделиться цветом"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rengi Paylaş"
           }
         },
         "zh-Hans" : {
@@ -2858,6 +7118,12 @@
     },
     "Share Palette" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Del palet"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2876,10 +7142,64 @@
             "value" : "Partager la palette"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partager la palette"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पैलेट साझा करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividi tavolozza"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パレットを共有"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "팔레트 공유"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kongsi Palet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udostępnij paletę"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhar Paleta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поделиться палитрой"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleti Paylaş"
           }
         },
         "zh-Hans" : {
@@ -2898,6 +7218,12 @@
     },
     "Shared from ColorSense" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delt fra ColorSense"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2916,10 +7242,64 @@
             "value" : "Partagé depuis ColorSense"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partagé depuis ColorSense"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ColorSense से साझा किया गया"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condiviso da ColorSense"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ColorSenseから共有"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ColorSense에서 공유됨"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dikongsi dari ColorSense"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udostępnione z ColorSense"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhado do ColorSense"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поделено из ColorSense"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ColorSense'den Paylaşıldı"
           }
         },
         "zh-Hans" : {
@@ -2938,6 +7318,12 @@
     },
     "Shared Palette" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delt palet"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2956,10 +7342,64 @@
             "value" : "Palette partagée"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palette partagée"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "साझा किया गया पैलेट"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tavolozza condivisa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共有されたパレット"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "공유된 팔레트"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Palet Dikongsi"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Udostępniona paleta"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleta Compartilhada"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Общая палитра"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paylaşılan Palet"
           }
         },
         "zh-Hans" : {
@@ -2978,6 +7418,12 @@
     },
     "Show CMYK" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis CMYK"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2996,10 +7442,64 @@
             "value" : "Afficher CMJN"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher CMJN"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सीएमवाईके दिखाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra CMYK"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CMYKを表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CMYK 보기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tunjukkan CMYK"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż CMYK"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar CMYK"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать CMYK"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CMYK Göster"
           }
         },
         "zh-Hans" : {
@@ -3018,6 +7518,12 @@
     },
     "Show HEX" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis HEX"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3036,10 +7542,64 @@
             "value" : "Afficher HEX"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher HEX"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेक्स दिखाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra HEX"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HEXを表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HEX 보기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tunjukkan HEX"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż HEX"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar HEX"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать HEX"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HEX Göster"
           }
         },
         "zh-Hans" : {
@@ -3058,6 +7618,12 @@
     },
     "Show HSL" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis HSL"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3076,10 +7642,64 @@
             "value" : "Afficher TSL"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher TSL"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एचएसएल दिखाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra HSL"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HSLを表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HSL 보기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tunjukkan HSL"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż HSL"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar HSL"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать HSL"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HSL Göster"
           }
         },
         "zh-Hans" : {
@@ -3098,6 +7718,12 @@
     },
     "Show RGB" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis RGB"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3116,10 +7742,64 @@
             "value" : "Afficher RVB"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher RVB"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आरजीबी दिखाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra RGB"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RGBを表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RGB 보기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tunjukkan RGB"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż RGB"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar RGB"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать RGB"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RGB Göster"
           }
         },
         "zh-Hans" : {
@@ -3138,6 +7818,12 @@
     },
     "Show SwiftUI" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis SwiftUI"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3156,10 +7842,64 @@
             "value" : "Afficher SwiftUI"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher SwiftUI"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "स्विफ्टयूआई दिखाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra SwiftUI"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SwiftUIを表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SwiftUI 보기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tunjukkan SwiftUI"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż SwiftUI"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar SwiftUI"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать SwiftUI"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SwiftUI Göster"
           }
         },
         "zh-Hans" : {
@@ -3178,6 +7918,12 @@
     },
     "Show UIKit" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis UIKit"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3196,10 +7942,64 @@
             "value" : "Afficher UIKit"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher UIKit"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यूआईकिट दिखाएं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra UIKit"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UIKitを表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UIKit 보기"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tunjukkan UIKit"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż UIKit"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar UIKit"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать UIKit"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UIKit Göster"
           }
         },
         "zh-Hans" : {
@@ -3218,6 +8018,12 @@
     },
     "Tap to Unlock" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryk for at låse op"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3236,10 +8042,64 @@
             "value" : "Appuyez pour déverrouiller"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez pour déverrouiller"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अनलॉक करने के लिए टैप करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tocca per sbloccare"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タップしてロック解除"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "탭하여 잠금 해제"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ketuk untuk Buka Kunci"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stuknij, aby odblokować"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque para Desbloquear"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажмите, чтобы разблокировать"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dokunarak Kilidi Aç"
           }
         },
         "zh-Hans" : {
@@ -3258,6 +8118,12 @@
     },
     "Terms of Use" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Betingelser for brug"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3276,10 +8142,64 @@
             "value" : "Conditions d’utilisation"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conditions d’utilisation"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रयोग की शर्तें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termini d'uso"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "利用規約"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이용 약관"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Syarat Penggunaan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warunki korzystania"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termos de Uso"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Условия"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kullanım Şartları"
           }
         },
         "zh-Hans" : {
@@ -3298,6 +8218,12 @@
     },
     "Thank you for subscribing to ColorSense Pro!" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tak for at abonnere på ColorSense Pro!"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3316,10 +8242,64 @@
             "value" : "Merci de vous être abonné à ColorSense Pro !"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merci de vous être abonné à ColorSense Pro !"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ColorSense प्रो की सदस्यता लेने के लिए धन्यवाद!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grazie per esserti abbonato a ColorSense Pro!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ColorSense Proをご購読いただきありがとうございます！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ColorSense Pro에 가입해 주셔서 감사합니다!"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terima kasih kerana melanggan ColorSense Pro!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziękujemy za subskrypcję ColorSense Pro!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obrigado por assinar o ColorSense Pro!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спасибо за подписку на ColorSense Pro!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ColorSense Pro'ya abone olduğunuz için teşekkür ederiz!"
           }
         },
         "zh-Hans" : {
@@ -3338,6 +8318,12 @@
     },
     "Thank You!" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tak!"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3356,10 +8342,64 @@
             "value" : "Merci !"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merci !"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "धन्यवाद!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grazie!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ありがとうございます！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "감사합니다!"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terima Kasih!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziękuję!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obrigado!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спасибо!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teşekkürler!"
           }
         },
         "zh-Hans" : {
@@ -3378,6 +8418,12 @@
     },
     "The color hex value you entered is not valid. It should be a 3- or 6-digit hexadecimal number, optionally starting with a '#'." : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den farve hex-værdi, du indtastede, er ikke gyldig. Den skal være et 3- eller 6-cifret hexadecimalt tal, eventuelt begyndende med '#'."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3396,10 +8442,64 @@
             "value" : "La valeur hexadécimale de couleur que vous avez entrée n'est pas valide. Elle doit être un nombre hexadécimal de 3 ou 6 chiffres, éventuellement précédé d'un '#'."
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La valeur hexadécimale de couleur que vous avez entrée n'est pas valide. Elle doit être un nombre hexadécimal de 3 ou 6 chiffres, éventuellement précédé d'un '#'."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आपके द्वारा दर्ज किया गया रंग हेक्स मान मान्य नहीं है। यह 3- या 6-अंकीय हेक्साडेसिमल संख्या होनी चाहिए, जो वैकल्पिक रूप से '#' से शुरू हो सकती है।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il valore esadecimale del colore inserito non è valido. Dovrebbe essere un numero esadecimale di 3 o 6 cifre, eventualmente preceduto da un '#'."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "入力したカラーの16進数値が無効です。3桁または6桁の16進数で、オプションで「#」で始まる必要があります。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "입력한 색상 16진수 값이 유효하지 않습니다. 3자리 또는 6자리 16진수여야 하며, 선택적으로 '#'로 시작할 수 있습니다."
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nilai heks warna yang anda masukkan tidak sah. Ia sepatutnya nombor heksadesimal 3 atau 6 digit, yang boleh dimulakan dengan '#'."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wartość koloru w formacie hex, którą wprowadziłeś, jest nieprawidłowa. Powinna to być 3- lub 6-cyfrowa liczba szesnastkowa, opcjonalnie zaczynająca się od '#'."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O valor hexadecimal da cor que você inseriu não é válido. Deve ser um número hexadecimal de 3 ou 6 dígitos, opcionalmente começando com um '#'."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введенное вами значение цвета в шестнадцатеричном формате недействительно. Оно должно быть 3- или 6-значным шестнадцатеричным числом, возможно, начинающимся с '#'."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Girdiğiniz renk hex değeri geçerli değil. 3 veya 6 basamaklı bir onaltılık sayı olmalı ve isteğe bağlı olarak '#' ile başlamalıdır."
           }
         },
         "zh-Hans" : {
@@ -3418,6 +8518,12 @@
     },
     "This is a pro feature" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dette er en pro-funktion"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3436,10 +8542,64 @@
             "value" : "Ceci est une fonctionnalité pro"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est une fonctionnalité pro"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यह एक प्रो सुविधा है"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questa è una funzione pro"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "これはプロ機能です"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이것은 프로 기능입니다"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ini adalah ciri pro"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To jest funkcja pro"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este é um recurso profissional"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Это функция для профессионалов"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu bir pro özelliktir"
           }
         },
         "zh-Hans" : {
@@ -3458,6 +8618,12 @@
     },
     "This will add a new color to your chosen Palette." : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dette vil tilføje en ny farve til din valgte palet."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3476,10 +8642,64 @@
             "value" : "Cela ajoutera une nouvelle couleur à votre palette choisie."
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cela ajoutera une nouvelle couleur à votre palette choisie."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यह आपके चुने हुए पैलेट में एक नया रंग जोड़ देगा।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questo aggiungerà un nuovo colore alla tua Palette scelta."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "これにより、選択したパレットに新しい色が追加されます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이것은 선택한 팔레트에 새 색상을 추가합니다."
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ini akan menambah warna baru ke Palet pilihan anda."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To doda nowy kolor do wybranej Palety."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isso adicionará uma nova cor à sua Paleta escolhida."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Это добавит новый цвет в выбранную вами палитру."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu, seçtiğiniz Palete yeni bir renk ekleyecektir."
           }
         },
         "zh-Hans" : {
@@ -3498,6 +8718,12 @@
     },
     "Unlock advanced color features" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lås op for avancerede farvefunktioner"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3516,10 +8742,64 @@
             "value" : "Déverrouillez des fonctionnalités avancées de couleur"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Déverrouillez des fonctionnalités avancées de couleur"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उन्नत रंग सुविधाओं को अनलॉक करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sblocca funzionalità avanzate del colore"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高度なカラー機能をアンロック"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "고급 색상 기능 잠금 해제"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Buka kunci ciri warna lanjutan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odblokuj zaawansowane funkcje kolorów"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbloqueie recursos avançados de cores"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Разблокируйте расширенные функции цвета"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gelişmiş renk özelliklerinin kilidini aç"
           }
         },
         "zh-Hans" : {
@@ -3538,6 +8818,12 @@
     },
     "Upgrade to Pro" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opgrader til Pro"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3556,10 +8842,64 @@
             "value" : "Passez à la version Pro"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passez à la version Pro"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रो में अपग्रेड करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passa alla versione Pro"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プロ版にアップグレード"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "프로로 업그레이드"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Naik taraf ke Pro"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulepsz do wersji Pro"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atualize para o Pro"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обновите до версии Pro"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro'ya Yükselt"
           }
         },
         "zh-Hans" : {
@@ -3578,6 +8918,12 @@
     },
     "Upgrade to the Pro version to access this feature from any iPhone, iPad, or macOS device." : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opgrader til Pro-versionen for at få adgang til denne funktion fra enhver iPhone, iPad eller macOS-enhed."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3596,10 +8942,64 @@
             "value" : "Passez à la version Pro pour accéder à cette fonctionnalité depuis n'importe quel appareil iPhone, iPad ou macOS."
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passez à la version Pro pour accéder à cette fonctionnalité depuis n'importe quel appareil iPhone, iPad ou macOS."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इस सुविधा का उपयोग किसी भी iPhone, iPad, या macOS डिवाइस से करने के लिए प्रो संस्करण में अपग्रेड करें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passa alla versione Pro per accedere a questa funzione da qualsiasi dispositivo iPhone, iPad o macOS."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この機能にアクセスするには、iPhone、iPad、またはmacOSデバイスからプロ版にアップグレードしてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 기능에 액세스하려면 Pro 버전으로 업그레이드하여 iPhone, iPad 또는 macOS 장치에서 사용하세요."
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Naik taraf ke versi Pro untuk mengakses ciri ini dari mana-mana peranti iPhone, iPad, atau macOS."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ulepsz do wersji Pro, aby uzyskać dostęp do tej funkcji z dowolnego urządzenia iPhone, iPad lub macOS."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atualize para a versão Pro para acessar este recurso de qualquer dispositivo iPhone, iPad ou macOS."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обновите до версии Pro, чтобы получить доступ к этой функции с любого устройства iPhone, iPad или macOS."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu özelliğe herhangi bir iPhone, iPad veya macOS cihazından erişmek için Pro sürümüne yükseltin."
           }
         },
         "zh-Hans" : {
@@ -3618,6 +9018,12 @@
     },
     "Version %@" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %@"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3636,10 +9042,64 @@
             "value" : "Version %@"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "संस्करण %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versione %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バージョン%@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버전 %@"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Versi %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wersja %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versão %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версия %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sürüm %@"
           }
         },
         "zh-Hans" : {
@@ -3658,6 +9118,12 @@
     },
     "year" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "år"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3676,10 +9142,64 @@
             "value" : "année"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "année"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वर्ष"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "anno"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "年"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "해"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "tahun"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rok"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ano"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "год"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "yıl"
           }
         },
         "zh-Hans" : {
@@ -3698,6 +9218,12 @@
     },
     "You can match colors here" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du kan matche farver her"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3716,10 +9242,64 @@
             "value" : "Vous pouvez assortir les couleurs ici"
           }
         },
+        "fr-CA" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous pouvez assortir les couleurs ici"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आप यहां रंगों का मिलान कर सकते हैं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puoi abbinare i colori qui"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここで色をマッチングできます"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여기에서 색상을 매치할 수 있습니다"
+          }
+        },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anda boleh memadankan warna di sini"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Możesz dopasować kolory tutaj"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você pode combinar cores aqui"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Здесь вы можете сопоставить цвета"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renkleri burada eşleştirebilirsiniz"
           }
         },
         "zh-Hans" : {

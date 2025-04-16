@@ -1,0 +1,3 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "デバイスのカメラを使用してリアルタイムで色を識別および分析するには、カメラへのアクセスが必要です。";
+

@@ -1,0 +1,3 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "L'accès à la caméra est requis pour identifier et analyser les couleurs en temps réel à l'aide de la caméra de votre appareil.";
+
