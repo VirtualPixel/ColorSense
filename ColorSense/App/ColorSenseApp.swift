@@ -11,13 +11,12 @@ import os
 
 @main
 struct ColorSenseApp: App {
+    @Environment(\.scenePhase) var scenePhase
     @State private var camera = CameraModel()
     @StateObject private var entitlementManager: EntitlementManager
     @StateObject var subscriptionsManager: SubscriptionsManager
     @State private var colorToDisplay: ColorStructure?
     @State private var paletteToDisplay: Palette?
-
-    @Environment(\.scenePhase) var scenePhase
 
     var body: some Scene {
         WindowGroup {
@@ -27,11 +26,8 @@ struct ColorSenseApp: App {
                 .environmentObject(subscriptionsManager)
                 .statusBarHidden(true)
                 .task {
-                    // Start the capture pipeline.
                     await camera.start()
                 }
-                // Monitor the scene phase. Synchronize the persistent state when
-                // the camera is running and the app becomes active.
                 .onChange(of: scenePhase) { _, newPhase in
                     guard camera.status == .running, newPhase == .active else { return }
                     Task { @MainActor in

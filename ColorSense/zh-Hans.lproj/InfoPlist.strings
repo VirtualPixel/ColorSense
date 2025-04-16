@@ -1,0 +1,3 @@
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "需要相机访问权限，以便使用设备的相机实时识别和分析颜色。";
+
