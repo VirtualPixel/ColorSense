@@ -20,4 +20,13 @@ extension String {
                 green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
                 blue: CGFloat(rgbValue & 0x0000FF) / 255.0)
     }
+
+    // TODO: Fix this, it is not showing automatically in .xcstrings file
+    var localized: String {
+        return NSLocalizedString(self, comment: "This should be translated.")
+    }
+
+    func localized(comment: String) -> String {
+        return NSLocalizedString(self, comment: comment)
+    }
 }

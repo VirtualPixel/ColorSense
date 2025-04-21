@@ -13,6 +13,10 @@ enum CameraMode: String, CaseIterable, Identifiable {
     case accessibility = "Accessibility"
 
     var id: String { self.rawValue }
+
+    var localizedName: String {
+        return String(localized: String.LocalizationValue(self.rawValue))
+    }
 }
 
 struct CameraUI: View {
@@ -137,13 +141,13 @@ struct CameraUI: View {
 
                         ForEach(Array(CameraMode.allCases.enumerated()), id: \.element.id) { index, mode in
                             VStack(spacing: 8) {
-                                Text(mode.rawValue)
+                                Text("\(mode.localizedName)")
                                     .font(.system(size: 16))
                                     .fontWeight(selectedMode == mode ? .bold : .regular)
                                     .foregroundColor(selectedMode == mode ? .white : .gray)
                                     .lineLimit(1)
-                                    .minimumScaleFactor(0.8)
-                                    .frame(width: 100)
+                                    .minimumScaleFactor(0.6)
+                                    .frame(width: 120)
 
                                 Rectangle()
                                     .frame(width: 40, height: 3)

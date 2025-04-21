@@ -23,63 +23,13 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             List {
-                if !entitlementManager.hasPro {
-                    Section {
-                        HStack {
-                            Spacer()
-                            
-                            Image(systemName: "star")
-                                .bold()
-                            
-                            Text("Upgrade to Pro")
-                                .font(.headline)
-                            
-                            Spacer()
-                        }
-                        .frame(height: 60)
-                        .foregroundStyle(.white)
-                   }
-                    .listRowSeparator(.hidden)
-                    .background(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center))
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    .onTapGesture {
-                        isShowingPaywall = true
-                    }
-                }
-                
-                Section("Color Details") {
-                    Toggle("Show RGB", isOn: $showRgb)
-                    Toggle("Show HEX", isOn: $showHex)
-                    Toggle("Show HSL", isOn: $showHsl)
-                    Toggle("Show CMYK", isOn: $showCmyk)
-                    Toggle("Show SwiftUI", isOn: $showSwiftUI)
-                    Toggle("Show UIKit", isOn: $showUIKit)
-                }
+                proBanner
 
-                Section("Contact Us") {
-                    Group {
-                        Button {
-                            isShowingWishkitScreen = true
-                        } label: {
-                            Text("Feature request? Just a tap away!")
-                        }
+                colorDetails
 
-                        Button {
-                            if let url = URL(string: "https://justinwells.dev/colorsense/report") {
-                                UIApplication.shared.open(url)
-                            }
-                        } label: {
-                            Text("Report a problem")
-                        }
-                    }
-                    .buttonStyle(.plain)
-                    .foregroundStyle(.blue)
-                }
+                contactUs
 
-
-                Section {
-                    Text("Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")")
-                }
+                versionInfo
             }
             .navigationTitle("Settings")
             .buttonStyle(BorderedButtonStyle())
@@ -89,6 +39,73 @@ struct SettingsView: View {
         }
         .sheet(isPresented: $isShowingWishkitScreen) {
             WishKit.FeedbackListView().withNavigation()
+        }
+    }
+
+    var proBanner: some View {
+        Group {
+            if !entitlementManager.hasPro {
+                Section {
+                    HStack {
+                        Spacer()
+
+                        Image(systemName: "star")
+                            .bold()
+
+                        Text("Upgrade to Pro")
+                            .font(.headline)
+
+                        Spacer()
+                    }
+                    .frame(height: 60)
+                    .foregroundStyle(.white)
+                }
+                .listRowSeparator(.hidden)
+                .background(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center))
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                .onTapGesture {
+                    isShowingPaywall = true
+                }
+            }
+        }
+    }
+
+    var colorDetails: some View {
+        Section("Color Details") {
+            Toggle("Show RGB", isOn: $showRgb)
+            Toggle("Show HEX", isOn: $showHex)
+            Toggle("Show HSL", isOn: $showHsl)
+            Toggle("Show CMYK", isOn: $showCmyk)
+            Toggle("Show SwiftUI", isOn: $showSwiftUI)
+            Toggle("Show UIKit", isOn: $showUIKit)
+        }
+    }
+
+    var contactUs: some View {
+        Section("Contact Us") {
+            Group {
+                Button {
+                    isShowingWishkitScreen = true
+                } label: {
+                    Text("Feature request? Just a tap away!")
+                }
+
+                Button {
+                    if let url = URL(string: "https://justinwells.dev/colorsense/report") {
+                        UIApplication.shared.open(url)
+                    }
+                } label: {
+                    Text("Report a problem")
+                }
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(.blue)
+        }
+    }
+
+    var versionInfo: some View {
+        Section {
+            Text("Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")")
         }
     }
 }

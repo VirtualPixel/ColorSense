@@ -66,12 +66,23 @@ struct ColorDetailView: View {
     }
     
     private func colorDetailsGroupBox() -> some View {
-        GroupBox(label: Text("Color Details").font(.title2)) {
+        GroupBox(label: Text("Color Details".localized).font(.title2)) {
             VStack(alignment: .leading) {
-                if (showRgb) { detailText(title: "RGB", value: "R: \(viewModel.rgb.red) G: \(viewModel.rgb.green) B: \(viewModel.rgb.blue)") }
-                if (showHex) { detailText(title: "Hex", value: "\(viewModel.hex)") }
-                if (showHsl) { detailText(title: "HSL", value: "Hue: \(viewModel.hsl.hue) Saturation: \(viewModel.hsl.saturation) Lightness: \(viewModel.hsl.lightness)") }
-                if (showCmyk) { detailText(title: "CMYK", value: "Cyan: \(viewModel.cmyk.cyan) Magenta: \(viewModel.cmyk.magenta) Yellow: \(viewModel.cmyk.yellow) Key: \(viewModel.cmyk.key)") }
+                if (showRgb) {
+                    detailText(title: "RGB",
+                               value: "R: \(viewModel.rgb.red) G: \(viewModel.rgb.green) B: \(viewModel.rgb.blue)".localized)
+                }
+                if (showHex) {
+                    detailText(title: "Hex", value: "\(viewModel.hex)")
+                }
+                if (showHsl) {
+                    detailText(title: "HSL",
+                               value: "Hue: \(viewModel.hsl.hue) Saturation: \(viewModel.hsl.saturation) Lightness: \(viewModel.hsl.lightness)".localized)
+                }
+                if (showCmyk) {
+                    detailText(title: "CMYK",
+                               value: "Cyan: \(viewModel.cmyk.cyan) Magenta: \(viewModel.cmyk.magenta) Yellow: \(viewModel.cmyk.yellow) Key: \(viewModel.cmyk.key)".localized)
+                }
                 Divider()
                 if (showSwiftUI) { detailText(title: "SwiftUI", value: viewModel.swiftUI) }
                 if (showUIKit) { detailText(title: "UIKit", value: viewModel.uiKit) }
@@ -80,7 +91,7 @@ struct ColorDetailView: View {
         .padding(.horizontal, 30)
         .frame(maxWidth: 700)
     }
-    
+
     private func pantoneGroupBox() -> some View {
         ZStack {
             

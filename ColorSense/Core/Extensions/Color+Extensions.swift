@@ -13,10 +13,10 @@ struct ColorVision: Identifiable {
     let type: String
     
     static let types = [
-        "Normal Vision",
-        "Deuteranopia",  // ~6% of males
-        "Protanopia",    // ~1% of males
-        "Tritanopia"     // Rare
+        NSLocalizedString("Normal Vision", comment: "Natural color vision"),
+        NSLocalizedString("Deuteranopia", comment: "Red-green color blindness, absense of green sensitive cones"),  // ~6% of males
+        NSLocalizedString("Protanopia", comment: "Red-green color blindness, absense of red sensitive cones"),    // ~1% of males
+        NSLocalizedString("Tritanopia", comment: "Blue-yellow color blindness")     // Rare
     ]
 }
 

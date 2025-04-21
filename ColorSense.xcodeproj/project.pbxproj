@@ -441,7 +441,6 @@
 			isa = PBXGroup;
 			children = (
 				576EC8D42DAEDD640038E232 /* Extensions */,
-				576EC8E42DAEED110038E232 /* Localization */,
 				576EC8D22DAEDD460038E232 /* Persistence */,
 				576EC8D32DAEDD510038E232 /* Services */,
 				576EC8D12DAEDD400038E232 /* UI */,
@@ -453,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				576EC8E22DAEE57E0038E232 /* Data */,
+				576EC8E42DAEED110038E232 /* Localization */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
