@@ -543,6 +543,10 @@ actor CaptureService {
         colorCapture.pauseProcessing = enabled
     }
 
+    func getCurrentColor() async -> Color? {
+        colorCapture.getCurrentColor()
+    }
+
     // MARK: - Internal state management
     /// Updates the state of the actor to ensure its advertised capabilities are accurate.
     ///
@@ -573,12 +577,6 @@ actor CaptureService {
 
         colorCapture.$dominantColor
             .assign(to: &$dominantColor)
-
-        colorCapture.$exactName
-            .assign(to: &$exactColorName)
-
-        colorCapture.$simpleName
-            .assign(to: &$simpleColorName)
     }
 
     /// Observe when capture control enter and exit a fullscreen appearance.

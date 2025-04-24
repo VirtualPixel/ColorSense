@@ -20,8 +20,6 @@ import Combine
 final class CameraModel: Camera, ObservableObject {
 
     private(set) var dominantColor: Color?
-    private(set) var exactColorName: String?
-    private(set) var simpleColorName: String?
     var colorRegion: CGFloat = 20 {
         didSet {
             Task {
@@ -224,6 +222,10 @@ final class CameraModel: Camera, ObservableObject {
         }
     }
 
+    func getCurrentColor() async -> Color? {
+        await captureService.getCurrentColor()
+    }
+
     // MARK: - Internal state observations
 
     // Set up camera's state observations.
@@ -269,18 +271,6 @@ final class CameraModel: Camera, ObservableObject {
         Task {
             for await dominantColor in await captureService.$dominantColor.values {
                 self.dominantColor = dominantColor
-            }
-        }
-
-        Task {
-            for await exactName in await captureService.$exactColorName.values {
-                self.exactColorName = exactName
-            }
-        }
-
-        Task {
-            for await simpleName in await captureService.$simpleColorName.values {
-                self.simpleColorName = simpleName
             }
         }
     }

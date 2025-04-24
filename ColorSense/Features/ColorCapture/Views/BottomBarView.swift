@@ -10,12 +10,21 @@ import SwiftUI
 struct BottomBarView: View {
     @EnvironmentObject private var camera: CameraModel
 
+    var onCaptureButtonPressed: () -> Void
+
+    var captureButtonIcon: String?
+    var captureButtonText: String?
+
+    var toggleProcessingButtonIcon: String {
+        camera.isPausingColorProcessing ? "play.fill" : "stop.fill"
+    }
+
     var body: some View {
         HStack {
             Spacer()
             swatchPaletteButton()
             Spacer()
-            pauseProcessingButton()
+            captureButton()
             Spacer()
             cameraSwapButton()
             Spacer()
@@ -33,11 +42,9 @@ struct BottomBarView: View {
         }
     }
 
-    private func pauseProcessingButton() -> some View {
+    private func captureButton() -> some View {
         Button {
-            withAnimation {
-                camera.isPausingColorProcessing.toggle()
-            }
+            onCaptureButtonPressed()
         } label: {
             ZStack {
                 Circle()
@@ -49,13 +56,20 @@ struct BottomBarView: View {
                     .frame(width: 55, height: 55)
                     .foregroundColor(.white)
                     .overlay(
-                        Image(systemName: "pause.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50)
-                            .opacity(camera.isPausingColorProcessing ? 1.0 : 0.0)
-                            .foregroundColor(.black)
-                            .padding()
+                        Group {
+                            if let text = captureButtonText {
+                                Text(text)
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                            } else {
+                                Image(systemName: captureButtonIcon ?? toggleProcessingButtonIcon)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 25)
+                                    .foregroundColor(.black)
+                            }
+                        }
                     )
             }
         }
@@ -82,9 +96,15 @@ struct BottomBarView: View {
     }
 }
 
-struct BottomBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        BottomBarView()
-            .environmentObject(PreviewCameraModel())
+extension BottomBarView {
+    init() {
+        self.onCaptureButtonPressed = {}
+        self.captureButtonIcon = "pause.fill"
+        self.captureButtonText = nil
     }
+}
+
+#Preview {
+    BottomBarView()
+        .environmentObject(PreviewCameraModel())
 }

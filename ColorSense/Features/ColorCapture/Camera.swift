@@ -13,12 +13,6 @@ protocol Camera: AnyObject {
     /// The dominant color currently detected by the camera
     var dominantColor: Color? { get }
 
-    /// The exact name of the dominant color
-    var exactColorName: String? { get }
-
-    /// The simple color family name
-    var simpleColorName: String? { get }
-
     /// The size of the region used for color sampling
     var colorRegion: CGFloat { get set }
 

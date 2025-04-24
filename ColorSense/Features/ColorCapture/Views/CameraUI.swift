@@ -7,21 +7,9 @@
 
 import SwiftUI
 
-enum CameraMode: String, CaseIterable, Identifiable {
-    case color = "Color"
-    case match = "Match"
-    case accessibility = "Accessibility"
-
-    var id: String { self.rawValue }
-
-    var localizedName: String {
-        return String(localized: String.LocalizationValue(self.rawValue))
-    }
-}
-
 struct CameraUI: View {
     @EnvironmentObject var camera: CameraModel
-    @State private var selectedMode: CameraMode = .color
+    @State private var modeManager = CameraModeManager()
     @State private var currentPage = 0
 
     var body: some View {
@@ -32,57 +20,44 @@ struct CameraUI: View {
                 flashAndSettingsButtons
 
                 ZStack {
-                    
                     VStack(spacing: 0) {
                         TabView(selection: $currentPage) {
-                            VStack(alignment: .center) {
-                                
-                                ColorCardView()
-                                    .padding(.top, 20)
-                                
-                                Spacer()
+                            ForEach(0..<modeManager.availableModes.count, id: \.self) { index in
+                                VStack(alignment: .center) {
+                                    modeManager.availableModes[index].getContentView()
+                                    Spacer()
+                                }
+                                .tag(index)
                             }
-                            .tag(0)
-
-                            VStack(alignment: .center) {
-                                matchView
-                                    .padding(.top, 20)
-
-                                Spacer()
-                            }
-                            .tag(1)
-
-                            VStack(alignment: .center) {
-                                accessibilityView
-                                    .padding(.top, 20)
-
-                                Spacer()
-                            }
-                            .tag(2)
                         }
                         .tabViewStyle(.page(indexDisplayMode: .never))
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .onChange(of: currentPage) { oldValue, newValue in
                             withAnimation(.easeInOut(duration: 0.3)) {
-                                selectedMode = CameraMode.allCases[newValue]
+                                modeManager.switchTo(mode: newValue)
                             }
                         }
-                        .onChange(of: selectedMode) { oldValue, newValue in
-                            if let index = CameraMode.allCases.firstIndex(where: { $0 == newValue }) {
+                        .onChange(of: modeManager.currentModeIndex) { oldValue, newValue in
+                            if currentPage != newValue {
                                 withAnimation(.easeInOut(duration: 0.3)) {
-                                    currentPage = index
+                                    currentPage = newValue
                                 }
                             }
                         }
-
-                        // rearCameraSelectorView
-                        //    .padding(.bottom, 8)
 
                         VStack(spacing: 15) {
                             modeSelectorView
                                 .padding(.bottom, 5)
 
-                            BottomBarView()
+                            BottomBarView(
+                                onCaptureButtonPressed: {
+                                    Task {
+                                        await modeManager.currentMode.onCaptureButtonPressed(camera: camera)
+                                    }
+                                },
+                                captureButtonIcon: modeManager.currentMode.captureButtonIcon,
+                                captureButtonText: modeManager.currentMode.captureButtonText
+                            )
                         }
                         .background(Color.black)
                     }
@@ -139,25 +114,25 @@ struct CameraUI: View {
                         Spacer()
                             .frame(width: totalWidth / 2 - 50)
 
-                        ForEach(Array(CameraMode.allCases.enumerated()), id: \.element.id) { index, mode in
+                        ForEach(0..<modeManager.availableModes.count, id: \.self) { index in
+                            let mode = modeManager.availableModes[index]
                             VStack(spacing: 8) {
-                                Text("\(mode.localizedName)")
+                                Text(mode.name)
                                     .font(.system(size: 16))
-                                    .fontWeight(selectedMode == mode ? .bold : .regular)
-                                    .foregroundColor(selectedMode == mode ? .white : .gray)
+                                    .fontWeight(modeManager.currentModeIndex == index ? .bold : .regular)
+                                    .foregroundColor(modeManager.currentModeIndex == index ? .white : .gray)
                                     .lineLimit(1)
                                     .minimumScaleFactor(0.6)
                                     .frame(width: 120)
 
                                 Rectangle()
                                     .frame(width: 40, height: 3)
-                                    .foregroundColor(selectedMode == mode ? .white : .clear)
+                                    .foregroundColor(modeManager.currentModeIndex == index ? .white : .clear)
                             }
-                            .id(mode)
+                            .id(index)
                             .onTapGesture {
                                 withAnimation(.easeInOut(duration: 0.3)) {
-                                    selectedMode = mode
-                                    currentPage = index
+                                    modeManager.switchTo(mode: index)
                                 }
                             }
                         }
@@ -166,14 +141,14 @@ struct CameraUI: View {
                             .frame(width: totalWidth / 2 - 50)
                     }
                 }
-                .onChange(of: selectedMode) { oldValue, newValue in
+                .onChange(of: modeManager.currentModeIndex) { oldValue, newValue in
                     withAnimation {
                         proxy.scrollTo(newValue, anchor: .center)
                     }
                 }
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                        proxy.scrollTo(selectedMode, anchor: .center)
+                        proxy.scrollTo(modeManager.currentModeIndex, anchor: .center)
                     }
                 }
             }
@@ -182,37 +157,6 @@ struct CameraUI: View {
         .padding(.top, 10)
     }
 
-    var matchView: some View {
-        VStack(spacing: 10) {
-            Text("Match Mode")
-                .foregroundColor(.white)
-                .font(.headline)
-
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color.gray.opacity(0.3))
-                .frame(width: 300, height: 90)
-                .overlay(
-                    Text("You can match colors here")
-                        .foregroundColor(.white)
-                )
-        }
-    }
-
-    var accessibilityView: some View {
-        VStack(spacing: 10) {
-            Text("Accessibility View")
-                .foregroundColor(.white)
-                .font(.headline)
-
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color.gray.opacity(0.3))
-                .frame(width: 300, height: 90)
-                .overlay(
-                    Text("Color accessibility details will appear here")
-                        .foregroundColor(.white)
-                )
-        }
-    }
 }
 
 #Preview {

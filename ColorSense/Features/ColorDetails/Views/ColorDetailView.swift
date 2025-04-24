@@ -180,16 +180,15 @@ struct ColorDetailView: View {
     
     private func accessibilityColorList() -> some View {
         ZStack {
-            
             GroupBox(label: Text("Accessibility View").font(.title2)) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(viewModel.colorVisionsSimulations) { color in
+                        ForEach(viewModel.colorVisionsSimulations) { colorVision in
                             VStack(alignment: .center) {
-                                Text(color.type)
-                                    .foregroundStyle(color.color.isDark() ? .white : .black)
+                                Text(colorVision.type.rawValue)
+                                    .foregroundStyle(colorVision.color.isDark() ? .white : .black)
                                 Spacer()
-                                Text(color.color.toHex())
+                                Text(colorVision.color.toHex())
                                     .font(.footnote)
                                     .background(
                                         Capsule()
@@ -202,7 +201,7 @@ struct ColorDetailView: View {
                             .frame(width: 90, height: 90)
                             .background (
                                 RoundedRectangle(cornerRadius: 12)
-                                    .foregroundStyle(color.color)
+                                    .foregroundStyle(colorVision.color)
                             )
                         }
                     }
@@ -213,7 +212,7 @@ struct ColorDetailView: View {
         .padding(.horizontal, 30)
         .frame(maxWidth: 700)
     }
-    
+
     private func detailText(title: String, value: String) -> some View {
         HStack {
             Text(title + ":")

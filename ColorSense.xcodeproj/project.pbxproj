@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,14 +17,12 @@
 		572053FC2A68900F0072DE06 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FB2A68900F0072DE06 /* Palette.swift */; };
 		572053FE2A6893700072DE06 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
 		572054012A68961F0072DE06 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
-		572054032A689AE40072DE06 /* PantoneColorArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054022A689AE40072DE06 /* PantoneColorArrays.swift */; };
 		572054062A68A56D0072DE06 /* Pantone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054052A68A56D0072DE06 /* Pantone.swift */; };
 		5725C5A22A7BCAEC00933331 /* macOSColorSenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725C5A12A7BCAEC00933331 /* macOSColorSenseApp.swift */; };
 		5725C5A42A7BCAEC00933331 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5725C5A32A7BCAEC00933331 /* ContentView.swift */; };
 		5725C5A82A7BCAEF00933331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5725C5A72A7BCAEF00933331 /* Assets.xcassets */; };
 		5725C5AB2A7BCAEF00933331 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5725C5AA2A7BCAEF00933331 /* Preview Assets.xcassets */; };
 		5725C5B02A7BCB6E00933331 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
-		5725C5B12A7BCB6E00933331 /* PantoneColorArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054022A689AE40072DE06 /* PantoneColorArrays.swift */; };
 		5725C5B22A7BCB6E00933331 /* Pantone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054052A68A56D0072DE06 /* Pantone.swift */; };
 		5725C5B32A7BCB6E00933331 /* colornames.json in Resources */ = {isa = PBXBuildFile; fileRef = 575301652A0339C2006A68A5 /* colornames.json */; };
 		5725C5B52A7BCB6E00933331 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FB2A68900F0072DE06 /* Palette.swift */; };
@@ -60,7 +58,6 @@
 		576A4F2A2A782EE000452FA5 /* Pantone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054052A68A56D0072DE06 /* Pantone.swift */; };
 		576A4F2B2A782EE000452FA5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575301732A034529006A68A5 /* String+Extensions.swift */; };
 		576A4F2C2A782EE000452FA5 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338D52A09C03A0034AF9D /* ColorData.swift */; };
-		576A4F2D2A782EE000452FA5 /* PantoneColorArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572054022A689AE40072DE06 /* PantoneColorArrays.swift */; };
 		576A4F2E2A782EE000452FA5 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
 		576A4F2F2A782EE000452FA5 /* UIColor+ColorCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016E2A033CF0006A68A5 /* UIColor+ColorCalculation.swift */; };
 		576A4F302A782EE000452FA5 /* UIColor+NamedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* UIColor+NamedColors.swift */; };
@@ -77,6 +74,24 @@
 		576EC8E72DAEF0DF0038E232 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 576EC8E52DAEF0DF0038E232 /* Localizable.xcstrings */; };
 		576EC8E82DAEF0DF0038E232 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 576EC8E52DAEF0DF0038E232 /* Localizable.xcstrings */; };
 		576EC8EC2DB035040038E232 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 576EC8EA2DB035040038E232 /* InfoPlist.strings */; };
+		576EC8FD2DB6AF8A0038E232 /* ColorVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC8FC2DB6AF890038E232 /* ColorVision.swift */; };
+		576EC8FE2DB6AF8A0038E232 /* ColorVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC8FC2DB6AF890038E232 /* ColorVision.swift */; };
+		576EC8FF2DB6AF8A0038E232 /* ColorVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC8FC2DB6AF890038E232 /* ColorVision.swift */; };
+		576EC9022DB6B25C0038E232 /* CameraModeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9012DB6B25C0038E232 /* CameraModeProtocol.swift */; };
+		576EC9072DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */; };
+		576EC9082DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */; };
+		576EC9092DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */; };
+		576EC90C2DB6BDCE0038E232 /* IdentifyMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC90A2DB6BDCE0038E232 /* IdentifyMode.swift */; };
+		576EC90F2DB6BF640038E232 /* MatchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC90E2DB6BF640038E232 /* MatchMode.swift */; };
+		576EC9132DB6C2DC0038E232 /* AccessibilityMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9122DB6C2DC0038E232 /* AccessibilityMode.swift */; };
+		576EC9182DB6D9A00038E232 /* CameraModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9162DB6D9A00038E232 /* CameraModeManager.swift */; };
+		576EC91B2DB80A7B0038E232 /* MachModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC91A2DB80A7B0038E232 /* MachModeViewModel.swift */; };
+		576EC91E2DB945B50038E232 /* ColorHarmonyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC91D2DB945B50038E232 /* ColorHarmonyEngine.swift */; };
+		576EC91F2DB945B50038E232 /* ColorHarmonyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC91D2DB945B50038E232 /* ColorHarmonyEngine.swift */; };
+		576EC9202DB945B50038E232 /* ColorHarmonyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC91D2DB945B50038E232 /* ColorHarmonyEngine.swift */; };
+		576EC9222DB945BF0038E232 /* HarmonyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9212DB945BF0038E232 /* HarmonyResult.swift */; };
+		576EC9232DB945BF0038E232 /* HarmonyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9212DB945BF0038E232 /* HarmonyResult.swift */; };
+		576EC9242DB945BF0038E232 /* HarmonyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9212DB945BF0038E232 /* HarmonyResult.swift */; };
 		57712DE42A7BD0D500B16DE9 /* Color+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* Color+Init.swift */; };
 		57712DE52A7BD0D500B16DE9 /* Color+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* Color+Init.swift */; };
 		57712DE62A7BD0D500B16DE9 /* Color+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57712DE32A7BD0D500B16DE9 /* Color+Init.swift */; };
@@ -134,6 +149,13 @@
 			remoteGlobalIDString = 576A4F112A782E6F00452FA5;
 			remoteInfo = "WatchColorSense Watch App";
 		};
+		576EC92D2DB9E39A0038E232 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 576D8E8F2A031069003DE880 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 576D8E962A031069003DE880;
+			remoteInfo = ColorSense;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -161,7 +183,6 @@
 		572053FB2A68900F0072DE06 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		572053FD2A6893700072DE06 /* ColorStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStructure.swift; sourceTree = "<group>"; };
 		572054002A68961F0072DE06 /* pantone-colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pantone-colors.json"; sourceTree = "<group>"; };
-		572054022A689AE40072DE06 /* PantoneColorArrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantoneColorArrays.swift; sourceTree = "<group>"; };
 		572054052A68A56D0072DE06 /* Pantone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pantone.swift; sourceTree = "<group>"; };
 		5725C59F2A7BCAEC00933331 /* macOSColorSense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOSColorSense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5725C5A12A7BCAEC00933331 /* macOSColorSenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOSColorSenseApp.swift; sourceTree = "<group>"; };
@@ -226,6 +247,17 @@
 		576EC8F92DB03C9E0038E232 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		576EC8FA2DB03CB30038E232 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		576EC8FB2DB03CC90038E232 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		576EC8FC2DB6AF890038E232 /* ColorVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorVision.swift; sourceTree = "<group>"; };
+		576EC9012DB6B25C0038E232 /* CameraModeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModeProtocol.swift; sourceTree = "<group>"; };
+		576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorVisionUtility.swift; sourceTree = "<group>"; };
+		576EC90A2DB6BDCE0038E232 /* IdentifyMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyMode.swift; sourceTree = "<group>"; };
+		576EC90E2DB6BF640038E232 /* MatchMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMode.swift; sourceTree = "<group>"; };
+		576EC9122DB6C2DC0038E232 /* AccessibilityMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityMode.swift; sourceTree = "<group>"; };
+		576EC9162DB6D9A00038E232 /* CameraModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModeManager.swift; sourceTree = "<group>"; };
+		576EC91A2DB80A7B0038E232 /* MachModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachModeViewModel.swift; sourceTree = "<group>"; };
+		576EC91D2DB945B50038E232 /* ColorHarmonyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHarmonyEngine.swift; sourceTree = "<group>"; };
+		576EC9212DB945BF0038E232 /* HarmonyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarmonyResult.swift; sourceTree = "<group>"; };
+		576EC9292DB9E39A0038E232 /* ColorSenseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColorSenseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57712DE32A7BD0D500B16DE9 /* Color+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Init.swift"; sourceTree = "<group>"; };
 		577357562A73150600903F85 /* PaletteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteDetailView.swift; sourceTree = "<group>"; };
 		577357582A73153800903F85 /* PaletteDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteDetailViewModel.swift; sourceTree = "<group>"; };
@@ -266,6 +298,10 @@
 		57FF640D2D446C90008BA8C3 /* ProFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		576EC92A2DB9E39A0038E232 /* ColorSenseTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ColorSenseTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		5725C59C2A7BCAEC00933331 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -289,6 +325,13 @@
 			files = (
 				57C7D4CD2DA83A470025AE20 /* WishKit in Frameworks */,
 				57E887012B44C4C40092B5ED /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		576EC9262DB9E39A0038E232 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +430,7 @@
 				5725C5A02A7BCAEC00933331 /* macOSColorSense */,
 				572720092A7D43CA00BDA48B /* visionColorSense */,
 				5727200A2A7D43CA00BDA48B /* Packages */,
+				576EC92A2DB9E39A0038E232 /* ColorSenseTests */,
 				576D8E982A031069003DE880 /* Products */,
 				57E886FF2B44C4C40092B5ED /* Frameworks */,
 				575FFF002D441E56005FD040 /* ColorSense: Color Identifier.storekit */,
@@ -400,6 +444,7 @@
 				576D8E972A031069003DE880 /* ColorSense.app */,
 				576A4F122A782E6F00452FA5 /* WatchColorSense Watch App.app */,
 				5725C59F2A7BCAEC00933331 /* macOSColorSense.app */,
+				576EC9292DB9E39A0038E232 /* ColorSenseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -440,9 +485,12 @@
 		576EC8CA2DAEDC590038E232 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				576EC9362DB9EA640038E232 /* ColorTheory */,
+				576EC8E02DAEE4E90038E232 /* Models */,
 				576EC8D42DAEDD640038E232 /* Extensions */,
 				576EC8D22DAEDD460038E232 /* Persistence */,
 				576EC8D32DAEDD510038E232 /* Services */,
+				576EC9052DB6BBB80038E232 /* Utilities */,
 				576EC8D12DAEDD400038E232 /* UI */,
 			);
 			path = Core;
@@ -501,6 +549,7 @@
 		576EC8D02DAEDD320038E232 /* ColorCapture */ = {
 			isa = PBXGroup;
 			children = (
+				576EC9002DB6B2490038E232 /* CameraModes */,
 				576EC8D52DAEDF0F0038E232 /* Views */,
 				579705382DAD92BD009AE8C5 /* CameraModel.swift */,
 				579705352DAD8BB7009AE8C5 /* Camera.swift */,
@@ -513,7 +562,6 @@
 			children = (
 				576EC8E12DAEE52D0038E232 /* Settings */,
 				5797053D2DAD9548009AE8C5 /* CameraState.swift */,
-				579705332DAD89C0009AE8C5 /* CameraTypes.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -521,7 +569,6 @@
 		576EC8D22DAEDD460038E232 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				576EC8E02DAEE4E90038E232 /* Models */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -656,10 +703,11 @@
 			isa = PBXGroup;
 			children = (
 				572053FD2A6893700072DE06 /* ColorStructure.swift */,
-				572053FB2A68900F0072DE06 /* Palette.swift */,
 				576338D52A09C03A0034AF9D /* ColorData.swift */,
+				579705332DAD89C0009AE8C5 /* CameraTypes.swift */,
+				576EC8FC2DB6AF890038E232 /* ColorVision.swift */,
+				572053FB2A68900F0072DE06 /* Palette.swift */,
 				572054052A68A56D0072DE06 /* Pantone.swift */,
-				572054022A689AE40072DE06 /* PantoneColorArrays.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -696,6 +744,36 @@
 				576EC8E52DAEF0DF0038E232 /* Localizable.xcstrings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		576EC9002DB6B2490038E232 /* CameraModes */ = {
+			isa = PBXGroup;
+			children = (
+				576EC9012DB6B25C0038E232 /* CameraModeProtocol.swift */,
+				576EC90A2DB6BDCE0038E232 /* IdentifyMode.swift */,
+				576EC90E2DB6BF640038E232 /* MatchMode.swift */,
+				576EC91A2DB80A7B0038E232 /* MachModeViewModel.swift */,
+				576EC9122DB6C2DC0038E232 /* AccessibilityMode.swift */,
+				576EC9162DB6D9A00038E232 /* CameraModeManager.swift */,
+			);
+			path = CameraModes;
+			sourceTree = "<group>";
+		};
+		576EC9052DB6BBB80038E232 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		576EC9362DB9EA640038E232 /* ColorTheory */ = {
+			isa = PBXGroup;
+			children = (
+				576EC9212DB945BF0038E232 /* HarmonyResult.swift */,
+				576EC91D2DB945B50038E232 /* ColorHarmonyEngine.swift */,
+			);
+			path = ColorTheory;
 			sourceTree = "<group>";
 		};
 		57C7D4D22DA83BB10025AE20 /* Configuration */ = {
@@ -783,6 +861,29 @@
 			productReference = 576D8E972A031069003DE880 /* ColorSense.app */;
 			productType = "com.apple.product-type.application";
 		};
+		576EC9282DB9E39A0038E232 /* ColorSenseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 576EC92F2DB9E39A0038E232 /* Build configuration list for PBXNativeTarget "ColorSenseTests" */;
+			buildPhases = (
+				576EC9252DB9E39A0038E232 /* Sources */,
+				576EC9262DB9E39A0038E232 /* Frameworks */,
+				576EC9272DB9E39A0038E232 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				576EC92E2DB9E39A0038E232 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				576EC92A2DB9E39A0038E232 /* ColorSenseTests */,
+			);
+			name = ColorSenseTests;
+			packageProductDependencies = (
+			);
+			productName = ColorSenseTests;
+			productReference = 576EC9292DB9E39A0038E232 /* ColorSenseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -790,7 +891,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					5725C59E2A7BCAEC00933331 = {
@@ -801,6 +902,10 @@
 					};
 					576D8E962A031069003DE880 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					576EC9282DB9E39A0038E232 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 576D8E962A031069003DE880;
 					};
 				};
 			};
@@ -839,6 +944,7 @@
 				576D8E962A031069003DE880 /* ColorSense */,
 				576A4F112A782E6F00452FA5 /* WatchColorSense Watch App */,
 				5725C59E2A7BCAEC00933331 /* macOSColorSense */,
+				576EC9282DB9E39A0038E232 /* ColorSenseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -887,6 +993,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		576EC9272DB9E39A0038E232 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -916,14 +1029,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5725C5B52A7BCB6E00933331 /* Palette.swift in Sources */,
+				576EC8FD2DB6AF8A0038E232 /* ColorVision.swift in Sources */,
 				57C7D4D72DA83C3E0025AE20 /* EnvironmentValues.swift in Sources */,
 				5725C5B82A7BCB6E00933331 /* ColorData.swift in Sources */,
 				5725C5A42A7BCAEC00933331 /* ContentView.swift in Sources */,
 				5725C5B22A7BCB6E00933331 /* Pantone.swift in Sources */,
 				5725C5A22A7BCAEC00933331 /* macOSColorSenseApp.swift in Sources */,
 				57712DE62A7BD0D500B16DE9 /* Color+Init.swift in Sources */,
+				576EC9232DB945BF0038E232 /* HarmonyResult.swift in Sources */,
+				576EC9202DB945B50038E232 /* ColorHarmonyEngine.swift in Sources */,
 				5725C5B02A7BCB6E00933331 /* ColorStructure.swift in Sources */,
-				5725C5B12A7BCB6E00933331 /* PantoneColorArrays.swift in Sources */,
+				576EC9092DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -934,13 +1050,14 @@
 				576A4F282A782EE000452FA5 /* Palette.swift in Sources */,
 				57C7D4D62DA83C3E0025AE20 /* EnvironmentValues.swift in Sources */,
 				5711D7EB2DA6EAB200F539AB /* ShareColor.swift in Sources */,
+				576EC9082DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */,
 				57712DE52A7BD0D500B16DE9 /* Color+Init.swift in Sources */,
+				576EC9222DB945BF0038E232 /* HarmonyResult.swift in Sources */,
 				576A4F372A782FBE00452FA5 /* WatchPaletteDetailView.swift in Sources */,
 				576A4F172A782E6F00452FA5 /* ContentView.swift in Sources */,
 				57FF640E2D446C90008BA8C3 /* ProFeature.swift in Sources */,
 				576A4F2B2A782EE000452FA5 /* String+Extensions.swift in Sources */,
 				576A4F2C2A782EE000452FA5 /* ColorData.swift in Sources */,
-				576A4F2D2A782EE000452FA5 /* PantoneColorArrays.swift in Sources */,
 				576A4F2E2A782EE000452FA5 /* ColorStructure.swift in Sources */,
 				576A4F2F2A782EE000452FA5 /* UIColor+ColorCalculation.swift in Sources */,
 				57FF64092D446418008BA8C3 /* EntitlementsManager.swift in Sources */,
@@ -951,7 +1068,9 @@
 				57DAA12E2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift in Sources */,
 				576A4F332A782EFF00452FA5 /* WatchColorDetailView.swift in Sources */,
 				57FF64062D4460ED008BA8C3 /* SubscriptionManager.swift in Sources */,
+				576EC91E2DB945B50038E232 /* ColorHarmonyEngine.swift in Sources */,
 				576A4F352A782FB000452FA5 /* WatchPaletteListView.swift in Sources */,
+				576EC8FF2DB6AF8A0038E232 /* ColorVision.swift in Sources */,
 				576A4F272A782EE000452FA5 /* Color+Extensions.swift in Sources */,
 				576A4F292A782EE000452FA5 /* UIColor+AdditionalColors.swift in Sources */,
 				5797051F2DA9922D009AE8C5 /* Image+Extensions.swift in Sources */,
@@ -965,8 +1084,10 @@
 				5711D7EE2DA6F82C00F539AB /* SharedPaletteView.swift in Sources */,
 				57FF640F2D446C90008BA8C3 /* ProFeature.swift in Sources */,
 				57DDCDFE2A08007000B53CB7 /* UIColor+NamedColors.swift in Sources */,
+				576EC9022DB6B25C0038E232 /* CameraModeProtocol.swift in Sources */,
 				572053FE2A6893700072DE06 /* ColorStructure.swift in Sources */,
 				5797054E2DAD98E7009AE8C5 /* AVCaptureDevice+Extensions.swift in Sources */,
+				576EC8FE2DB6AF8A0038E232 /* ColorVision.swift in Sources */,
 				5711D7EA2DA6EAB200F539AB /* ShareColor.swift in Sources */,
 				5753016D2A033CC6006A68A5 /* CIImage+Extensions.swift in Sources */,
 				5797052E2DAD5DFC009AE8C5 /* PreviewCameraModel.swift in Sources */,
@@ -979,18 +1100,20 @@
 				579705532DADAB06009AE8C5 /* CameraUI.swift in Sources */,
 				576D8EAA2A0310AA003DE880 /* CameraPreview.swift in Sources */,
 				57FF64052D4460ED008BA8C3 /* SubscriptionManager.swift in Sources */,
-				572054032A689AE40072DE06 /* PantoneColorArrays.swift in Sources */,
 				57FF64082D446418008BA8C3 /* EntitlementsManager.swift in Sources */,
 				576338CB2A09A5D10034AF9D /* ColorDetailViewModel.swift in Sources */,
 				576D8E9D2A031069003DE880 /* ContentView.swift in Sources */,
 				576338C92A09A5A00034AF9D /* ColorDetailView.swift in Sources */,
 				579705442DAD96AD009AE8C5 /* CaptureService.swift in Sources */,
 				5711D7E22DA451F600F539AB /* PaletteEditView.swift in Sources */,
+				576EC9132DB6C2DC0038E232 /* AccessibilityMode.swift in Sources */,
+				576EC9242DB945BF0038E232 /* HarmonyResult.swift in Sources */,
 				576D8E9B2A031069003DE880 /* ColorSenseApp.swift in Sources */,
 				5797053E2DAD9548009AE8C5 /* CameraState.swift in Sources */,
 				579705302DAD5FFF009AE8C5 /* PreviewContainer.swift in Sources */,
 				579705342DAD89C0009AE8C5 /* CameraTypes.swift in Sources */,
 				57FF640B2D446B78008BA8C3 /* PaywallView.swift in Sources */,
+				576EC90F2DB6BF640038E232 /* MatchMode.swift in Sources */,
 				576338C62A09A3C50034AF9D /* ContentView-ViewModel.swift in Sources */,
 				57E887172B465B1C0092B5ED /* SettingsView.swift in Sources */,
 				5797053B2DAD94FE009AE8C5 /* MediaLibrary.swift in Sources */,
@@ -1005,20 +1128,32 @@
 				572054062A68A56D0072DE06 /* Pantone.swift in Sources */,
 				579705572DADB5D4009AE8C5 /* ColorCaptureService.swift in Sources */,
 				576338B92A0997AA0034AF9D /* View+Extensions.swift in Sources */,
+				576EC91F2DB945B50038E232 /* ColorHarmonyEngine.swift in Sources */,
 				57712DE42A7BD0D500B16DE9 /* Color+Init.swift in Sources */,
 				5711D7F62DA6F94700F539AB /* SharePaletteView.swift in Sources */,
 				579705502DAD9A56009AE8C5 /* URL+Extensions.swift in Sources */,
 				576338BE2A099B690034AF9D /* ColorCardView.swift in Sources */,
 				579705392DAD92BD009AE8C5 /* CameraModel.swift in Sources */,
 				579705322DAD87E4009AE8C5 /* DeviceLookup.swift in Sources */,
+				576EC90C2DB6BDCE0038E232 /* IdentifyMode.swift in Sources */,
 				5711D7E42DA4522B00F539AB /* PaletteEditViewModel.swift in Sources */,
 				5753016B2A033C9F006A68A5 /* CIColor+Extensions.swift in Sources */,
+				576EC9182DB6D9A00038E232 /* CameraModeManager.swift in Sources */,
 				579705422DAD95A1009AE8C5 /* AVCamCaptureIntent.swift in Sources */,
 				57C7D4D52DA83C3E0025AE20 /* EnvironmentValues.swift in Sources */,
 				577357592A73153800903F85 /* PaletteDetailViewModel.swift in Sources */,
 				576338C22A099D240034AF9D /* FocusCircleView.swift in Sources */,
+				576EC91B2DB80A7B0038E232 /* MachModeViewModel.swift in Sources */,
 				57DDCDFC2A07F93600B53CB7 /* UIColor+AdditionalColors.swift in Sources */,
+				576EC9072DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */,
 				579705362DAD8BB7009AE8C5 /* Camera.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		576EC9252DB9E39A0038E232 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1029,6 +1164,11 @@
 			isa = PBXTargetDependency;
 			target = 576A4F112A782E6F00452FA5 /* WatchColorSense Watch App */;
 			targetProxy = 576A4F1D2A782E7200452FA5 /* PBXContainerItemProxy */;
+		};
+		576EC92E2DB9E39A0038E232 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 576D8E962A031069003DE880 /* ColorSense */;
+			targetProxy = 576EC92D2DB9E39A0038E232 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1358,6 +1498,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify and analyze colors in real-time using your device's camera.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Photo library access is needed to save captured color samples, palettes, accessibility simulations, and color matching results for future reference and sharing.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1399,6 +1540,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify and analyze colors in real-time using your device's camera.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Photo library access is needed to save captured color samples, palettes, accessibility simulations, and color matching results for future reference and sharing.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1420,6 +1562,55 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		576EC9302DB9E39A0038E232 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3LPAZYKA42;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.justinwells.ColorSenseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorSense.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ColorSense";
+			};
+			name = Debug;
+		};
+		576EC9312DB9E39A0038E232 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3LPAZYKA42;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.justinwells.ColorSenseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColorSense.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ColorSense";
 			};
 			name = Release;
 		};
@@ -1458,6 +1649,15 @@
 			buildConfigurations = (
 				576D8EA62A03106A003DE880 /* Debug */,
 				576D8EA72A03106A003DE880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		576EC92F2DB9E39A0038E232 /* Build configuration list for PBXNativeTarget "ColorSenseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				576EC9302DB9E39A0038E232 /* Debug */,
+				576EC9312DB9E39A0038E232 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

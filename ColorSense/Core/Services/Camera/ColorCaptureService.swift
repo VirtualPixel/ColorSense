@@ -13,31 +13,23 @@ final class ColorCaptureService: NSObject, OutputService {
 
     /// A value that indicates the current state of color capture.
     @Published private(set) var captureActivity: CaptureActivity = .idle
-
     /// The dominant color detected at the center region
     @Published private(set) var dominantColor: Color?
-
-    /// The exact name of the dominant color
-    @Published private(set) var exactName: String?
-
-    /// The simplified color family name
-    @Published private(set) var simpleName: String?
-
     /// The size of the region used for color sampling
     @Published var region: CGFloat = 20
-
     /// Determines if color processing is paused
     @Published var pauseProcessing: Bool = false
 
+    private var cachedColor: UIColor?
+    private var cachedColorTimestamp: TimeInterval = 0
+
     /// The capture output type for this service.
     let output = AVCaptureVideoDataOutput()
-
-    /// Private buffer processing queue
     private var bufferQueue = DispatchQueue(label: "colorCaptureBufferQueue")
-
-    /// Minimum time between processing frames to avoid excessive CPU usage
     private var lastProcessingTime: TimeInterval = 0
     private var processingInterval: TimeInterval = 0.4 // 4 frames per second
+    private let cacheInterval: TimeInterval = 0.1
+
 
     override init() {
         super.init()
@@ -68,42 +60,44 @@ final class ColorCaptureService: NSObject, OutputService {
     func toggleProcessing() {
         self.pauseProcessing.toggle()
     }
+
+    func getCurrentColor() -> Color? {
+        // Return the cached color if we have a recent one (within 1 second)
+        let currentTime = Date().timeIntervalSince1970
+        if let cached = cachedColor, currentTime - cachedColorTimestamp < 1.0 {
+            return cached.color
+        }
+
+        return dominantColor
+    }
 }
 
 // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
 extension ColorCaptureService: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard !pauseProcessing else {
-            return
-        }
-
-        // Throttle processing to avoid excessive CPU usage
         let currentTime = Date().timeIntervalSince1970
-        if currentTime - lastProcessingTime < processingInterval {
-            return
-        }
-
-        lastProcessingTime = currentTime
 
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
 
-        // Process color on a background queue
-        Task.detached {
-            await self.updateDominantColor(for: ciImage)
+        if currentTime - cachedColorTimestamp > cacheInterval {
+            if let uiColor = ciImage.averageColor(region: self.region) {
+                self.cachedColor = uiColor
+                self.cachedColorTimestamp = currentTime
+            }
         }
 
-        captureActivity = .colorCapture
-    }
+        guard !pauseProcessing,
+              currentTime - lastProcessingTime > processingInterval else { return }
 
-    /// Updates the dominant color based on the provided CIImage.
-    @MainActor
-    private func updateDominantColor(for ciImage: CIImage) {
-        guard let ciColor = ciImage.averageColor(region: self.region) else { return }
-        let color = UIColor(ciColor: ciColor)
+        lastProcessingTime = currentTime
 
-        self.dominantColor = ciColor.toColor()
-        self.exactName = color.exactName
-        self.simpleName = color.simpleName
+        // Process color on a main thread
+        Task { @MainActor in
+            if let cachedColor = self.cachedColor {
+                self.dominantColor = cachedColor.color
+                self.captureActivity = .colorCapture
+            }
+        }
     }
 }

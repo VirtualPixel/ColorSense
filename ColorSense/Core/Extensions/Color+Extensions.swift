@@ -7,20 +7,8 @@
 
 import SwiftUI
 
-struct ColorVision: Identifiable {
-    let id = UUID()
-    let color: Color
-    let type: String
-    
-    static let types = [
-        NSLocalizedString("Normal Vision", comment: "Natural color vision"),
-        NSLocalizedString("Deuteranopia", comment: "Red-green color blindness, absense of green sensitive cones"),  // ~6% of males
-        NSLocalizedString("Protanopia", comment: "Red-green color blindness, absense of red sensitive cones"),    // ~1% of males
-        NSLocalizedString("Tritanopia", comment: "Blue-yellow color blindness")     // Rare
-    ]
-}
-
 extension Color: @retroactive Identifiable {
+
     public var id: UUID { UUID() }
     
     // MARK: - Constants
@@ -62,24 +50,6 @@ extension Color: @retroactive Identifiable {
     }
 
     // MARK: - Public Methods
-    func colorVisionSimulations() -> [ColorVision] {
-        let components = toRGBComponents()
-        let rgb = [
-            removeGamma(components.red),
-            removeGamma(components.green),
-            removeGamma(components.blue)
-        ]
-        
-        return [
-            ColorVision(color: self, type: ColorVision.types[0]),
-            ColorVision(color: simulateDeficiency(rgb: rgb, matrix: Color.deuteranopiaMatrix),
-                       type: ColorVision.types[1]),
-            ColorVision(color: simulateDeficiency(rgb: rgb, matrix: Color.protanopiaMatrix),
-                       type: ColorVision.types[2]),
-            ColorVision(color: simulateDeficiency(rgb: rgb, matrix: Color.tritanopiaMatrix),
-                       type: ColorVision.types[3])
-        ]
-    }
     
     func isDark() -> Bool {
         let components = toRGBComponents()
@@ -236,8 +206,7 @@ extension Color: @retroactive Identifiable {
         let components = toRGBComponents()
         return "UIColor(red: \(String(format: "%.3f", components.red)), green: \(String(format: "%.3f", components.green)), blue: \(String(format: "%.3f", components.blue)), alpha: \(String(format: "%.3f", components.alpha))"
     }
-    
-    // MARK: - Private Methods
+
     private func toRGBComponents() -> (red: Double, green: Double, blue: Double, alpha: Double) {
         var r: CGFloat = 0
         var g: CGFloat = 0

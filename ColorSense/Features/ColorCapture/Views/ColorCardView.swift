@@ -10,8 +10,10 @@ import SwiftUI
 struct ColorCardView: View {
     @EnvironmentObject private var camera: CameraModel
     @State private var isAddingColor = false
+    @State private var simpleName = "The Geothermal blue"
+    @State private var exactName = "Blue"
     let isDisabled: Bool
-    
+
     var body: some View {
         HStack {
             displayColorCard()
@@ -21,6 +23,12 @@ struct ColorCardView: View {
                     .onAppear {
                         camera.isPausingColorProcessing = true
                     }
+            }
+        }
+        .onChange(of: camera.dominantColor) {
+            if let dominantColor = camera.dominantColor?.uiColor {
+                self.simpleName = dominantColor.simpleName
+                self.exactName = dominantColor.exactName
             }
         }
     }
@@ -40,14 +48,14 @@ struct ColorCardView: View {
 
     private func createColorText(geometry: GeometryProxy) -> some View {
         VStack {
-            Text("\(camera.exactColorName ?? "The Geothermal blue")")
+            Text("\(exactName)")
                 .font(.system(size: geometry.size.width * 0.04))
                 .minimumScaleFactor(0.5)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.white)
-            Text("\(camera.simpleColorName ?? "Blue") Family")
+            Text("\(simpleName) Family")
                 .font(.system(size: geometry.size.width * 0.04).bold())
-                .minimumScaleFactor(0.5)  // Allows the text to scale down to 50% of its original size
+                .minimumScaleFactor(0.5)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.white)
         }

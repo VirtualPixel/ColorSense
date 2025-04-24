@@ -516,6 +516,9 @@
         }
       }
     },
+    "%lld%%" : {
+
+    },
     "+%lld" : {
       "localizations" : {
         "da" : {
@@ -2222,6 +2225,7 @@
       }
     },
     "Color accessibility details will appear here" : {
+      "extractionState" : "stale",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -2621,6 +2625,9 @@
           }
         }
       }
+    },
+    "Color Vision Simulation" : {
+
     },
     "Color Wheel" : {
       "localizations" : {
@@ -5838,6 +5845,9 @@
         }
       }
     },
+    "Identical colors create perfect harmony." : {
+      "comment" : "Description for identical colors"
+    },
     "Interesting color" : {
       "localizations" : {
         "da" : {
@@ -7651,6 +7661,7 @@
       }
     },
     "Match Mode" : {
+      "extractionState" : "stale",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -12456,6 +12467,18 @@
         }
       }
     },
+    "These adjacent colors create a harmonious analogous relationship." : {
+      "comment" : "Description for analogous colors"
+    },
+    "These colors form part of a triadic relationship with balanced contrast." : {
+      "comment" : "Description for triadic colors"
+    },
+    "These colors have a unique relationship that doesn't follow classic color theory principles." : {
+      "comment" : "Description for non-standard color harmony"
+    },
+    "These opposite colors form a complementary relationship with strong visual impact." : {
+      "comment" : "Description for complementary colors"
+    },
     "This is a pro feature" : {
       "localizations" : {
         "da" : {
@@ -13157,6 +13180,9 @@
         }
       }
     },
+    "Vision Type" : {
+
+    },
     "White" : {
       "comment" : "Color name for white",
       "localizations" : {
@@ -13460,6 +13486,7 @@
       }
     },
     "You can match colors here" : {
+      "extractionState" : "stale",
       "localizations" : {
         "da" : {
           "stringUnit" : {

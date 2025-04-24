@@ -18,3 +18,8 @@ struct Pantone: Identifiable {
         Pantone(name: "Something", value: "fj48dg"),
     ]
 }
+
+struct PantoneColorArrays: Decodable {
+    let names: [String]
+    let values: [String]
+}
