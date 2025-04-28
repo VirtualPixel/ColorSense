@@ -23,77 +23,66 @@ extension XCTestCase {
         color2: Color,
         expectedScore: Double,
         expectedType: HarmonyType?,
-        message: String? = nil,
-        file: StaticString = #file,
+        message: String = "",
+        file: StaticString = #filePath,
         line: UInt = #line
     ) {
         let result = ColorHarmonyEngine.calculateHarmony(between: color1, and: color2)
 
-        // If there's a custom message, print it
-        if let message = message {
-            print("ℹ️ \(message)")
-        }
+        // Check if the score falls within the expected quality range
+        let expectedQuality = HarmonyQuality.forScore(expectedScore)
+        let resultQuality = HarmonyQuality.forScore(result.score)
 
-        // Check score with tolerance of 0.1
         XCTAssertEqual(
-            result.score,
-            expectedScore,
-            accuracy: 0.1,
-            "Expected score \(expectedScore), got \(result.score)",
+            resultQuality,
+            expectedQuality,
+            "\(message) Expected quality: \(expectedQuality.rawValue), got: \(resultQuality.rawValue) with score: \(result.score)",
             file: file,
             line: line
         )
 
-        // Check type
+        // Check the harmony type
         XCTAssertEqual(
             result.type,
             expectedType,
-            "Expected type \(String(describing: expectedType)), got \(String(describing: result.type))",
+            "\(message) Expected type: \(String(describing: expectedType)), got: \(String(describing: result.type))",
             file: file,
             line: line
         )
     }
 
-    /// Tests color harmony with flexibility
+    /// Tests color harmony with a flexible approach allowing multiple possible quality categories
     /// - Parameters:
     ///   - color1: First color to test
     ///   - color2: Second color to test
-    ///   - expectedTypes: An array of acceptable harmony types
-    ///   - minScore: Minimum acceptable score
+    ///   - expectedQualities: Array of accepted quality categories
+    ///   - expectedType: The expected harmony type
     ///   - message: Optional test description
     func assertFlexibleHarmony(
         color1: Color,
         color2: Color,
-        expectedTypes: [HarmonyType?],
-        minScore: Double = 0.5,
-        message: String? = nil,
-        file: StaticString = #file,
+        expectedQualities: [HarmonyQuality],
+        expectedType: HarmonyType?,
+        message: String = "",
+        file: StaticString = #filePath,
         line: UInt = #line
     ) {
         let result = ColorHarmonyEngine.calculateHarmony(between: color1, and: color2)
+        let resultQuality = HarmonyQuality.forScore(result.score)
 
-        if let message = message {
-            print("ℹ️ \(message)")
-        }
-
-        // Check if result type is among expected types
         XCTAssertTrue(
-            expectedTypes.contains(result.type),
-            "Expected type to be one of \(expectedTypes), got \(String(describing: result.type))",
+            expectedQualities.contains(resultQuality),
+            "\(message) Expected one of qualities: \(expectedQualities.map { $0.rawValue }.joined(separator: ", ")), got: \(resultQuality.rawValue) with score: \(result.score)",
             file: file,
             line: line
         )
 
-        // Check if score is above minimum
-        XCTAssertGreaterThanOrEqual(
-            result.score,
-            minScore,
-            "Expected minimum score \(minScore), got \(result.score)",
+        XCTAssertEqual(
+            result.type,
+            expectedType,
+            "\(message) Expected type: \(String(describing: expectedType)), got: \(String(describing: result.type))",
             file: file,
             line: line
         )
-
-        // Print actual result for debugging
-        print("📊 Actual result: type=\(String(describing: result.type)), score=\(result.score)")
     }
 }

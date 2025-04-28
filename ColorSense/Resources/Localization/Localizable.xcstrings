@@ -2224,107 +2224,6 @@
         }
       }
     },
-    "Color accessibility details will appear here" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farvetilgængelighedsdetaljer vil blive vist her"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Details zur Farbzugänglichkeit werden hier angezeigt"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Los detalles de accesibilidad del color aparecerán aquí"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les détails d'accessibilité des couleurs apparaîtront ici"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les détails d'accessibilité des couleurs apparaîtront ici"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "रंग एक्सेसिबिलिटी विवरण यहाँ दिखाई देंगे"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "I dettagli di accessibilità del colore appariranno qui"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ここに色のアクセシビリティの詳細が表示されます"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "색상 접근성 세부정보가 여기에 나타납니다"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Butiran kebolehcapaian warna akan muncul di sini"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Szczegóły dostępności kolorów pojawią się tutaj"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Os detalhes de acessibilidade de cores aparecerão aqui"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Детали доступности цвета появятся здесь"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Renk erişilebilirlik detayları burada görünecek"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "颜色辅助功能详细信息将显示在此处"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "顏色無障礙細節將顯示在此"
-          }
-        }
-      }
-    },
     "Color Details" : {
       "comment" : "Title for color details section",
       "localizations" : {
@@ -5845,9 +5744,6 @@
         }
       }
     },
-    "Identical colors create perfect harmony." : {
-      "comment" : "Description for identical colors"
-    },
     "Interesting color" : {
       "localizations" : {
         "da" : {
@@ -7759,7 +7655,8 @@
             "value" : "匹配模式"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "month" : {
       "localizations" : {
@@ -12467,18 +12364,6 @@
         }
       }
     },
-    "These adjacent colors create a harmonious analogous relationship." : {
-      "comment" : "Description for analogous colors"
-    },
-    "These colors form part of a triadic relationship with balanced contrast." : {
-      "comment" : "Description for triadic colors"
-    },
-    "These colors have a unique relationship that doesn't follow classic color theory principles." : {
-      "comment" : "Description for non-standard color harmony"
-    },
-    "These opposite colors form a complementary relationship with strong visual impact." : {
-      "comment" : "Description for complementary colors"
-    },
     "This is a pro feature" : {
       "localizations" : {
         "da" : {
@@ -13584,7 +13469,8 @@
             "value" : "您可以在這裡匹配顏色"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     }
   },
   "version" : "1.0"
