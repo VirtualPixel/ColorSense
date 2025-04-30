@@ -19,8 +19,12 @@ struct ContentView: View {
             ZStack {
 
                 PreviewContainer(camera: camera) {
-                    CameraPreview(source: camera.previewSource)
-                        .opacity(camera.shouldFlashScreen ? 0 : 1)
+                    FilteredCameraPreview(
+                        source: camera.previewSource,
+                        filterType: camera.currentColorVisionType,
+                        isFilterEnabled: camera.applyColorVisionFilter
+                    )
+                    .opacity(camera.shouldFlashScreen ? 0 : 1)
                 }
                 .offset(y: -20)
 
@@ -49,7 +53,7 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(PreviewCameraModel())
+        // .environmentObject(PreviewCameraModel())
         .environmentObject(SubscriptionsManager(entitlementManager: EntitlementManager()))
         .environmentObject(EntitlementManager())
 }

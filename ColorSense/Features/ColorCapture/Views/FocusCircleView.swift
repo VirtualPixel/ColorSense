@@ -22,6 +22,6 @@ struct FocusCircleView: View {
 struct FocusCircleView_Previews: PreviewProvider {
     static var previews: some View {
         FocusCircleView(bounds: CGRect(x: 0, y: 0, width: 0, height: 0))
-            .environmentObject(PreviewCameraModel())
+            // .environmentObject(PreviewCameraModel())
     }
 }

@@ -161,5 +161,5 @@ struct CameraUI: View {
 
 #Preview {
     CameraUI()
-        .environmentObject(PreviewCameraModel())
+        // .environmentObject(PreviewCameraModel())
 }

@@ -150,6 +150,6 @@ struct PaletteEditView: View {
 #Preview {
     NavigationStack {
         PaletteEditView(palette: Palette.defaultPalette)
-            .environmentObject(PreviewCameraModel())
+            // .environmentObject(PreviewCameraModel())
     }
 }

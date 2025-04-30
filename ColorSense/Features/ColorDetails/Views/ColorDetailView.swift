@@ -260,7 +260,7 @@ struct ColorDetailView: View {
 struct ColorDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ColorDetailView(color: Color.init(hex: "2A2A1A"))
-            .environmentObject(PreviewCameraModel())
+            // .environmentObject(PreviewCameraModel())
             .environmentObject(EntitlementManager())
     }
 }

@@ -27,6 +27,7 @@ struct AccessibilityMode: CameraModeProtocol {
 
 struct AccessibilityContentView: View {
     @State private var selectedDeficiency: ColorVisionType = .normal
+    @EnvironmentObject var camera: CameraModel
 
     var body: some View {
         VStack(spacing: 10) {
@@ -40,10 +41,20 @@ struct AccessibilityContentView: View {
                     Text(type.rawValue).tag(type)
                 }
             }
+            .padding(2)
+            .background(.ultraThinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 9))
             .pickerStyle(SegmentedPickerStyle())
             .padding(.horizontal)
+            .onChange(of: selectedDeficiency) { _, newValue in
+                camera.currentColorVisionType = newValue
+                if newValue == ColorVisionType.normal {
+                    camera.applyColorVisionFilter = false
+                } else {
+                    camera.applyColorVisionFilter = true
+                }
+            }
 
-            // Optionally add a description
             Text(selectedDeficiency.description)
                 .font(.caption)
                 .foregroundColor(.white.opacity(0.8))
@@ -51,5 +62,9 @@ struct AccessibilityContentView: View {
                 .padding(.horizontal)
         }
         .padding(.top, 20)
+        .onDisappear {
+            camera.applyColorVisionFilter = false
+            selectedDeficiency = .normal
+        }
     }
 }

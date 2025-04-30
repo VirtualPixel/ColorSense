@@ -74,13 +74,9 @@
 		576EC8E72DAEF0DF0038E232 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 576EC8E52DAEF0DF0038E232 /* Localizable.xcstrings */; };
 		576EC8E82DAEF0DF0038E232 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 576EC8E52DAEF0DF0038E232 /* Localizable.xcstrings */; };
 		576EC8EC2DB035040038E232 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 576EC8EA2DB035040038E232 /* InfoPlist.strings */; };
-		576EC8FD2DB6AF8A0038E232 /* ColorVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC8FC2DB6AF890038E232 /* ColorVision.swift */; };
 		576EC8FE2DB6AF8A0038E232 /* ColorVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC8FC2DB6AF890038E232 /* ColorVision.swift */; };
-		576EC8FF2DB6AF8A0038E232 /* ColorVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC8FC2DB6AF890038E232 /* ColorVision.swift */; };
 		576EC9022DB6B25C0038E232 /* CameraModeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9012DB6B25C0038E232 /* CameraModeProtocol.swift */; };
 		576EC9072DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */; };
-		576EC9082DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */; };
-		576EC9092DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */; };
 		576EC90C2DB6BDCE0038E232 /* IdentifyMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC90A2DB6BDCE0038E232 /* IdentifyMode.swift */; };
 		576EC90F2DB6BF640038E232 /* MatchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC90E2DB6BF640038E232 /* MatchMode.swift */; };
 		576EC9132DB6C2DC0038E232 /* AccessibilityMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9122DB6C2DC0038E232 /* AccessibilityMode.swift */; };
@@ -116,6 +112,9 @@
 		579705502DAD9A56009AE8C5 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797054F2DAD9A56009AE8C5 /* URL+Extensions.swift */; };
 		579705532DADAB06009AE8C5 /* CameraUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705522DADAB06009AE8C5 /* CameraUI.swift */; };
 		579705572DADB5D4009AE8C5 /* ColorCaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579705542DADB5D4009AE8C5 /* ColorCaptureService.swift */; };
+		57C4B4432DC008A700FF3744 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C4B4412DC0072900FF3744 /* Metal.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		57C4B4442DC008F800FF3744 /* ColorVisionShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 57C4B43F2DC006CA00FF3744 /* ColorVisionShaders.metal */; };
+		57C4B4462DC052A400FF3744 /* ColorVisionFilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C4B4452DC052A400FF3744 /* ColorVisionFilterDelegate.swift */; };
 		57C7D4CD2DA83A470025AE20 /* WishKit in Frameworks */ = {isa = PBXBuildFile; productRef = 57C7D4CC2DA83A470025AE20 /* WishKit */; };
 		57C7D4D12DA83B970025AE20 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 57C7D4D02DA83B970025AE20 /* .env */; };
 		57C7D4D52DA83C3E0025AE20 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C7D4D42DA83C3E0025AE20 /* EnvironmentValues.swift */; };
@@ -126,6 +125,7 @@
 		57C7D4DB2DA83E260025AE20 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 57C7D4D82DA83E260025AE20 /* Debug.xcconfig */; };
 		57CC2DAF2D5549A000DF8603 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */; };
 		57DAA12E2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */; };
+		57DD83D52DC1217D00227BDD /* FilteredCameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD83D42DC1217D00227BDD /* FilteredCameraPreview.swift */; };
 		57DDCDFC2A07F93600B53CB7 /* UIColor+AdditionalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFB2A07F93600B53CB7 /* UIColor+AdditionalColors.swift */; };
 		57DDCDFE2A08007000B53CB7 /* UIColor+NamedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* UIColor+NamedColors.swift */; };
 		57E887012B44C4C40092B5ED /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E887002B44C4C40092B5ED /* StoreKit.framework */; };
@@ -279,11 +279,15 @@
 		5797054F2DAD9A56009AE8C5 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		579705522DADAB06009AE8C5 /* CameraUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUI.swift; sourceTree = "<group>"; };
 		579705542DADB5D4009AE8C5 /* ColorCaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCaptureService.swift; sourceTree = "<group>"; };
+		57C4B43F2DC006CA00FF3744 /* ColorVisionShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColorVisionShaders.metal; sourceTree = "<group>"; };
+		57C4B4412DC0072900FF3744 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		57C4B4452DC052A400FF3744 /* ColorVisionFilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorVisionFilterDelegate.swift; sourceTree = "<group>"; };
 		57C7D4D02DA83B970025AE20 /* .env */ = {isa = PBXFileReference; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		57C7D4D42DA83C3E0025AE20 /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
 		57C7D4D82DA83E260025AE20 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchColorDetailview-ViewModel.swift"; sourceTree = "<group>"; };
+		57DD83D42DC1217D00227BDD /* FilteredCameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredCameraPreview.swift; sourceTree = "<group>"; };
 		57DDCDFB2A07F93600B53CB7 /* UIColor+AdditionalColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AdditionalColors.swift"; sourceTree = "<group>"; };
 		57DDCDFD2A08007000B53CB7 /* UIColor+NamedColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+NamedColors.swift"; sourceTree = "<group>"; };
 		57E77E8C2A82601A0074D4C8 /* visionColorSense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visionColorSense.entitlements; sourceTree = "<group>"; };
@@ -323,6 +327,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C4B4432DC008A700FF3744 /* Metal.framework in Frameworks */,
 				57C7D4CD2DA83A470025AE20 /* WishKit in Frameworks */,
 				57E887012B44C4C40092B5ED /* StoreKit.framework in Frameworks */,
 			);
@@ -486,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				576EC9362DB9EA640038E232 /* ColorTheory */,
+				57C4B43E2DC006B700FF3744 /* Metal */,
 				576EC8E02DAEE4E90038E232 /* Models */,
 				576EC8D42DAEDD640038E232 /* Extensions */,
 				576EC8D22DAEDD460038E232 /* Persistence */,
@@ -610,6 +616,7 @@
 				5797052F2DAD5FFF009AE8C5 /* PreviewContainer.swift */,
 				576D8EA92A0310AA003DE880 /* CameraPreview.swift */,
 				576338BF2A099C810034AF9D /* BottomBarView.swift */,
+				57DD83D42DC1217D00227BDD /* FilteredCameraPreview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -763,6 +770,7 @@
 			isa = PBXGroup;
 			children = (
 				576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */,
+				57C4B4452DC052A400FF3744 /* ColorVisionFilterDelegate.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -774,6 +782,14 @@
 				576EC91D2DB945B50038E232 /* ColorHarmonyEngine.swift */,
 			);
 			path = ColorTheory;
+			sourceTree = "<group>";
+		};
+		57C4B43E2DC006B700FF3744 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				57C4B43F2DC006CA00FF3744 /* ColorVisionShaders.metal */,
+			);
+			path = Metal;
 			sourceTree = "<group>";
 		};
 		57C7D4D22DA83BB10025AE20 /* Configuration */ = {
@@ -790,6 +806,7 @@
 		57E886FF2B44C4C40092B5ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57C4B4412DC0072900FF3744 /* Metal.framework */,
 				57E887042B44C4D80092B5ED /* StoreKit.framework */,
 				57E887022B44C4D00092B5ED /* StoreKit.framework */,
 				57E887002B44C4C40092B5ED /* StoreKit.framework */,
@@ -1029,7 +1046,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5725C5B52A7BCB6E00933331 /* Palette.swift in Sources */,
-				576EC8FD2DB6AF8A0038E232 /* ColorVision.swift in Sources */,
 				57C7D4D72DA83C3E0025AE20 /* EnvironmentValues.swift in Sources */,
 				5725C5B82A7BCB6E00933331 /* ColorData.swift in Sources */,
 				5725C5A42A7BCAEC00933331 /* ContentView.swift in Sources */,
@@ -1039,7 +1055,6 @@
 				576EC9232DB945BF0038E232 /* HarmonyResult.swift in Sources */,
 				576EC9202DB945B50038E232 /* ColorHarmonyEngine.swift in Sources */,
 				5725C5B02A7BCB6E00933331 /* ColorStructure.swift in Sources */,
-				576EC9092DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1050,7 +1065,6 @@
 				576A4F282A782EE000452FA5 /* Palette.swift in Sources */,
 				57C7D4D62DA83C3E0025AE20 /* EnvironmentValues.swift in Sources */,
 				5711D7EB2DA6EAB200F539AB /* ShareColor.swift in Sources */,
-				576EC9082DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */,
 				57712DE52A7BD0D500B16DE9 /* Color+Init.swift in Sources */,
 				576EC9222DB945BF0038E232 /* HarmonyResult.swift in Sources */,
 				576A4F372A782FBE00452FA5 /* WatchPaletteDetailView.swift in Sources */,
@@ -1070,7 +1084,6 @@
 				57FF64062D4460ED008BA8C3 /* SubscriptionManager.swift in Sources */,
 				576EC91E2DB945B50038E232 /* ColorHarmonyEngine.swift in Sources */,
 				576A4F352A782FB000452FA5 /* WatchPaletteListView.swift in Sources */,
-				576EC8FF2DB6AF8A0038E232 /* ColorVision.swift in Sources */,
 				576A4F272A782EE000452FA5 /* Color+Extensions.swift in Sources */,
 				576A4F292A782EE000452FA5 /* UIColor+AdditionalColors.swift in Sources */,
 				5797051F2DA9922D009AE8C5 /* Image+Extensions.swift in Sources */,
@@ -1081,6 +1094,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C4B4442DC008F800FF3744 /* ColorVisionShaders.metal in Sources */,
 				5711D7EE2DA6F82C00F539AB /* SharedPaletteView.swift in Sources */,
 				57FF640F2D446C90008BA8C3 /* ProFeature.swift in Sources */,
 				57DDCDFE2A08007000B53CB7 /* UIColor+NamedColors.swift in Sources */,
@@ -1095,6 +1109,7 @@
 				579705202DA9922D009AE8C5 /* Image+Extensions.swift in Sources */,
 				5753016F2A033CF0006A68A5 /* UIColor+ColorCalculation.swift in Sources */,
 				576338C02A099C810034AF9D /* BottomBarView.swift in Sources */,
+				57DD83D52DC1217D00227BDD /* FilteredCameraPreview.swift in Sources */,
 				576338D12A09BD340034AF9D /* PaletteListView.swift in Sources */,
 				576338CF2A09BD280034AF9D /* PaletteListViewModel.swift in Sources */,
 				579705532DADAB06009AE8C5 /* CameraUI.swift in Sources */,
@@ -1102,6 +1117,7 @@
 				57FF64052D4460ED008BA8C3 /* SubscriptionManager.swift in Sources */,
 				57FF64082D446418008BA8C3 /* EntitlementsManager.swift in Sources */,
 				576338CB2A09A5D10034AF9D /* ColorDetailViewModel.swift in Sources */,
+				57C4B4462DC052A400FF3744 /* ColorVisionFilterDelegate.swift in Sources */,
 				576D8E9D2A031069003DE880 /* ContentView.swift in Sources */,
 				576338C92A09A5A00034AF9D /* ColorDetailView.swift in Sources */,
 				579705442DAD96AD009AE8C5 /* CaptureService.swift in Sources */,

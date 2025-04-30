@@ -10,7 +10,9 @@ import SwiftUI
 
 @Observable
 class PreviewCameraModel: Camera, ObservableObject {
-
+    var currentColorVisionType: ColorVisionType = .normal
+    var applyColorVisionFilter: Bool = false
+    
     var isLivePhotoEnabled = true
     var prefersMinimizedUI = false
     var qualityPrioritization = QualityPrioritization.quality

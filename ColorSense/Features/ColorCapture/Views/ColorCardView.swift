@@ -124,6 +124,6 @@ struct ColorCardView: View {
 struct ColorCardView_Previews: PreviewProvider {
     static var previews: some View {
         ColorCardView()
-            .environmentObject(PreviewCameraModel())
+            // .environmentObject(PreviewCameraModel())
     }
 }

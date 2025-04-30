@@ -9,6 +9,7 @@ import SwiftUICore
 
 enum ColorVisionType: String, CaseIterable, Identifiable {
     case normal = "Normal Vision"
+    // case testing = "Testing"
     case deuteranopia = "Deuteranopia"
     case protanopia = "Protanopia"
     case tritanopia = "Tritanopia"
@@ -19,6 +20,8 @@ enum ColorVisionType: String, CaseIterable, Identifiable {
         switch self {
         case .normal:
             return "Natural color vision"
+        // case .testing:
+        //    return "This is for testing purposes"
         case .deuteranopia:
             return "Red-green color blindness, absence of green sensitive cones (~6% of males)"
         case .protanopia:

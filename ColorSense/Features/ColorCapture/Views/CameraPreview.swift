@@ -11,6 +11,13 @@ struct CameraPreview: UIViewRepresentable {
     func makeUIView(context: Context) -> PreviewView {
         let preview = PreviewView()
         source.connect(to: preview)
+
+        // Add this debug check
+        if let previewLayer = preview.layer as? AVCaptureVideoPreviewLayer,
+           let session = (source as? DefaultPreviewSource)?.session {
+            DebugHelper.verifySessionConnection(previewLayer: previewLayer, session: session)
+        }
+
         return preview
     }
 
@@ -25,6 +32,10 @@ struct CameraPreview: UIViewRepresentable {
     /// This class owns the `AVCaptureVideoPreviewLayer` that presents the captured content.
     ///
     class PreviewView: UIView, PreviewTarget {
+        func setVideoRotationAngle(_ angle: CGFloat) {
+            // Do nothing
+        }
+        
 
         init() {
             super.init(frame: .zero)
@@ -71,12 +82,14 @@ protocol PreviewSource: Sendable {
 protocol PreviewTarget {
     // Sets the capture session on the destination.
     func setSession(_ session: AVCaptureSession)
+
+    func setVideoRotationAngle(_ angle: CGFloat)
 }
 
 /// The app's default `PreviewSource` implementation.
 struct DefaultPreviewSource: PreviewSource {
 
-    private let session: AVCaptureSession
+    let session: AVCaptureSession
 
     init(session: AVCaptureSession) {
         self.session = session
@@ -84,5 +97,15 @@ struct DefaultPreviewSource: PreviewSource {
 
     func connect(to target: PreviewTarget) {
         target.setSession(session)
+    }
+}
+
+class DebugHelper {
+    static func verifySessionConnection(previewLayer: AVCaptureVideoPreviewLayer, session: AVCaptureSession) {
+        if previewLayer.session === session {
+            print("SUCCESS: Preview layer is connected to the correct session")
+        } else {
+            print("ERROR: Preview layer is connected to a different session!")
+        }
     }
 }

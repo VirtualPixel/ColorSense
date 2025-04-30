@@ -106,5 +106,5 @@ extension BottomBarView {
 
 #Preview {
     BottomBarView()
-        .environmentObject(PreviewCameraModel())
+        // .environmentObject(PreviewCameraModel())
 }

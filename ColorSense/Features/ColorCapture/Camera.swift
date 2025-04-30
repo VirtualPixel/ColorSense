@@ -19,6 +19,12 @@ protocol Camera: AnyObject {
     /// Whether color processing is paused
     var isPausingColorProcessing: Bool { get set }
 
+    /// Which colorblindness filter is currently selected in AccessibilityMode
+    var currentColorVisionType: ColorVisionType { get set }
+
+    /// Whether or not the colorblindness filter should be applied to the preview
+    var applyColorVisionFilter: Bool { get set }
+
     /// Provides the current camera status
     var status: CameraStatus { get }
 

@@ -78,9 +78,10 @@ extension ColorCaptureService: AVCaptureVideoDataOutputSampleBufferDelegate {
         let currentTime = Date().timeIntervalSince1970
 
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
+        let processedBuffer: CVPixelBuffer = pixelBuffer
 
         if currentTime - cachedColorTimestamp > cacheInterval {
+            let ciImage = CIImage(cvPixelBuffer: processedBuffer)
             if let uiColor = ciImage.averageColor(region: self.region) {
                 self.cachedColor = uiColor
                 self.cachedColorTimestamp = currentTime

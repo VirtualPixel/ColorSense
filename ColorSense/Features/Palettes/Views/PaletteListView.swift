@@ -258,6 +258,6 @@ struct PaletteListView: View {
 
 #Preview {    
     PaletteListView()
-        .environmentObject(PreviewCameraModel())
+        // .environmentObject(PreviewCameraModel())
         .environmentObject(EntitlementManager())
 }

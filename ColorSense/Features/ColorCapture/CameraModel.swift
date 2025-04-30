@@ -18,6 +18,18 @@ import Combine
 ///
 @Observable
 final class CameraModel: Camera, ObservableObject {
+    var currentColorVisionType: ColorVisionType = .normal {
+        didSet {
+            updateColorVisionFilter()
+        }
+    }
+
+    var applyColorVisionFilter: Bool = false {
+        didSet {
+            updateColorVisionFilter()
+        }
+    }
+
 
     private(set) var dominantColor: Color?
     var colorRegion: CGFloat = 20 {
@@ -144,10 +156,48 @@ final class CameraModel: Camera, ObservableObject {
     /// Captures a photo and writes it to the user's Photos library.
     func capturePhoto() async {
         do {
+            // Capture the original photo
             let photoFeatures = PhotoFeatures(isLivePhotoEnabled: isLivePhotoEnabled, qualityPrioritization: qualityPrioritization)
             let photo = try await captureService.capturePhoto(with: photoFeatures)
-            try await mediaLibrary.save(photo: photo)
+
+            print("Photo captured successfully")
+
+            // If no filter is needed, save the original
+            if !applyColorVisionFilter || currentColorVisionType == .normal {
+                print("No filter needed, saving original photo")
+                try await mediaLibrary.save(photo: photo)
+                return
+            }
+
+            // Apply filter
+            print("Applying \(currentColorVisionType) filter")
+            guard let originalImage = UIImage(data: photo.data) else {
+                print("Failed to create UIImage from photo data, saving original")
+                try await mediaLibrary.save(photo: photo)
+                return
+            }
+
+            // Use our debug version to see exactly what's happening
+            if let filteredImage = ColorVisionUtility.applyFilterWithDebug(to: originalImage, type: currentColorVisionType) {
+                print("Filter applied successfully, saving filtered image")
+
+                // Convert to JPEG with high quality
+                guard let filteredData = filteredImage.jpegData(compressionQuality: 0.95) else {
+                    print("Failed to convert filtered image to JPEG, saving original")
+                    try await mediaLibrary.save(photo: photo)
+                    return
+                }
+
+                // Create a new Photo object with the filtered data
+                let filteredPhoto = Photo(data: filteredData, isProxy: photo.isProxy, livePhotoMovieURL: photo.livePhotoMovieURL)
+                try await mediaLibrary.save(photo: filteredPhoto)
+                print("Filtered photo saved successfully")
+            } else {
+                print("Filter application failed, saving original")
+                try await mediaLibrary.save(photo: photo)
+            }
         } catch {
+            print("Error in photo capture: \(error.localizedDescription)")
             self.error = error
         }
     }
@@ -272,6 +322,12 @@ final class CameraModel: Camera, ObservableObject {
             for await dominantColor in await captureService.$dominantColor.values {
                 self.dominantColor = dominantColor
             }
+        }
+    }
+
+    private func updateColorVisionFilter() {
+        Task {
+            await captureService.setColorVisionFilter(type: currentColorVisionType, enabled: applyColorVisionFilter)
         }
     }
 }

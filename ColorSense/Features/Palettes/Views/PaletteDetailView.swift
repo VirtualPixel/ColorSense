@@ -133,6 +133,6 @@ struct PaletteDetailView: View {
 
 #Preview {
     PaletteDetailView(palette: Palette.defaultPalette)
-        .environmentObject(PreviewCameraModel())
+        // .environmentObject(PreviewCameraModel())
         .environmentObject(EntitlementManager())
 }

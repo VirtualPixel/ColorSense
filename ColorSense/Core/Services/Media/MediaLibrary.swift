@@ -51,15 +51,23 @@ actor MediaLibrary {
 
     /// Saves a photo to the Photos library.
     func save(photo: Photo) async throws {
-        let location = try await currentLocation
+        print("MediaLibrary: Saving photo (\(photo.data.count) bytes)")
+
         try await performChange {
             let creationRequest = PHAssetCreationRequest.forAsset()
 
             // Save primary photo.
             let options = PHAssetResourceCreationOptions()
+
+            // Verify the photo data is valid
+            if let image = UIImage(data: photo.data) {
+                print("MediaLibrary: Photo data is valid, dimensions: \(image.size.width) x \(image.size.height)")
+            } else {
+                print("WARNING: MediaLibrary received invalid photo data!")
+            }
+
             // Specify the appropriate resource type for the photo.
             creationRequest.addResource(with: photo.isProxy ? .photoProxy : .photo, data: photo.data, options: options)
-            creationRequest.location = location
 
             // Save Live Photo data.
             if let url = photo.livePhotoMovieURL {
@@ -70,17 +78,17 @@ actor MediaLibrary {
 
             return creationRequest.placeholderForCreatedAsset
         }
+
+        print("MediaLibrary: Save completed")
     }
 
     /// Saves a movie to the Photos library.
     func save(movie: Movie) async throws {
-        let location = try await currentLocation
         try await performChange {
             let options = PHAssetResourceCreationOptions()
             options.shouldMoveFile = true
             let creationRequest = PHAssetCreationRequest.forAsset()
             creationRequest.addResource(with: .video, fileURL: movie.url, options: options)
-            creationRequest.location = location
             return creationRequest.placeholderForCreatedAsset
         }
     }
@@ -88,6 +96,7 @@ actor MediaLibrary {
     // A template method for writing a change to the user's photo library.
     private func performChange(_ change: @Sendable @escaping () -> PHObjectPlaceholder?) async throws {
         guard await isAuthorized else {
+            print("MediaLibrary: Not authorized to save to Photos")
             throw Error.unauthorized
         }
 
@@ -95,16 +104,56 @@ actor MediaLibrary {
             var placeholder: PHObjectPlaceholder?
             try await PHPhotoLibrary.shared().performChanges {
                 // Execute the change closure.
+                print("MediaLibrary: Executing PHAssetCreationRequest")
                 placeholder = change()
             }
 
+            print("MediaLibrary: PHPhotoLibrary changes completed")
+
             if let placeholder {
                 /// Retrieve the newly created `PHAsset` instance.
+                print("MediaLibrary: Got placeholder, creating thumbnail")
                 guard let asset = PHAsset.fetchAssets(withLocalIdentifiers: [placeholder.localIdentifier],
-                                                      options: nil).firstObject else { return }
+                                                      options: nil).firstObject else {
+                    print("MediaLibrary: Failed to fetch asset for thumbnail")
+                    return
+                }
                 await createThumbnail(for: asset)
+            } else {
+                print("MediaLibrary: No placeholder returned from change closure")
             }
         } catch {
+            print("MediaLibrary: Save failed with error: \(error.localizedDescription)")
+            throw Error.saveFailed
+        }
+    }
+
+    func saveFilteredImage(_ image: UIImage) async throws {
+        print("MediaLibrary: Saving filtered image directly")
+
+        guard await isAuthorized else {
+            print("MediaLibrary: Not authorized to save to Photos")
+            throw Error.unauthorized
+        }
+
+        do {
+            try await PHPhotoLibrary.shared().performChanges {
+                // Create a simple asset creation request
+                let request = PHAssetCreationRequest.forAsset()
+
+                // Try to get JPEG data with high quality
+                if let imageData = image.jpegData(compressionQuality: 0.95) {
+                    let options = PHAssetResourceCreationOptions()
+                    options.uniformTypeIdentifier = UTType.jpeg.identifier
+                    request.addResource(with: .photo, data: imageData, options: options)
+                } else {
+                    print("MediaLibrary: Failed to convert image to JPEG data")
+                }
+            }
+
+            print("MediaLibrary: Direct image save completed")
+        } catch {
+            print("MediaLibrary: Direct save failed: \(error.localizedDescription)")
             throw Error.saveFailed
         }
     }
@@ -132,20 +181,6 @@ actor MediaLibrary {
             // Set the latest thumbnail image.
             guard let self, let image = image else { return }
             continuation?.yield(image.cgImage)
-        }
-    }
-
-    // MARK: - Location management
-
-    private let locationManager = CLLocationManager()
-
-    private var currentLocation: CLLocation? {
-        get async throws {
-            if locationManager.authorizationStatus == .notDetermined {
-                locationManager.requestWhenInUseAuthorization()
-            }
-            // Return the location for the first update.
-            return try await CLLocationUpdate.liveUpdates().first(where: { _ in true })?.location
         }
     }
 }

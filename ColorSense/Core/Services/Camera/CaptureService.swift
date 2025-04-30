@@ -70,11 +70,22 @@ actor CaptureService {
     // A delegate object that responds to capture control activation and presentation events.
     private var controlsDelegate = CaptureControlsDelegate()
 
+    // Whether or not to apply the colorblindness filter
+    private var colorVisionFilterEnabled = false
+
+    // Which colorblindness filter it currently selected
+    private var currentColorVisionType: ColorVisionType = .normal
+
     // A map that stores capture controls by device identifier.
     private var controlsMap: [String: [AVCaptureControl]] = [:]
 
+    private var colorVisionFilterDelegate: ColorVisionFilterDelegate?
+    private var originalColorCaptureDelegate: AVCaptureVideoDataOutputSampleBufferDelegate?
+
     // A serial dispatch queue to use for capture control actions.
     private let sessionQueue = DispatchSerialQueue(label: "com.wells.justin.ColorSenseiOS.AVCam.sessionQueue")
+
+    private let bufferQueue = DispatchQueue(label: "com.wells.justin.ColorSenseiOS.bufferQueue")
 
     // Sets the session queue as the actor's executor.
     nonisolated var unownedExecutor: UnownedSerialExecutor {
@@ -116,6 +127,12 @@ actor CaptureService {
         // Configure the session and start it.
         try setUpSession()
         captureSession.startRunning()
+    }
+
+    // MARK: Colorblindness options
+    func setColorVisionFilter(type: ColorVisionType, enabled: Bool) {
+        colorVisionFilterEnabled = enabled
+        currentColorVisionType = type
     }
 
     // MARK: - Capture setup
@@ -424,6 +441,10 @@ actor CaptureService {
         Task { @MainActor in
             // Set initial rotation angle on the video preview.
             previewLayer.connection?.videoRotationAngle = angle
+
+            if let filteredPreview = previewLayer.superlayer?.superlayer?.delegate as? FilteredPreviewView {
+                filteredPreview.setVideoRotationAngle(angle)
+            }
         }
     }
 
