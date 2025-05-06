@@ -33,6 +33,18 @@ constant float3x3 tritanopiaRGB = float3x3(
                                            0.0,     0.56667, 0.525
                                            );
 
+vertex float4 vertexShader(uint vertexID [[vertex_id]]) {
+    // The positions of a triangle strip covering the entire viewport
+    const float4 vertices[] = {
+        float4(-1.0, -1.0, 0.0, 1.0), // bottom left
+        float4( 1.0, -1.0, 0.0, 1.0), // bottom right
+        float4(-1.0,  1.0, 0.0, 1.0), // top left
+        float4( 1.0,  1.0, 0.0, 1.0), // top right
+    };
+
+    return vertices[vertexID];
+}
+
 // Remove sRGB gamma (linearize)
 float3 removeGamma(float3 color) {
     float3 result;
@@ -68,6 +80,19 @@ float3 simulateColorBlindness(float3 rgb, float3x3 simMatrix, float severity) {
 
     // Mix original and simulated colors
     return mix(validRGB, simColor, validSeverity);
+}
+
+kernel void passThroughFilter(texture2d<float, access::read> inTexture [[texture(0)]],
+                              texture2d<float, access::write> outTexture [[texture(1)]],
+                              uint2 gid [[thread_position_in_grid]]) {
+    // Bounds checking
+    if (gid.x >= outTexture.get_width() || gid.y >= outTexture.get_height()) {
+        return;
+    }
+
+    // Simply copy the input to the output
+    float4 color = inTexture.read(gid);
+    outTexture.write(color, gid);
 }
 
 // Test Value filter with bounds checking

@@ -48,6 +48,8 @@ actor CaptureService {
     // An internal collection of output services.
     private var outputServices: [any OutputService] { [photoCapture, movieCapture, colorCapture] }
 
+    private var usesMetalRendering = false
+
     // The video input for the currently selected device camera.
     private var activeVideoInput: AVCaptureDeviceInput?
 
@@ -441,10 +443,6 @@ actor CaptureService {
         Task { @MainActor in
             // Set initial rotation angle on the video preview.
             previewLayer.connection?.videoRotationAngle = angle
-
-            if let filteredPreview = previewLayer.superlayer?.superlayer?.delegate as? FilteredPreviewView {
-                filteredPreview.setVideoRotationAngle(angle)
-            }
         }
     }
 

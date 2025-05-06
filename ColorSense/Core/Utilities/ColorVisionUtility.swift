@@ -55,6 +55,7 @@ struct ColorVisionUtility {
 
     /// Simulates how a color would appear to someone with the specified color vision type
     static func simulateColorVision(_ color: Color, type: ColorVisionType) -> Color {
+        print("simulateColorVision")
         // For normal vision, just return the original color
         guard type != .normal else { return color }
 

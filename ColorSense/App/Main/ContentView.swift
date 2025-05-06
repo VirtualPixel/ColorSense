@@ -19,7 +19,7 @@ struct ContentView: View {
             ZStack {
 
                 PreviewContainer(camera: camera) {
-                    FilteredCameraPreview(
+                    MetalCameraPreview(
                         source: camera.previewSource,
                         filterType: camera.currentColorVisionType,
                         isFilterEnabled: camera.applyColorVisionFilter

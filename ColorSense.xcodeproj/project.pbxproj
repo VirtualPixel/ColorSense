@@ -33,6 +33,7 @@
 		5753016D2A033CC6006A68A5 /* CIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016C2A033CC6006A68A5 /* CIImage+Extensions.swift */; };
 		5753016F2A033CF0006A68A5 /* UIColor+ColorCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016E2A033CF0006A68A5 /* UIColor+ColorCalculation.swift */; };
 		575301742A034529006A68A5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575301732A034529006A68A5 /* String+Extensions.swift */; };
+		5755E6A12DCA550A005890CC /* MetalCameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E6A02DCA550A005890CC /* MetalCameraPreview.swift */; };
 		575FFF012D441E56005FD040 /* ColorSense: Color Identifier.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 575FFF002D441E56005FD040 /* ColorSense: Color Identifier.storekit */; };
 		576338B92A0997AA0034AF9D /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338B82A0997AA0034AF9D /* View+Extensions.swift */; };
 		576338BE2A099B690034AF9D /* ColorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338BD2A099B690034AF9D /* ColorCardView.swift */; };
@@ -125,7 +126,6 @@
 		57C7D4DB2DA83E260025AE20 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 57C7D4D82DA83E260025AE20 /* Debug.xcconfig */; };
 		57CC2DAF2D5549A000DF8603 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */; };
 		57DAA12E2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */; };
-		57DD83D52DC1217D00227BDD /* FilteredCameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD83D42DC1217D00227BDD /* FilteredCameraPreview.swift */; };
 		57DDCDFC2A07F93600B53CB7 /* UIColor+AdditionalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFB2A07F93600B53CB7 /* UIColor+AdditionalColors.swift */; };
 		57DDCDFE2A08007000B53CB7 /* UIColor+NamedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DDCDFD2A08007000B53CB7 /* UIColor+NamedColors.swift */; };
 		57E887012B44C4C40092B5ED /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E887002B44C4C40092B5ED /* StoreKit.framework */; };
@@ -200,6 +200,7 @@
 		5753016C2A033CC6006A68A5 /* CIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extensions.swift"; sourceTree = "<group>"; };
 		5753016E2A033CF0006A68A5 /* UIColor+ColorCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorCalculation.swift"; sourceTree = "<group>"; };
 		575301732A034529006A68A5 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		5755E6A02DCA550A005890CC /* MetalCameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalCameraPreview.swift; sourceTree = "<group>"; };
 		575FFF002D441E56005FD040 /* ColorSense: Color Identifier.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ColorSense: Color Identifier.storekit"; sourceTree = "<group>"; };
 		576338B82A0997AA0034AF9D /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		576338BD2A099B690034AF9D /* ColorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCardView.swift; sourceTree = "<group>"; };
@@ -287,7 +288,6 @@
 		57C7D4D82DA83E260025AE20 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		57CC2DAE2D5549A000DF8603 /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		57DAA12D2A7B023A00F71CFA /* WatchColorDetailview-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchColorDetailview-ViewModel.swift"; sourceTree = "<group>"; };
-		57DD83D42DC1217D00227BDD /* FilteredCameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredCameraPreview.swift; sourceTree = "<group>"; };
 		57DDCDFB2A07F93600B53CB7 /* UIColor+AdditionalColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AdditionalColors.swift"; sourceTree = "<group>"; };
 		57DDCDFD2A08007000B53CB7 /* UIColor+NamedColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+NamedColors.swift"; sourceTree = "<group>"; };
 		57E77E8C2A82601A0074D4C8 /* visionColorSense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visionColorSense.entitlements; sourceTree = "<group>"; };
@@ -404,6 +404,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5755E69F2DCA54E9005890CC /* ColorblindSimulation */ = {
+			isa = PBXGroup;
+			children = (
+				5755E6A02DCA550A005890CC /* MetalCameraPreview.swift */,
+			);
+			path = ColorblindSimulation;
+			sourceTree = "<group>";
+		};
+		5755E6A22DCA7CBD005890CC /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				57C4B43E2DC006B700FF3744 /* Shaders */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
 		576A4F132A782E6F00452FA5 /* WatchColorSense Watch App */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,8 +506,8 @@
 		576EC8CA2DAEDC590038E232 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5755E6A22DCA7CBD005890CC /* Rendering */,
 				576EC9362DB9EA640038E232 /* ColorTheory */,
-				57C4B43E2DC006B700FF3744 /* Metal */,
 				576EC8E02DAEE4E90038E232 /* Models */,
 				576EC8D42DAEDD640038E232 /* Extensions */,
 				576EC8D22DAEDD460038E232 /* Persistence */,
@@ -514,6 +530,7 @@
 		576EC8CC2DAEDC7E0038E232 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5755E69F2DCA54E9005890CC /* ColorblindSimulation */,
 				576EC8D02DAEDD320038E232 /* ColorCapture */,
 				576EC8CE2DAEDD0B0038E232 /* ColorDetails */,
 				576EC8CF2DAEDD2A0038E232 /* Palettes */,
@@ -616,7 +633,6 @@
 				5797052F2DAD5FFF009AE8C5 /* PreviewContainer.swift */,
 				576D8EA92A0310AA003DE880 /* CameraPreview.swift */,
 				576338BF2A099C810034AF9D /* BottomBarView.swift */,
-				57DD83D42DC1217D00227BDD /* FilteredCameraPreview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -784,12 +800,12 @@
 			path = ColorTheory;
 			sourceTree = "<group>";
 		};
-		57C4B43E2DC006B700FF3744 /* Metal */ = {
+		57C4B43E2DC006B700FF3744 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
 				57C4B43F2DC006CA00FF3744 /* ColorVisionShaders.metal */,
 			);
-			path = Metal;
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 		57C7D4D22DA83BB10025AE20 /* Configuration */ = {
@@ -1109,7 +1125,6 @@
 				579705202DA9922D009AE8C5 /* Image+Extensions.swift in Sources */,
 				5753016F2A033CF0006A68A5 /* UIColor+ColorCalculation.swift in Sources */,
 				576338C02A099C810034AF9D /* BottomBarView.swift in Sources */,
-				57DD83D52DC1217D00227BDD /* FilteredCameraPreview.swift in Sources */,
 				576338D12A09BD340034AF9D /* PaletteListView.swift in Sources */,
 				576338CF2A09BD280034AF9D /* PaletteListViewModel.swift in Sources */,
 				579705532DADAB06009AE8C5 /* CameraUI.swift in Sources */,
@@ -1133,6 +1148,7 @@
 				576338C62A09A3C50034AF9D /* ContentView-ViewModel.swift in Sources */,
 				57E887172B465B1C0092B5ED /* SettingsView.swift in Sources */,
 				5797053B2DAD94FE009AE8C5 /* MediaLibrary.swift in Sources */,
+				5755E6A12DCA550A005890CC /* MetalCameraPreview.swift in Sources */,
 				575301742A034529006A68A5 /* String+Extensions.swift in Sources */,
 				579705492DAD9708009AE8C5 /* PhotoCapture.swift in Sources */,
 				5797054A2DAD9708009AE8C5 /* MovieCapture.swift in Sources */,

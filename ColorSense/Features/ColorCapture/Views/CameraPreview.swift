@@ -32,6 +32,12 @@ struct CameraPreview: UIViewRepresentable {
     /// This class owns the `AVCaptureVideoPreviewLayer` that presents the captured content.
     ///
     class PreviewView: UIView, PreviewTarget {
+        var usesMetalRendering: Bool = false
+        
+        func updateFilterSettings(type: ColorVisionType, enabled: Bool) {
+            // Do nothing
+        }
+        
         func setVideoRotationAngle(_ angle: CGFloat) {
             // Do nothing
         }
@@ -79,11 +85,15 @@ protocol PreviewSource: Sendable {
 }
 
 /// A protocol that passes the app's capture session to the `CameraPreview` view.
-protocol PreviewTarget {
+protocol PreviewTarget: AnyObject {
     // Sets the capture session on the destination.
     func setSession(_ session: AVCaptureSession)
 
     func setVideoRotationAngle(_ angle: CGFloat)
+
+    var usesMetalRendering: Bool { get }
+
+    func updateFilterSettings(type: ColorVisionType, enabled: Bool)
 }
 
 /// The app's default `PreviewSource` implementation.
@@ -97,6 +107,20 @@ struct DefaultPreviewSource: PreviewSource {
 
     func connect(to target: PreviewTarget) {
         target.setSession(session)
+
+        if target.usesMetalRendering {
+            ensureSessionSupportsMetalTarget(session)
+        }
+    }
+
+    private func ensureSessionSupportsMetalTarget(_ session: AVCaptureSession) {
+        // Here we would modify the session configuration if needed
+        // This is where you'd address the specific architectural constraints
+
+        // For example, you might need to add a special output or set a flag
+        // in your session management code
+
+        print("Session configured for Metal rendering")
     }
 }
 
