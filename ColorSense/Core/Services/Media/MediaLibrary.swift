@@ -51,36 +51,49 @@ actor MediaLibrary {
 
     /// Saves a photo to the Photos library.
     func save(photo: Photo) async throws {
-        print("MediaLibrary: Saving photo (\(photo.data.count) bytes)")
-
-        try await performChange {
-            let creationRequest = PHAssetCreationRequest.forAsset()
-
-            // Save primary photo.
-            let options = PHAssetResourceCreationOptions()
-
-            // Verify the photo data is valid
-            if let image = UIImage(data: photo.data) {
-                print("MediaLibrary: Photo data is valid, dimensions: \(image.size.width) x \(image.size.height)")
-            } else {
-                print("WARNING: MediaLibrary received invalid photo data!")
-            }
-
-            // Specify the appropriate resource type for the photo.
-            creationRequest.addResource(with: photo.isProxy ? .photoProxy : .photo, data: photo.data, options: options)
-
-            // Save Live Photo data.
-            if let url = photo.livePhotoMovieURL {
-                let livePhotoOptions = PHAssetResourceCreationOptions()
-                livePhotoOptions.shouldMoveFile = true
-                creationRequest.addResource(with: .pairedVideo, fileURL: url, options: livePhotoOptions)
-            }
-
-            return creationRequest.placeholderForCreatedAsset
+        // Verify the photo data is valid
+        guard let image = UIImage(data: photo.data) else {
+            print("MediaLibrary: Photo data is invalid!")
+            throw Error.saveFailed
         }
 
-        print("MediaLibrary: Save completed")
+        // Make sure we have proper permissions
+        guard await isAuthorized else {
+            print("MediaLibrary: Not authorized to save to Photos")
+            throw Error.unauthorized
+        }
+
+        do {
+            try await PHPhotoLibrary.shared().performChanges {
+
+                // Create a simpler asset creation request
+                let creationRequest = PHAssetCreationRequest.forAsset()
+
+                // Use a more explicit options setup
+                let options = PHAssetResourceCreationOptions()
+                options.shouldMoveFile = false
+
+                // Specify the appropriate resource type for the photo
+                creationRequest.addResource(with: photo.isProxy ? .photoProxy : .photo,
+                                            data: photo.data,
+                                            options: options)
+
+                // Save Live Photo data if available
+                if let url = photo.livePhotoMovieURL {
+                    let livePhotoOptions = PHAssetResourceCreationOptions()
+                    livePhotoOptions.shouldMoveFile = true
+                    creationRequest.addResource(with: .pairedVideo,
+                                               fileURL: url,
+                                               options: livePhotoOptions)
+                }
+            }
+        } catch {
+            print("MediaLibrary: Save failed with error: \(error.localizedDescription)")
+            throw Error.saveFailed
+        }
     }
+
+    
 
     /// Saves a movie to the Photos library.
     func save(movie: Movie) async throws {
@@ -129,8 +142,6 @@ actor MediaLibrary {
     }
 
     func saveFilteredImage(_ image: UIImage) async throws {
-        print("MediaLibrary: Saving filtered image directly")
-
         guard await isAuthorized else {
             print("MediaLibrary: Not authorized to save to Photos")
             throw Error.unauthorized
@@ -150,8 +161,6 @@ actor MediaLibrary {
                     print("MediaLibrary: Failed to convert image to JPEG data")
                 }
             }
-
-            print("MediaLibrary: Direct image save completed")
         } catch {
             print("MediaLibrary: Direct save failed: \(error.localizedDescription)")
             throw Error.saveFailed

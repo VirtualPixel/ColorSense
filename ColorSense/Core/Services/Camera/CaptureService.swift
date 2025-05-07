@@ -155,6 +155,8 @@ actor CaptureService {
             activeVideoInput = try addInput(for: defaultCamera)
             // Configure the session preset based on the current capture mode.
             captureSession.sessionPreset = captureMode == .photo ? .photo : .high
+            // Enable auto white balance
+            configureAutoWhiteBalance(for: defaultCamera)
             // Add the photo capture output as the default output type.
             try addOutput(photoCapture.output)
             // Add color capture output
@@ -359,6 +361,8 @@ actor CaptureService {
             observeSubjectAreaChanges(of: device)
             // Update the service's advertised capabilities.
             updateCaptureCapabilities()
+            // Set auto white balance
+            configureAutoWhiteBalance(for: device)
         } catch {
             // Reconnect the existing camera on failure.
             captureSession.addInput(currentInput)
@@ -404,6 +408,20 @@ actor CaptureService {
         } catch {
             logger.error("Unable to configure torch: \(error)")
         }
+    }
+
+    func stopSession() {
+        // Only stop if running
+        guard captureSession.isRunning else { return }
+
+        captureSession.stopRunning()
+    }
+
+    func restartSession() {
+        // Only restart if not already running
+        guard !captureSession.isRunning else { return }
+
+        captureSession.startRunning()
     }
 
     // MARK: - Rotation handling
@@ -457,6 +475,23 @@ actor CaptureService {
             fatalError("The app is misconfigured. The capture session should have a connection to a preview layer.")
         }
         return previewLayer
+    }
+
+    private func configureAutoWhiteBalance(for device: AVCaptureDevice) {
+        do {
+            try device.lockForConfiguration()
+
+            // Enable auto white balance if supported
+            if device.isWhiteBalanceModeSupported(.continuousAutoWhiteBalance) {
+                device.whiteBalanceMode = .continuousAutoWhiteBalance
+            } else {
+                print("Continuous auto white balance not supported on this device")
+            }
+
+            device.unlockForConfiguration()
+        } catch {
+            logger.error("Failed to configure auto white balance: \(error)")
+        }
     }
 
     // MARK: - Automatic focus and exposure
@@ -518,7 +553,7 @@ actor CaptureService {
 
     // MARK: - Photo capture
     func capturePhoto(with features: PhotoFeatures) async throws -> Photo {
-        try await photoCapture.capturePhoto(with: features)
+        return try await photoCapture.capturePhoto(with: features)
     }
 
     // MARK: - Movie capture

@@ -87,6 +87,8 @@ struct ColorSenseApp: App {
         UIApplication.shared.isIdleTimerDisabled = true
         WishKit.configure(with: EnvironmentValues.wishKitAPIKey)
 
+        PhotoProcessor.initialize()
+
         let entitlementManager = EntitlementManager()
         let subscriptionsManager = SubscriptionsManager(entitlementManager: entitlementManager)
         

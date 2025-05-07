@@ -23,12 +23,12 @@ enum ColorVisionType: String, CaseIterable, Identifiable {
         // case .testing:
         //    return "This is for testing purposes"
         case .deuteranopia:
-            return "Red-green color blindness, absence of green sensitive cones (~6% of males)"
+            return "Red-green color blindness, absence of green sensitive cones (~6% of males and ~0.04% of females)"
         case .protanopia:
 
-            return "Red-green color blindness, absence of red sensitive cones (~1% of males)"
+            return "Red-green color blindness, absence of red sensitive cones (~2% of males and ~0.39% of females)"
         case .tritanopia:
-            return "Blue-yellow color blindness (rare)"
+            return "Blue-yellow color blindness, absence of S-cones (~0.002% of males and ~0.0001% of females)"
         }
     }
 

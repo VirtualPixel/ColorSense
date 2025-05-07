@@ -114,13 +114,7 @@ struct DefaultPreviewSource: PreviewSource {
     }
 
     private func ensureSessionSupportsMetalTarget(_ session: AVCaptureSession) {
-        // Here we would modify the session configuration if needed
-        // This is where you'd address the specific architectural constraints
-
-        // For example, you might need to add a special output or set a flag
-        // in your session management code
-
-        print("Session configured for Metal rendering")
+        // Do nothing
     }
 }
 

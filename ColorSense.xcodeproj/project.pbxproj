@@ -34,6 +34,7 @@
 		5753016F2A033CF0006A68A5 /* UIColor+ColorCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016E2A033CF0006A68A5 /* UIColor+ColorCalculation.swift */; };
 		575301742A034529006A68A5 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575301732A034529006A68A5 /* String+Extensions.swift */; };
 		5755E6A12DCA550A005890CC /* MetalCameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E6A02DCA550A005890CC /* MetalCameraPreview.swift */; };
+		5755E6A42DCA867D005890CC /* PhotoProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5755E6A32DCA867D005890CC /* PhotoProcessor.swift */; };
 		575FFF012D441E56005FD040 /* ColorSense: Color Identifier.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 575FFF002D441E56005FD040 /* ColorSense: Color Identifier.storekit */; };
 		576338B92A0997AA0034AF9D /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338B82A0997AA0034AF9D /* View+Extensions.swift */; };
 		576338BE2A099B690034AF9D /* ColorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338BD2A099B690034AF9D /* ColorCardView.swift */; };
@@ -201,6 +202,7 @@
 		5753016E2A033CF0006A68A5 /* UIColor+ColorCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorCalculation.swift"; sourceTree = "<group>"; };
 		575301732A034529006A68A5 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		5755E6A02DCA550A005890CC /* MetalCameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalCameraPreview.swift; sourceTree = "<group>"; };
+		5755E6A32DCA867D005890CC /* PhotoProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProcessor.swift; sourceTree = "<group>"; };
 		575FFF002D441E56005FD040 /* ColorSense: Color Identifier.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ColorSense: Color Identifier.storekit"; sourceTree = "<group>"; };
 		576338B82A0997AA0034AF9D /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		576338BD2A099B690034AF9D /* ColorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCardView.swift; sourceTree = "<group>"; };
@@ -718,6 +720,7 @@
 			isa = PBXGroup;
 			children = (
 				5797053A2DAD94FE009AE8C5 /* MediaLibrary.swift */,
+				5755E6A32DCA867D005890CC /* PhotoProcessor.swift */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -1165,6 +1168,7 @@
 				5711D7F62DA6F94700F539AB /* SharePaletteView.swift in Sources */,
 				579705502DAD9A56009AE8C5 /* URL+Extensions.swift in Sources */,
 				576338BE2A099B690034AF9D /* ColorCardView.swift in Sources */,
+				5755E6A42DCA867D005890CC /* PhotoProcessor.swift in Sources */,
 				579705392DAD92BD009AE8C5 /* CameraModel.swift in Sources */,
 				579705322DAD87E4009AE8C5 /* DeviceLookup.swift in Sources */,
 				576EC90C2DB6BDCE0038E232 /* IdentifyMode.swift in Sources */,
@@ -1530,7 +1534,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify and analyze colors in real-time using your device's camera.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Photo library access is needed to save captured color samples, palettes, accessibility simulations, and color matching results for future reference and sharing.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app saves photos to your library to store your color captures with filters applied.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app saves photos to your library to store your color captures with filters applied.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1572,7 +1577,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = ColorSense;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera access is required to identify and analyze colors in real-time using your device's camera.";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Photo library access is needed to save captured color samples, palettes, accessibility simulations, and color matching results for future reference and sharing.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app saves photos to your library to store your color captures with filters applied.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app saves photos to your library to store your color captures with filters applied.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

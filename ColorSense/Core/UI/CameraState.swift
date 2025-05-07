@@ -10,7 +10,7 @@ import Foundation
 
 struct CameraState: Codable {
 
-    var isLivePhotoEnabled = true {
+    var isLivePhotoEnabled = false {
         didSet { save() }
     }
 

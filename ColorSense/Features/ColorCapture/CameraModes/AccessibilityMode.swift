@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct AccessibilityMode: CameraModeProtocol {
-    private var selectedDeficiency: ColorVisionType = .normal
-
     var name: String { "Accessibility" }
     var iconName: String { "eye" }
 

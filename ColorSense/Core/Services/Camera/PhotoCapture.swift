@@ -34,7 +34,6 @@ final class PhotoCapture: OutputService {
             
             let delegate = PhotoCaptureDelegate(continuation: continuation)
             monitorProgress(of: delegate)
-            
             // Capture a new photo with the specified settings.
             photoOutput.capturePhoto(with: photoSettings, delegate: delegate)
         }
