@@ -1823,6 +1823,9 @@
         }
       }
     },
+    "Cancel anytime before the trial ends" : {
+
+    },
     "Capture photos and videos with AVCam." : {
       "localizations" : {
         "da" : {
@@ -2324,6 +2327,9 @@
           }
         }
       }
+    },
+    "Color Matching" : {
+
     },
     "Color Palettes" : {
       "localizations" : {
@@ -2828,6 +2834,9 @@
           }
         }
       }
+    },
+    "Compare colors and analyze their harmony" : {
+
     },
     "Contact Us" : {
       "localizations" : {
@@ -10062,6 +10071,9 @@
         }
       }
     },
+    "Save %lld%%" : {
+
+    },
     "Save 33%" : {
       "localizations" : {
         "da" : {
@@ -11762,6 +11774,9 @@
         }
       }
     },
+    "Start with %@ free" : {
+
+    },
     "Tap to Unlock" : {
       "localizations" : {
         "da" : {
@@ -12863,6 +12878,9 @@
         }
       }
     },
+    "Use the camera button below to capture photos with this filter applied" : {
+
+    },
     "Version %@" : {
       "localizations" : {
         "da" : {
@@ -13066,6 +13084,9 @@
           }
         }
       }
+    },
+    "With Pro, you can:" : {
+
     },
     "year" : {
       "localizations" : {

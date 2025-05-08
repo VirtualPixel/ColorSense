@@ -52,7 +52,7 @@ actor MediaLibrary {
     /// Saves a photo to the Photos library.
     func save(photo: Photo) async throws {
         // Verify the photo data is valid
-        guard let image = UIImage(data: photo.data) else {
+        guard UIImage(data: photo.data) != nil else {
             print("MediaLibrary: Photo data is invalid!")
             throw Error.saveFailed
         }

@@ -8,9 +8,8 @@
 import SwiftUICore
 
 @MainActor
-extension MatchMode {
     @Observable
-    class ViewModel: ObservableObject {
+    class MatchModeViewModel: ObservableObject {
         var selectedColorBox: Int = 1
         var color1: Color? = nil
         var color2: Color? = nil
@@ -28,4 +27,3 @@ extension MatchMode {
             }
         }
     }
-}

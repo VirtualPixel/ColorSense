@@ -134,18 +134,84 @@ struct PaywallView: View {
             }
             Text(selectedPlan == .yearly ? "year" : "month")
                 .foregroundStyle(.secondary)
-            if selectedPlan == .yearly {
-                Text("Save 33%")
-                    .font(.subheadline)
-                    .foregroundColor(.green)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 4)
-                    .background(Color.green.opacity(0.1))
-                    .cornerRadius(12)
+
+            Group {
+                if let introOffer = product.subscription?.introductoryOffer,
+                   introOffer.paymentMode == .freeTrial {
+                    Text("Start with \(formatSubscriptionPeriod(introOffer.period)) free")
+                        .font(.subheadline)
+                        .foregroundColor(.green)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 4)
+                        .background(Color.green.opacity(0.1))
+                        .cornerRadius(12)
+                } else if selectedPlan == .yearly {
+                    // Calculate discount dynamically
+                    calculateAndDisplayDiscount()
+                }
+            }
+            .padding(.top, 4)
+
+            Group {
+                if let product = subscriptionsManager.products.first(where: {
+                    $0.id == (selectedPlan == .monthly ? "colorsenseproplan" : "colorsenseproplanannual")
+                }),
+                let introOffer = product.subscription?.introductoryOffer,
+                introOffer.paymentMode == .freeTrial {
+                    Text("Cancel anytime before the trial ends")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
             }
         }
     }
-    
+
+    private func calculateAndDisplayDiscount() -> some View {
+        let monthlyProduct = subscriptionsManager.products.first { $0.id == "colorsenseproplan" }
+        let yearlyProduct = subscriptionsManager.products.first { $0.id == "colorsenseproplanannual" }
+
+        guard let monthly = monthlyProduct?.price, let yearly = yearlyProduct?.price else {
+            return Text("Save 33%")
+                .font(.subheadline)
+                .foregroundColor(.green)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 4)
+                .background(Color.green.opacity(0.1))
+                .cornerRadius(12)
+        }
+
+        // Convert Decimal values to Double for calculations
+        let monthlyDouble = (monthly as NSDecimalNumber).doubleValue
+        let yearlyDouble = (yearly as NSDecimalNumber).doubleValue
+
+        let annualMonthlyPrice = yearlyDouble / 12
+        let savings = (monthlyDouble - annualMonthlyPrice) / monthlyDouble
+        let discountPercentage = Int(savings * 100)
+
+        return Text("Save \(discountPercentage)%")
+            .font(.subheadline)
+            .foregroundColor(.green)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 4)
+            .background(Color.green.opacity(0.1))
+            .cornerRadius(12)
+    }
+
+    private func formatSubscriptionPeriod(_ period: Product.SubscriptionPeriod) -> String {
+        switch period.unit {
+        case .day:
+            return period.value == 1 ? "1 day" : "\(period.value) days"
+        case .week:
+            return period.value == 1 ? "1 week" : "\(period.value) weeks"
+        case .month:
+            return period.value == 1 ? "1 month" : "\(period.value) months"
+        case .year:
+            return period.value == 1 ? "1 year" : "\(period.value) years"
+        @unknown default:
+            return "\(period.value) \(period.unit)"
+        }
+    }
+
     private var featuresSection: some View {
         VStack(spacing: 12) {
             ForEach(features, id: \.self) { feature in
@@ -165,8 +231,11 @@ struct PaywallView: View {
     }
     
     private var purchaseButton: some View {
-        Button(action: { handlePurchase() }) {
-            Text("Continue")
+        let productId = selectedPlan == .monthly ? "colorsenseproplan" : "colorsenseproplanannual"
+        let product = subscriptionsManager.products.first(where: { $0.id == productId })
+
+        return Button(action: { handlePurchase() }) {
+            Text(getButtonText(for: product))
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -175,7 +244,17 @@ struct PaywallView: View {
                 .cornerRadius(12)
         }
     }
-    
+
+    private func getButtonText(for product: Product?) -> String {
+        guard let product = product,
+              let introOffer = product.subscription?.introductoryOffer,
+              introOffer.paymentMode == .freeTrial else {
+            return "Continue"
+        }
+
+        return "Start Free Trial"
+    }
+
     private var restoreButton: some View {
         Button("Restore Purchases") {
             Task {

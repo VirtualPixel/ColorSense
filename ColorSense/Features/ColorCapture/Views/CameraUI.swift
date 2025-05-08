@@ -10,7 +10,6 @@ import SwiftUI
 struct CameraUI: View {
     @EnvironmentObject var camera: CameraModel
     @State private var modeManager = CameraModeManager()
-    @State private var currentPage = 0
 
     var body: some View {
         ZStack {
@@ -21,29 +20,7 @@ struct CameraUI: View {
 
                 ZStack {
                     VStack(spacing: 0) {
-                        TabView(selection: $currentPage) {
-                            ForEach(0..<modeManager.availableModes.count, id: \.self) { index in
-                                VStack(alignment: .center) {
-                                    modeManager.availableModes[index].getContentView()
-                                    Spacer()
-                                }
-                                .tag(index)
-                            }
-                        }
-                        .tabViewStyle(.page(indexDisplayMode: .never))
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .onChange(of: currentPage) { oldValue, newValue in
-                            withAnimation(.easeInOut(duration: 0.3)) {
-                                modeManager.switchTo(mode: newValue)
-                            }
-                        }
-                        .onChange(of: modeManager.currentModeIndex) { oldValue, newValue in
-                            if currentPage != newValue {
-                                withAnimation(.easeInOut(duration: 0.3)) {
-                                    currentPage = newValue
-                                }
-                            }
-                        }
+                        cameraUI
 
                         VStack(spacing: 15) {
                             modeSelectorView
@@ -56,8 +33,7 @@ struct CameraUI: View {
                                     }
                                 },
                                 captureButtonIcon: modeManager.currentMode.captureButtonIcon,
-                                captureButtonText: modeManager.currentMode.captureButtonText
-                            )
+                                captureButtonText: modeManager.currentMode.captureButtonText)
                         }
                         .background(Color.black)
                     }
@@ -75,6 +51,21 @@ struct CameraUI: View {
         }
         .padding(15)
         .background(.black)
+    }
+
+    @ViewBuilder
+    var cameraUI: some View {
+        TabView(selection: $modeManager.currentModeIndex) {
+            ForEach(0..<modeManager.availableModes.count, id: \.self) { index in
+                VStack(alignment: .center) {
+                    modeManager.availableModes[index].getContentView()
+                    Spacer()
+                }
+                .tag(index)
+            }
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     var settingsButton: some View {
@@ -161,5 +152,5 @@ struct CameraUI: View {
 
 #Preview {
     CameraUI()
-        // .environmentObject(PreviewCameraModel())
+    // .environmentObject(PreviewCameraModel())
 }

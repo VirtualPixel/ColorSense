@@ -38,6 +38,18 @@ struct ContentView: View {
             .onAppear {
                 Task {
                     await subscriptionsManager.loadProducts()
+
+                    for product in subscriptionsManager.products {
+                            if let subscription = product.subscription,
+                               let intro = subscription.introductoryOffer {
+                                print("Product \(product.id) has intro offer:")
+                                print("  - Type: \(intro.paymentMode)")
+                                print("  - Period: \(intro.period.value) \(intro.period.unit)")
+                                print("  - Price: \(intro.price)")
+                            } else {
+                                // No intro offer
+                            }
+                        }
                 }
             }
             .background(Color.black)

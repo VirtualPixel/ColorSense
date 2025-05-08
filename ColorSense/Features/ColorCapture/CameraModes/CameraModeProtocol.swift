@@ -25,6 +25,8 @@ protocol CameraModeProtocol {
 }
 
 extension CameraModeProtocol {
+    /// Boolean to hide or show the retical
+    var showRetical: Bool { true }
     var captureButtonText: String? { nil }
     var captureButtonIcon: String? { "" }
 }

@@ -81,7 +81,7 @@
 		576EC9072DB6BBFC0038E232 /* ColorVisionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */; };
 		576EC90C2DB6BDCE0038E232 /* IdentifyMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC90A2DB6BDCE0038E232 /* IdentifyMode.swift */; };
 		576EC90F2DB6BF640038E232 /* MatchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC90E2DB6BF640038E232 /* MatchMode.swift */; };
-		576EC9132DB6C2DC0038E232 /* AccessibilityMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9122DB6C2DC0038E232 /* AccessibilityMode.swift */; };
+		576EC9132DB6C2DC0038E232 /* ColorVisionMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9122DB6C2DC0038E232 /* ColorVisionMode.swift */; };
 		576EC9182DB6D9A00038E232 /* CameraModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC9162DB6D9A00038E232 /* CameraModeManager.swift */; };
 		576EC91B2DB80A7B0038E232 /* MachModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC91A2DB80A7B0038E232 /* MachModeViewModel.swift */; };
 		576EC91E2DB945B50038E232 /* ColorHarmonyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576EC91D2DB945B50038E232 /* ColorHarmonyEngine.swift */; };
@@ -255,7 +255,7 @@
 		576EC9062DB6BBFC0038E232 /* ColorVisionUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorVisionUtility.swift; sourceTree = "<group>"; };
 		576EC90A2DB6BDCE0038E232 /* IdentifyMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifyMode.swift; sourceTree = "<group>"; };
 		576EC90E2DB6BF640038E232 /* MatchMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMode.swift; sourceTree = "<group>"; };
-		576EC9122DB6C2DC0038E232 /* AccessibilityMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityMode.swift; sourceTree = "<group>"; };
+		576EC9122DB6C2DC0038E232 /* ColorVisionMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorVisionMode.swift; sourceTree = "<group>"; };
 		576EC9162DB6D9A00038E232 /* CameraModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModeManager.swift; sourceTree = "<group>"; };
 		576EC91A2DB80A7B0038E232 /* MachModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachModeViewModel.swift; sourceTree = "<group>"; };
 		576EC91D2DB945B50038E232 /* ColorHarmonyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHarmonyEngine.swift; sourceTree = "<group>"; };
@@ -779,7 +779,7 @@
 				576EC90A2DB6BDCE0038E232 /* IdentifyMode.swift */,
 				576EC90E2DB6BF640038E232 /* MatchMode.swift */,
 				576EC91A2DB80A7B0038E232 /* MachModeViewModel.swift */,
-				576EC9122DB6C2DC0038E232 /* AccessibilityMode.swift */,
+				576EC9122DB6C2DC0038E232 /* ColorVisionMode.swift */,
 				576EC9162DB6D9A00038E232 /* CameraModeManager.swift */,
 			);
 			path = CameraModes;
@@ -1140,7 +1140,7 @@
 				576338C92A09A5A00034AF9D /* ColorDetailView.swift in Sources */,
 				579705442DAD96AD009AE8C5 /* CaptureService.swift in Sources */,
 				5711D7E22DA451F600F539AB /* PaletteEditView.swift in Sources */,
-				576EC9132DB6C2DC0038E232 /* AccessibilityMode.swift in Sources */,
+				576EC9132DB6C2DC0038E232 /* ColorVisionMode.swift in Sources */,
 				576EC9242DB945BF0038E232 /* HarmonyResult.swift in Sources */,
 				576D8E9B2A031069003DE880 /* ColorSenseApp.swift in Sources */,
 				5797053E2DAD9548009AE8C5 /* CameraState.swift in Sources */,

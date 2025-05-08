@@ -10,17 +10,17 @@ import Foundation
 @Observable
 class CameraModeManager {
     private let modes: [any CameraModeProtocol] = [
+        ColorVisionMode(),
         IdentifyMode(),
-        MatchMode(),
-        AccessibilityMode()
+        MatchMode()
     ]
-
-    var currentModeIndex: Int = 0
-
+    var currentModeIndex: Int = 1
     var currentMode: any CameraModeProtocol {
         modes[currentModeIndex]
     }
-
+    var isShowingRetical: Bool {
+        currentMode.showRetical
+    }
     var availableModes: [any CameraModeProtocol] {
         modes
     }
