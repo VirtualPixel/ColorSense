@@ -203,6 +203,14 @@ struct ColorDetailView: View {
                                 RoundedRectangle(cornerRadius: 12)
                                     .foregroundStyle(colorVision.color)
                             )
+                            .contextMenu {
+                                Button {
+                                    UIPasteboard.general.string = colorVision.color.toHex()
+                                } label: {
+                                    Text("Copy to clipboard")
+                                    Image(systemName: "doc.on.doc")
+                                }
+                            }
                         }
                     }
                 }

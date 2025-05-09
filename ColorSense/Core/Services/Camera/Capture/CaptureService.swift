@@ -76,7 +76,10 @@ actor CaptureService {
     private var colorVisionFilterEnabled = false
 
     // Which colorblindness filter it currently selected
-    private var currentColorVisionType: ColorVisionType = .normal
+    private var currentColorVisionType: ColorVisionType = .typical
+
+    // Whether to enhance the colors
+    private var isEnhancementEnabled = false
 
     // A map that stores capture controls by device identifier.
     private var controlsMap: [String: [AVCaptureControl]] = [:]
@@ -132,9 +135,10 @@ actor CaptureService {
     }
 
     // MARK: Colorblindness options
-    func setColorVisionFilter(type: ColorVisionType, enabled: Bool) {
+    func setColorVisionFilter(type: ColorVisionType, enabled: Bool, enhance: Bool) {
         colorVisionFilterEnabled = enabled
         currentColorVisionType = type
+        isEnhancementEnabled = enhance
     }
 
     // MARK: - Capture setup

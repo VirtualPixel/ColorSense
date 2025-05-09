@@ -45,7 +45,7 @@ extension ColorDetailView {
         }
         
         var colorVisionsSimulations: [ColorVision] {
-            return ColorVisionUtility.simulateAllColorVisions(for: self.color)
+            return ColorVisionUtility.colorAccessibilityVariants(for: self.color)
         }
         
         init(color: Color, showAddToPalette: Bool = true) {

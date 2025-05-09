@@ -85,6 +85,9 @@ protocol Camera: AnyObject {
     /// An error if the camera encountered a problem.
     var error: Error? { get }
 
+    /// Colorblind simulation enhancement boolean
+    var isEnhancementEnabled: Bool { get set }
+
     /// Synchronize the state of the camera with the persisted values.
     func syncState() async
 }

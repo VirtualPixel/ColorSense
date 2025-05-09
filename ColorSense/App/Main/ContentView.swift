@@ -22,7 +22,8 @@ struct ContentView: View {
                     MetalCameraPreview(
                         source: camera.previewSource,
                         filterType: camera.currentColorVisionType,
-                        isFilterEnabled: camera.applyColorVisionFilter
+                        isFilterEnabled: camera.applyColorVisionFilter,
+                        isEnhancementEnabled: camera.isEnhancementEnabled
                     )
                     .opacity(camera.shouldFlashScreen ? 0 : 1)
                 }
@@ -34,6 +35,7 @@ struct ContentView: View {
                 .offset(y: -60)
 
                 CameraUI()
+                
             }
             .onAppear {
                 Task {

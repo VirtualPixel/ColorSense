@@ -81,7 +81,7 @@ struct Photo: Sendable {
 
     func withColorVisionFilter(type: ColorVisionType, enabled: Bool) -> Photo {
         // Skip processing if filter is disabled or normal
-        guard enabled, type != .normal else {
+        guard enabled, type != .typical else {
             return self
         }
 
@@ -144,103 +144,6 @@ struct Photo: Sendable {
 
         // Return new Photo with filtered data
         return Photo(data: filteredData, isProxy: isProxy, livePhotoMovieURL: livePhotoMovieURL)
-    }
-
-    func withSimplifiedColorVisionFilter(type: ColorVisionType, enabled: Bool) -> Photo {
-        // Skip processing if filter is disabled or normal
-        guard enabled, type != .normal else {
-            print("Skipping filter (disabled or normal vision)")
-            return self
-        }
-
-        print("Applying \(type) filter to photo")
-
-        // Convert Data to UIImage
-        guard let image = UIImage(data: data) else {
-            print("Failed to create image from photo data")
-            return self
-        }
-
-        // Test with our direct method
-        print("Testing with direct method")
-        if let filteredImage = ColorVisionUtility.testFilterOnImage(image: image, type: type),
-           let filteredData = filteredImage.jpegData(compressionQuality: 0.9) {
-            print("Direct filter test successful")
-            return Photo(data: filteredData, isProxy: isProxy, livePhotoMovieURL: livePhotoMovieURL)
-        }
-
-        // If direct method fails, try a fallback approach with Core Image
-        print("Direct method failed, trying Core Image fallback")
-        guard let ciImage = CIImage(image: image) else {
-            print("Failed to create CIImage")
-            return self
-        }
-
-        // Apply a simple color filter as fallback (invert colors to confirm it's working)
-        let filter = CIFilter(name: "CIColorInvert")
-        filter?.setValue(ciImage, forKey: kCIInputImageKey)
-
-        guard let outputImage = filter?.outputImage else {
-            print("Failed to apply fallback filter")
-            return self
-        }
-
-        let context = CIContext()
-        guard let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else {
-            print("Failed to create CGImage from filtered output")
-            return self
-        }
-
-        let filteredImage = UIImage(cgImage: cgImage)
-        guard let filteredData = filteredImage.jpegData(compressionQuality: 0.9) else {
-            print("Failed to create JPEG data")
-            return self
-        }
-
-        print("Fallback filter successful")
-        return Photo(data: filteredData, isProxy: isProxy, livePhotoMovieURL: livePhotoMovieURL)
-    }
-
-    func withDebugSaveFilter(type: ColorVisionType, enabled: Bool) -> Photo {
-        // Skip processing if filter is disabled or normal
-        guard enabled, type != .normal else {
-            print("Skipping filter (disabled or normal vision)")
-            return self
-        }
-
-        print("Applying \(type) filter to photo")
-
-        // Convert Data to UIImage
-        guard let image = UIImage(data: data) else {
-            print("Failed to create image from photo data")
-            return self
-        }
-
-        // Apply filter directly
-        guard let filteredImage = ColorVisionUtility.testFilterOnImage(image: image, type: type) else {
-            print("Filter application failed")
-            return self
-        }
-
-        // Save to temporary file to verify filtering worked
-        let tempDir = FileManager.default.temporaryDirectory
-        let filteredURL = tempDir.appendingPathComponent("filtered_\(UUID().uuidString).jpg")
-
-        // Try saving with a specific compression quality
-        if let filteredData = filteredImage.jpegData(compressionQuality: 0.95) {
-            do {
-                try filteredData.write(to: filteredURL)
-                print("DEBUG: Filtered image saved to: \(filteredURL.path)")
-
-                // Return a new Photo object with the filtered data
-                return Photo(data: filteredData, isProxy: isProxy, livePhotoMovieURL: livePhotoMovieURL)
-            } catch {
-                print("ERROR: Failed to save filtered image: \(error)")
-            }
-        }
-
-        print("WARNING: Using original photo as fallback")
-        return self
     }
 }
 

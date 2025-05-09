@@ -91,6 +91,22 @@ extension Color: @retroactive Identifiable {
         return Image(uiImage: resizedImage)
     }
 
+    func toUIImage(width: Int = 1, height: Int = 1) -> UIImage {
+        // Create a 1x1 image with the color
+        let uiColor = UIColor(self)
+        let size = CGSize(width: width, height: height)
+
+        UIGraphicsBeginImageContextWithOptions(size, true, 0)
+        defer { UIGraphicsEndImageContext() }
+
+        if let context = UIGraphicsGetCurrentContext() {
+            context.setFillColor(uiColor.cgColor)
+            context.fill(CGRect(origin: .zero, size: size))
+        }
+
+        return UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+    }
+
     func toPantone() -> [Pantone] {
         let url = Bundle.main.url(forResource: "pantone-colors", withExtension: "json")!
         let data = try! Data(contentsOf: url)
@@ -207,7 +223,7 @@ extension Color: @retroactive Identifiable {
         return "UIColor(red: \(String(format: "%.3f", components.red)), green: \(String(format: "%.3f", components.green)), blue: \(String(format: "%.3f", components.blue)), alpha: \(String(format: "%.3f", components.alpha))"
     }
 
-    private func toRGBComponents() -> (red: Double, green: Double, blue: Double, alpha: Double) {
+    func toRGBComponents() -> (red: Double, green: Double, blue: Double, alpha: Double) {
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0

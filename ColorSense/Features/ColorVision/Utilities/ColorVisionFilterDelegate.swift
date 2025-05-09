@@ -13,7 +13,7 @@ class ColorVisionFilterDelegate: NSObject, AVCaptureVideoDataOutputSampleBufferD
     private weak var originalDelegate: AVCaptureVideoDataOutputSampleBufferDelegate?
     private let originalDelegateQueue: DispatchQueue
 
-    private var filterType: ColorVisionType = .normal
+    private var filterType: ColorVisionType = .typical
     private var isFilterEnabled: Bool = false
 
     init(originalDelegate: AVCaptureVideoDataOutputSampleBufferDelegate, queue: DispatchQueue) {
@@ -32,7 +32,7 @@ class ColorVisionFilterDelegate: NSObject, AVCaptureVideoDataOutputSampleBufferD
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         // If filter is disabled or set to normal, just pass through
-        guard isFilterEnabled, filterType != .normal else {
+        guard isFilterEnabled, filterType != .typical else {
             originalDelegate?.captureOutput?(output, didOutput: sampleBuffer, from: connection)
             return
         }

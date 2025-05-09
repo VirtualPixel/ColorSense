@@ -18,12 +18,17 @@ import Combine
 ///
 @Observable
 final class CameraModel: Camera, ObservableObject {
-    var currentColorVisionType: ColorVisionType = .normal {
+    var currentColorVisionType: ColorVisionType = .typical {
         didSet {
             updateColorVisionFilter()
         }
     }
     var applyColorVisionFilter: Bool = false {
+        didSet {
+            updateColorVisionFilter()
+        }
+    }
+    var isEnhancementEnabled: Bool = false {
         didSet {
             updateColorVisionFilter()
         }
@@ -167,7 +172,7 @@ final class CameraModel: Camera, ObservableObject {
             let photo = try await captureService.capturePhoto(with: photoFeatures)
 
             // If not applying filter, save original photo
-            if !applyColorVisionFilter || currentColorVisionType == .normal {
+            if !applyColorVisionFilter || currentColorVisionType == .typical {
                 try await mediaLibrary.save(photo: photo)
                 return
             }
@@ -325,7 +330,11 @@ final class CameraModel: Camera, ObservableObject {
 
     private func updateColorVisionFilter() {
         Task {
-            await captureService.setColorVisionFilter(type: currentColorVisionType, enabled: applyColorVisionFilter)
+            await captureService.setColorVisionFilter(
+                type: currentColorVisionType,
+                enabled: applyColorVisionFilter,
+                enhance: isEnhancementEnabled
+            )
         }
     }
 }

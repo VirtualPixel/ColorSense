@@ -32,11 +32,11 @@ struct CameraPreview: UIViewRepresentable {
     /// This class owns the `AVCaptureVideoPreviewLayer` that presents the captured content.
     ///
     class PreviewView: UIView, PreviewTarget {
-        var usesMetalRendering: Bool = false
-        
-        func updateFilterSettings(type: ColorVisionType, enabled: Bool) {
-            // Do nothing
+        func updateFilterSettings(type: ColorVisionType, enabled: Bool, enhance: Bool) {
+            // do nothing
         }
+        
+        var usesMetalRendering: Bool = false
         
         func setVideoRotationAngle(_ angle: CGFloat) {
             // Do nothing
@@ -93,7 +93,7 @@ protocol PreviewTarget: AnyObject {
 
     var usesMetalRendering: Bool { get }
 
-    func updateFilterSettings(type: ColorVisionType, enabled: Bool)
+    func updateFilterSettings(type: ColorVisionType, enabled: Bool, enhance: Bool)
 }
 
 /// The app's default `PreviewSource` implementation.

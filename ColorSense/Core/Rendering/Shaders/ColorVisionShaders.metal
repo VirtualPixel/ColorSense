@@ -43,16 +43,16 @@ constant float severity = 1.0;
 
 // MARK: Matrix constants based on ITU-R BT.709 primaries with D65 white point
 constant float3x3 rgb_to_xyz_matrix = float3x3(
-    float3(0.4124564, 0.3575761, 0.1804375),
-    float3(0.2126729, 0.7151522, 0.0721750),
-    float3(0.0193339, 0.1191920, 0.9503041)
-);
+                                               float3(0.4124564, 0.3575761, 0.1804375),
+                                               float3(0.2126729, 0.7151522, 0.0721750),
+                                               float3(0.0193339, 0.1191920, 0.9503041)
+                                               );
 
 constant float3x3 xyz_to_rgb_matrix = float3x3(
-    float3( 3.2404542, -1.5371385, -0.4985314),
-    float3(-0.9692660,  1.8760108,  0.0415560),
-    float3( 0.0556434, -0.2040259,  1.0572252)
-);
+                                               float3( 3.2404542, -1.5371385, -0.4985314),
+                                               float3(-0.9692660,  1.8760108,  0.0415560),
+                                               float3( 0.0556434, -0.2040259,  1.0572252)
+                                               );
 
 // MARK: White point in XYZ
 constant float4 white_xyz0 = float4(0.312713, 0.329016, 0.358271, 0.0);
@@ -156,11 +156,11 @@ float3 simulateCVD(float3 rgb, float2 confusionPoint, float2 axisBegin, float2 a
     // Find simulated color's XYZ coords
     float d_u_div_d_v = d_uv.x / d_uv.y;
     float4 s_xyz0 = colorXYZ.y * float4(
-        d_u_div_d_v,
-        1.0,
-        (1.0 / d_uv.y - (d_u_div_d_v + 1.0)),
-        0.0
-    );
+                                        d_u_div_d_v,
+                                        1.0,
+                                        (1.0 / d_uv.y - (d_u_div_d_v + 1.0)),
+                                        0.0
+                                        );
 
     // Calculate RGB coords
     float3 s_rgb = s_xyz0.xyz * xyz_to_rgb_matrix;
@@ -224,8 +224,8 @@ kernel void applyDeuteranopiaFilter(texture2d<float, access::read> inTexture [[t
 
     // Apply simulation with severity
     float3 simulated = simulateCVD(
-        linear, deutan_confusion_point, deutan_axis_start, deutan_axis_end, severity
-    );
+                                   linear, deutan_confusion_point, deutan_axis_start, deutan_axis_end, severity
+                                   );
 
     float3 corrected = clamp(applyGamma(simulated), 0.0, 1.0);
 
@@ -250,8 +250,8 @@ kernel void applyProtanopiaFilter(texture2d<float, access::read> inTexture [[tex
 
     // Apply simulation with full severity (1.0)
     float3 simulated = simulateCVD(
-        linear, protan_confusion_point, protan_axis_start, protan_axis_end, severity
-    );
+                                   linear, protan_confusion_point, protan_axis_start, protan_axis_end, severity
+                                   );
 
     float3 corrected = clamp(applyGamma(simulated), 0.0, 1.0);
 
@@ -276,8 +276,8 @@ kernel void applyTritanopiaFilter(texture2d<float, access::read> inTexture [[tex
 
     // Apply simulation with full severity (1.0)
     float3 simulated = simulateCVD(
-        linear, tritan_confusion_point, tritan_axis_start, tritan_axis_end, severity
-    );
+                                   linear, tritan_confusion_point, tritan_axis_start, tritan_axis_end, severity
+                                   );
 
     float3 corrected = clamp(applyGamma(simulated), 0.0, 1.0);
 
@@ -287,8 +287,8 @@ kernel void applyTritanopiaFilter(texture2d<float, access::read> inTexture [[tex
 
 // Monochromacy filter
 kernel void applyMonochromacyFilter(texture2d<float, access::read> inTexture [[texture(0)]],
-                                   texture2d<float, access::write> outTexture [[texture(1)]],
-                                   uint2 gid [[thread_position_in_grid]]) {
+                                    texture2d<float, access::write> outTexture [[texture(1)]],
+                                    uint2 gid [[thread_position_in_grid]]) {
     // Bounds checking
     if (gid.x >= outTexture.get_width() || gid.y >= outTexture.get_height()) {
         return;
@@ -311,8 +311,8 @@ kernel void applyMonochromacyFilter(texture2d<float, access::read> inTexture [[t
 
 // Deuteranomaly filter
 kernel void applyDeuteranomalyFilter(texture2d<float, access::read> inTexture [[texture(0)]],
-                                    texture2d<float, access::write> outTexture [[texture(1)]],
-                                    uint2 gid [[thread_position_in_grid]]) {
+                                     texture2d<float, access::write> outTexture [[texture(1)]],
+                                     uint2 gid [[thread_position_in_grid]]) {
     // Bounds checking
     if (gid.x >= outTexture.get_width() || gid.y >= outTexture.get_height()) {
         return;
@@ -327,8 +327,8 @@ kernel void applyDeuteranomalyFilter(texture2d<float, access::read> inTexture [[
     // Apply simulation with severity based on Machado's model: α = (20 - Δλ)/20
     // For deuteranomaly: equivalent to ~13nm shift
     float3 simulated = simulateCVD(
-        linear, deutan_confusion_point, deutan_axis_start, deutan_axis_end, severity * 0.35
-    );
+                                   linear, deutan_confusion_point, deutan_axis_start, deutan_axis_end, severity * 0.35
+                                   );
 
     float3 corrected = clamp(applyGamma(simulated), 0.0, 1.0);
 
@@ -338,8 +338,8 @@ kernel void applyDeuteranomalyFilter(texture2d<float, access::read> inTexture [[
 
 // Protanomaly filter
 kernel void applyProtanomalyFilter(texture2d<float, access::read> inTexture [[texture(0)]],
-                                  texture2d<float, access::write> outTexture [[texture(1)]],
-                                  uint2 gid [[thread_position_in_grid]]) {
+                                   texture2d<float, access::write> outTexture [[texture(1)]],
+                                   uint2 gid [[thread_position_in_grid]]) {
     // Bounds checking
     if (gid.x >= outTexture.get_width() || gid.y >= outTexture.get_height()) {
         return;
@@ -354,8 +354,8 @@ kernel void applyProtanomalyFilter(texture2d<float, access::read> inTexture [[te
     // Apply simulation with severity based on Machado's model: α = (20 - Δλ)/20
     // For protanomaly: equivalent to ~13nm shift
     float3 simulated = simulateCVD(
-        linear, protan_confusion_point, protan_axis_start, protan_axis_end, severity * 0.35
-    );
+                                   linear, protan_confusion_point, protan_axis_start, protan_axis_end, severity * 0.35
+                                   );
 
     float3 corrected = clamp(applyGamma(simulated), 0.0, 1.0);
 
@@ -365,8 +365,8 @@ kernel void applyProtanomalyFilter(texture2d<float, access::read> inTexture [[te
 
 // Tritanomaly filter
 kernel void applyTritanomalyFilter(texture2d<float, access::read> inTexture [[texture(0)]],
-                                  texture2d<float, access::write> outTexture [[texture(1)]],
-                                  uint2 gid [[thread_position_in_grid]]) {
+                                   texture2d<float, access::write> outTexture [[texture(1)]],
+                                   uint2 gid [[thread_position_in_grid]]) {
     // Bounds checking
     if (gid.x >= outTexture.get_width() || gid.y >= outTexture.get_height()) {
         return;
@@ -380,19 +380,19 @@ kernel void applyTritanomalyFilter(texture2d<float, access::read> inTexture [[te
 
     // Apply simulation with partial severity (0.35) for anomaly
     float3 simulated = simulateCVD(
-        linear, tritan_confusion_point, tritan_axis_start, tritan_axis_end, severity * 0.35
-    );
+                                   linear, tritan_confusion_point, tritan_axis_start, tritan_axis_end, severity * 0.35
+                                   );
 
     float3 corrected = clamp(applyGamma(simulated), 0.0, 1.0);
-    
+
     // Write output pixel
     outTexture.write(float4(corrected, color.a), gid);
 }
 
 // Partial monochromacy filter
 kernel void applyPartialMonochromacyFilter(texture2d<float, access::read> inTexture [[texture(0)]],
-                                          texture2d<float, access::write> outTexture [[texture(1)]],
-                                          uint2 gid [[thread_position_in_grid]]) {
+                                           texture2d<float, access::write> outTexture [[texture(1)]],
+                                           uint2 gid [[thread_position_in_grid]]) {
     // Bounds checking
     if (gid.x >= outTexture.get_width() || gid.y >= outTexture.get_height()) {
         return;
@@ -409,4 +409,173 @@ kernel void applyPartialMonochromacyFilter(texture2d<float, access::read> inText
 
     // Write output pixel
     outTexture.write(float4(corrected, color.a), gid);
+}
+
+// MARK: Enahncement Kernal Functions
+
+// RGB to LMS conversion matrix
+constant float3x3 rgb_to_lms_matrix = float3x3(
+                                               float3(17.8824, 43.5161, 4.11935),
+                                               float3(3.45565, 27.1554, 3.86714),
+                                               float3(0.0299566, 0.184309, 1.46709)
+                                               );
+
+// LMS to RGB conversion matrix
+constant float3x3 lms_to_rgb_matrix = float3x3(
+                                               float3(0.0809, -0.1305, 0.1167),
+                                               float3(-0.0102, 0.0540, -0.1136),
+                                               float3(-0.0003, -0.0041, 0.6935)
+                                               );
+
+// Daltonization Kernel for Deuteranopia
+kernel void enhanceDeuteranopia(texture2d<float, access::read> inTexture [[texture(0)]],
+                              texture2d<float, access::write> outTexture [[texture(1)]],
+                              uint2 gid [[thread_position_in_grid]]) {
+    // Bounds checking
+    if (gid.x >= outTexture.get_width() || gid.y >= outTexture.get_height()) {
+        return;
+    }
+
+    // Read input pixel and set up our intensity controls
+    float4 color = inTexture.read(gid);
+    float3 rgb = color.rgb;
+    float3 enhanced = rgb;
+
+    // Customizable strengths
+    float greenBoost = 0.6;     // Higher = more blue added to greens
+    float redEnhance = 0.15;    // Higher = more red enhancement
+    float blueReduce = 0.15;    // Higher = more blue reduction in reds
+
+    // Calculate how "green-heavy" the pixel is - with better formula
+    float greenness = rgb.g - ((rgb.r + rgb.b) * 0.5);
+
+    // Green enhancement - now with more sauce!
+    if (greenness > 0.05) {
+        // For green-dominant pixels, boost blue more aggressively
+        enhanced.b = min(1.0, rgb.b + greenness * greenBoost);
+
+        // Also slightly reduce red to create even more contrast
+        enhanced.r = max(0.0, rgb.r - greenness * 0.2);
+    }
+    // Red enhancement
+    else if (rgb.r > rgb.g + 0.05) {
+        // More aggressive red boost
+        enhanced.r = min(1.0, rgb.r * (1.0 + redEnhance));
+
+        // Stronger blue reduction for reds
+        enhanced.b = max(0.0, rgb.b - blueReduce);
+
+        // NEW: Also slightly reduce green for even more distinction
+        enhanced.g = max(0.0, rgb.g - 0.05);
+    }
+
+    // NEW: Handle yellow and orange (tricky colors for deuteranopes)
+    else if (rgb.r > 0.4 && rgb.g > 0.4 && rgb.b < 0.3) {
+        // This is likely yellow or orange - make it more distinct
+        enhanced.r *= 1.1;  // Boost red
+        enhanced.b += 0.1;  // Add a touch of blue
+    }
+
+    // Write output pixel
+    outTexture.write(float4(enhanced, color.a), gid);
+}
+
+// Daltonization Kernel for Protanopia
+kernel void enhanceProtanopia(texture2d<float, access::read> inTexture [[texture(0)]],
+                            texture2d<float, access::write> outTexture [[texture(1)]],
+                            uint2 gid [[thread_position_in_grid]]) {
+    // Bounds checking
+    if (gid.x >= outTexture.get_width() || gid.y >= outTexture.get_height()) {
+        return;
+    }
+
+    // Read input pixel
+    float4 color = inTexture.read(gid);
+    float3 rgb = color.rgb;
+    float3 enhanced = rgb;
+
+    // Customizable strengths
+    float redBoost = 0.7;     // Higher = more boost for problematic reds
+    float contrastDim = 0.15; // Higher = more dimming for contrast
+
+    // Calculate "redness" - essential for protans who struggle with red
+    float redness = rgb.r - ((rgb.g + rgb.b) * 0.5);
+
+    // Red deficiency is the key issue for protanopia
+    if (redness > 0.05) {
+        // For red-dominant pixels, boost blue to create distinction
+        enhanced.b = min(1.0, rgb.b + redness * 0.4);
+
+        // Also boost the red slightly to prevent it from appearing too dark
+        enhanced.r = min(1.0, rgb.r * 1.1);
+    }
+    // Green enhancement
+    else if (rgb.g > rgb.r + 0.05) {
+        // Make greens more distinctive by boosting their intensity
+        enhanced.g = min(1.0, rgb.g * 1.15);
+
+        // Reduce red slightly for better contrast
+        enhanced.r = max(0.0, rgb.r - contrastDim);
+    }
+
+    // Handle problematic brown/yellow colors
+    else if (rgb.r > 0.4 && rgb.g > 0.3 && rgb.b < 0.3) {
+        // This is likely brown or yellow - difficult for protanopes
+        enhanced.b += 0.15;  // Add blue component to make it distinctive
+        enhanced.r = min(1.0, rgb.r * (1.0 + redBoost * 0.3));  // Boost red
+    }
+
+    // Write output pixel
+    outTexture.write(float4(enhanced, color.a), gid);
+}
+
+// Daltonization Kernel for Tritanopia
+kernel void enhanceTritanopia(texture2d<float, access::read> inTexture [[texture(0)]],
+                            texture2d<float, access::write> outTexture [[texture(1)]],
+                            uint2 gid [[thread_position_in_grid]]) {
+    // Bounds checking
+    if (gid.x >= outTexture.get_width() || gid.y >= outTexture.get_height()) {
+        return;
+    }
+
+    // Read input pixel
+    float4 color = inTexture.read(gid);
+    float3 rgb = color.rgb;
+    float3 enhanced = rgb;
+
+    // Customizable strengths
+    float blueBoost = 0.6;    // Higher = more enhancement for blues
+    float yellowAdjust = 0.5; // Higher = more enhancement for yellows
+
+    // Calculate "blueness" - critical measure for tritanopes
+    float blueness = rgb.b - ((rgb.r + rgb.g) * 0.5);
+
+    // Calculate "yellowness" - another problem area
+    float yellowness = (rgb.r + rgb.g) * 0.5 - rgb.b;
+
+    // Blue adjustment - blues can look greenish to tritanopes
+    if (blueness > 0.05) {
+        // For blue-dominant pixels, boost red to create distinction from greens
+        enhanced.r = min(1.0, rgb.r + blueness * blueBoost);
+
+        // Reduce green slightly to further separate from blue
+        enhanced.g = max(0.0, rgb.g - blueness * 0.2);
+    }
+    // Yellow adjustment - yellows can look pink to tritanopes
+    else if (yellowness > 0.05) {
+        // For yellow colors, boost both red and green but reduce blue
+        enhanced.r = min(1.0, rgb.r * 1.1);
+        enhanced.g = min(1.0, rgb.g * 1.1);
+        enhanced.b = max(0.0, rgb.b - yellowness * yellowAdjust * 0.3);
+    }
+
+    // Special handling for purple/violet shades
+    else if (rgb.r > 0.2 && rgb.b > 0.2 && rgb.g < 0.2) {
+        // Enhance purple colors by boosting both red and blue
+        enhanced.r = min(1.0, rgb.r * 1.15);
+        enhanced.b = min(1.0, rgb.b * 1.15);
+    }
+
+    // Write output pixel
+    outTexture.write(float4(enhanced, color.a), gid);
 }

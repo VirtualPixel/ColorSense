@@ -13,6 +13,7 @@ struct MetalCameraPreview: UIViewRepresentable {
     let source: PreviewSource
     let filterType: ColorVisionType
     let isFilterEnabled: Bool
+    let isEnhancementEnabled: Bool
 
     func makeUIView(context: Context) -> MetalPreviewView {
         let view = MetalPreviewView()
@@ -21,7 +22,11 @@ struct MetalCameraPreview: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MetalPreviewView, context: Context) {
-        uiView.updateFilterSettings(type: filterType, enabled: isFilterEnabled)
+        uiView.updateFilterSettings(
+            type: filterType,
+            enabled: isFilterEnabled,
+            enhance: isEnhancementEnabled
+        )
     }
 
     static func dismantleUIView(_ uiView: MetalPreviewView, coordinator: ()) {
@@ -43,8 +48,9 @@ class MetalPreviewView: UIView, PreviewTarget {
     private var previewLayer: AVCaptureVideoPreviewLayer!
 
     // Filter settings
-    private var filterType: ColorVisionType = .normal
+    private var filterType: ColorVisionType = .typical
     private var isFilterEnabled: Bool = false
+    private var isEnhanceEnabled: Bool = false
 
     // Frame rate control
     private let targetFrameRate: Double = 60.0
@@ -142,8 +148,19 @@ class MetalPreviewView: UIView, PreviewTarget {
         }
 
         let functionName: String
-        if !isFilterEnabled || filterType == .normal {
+        if !isFilterEnabled || filterType == .typical {
             functionName = "passThroughFilter" // Use a simple pass-through filter
+        } else if isEnhanceEnabled {
+            switch filterType {
+            case .deuteranopia:
+                functionName = "enhanceDeuteranopia"
+            case .protanopia:
+                functionName = "enhanceProtanopia"
+            case .tritanopia:
+                functionName = "enhanceTritanopia"
+            default:
+                functionName = "passThroughFilter"
+            }
         } else {
             switch filterType {
             case .protanopia:
@@ -153,7 +170,7 @@ class MetalPreviewView: UIView, PreviewTarget {
             case .tritanopia:
                 functionName = "applyTritanopiaFilter"
             default:
-                functionName = "applyTestingFilter"
+                functionName = "passThroughFilter"
             }
         }
 
@@ -170,11 +187,14 @@ class MetalPreviewView: UIView, PreviewTarget {
         }
     }
 
-    func updateFilterSettings(type: ColorVisionType, enabled: Bool) {
-        let needsUpdate = (type != filterType || enabled != isFilterEnabled)
+    func updateFilterSettings(type: ColorVisionType, enabled: Bool, enhance: Bool) {
+        let needsUpdate = (type != filterType ||
+                           enabled != isFilterEnabled ||
+                           isEnhanceEnabled != enhance)
 
         filterType = type
         isFilterEnabled = enabled
+        isEnhanceEnabled = enhance
 
         if needsUpdate {
             setupComputePipeline()
@@ -238,13 +258,6 @@ class MetalPreviewView: UIView, PreviewTarget {
 
 extension MetalPreviewView: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        // frame limiting
-        let currentTime = CACurrentMediaTime()
-        let elapsedTime = currentTime - lastFrameTime
-
-        guard elapsedTime >= (1.0 / targetFrameRate) else { return }
-        lastFrameTime = currentTime
-
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             print("Failed ot get pixel buffer from sample buffer")
             return

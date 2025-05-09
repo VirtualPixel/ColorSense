@@ -1,5 +1,5 @@
 //
-//  MachModeViewModel.swift
+//  MatchModeViewModel.swift
 //  ColorSense
 //
 //  Created by Justin Wells on 4/22/25.

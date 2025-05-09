@@ -37,7 +37,7 @@ class PhotoProcessor {
         }
 
         // Create compute pipelines for each color vision type
-        for type in ColorVisionType.allCases where type != .normal {
+        for type in ColorVisionType.allCases where type != .typical {
             let functionName = "apply\(type.rawValue)Filter"
 
             guard let function = library.makeFunction(name: functionName) else {
@@ -58,7 +58,7 @@ class PhotoProcessor {
 
     static func applyFilter(to photo: Photo, type: ColorVisionType) -> UIImage? {
         // Skip processing if normal vision
-        guard type != .normal else {
+        guard type != .typical else {
             return UIImage(data: photo.data)
         }
 
