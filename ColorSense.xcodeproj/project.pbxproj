@@ -14,6 +14,9 @@
 		5711D7EB2DA6EAB200F539AB /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7E92DA6EAB200F539AB /* ShareColor.swift */; };
 		5711D7EE2DA6F82C00F539AB /* SharedPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */; };
 		5711D7F62DA6F94700F539AB /* SharePaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7F52DA6F94700F539AB /* SharePaletteView.swift */; };
+		572033412DCFF8E900D97E3A /* colorMixes.json in Resources */ = {isa = PBXBuildFile; fileRef = 572033402DCFF8E900D97E3A /* colorMixes.json */; };
+		572033422DCFF8E900D97E3A /* colorMixes.json in Resources */ = {isa = PBXBuildFile; fileRef = 572033402DCFF8E900D97E3A /* colorMixes.json */; };
+		572033432DCFF8E900D97E3A /* colorMixes.json in Resources */ = {isa = PBXBuildFile; fileRef = 572033402DCFF8E900D97E3A /* colorMixes.json */; };
 		572053FC2A68900F0072DE06 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FB2A68900F0072DE06 /* Palette.swift */; };
 		572053FE2A6893700072DE06 /* ColorStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FD2A6893700072DE06 /* ColorStructure.swift */; };
 		572054012A68961F0072DE06 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
@@ -181,6 +184,7 @@
 		5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPaletteView.swift; sourceTree = "<group>"; };
 		5711D7F52DA6F94700F539AB /* SharePaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePaletteView.swift; sourceTree = "<group>"; };
 		571272972A7DDB1B002F8720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		572033402DCFF8E900D97E3A /* colorMixes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colorMixes.json; sourceTree = "<group>"; };
 		572053FB2A68900F0072DE06 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		572053FD2A6893700072DE06 /* ColorStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStructure.swift; sourceTree = "<group>"; };
 		572054002A68961F0072DE06 /* pantone-colors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pantone-colors.json"; sourceTree = "<group>"; };
@@ -798,6 +802,7 @@
 		576EC8E22DAEE57E0038E232 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				572033402DCFF8E900D97E3A /* colorMixes.json */,
 				575301652A0339C2006A68A5 /* colornames.json */,
 				572054002A68961F0072DE06 /* pantone-colors.json */,
 			);
@@ -1032,6 +1037,7 @@
 			files = (
 				5725C5B32A7BCB6E00933331 /* colornames.json in Resources */,
 				5725C5AB2A7BCAEF00933331 /* Preview Assets.xcassets in Resources */,
+				572033412DCFF8E900D97E3A /* colorMixes.json in Resources */,
 				576EC8E82DAEF0DF0038E232 /* Localizable.xcstrings in Resources */,
 				5725C5A82A7BCAEF00933331 /* Assets.xcassets in Resources */,
 				57C7D4DA2DA83E260025AE20 /* Debug.xcconfig in Resources */,
@@ -1045,6 +1051,7 @@
 			files = (
 				576A4F232A782EE000452FA5 /* colornames.json in Resources */,
 				576A4F1C2A782E7200452FA5 /* Preview Assets.xcassets in Resources */,
+				572033432DCFF8E900D97E3A /* colorMixes.json in Resources */,
 				576EC8E72DAEF0DF0038E232 /* Localizable.xcstrings in Resources */,
 				576A4F192A782E7200452FA5 /* Assets.xcassets in Resources */,
 				57C7D4D92DA83E260025AE20 /* Debug.xcconfig in Resources */,
@@ -1062,6 +1069,7 @@
 				575FFF012D441E56005FD040 /* ColorSense: Color Identifier.storekit in Resources */,
 				57C7D4DB2DA83E260025AE20 /* Debug.xcconfig in Resources */,
 				572054012A68961F0072DE06 /* pantone-colors.json in Resources */,
+				572033422DCFF8E900D97E3A /* colorMixes.json in Resources */,
 				57CC2DAF2D5549A000DF8603 /* StoreKitTestCertificate.cer in Resources */,
 				57C7D4D12DA83B970025AE20 /* .env in Resources */,
 				576EC8E62DAEF0DF0038E232 /* Localizable.xcstrings in Resources */,

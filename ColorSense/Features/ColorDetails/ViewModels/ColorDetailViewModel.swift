@@ -27,11 +27,11 @@ extension ColorDetailView {
         var cmyk: (cyan: Int, magenta: Int, yellow: Int, key: Int, alpha: Int) {
             self.color.toCMYK()
         }
-        
+
         var swiftUI: String {
-            self.color.toSwiftUI()
+            self.color.toColorMix()
         }
-        
+
         var uiKit: String {
             self.color.toUIKit()
         }

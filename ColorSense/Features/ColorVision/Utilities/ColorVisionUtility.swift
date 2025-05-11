@@ -37,175 +37,6 @@ struct ColorVisionUtility {
         return results
     }
 
-    static func applyEnhancementFilter(to image: UIImage, type: ColorVisionType) -> UIImage? {
-        // Convert to pixel buffer
-        guard let pixelBuffer = createPixelBufferFromUIImage(image) else {
-            print("Failed to create pixel buffer from image")
-            return nil
-        }
-
-        // Make sure Metal is initialized
-        if computePipelines.isEmpty {
-            setupMetal()
-        }
-
-        guard let device = metalDevice,
-              let commandQueue = commandQueue,
-              let textureCache = textureCache else {
-            print("Metal setup incomplete")
-            return nil
-        }
-
-        // Get the appropriate shader function name
-        // CRITICAL FIX: Use "enhance" + type name for enhancement functions
-        let functionName: String
-        switch type {
-        case .deuteranopia:
-            functionName = "enhanceDeuteranopia"  // Make sure this matches your .metal file
-        case .protanopia:
-            functionName = "enhanceProtanopia"    // Make sure this matches your .metal file
-        case .tritanopia:
-            functionName = "enhanceTritanopia"    // Make sure this matches your .metal file
-        default:
-            print("No enhancement available for typical vision")
-            return image
-        }
-
-        // Try to find or create the pipeline for this function
-        var pipelineState: MTLComputePipelineState
-
-        // Create or use cached pipeline
-        if let existingPipeline = computePipelines[type] {
-            pipelineState = existingPipeline
-        } else {
-            // Create a new pipeline for the enhancement function
-            guard let library = device.makeDefaultLibrary() else {
-                print("Failed to load Metal library")
-
-                // Debug: List available functions in the library
-                if let lib = device.makeDefaultLibrary() {
-                    print("Available Metal functions: \(lib.functionNames.joined(separator: ", "))")
-                }
-
-                return image
-            }
-
-            guard let function = library.makeFunction(name: functionName) else {
-                print("Failed to find enhancement function: \(functionName)")
-
-                // Debug: List available functions in the library
-                print("Available Metal functions: \(library.functionNames.joined(separator: ", "))")
-
-                return image
-            }
-
-            do {
-                pipelineState = try device.makeComputePipelineState(function: function)
-                // Cache it for future use
-                computePipelines[type] = pipelineState
-            } catch {
-                print("Failed to create pipeline for \(functionName): \(error)")
-                return image
-            }
-        }
-
-        // Now apply the filter using the pipeline state - rest of your existing code
-        let width = CVPixelBufferGetWidth(pixelBuffer)
-        let height = CVPixelBufferGetHeight(pixelBuffer)
-
-        // Create output buffer
-        var outputBuffer: CVPixelBuffer?
-        let attributes = [
-            kCVPixelBufferMetalCompatibilityKey: true
-        ] as CFDictionary
-
-        CVPixelBufferCreate(
-            kCFAllocatorDefault,
-            width, height,
-            kCVPixelFormatType_32BGRA,
-            attributes,
-            &outputBuffer
-        )
-
-        guard let outputBuffer = outputBuffer else {
-            print("Failed to create output buffer")
-            return image
-        }
-
-        // Create metal textures
-        var inputTexture: CVMetalTexture?
-        var outputTexture: CVMetalTexture?
-
-        CVMetalTextureCacheCreateTextureFromImage(
-            kCFAllocatorDefault,
-            textureCache,
-            pixelBuffer,
-            nil,
-            .bgra8Unorm,
-            width, height,
-            0,
-            &inputTexture
-        )
-
-        CVMetalTextureCacheCreateTextureFromImage(
-            kCFAllocatorDefault,
-            textureCache,
-            outputBuffer,
-            nil,
-            .bgra8Unorm,
-            width, height,
-            0,
-            &outputTexture
-        )
-
-        guard let inputTexture = inputTexture,
-              let outputTexture = outputTexture,
-              let inputMTLTexture = CVMetalTextureGetTexture(inputTexture),
-              let outputMTLTexture = CVMetalTextureGetTexture(outputTexture) else {
-            print("Failed to get Metal textures")
-            return image
-        }
-
-        // Run the shader
-        guard let commandBuffer = commandQueue.makeCommandBuffer(),
-              let encoder = commandBuffer.makeComputeCommandEncoder() else {
-            return image
-        }
-
-        encoder.setComputePipelineState(pipelineState)
-        encoder.setTexture(inputMTLTexture, index: 0)
-        encoder.setTexture(outputMTLTexture, index: 1)
-
-        let threadsPerThreadgroup = MTLSize(width: 16, height: 16, depth: 1)
-        let threadgroupsPerGrid = MTLSize(
-            width: (width + 15) / 16,
-            height: (height + 15) / 16,
-            depth: 1
-        )
-
-        encoder.dispatchThreadgroups(threadgroupsPerGrid, threadsPerThreadgroup: threadsPerThreadgroup)
-        encoder.endEncoding()
-
-        commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
-
-        if let error = commandBuffer.error {
-            print("Metal command execution failed: \(error)")
-        } else {
-            print("Metal command executed successfully")
-        }
-
-        // Convert back to UIImage
-        let result = createUIImageFromPixelBuffer(outputBuffer)
-        if result == nil {
-            print("Failed to create UIImage from processed buffer")
-        } else {
-            print("Successfully created enhanced image")
-        }
-
-        return result
-    }
-
     static func createPixelBufferFromUIImage(_ image: UIImage) -> CVPixelBuffer? {
         // For consistency, let's make sure we have the right dimensions
         let width = Int(image.size.width)
@@ -508,7 +339,7 @@ extension ColorVisionUtility {
         let attrs = [
             kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue,
             kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue,
-            kCVPixelBufferMetalCompatibilityKey: kCFBooleanTrue // 👈 Add this for Metal compatibility
+            kCVPixelBufferMetalCompatibilityKey: kCFBooleanTrue
         ] as CFDictionary
 
         var pixelBuffer: CVPixelBuffer?
@@ -518,7 +349,7 @@ extension ColorVisionUtility {
             kCFAllocatorDefault,
             Int(image.size.width),
             Int(image.size.height),
-            kCVPixelFormatType_32BGRA,  // 👈 Changed from ARGB to BGRA
+            kCVPixelFormatType_32BGRA,
             attrs,
             &pixelBuffer
         )

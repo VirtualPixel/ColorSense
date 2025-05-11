@@ -31,6 +31,8 @@ struct ColorVisionModeView: View {
     @State private var isEnhancementEnabled: Bool = false
     @State private var showPaywall = false
     @State private var showEnhancementCard = false
+    @State private var isShowingEnhancementLabel = false
+    @State private var enhancementButtonWidth: CGFloat = 50
 
     var body: some View {
         VStack(spacing: 10) {
@@ -200,6 +202,7 @@ struct ColorVisionModeView: View {
                     if entitlementManager.hasPro {
                         withAnimation(.spring(response: 0.4, dampingFraction: 0.7, blendDuration: 0.1)) {
                             isEnhancementEnabled.toggle()
+                            showEnhancementLabel()
                             updateCameraEnhancement()
 
                             let generator = UIImpactFeedbackGenerator(style: .light)
@@ -214,14 +217,25 @@ struct ColorVisionModeView: View {
                             .fill(isEnhancementEnabled ?
                                   Color.yellow.opacity(0.2) :
                                   Color(UIColor.systemFill))
-                            .frame(width: 50, height: 50)
+                            .frame(width: enhancementButtonWidth, height: 50)
 
-                        // The wand icon
-                        Image(systemName: "wand.and.stars")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundStyle(isEnhancementEnabled ? .yellow : .white)
+                        HStack(spacing: 8) {
+                            // The wand icon
+                            Image(systemName: "wand.and.stars")
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundStyle(isEnhancementEnabled ? .yellow : .white)
 
-                        // Pro badge - standard iOS indicator style
+                            // This text only appears when isShowingEnhancementLabel is true
+                            if isShowingEnhancementLabel {
+                                Text(isEnhancementEnabled ? "Enhanced" : "Normal")
+                                    .font(.system(size: 14, weight: .medium))
+                                    .foregroundStyle(isEnhancementEnabled ? .yellow : .white)
+                                    .minimumScaleFactor(0.4)
+                                    .transition(.opacity)
+                            }
+                        }
+
+                        // Pro badge
                         if !entitlementManager.hasPro {
                             Text("PRO")
                                 .font(.system(size: 8, weight: .heavy))
@@ -232,7 +246,7 @@ struct ColorVisionModeView: View {
                                         .fill(Color.yellow)
                                 )
                                 .foregroundColor(.black)
-                                .offset(x: 15, y: 15)
+                                .offset(x: isShowingEnhancementLabel ? 70 : 15, y: 15)
                         }
                     }
                     .overlay(
@@ -253,6 +267,22 @@ struct ColorVisionModeView: View {
                 }
                 .buttonStyle(.plain)
                 .padding(16)
+            }
+        }
+    }
+
+    private func showEnhancementLabel() {
+        // First expand the button
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
+            enhancementButtonWidth = 150
+            isShowingEnhancementLabel = true
+        }
+
+        // Then shrink it back after delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
+                enhancementButtonWidth = 50
+                isShowingEnhancementLabel = false
             }
         }
     }
