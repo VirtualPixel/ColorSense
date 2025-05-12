@@ -22,7 +22,7 @@
     "_billingGracePeriodEnabled" : true,
     "_developerTeamID" : "3LPAZYKA42",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 760563453.398417,
+    "_lastSynchronizedDate" : 768769023.99387002,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -97,11 +97,16 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "29.99",
+          "displayPrice" : "19.99",
           "familyShareable" : true,
           "groupNumber" : 1,
           "internalID" : "6740999474",
-          "introductoryOffer" : null,
+          "introductoryOffer" : {
+            "internalID" : "E00B81A5",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
           "localizations" : [
             {
               "description" : "This gives annual access to pro features.",

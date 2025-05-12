@@ -13,7 +13,7 @@ struct PaywallView: View {
     @EnvironmentObject private var subscriptionsManager: SubscriptionsManager
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
-    @State private var selectedPlan: Plan = .monthly
+    @State private var selectedPlan: Plan = .yearly
     @State private var showError = false
     
     enum Plan {
