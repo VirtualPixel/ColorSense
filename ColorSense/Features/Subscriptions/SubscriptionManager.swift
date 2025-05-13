@@ -35,8 +35,8 @@ class SubscriptionsManager: NSObject, ObservableObject {
     @Published var isLoading = false
     @Published var showThankYouAlert = false
     
-    let productIDs = ["colorsenseproplan", "colorsenseproplanannual"]
-    
+    let productIDs = ["colorsenseproplanweekly", "colorsenseproplanannual"]
+
     private var purchasedProductIDs: Set<String> = []
     private let entitlementManager: EntitlementManager
     private var transactionListenerTask: Task<Void, Never>?
@@ -128,25 +128,7 @@ extension SubscriptionsManager {
             purchaseError = .purchaseFailed
         }
     }
-    
-    private func updatePurchasedProducts() async {
-        purchasedProductIDs.removeAll()
-        
-        for await result in Transaction.currentEntitlements {
-            guard case .verified(let transaction) = result else {
-                continue
-            }
-                        
-            if let expirationDate = transaction.expirationDate {
-                if expirationDate > Date() {
-                    purchasedProductIDs.insert(transaction.productID)
-                }
-            }
-        }
-        
-        entitlementManager.hasPro = !purchasedProductIDs.isEmpty
-    }
-    
+
     func restorePurchases() async {
         isLoading = true
         defer { isLoading = false }
@@ -177,4 +159,23 @@ extension SubscriptionsManager {
             purchaseError = .restoreFailed
         }
     }
+
+    private func updatePurchasedProducts() async {
+        purchasedProductIDs.removeAll()
+
+        for await result in Transaction.currentEntitlements {
+            guard case .verified(let transaction) = result else {
+                continue
+            }
+
+            if let expirationDate = transaction.expirationDate {
+                if expirationDate > Date() {
+                    purchasedProductIDs.insert(transaction.productID)
+                }
+            }
+        }
+
+        entitlementManager.hasPro = !purchasedProductIDs.isEmpty
+    }
+
 }

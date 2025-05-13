@@ -22,7 +22,7 @@
     "_billingGracePeriodEnabled" : true,
     "_developerTeamID" : "3LPAZYKA42",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 768769023.99387002,
+    "_lastSynchronizedDate" : 768854911.21328604,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -99,13 +99,13 @@
           ],
           "displayPrice" : "19.99",
           "familyShareable" : true,
-          "groupNumber" : 1,
+          "groupNumber" : 3,
           "internalID" : "6740999474",
           "introductoryOffer" : {
-            "internalID" : "E00B81A5",
+            "internalID" : "972C0639",
             "numberOfPeriods" : 1,
             "paymentMode" : "free",
-            "subscriptionPeriod" : "P1W"
+            "subscriptionPeriod" : "P3D"
           },
           "localizations" : [
             {
@@ -132,7 +132,7 @@
           ],
           "displayPrice" : "2.99",
           "familyShareable" : true,
-          "groupNumber" : 1,
+          "groupNumber" : 2,
           "internalID" : "6740999603",
           "introductoryOffer" : null,
           "localizations" : [
@@ -145,6 +145,39 @@
           "productID" : "colorsenseproplan",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Pro Plan - Monthly",
+          "subscriptionGroupID" : "21626257",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "0.79",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "6745838071",
+          "introductoryOffer" : {
+            "internalID" : "E95D3960",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "This gives access to all features for a week",
+              "displayName" : "Pro Plan - Weekly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "colorsenseproplanweekly",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "Pro Plan - Weekly",
           "subscriptionGroupID" : "21626257",
           "type" : "RecurringSubscription",
           "winbackOffers" : [

@@ -60,7 +60,7 @@ struct PaletteListView: View {
                 }
             }
             .navigationTitle("Color Palettes")
-            .sheet(isPresented: $showPaywall) {
+            .fullScreenCover(isPresented: $showPaywall) {
                 PaywallView()
             }
             .sheet(isPresented: $showingAddNewPalette) {

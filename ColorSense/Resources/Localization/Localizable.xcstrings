@@ -5,6 +5,7 @@
       "shouldTranslate" : false
     },
     "/" : {
+      "extractionState" : "stale",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -103,6 +104,12 @@
           }
         }
       }
+    },
+    "/week" : {
+
+    },
+    "/year" : {
+
     },
     "%@" : {
       "localizations" : {
@@ -516,6 +523,9 @@
         }
       }
     },
+    "%@ FREE" : {
+
+    },
     "%lld%%" : {
 
     },
@@ -618,6 +628,9 @@
           }
         }
       }
+    },
+    "$%@" : {
+
     },
     "A wild color has appeared!" : {
       "localizations" : {
@@ -1420,6 +1433,9 @@
         }
       }
     },
+    "Best Value" : {
+
+    },
     "Black" : {
       "comment" : "Color name for black",
       "localizations" : {
@@ -1823,9 +1839,6 @@
         }
       }
     },
-    "Cancel anytime before the trial ends" : {
-
-    },
     "Capture photos and videos with AVCam." : {
       "localizations" : {
         "da" : {
@@ -2026,7 +2039,11 @@
         }
       }
     },
+    "Choose Your Plan" : {
+
+    },
     "Close" : {
+      "extractionState" : "stale",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -2839,6 +2856,9 @@
       }
     },
     "Compare colors and analyze their harmony" : {
+
+    },
+    "compared to weekly" : {
 
     },
     "Contact Us" : {
@@ -6362,6 +6382,9 @@
         }
       }
     },
+    "Just $%@/week billed annually" : {
+
+    },
     "Light Blue" : {
       "comment" : "Color name for light blue",
       "localizations" : {
@@ -7371,6 +7394,9 @@
           }
         }
       }
+    },
+    "Limited Time Offer" : {
+
     },
     "Magenta" : {
       "comment" : "Color name for magenta",
@@ -9285,6 +9311,9 @@
         }
       }
     },
+    "Processing..." : {
+
+    },
     "Protanopia" : {
       "comment" : "Red-green color blindness",
       "localizations" : {
@@ -9992,6 +10021,7 @@
 
     },
     "Save 33%" : {
+      "extractionState" : "stale",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -11691,9 +11721,6 @@
         }
       }
     },
-    "Start with %@ free" : {
-
-    },
     "Tap to Unlock" : {
       "localizations" : {
         "da" : {
@@ -11794,7 +11821,11 @@
         }
       }
     },
+    "Terms of Service" : {
+
+    },
     "Terms of Use" : {
+      "extractionState" : "stale",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -12498,7 +12529,11 @@
     "Try Enhancement" : {
 
     },
+    "Unable to process your purchase at this time. Please try again later." : {
+
+    },
     "Unlock advanced color features" : {
+      "extractionState" : "stale",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -12597,6 +12632,12 @@
           }
         }
       }
+    },
+    "Unlock the full spectrum of professional features" : {
+
+    },
+    "Upgrade to ColorSense Pro" : {
+
     },
     "Upgrade to Pro" : {
       "localizations" : {

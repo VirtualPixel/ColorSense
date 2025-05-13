@@ -89,7 +89,7 @@ struct ColorVisionModeView: View {
                 .opacity(selectedDeficiency != .typical && isEnhancementEnabled ? 1 : 0)
         }
         .padding(.top, 20)
-        .sheet(isPresented: $showPaywall) {
+        .fullScreenCover(isPresented: $showPaywall) {
             PaywallView()
         }
         .onDisappear {

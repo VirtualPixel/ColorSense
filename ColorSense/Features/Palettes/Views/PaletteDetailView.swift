@@ -83,7 +83,7 @@ struct PaletteDetailView: View {
             }
         }
         .navigationTitle(palette.name ?? "Palette View")
-        .sheet(isPresented: $showingPaywall) {
+        .fullScreenCover(isPresented: $showingPaywall) {
             PaywallView()
         }
     }

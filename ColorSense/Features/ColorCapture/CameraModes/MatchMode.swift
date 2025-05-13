@@ -113,7 +113,7 @@ struct MatchModeView: View {
                                     .padding(-15)
                                     .padding(.top, 20)
                             )
-                    .sheet(isPresented: $showPaywall) {
+                    .fullScreenCover(isPresented: $showPaywall) {
                         PaywallView()
                     }
                 }

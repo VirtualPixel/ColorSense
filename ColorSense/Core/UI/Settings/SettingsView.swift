@@ -34,7 +34,7 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .buttonStyle(BorderedButtonStyle())
         }
-        .sheet(isPresented: $isShowingPaywall) {
+        .fullScreenCover(isPresented: $isShowingPaywall) {
             PaywallView()
         }
         .sheet(isPresented: $isShowingWishkitScreen) {

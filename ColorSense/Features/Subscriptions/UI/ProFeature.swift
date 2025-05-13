@@ -30,7 +30,7 @@ struct ProFeature: ViewModifier {
                     .overlay {
                         proOverlay
                     }
-                    .sheet(isPresented: $showPaywall) {
+                    .fullScreenCover(isPresented: $showPaywall) {
                     #if !os(watchOS)
                         PaywallView()
                     #endif
