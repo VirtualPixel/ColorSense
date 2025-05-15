@@ -14,6 +14,7 @@
 		5711D7EB2DA6EAB200F539AB /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7E92DA6EAB200F539AB /* ShareColor.swift */; };
 		5711D7EE2DA6F82C00F539AB /* SharedPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */; };
 		5711D7F62DA6F94700F539AB /* SharePaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7F52DA6F94700F539AB /* SharePaletteView.swift */; };
+		571692CC2DD67B2F0060E284 /* LifetimeOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571692CB2DD67B2F0060E284 /* LifetimeOfferView.swift */; };
 		572033412DCFF8E900D97E3A /* colorMixes.json in Resources */ = {isa = PBXBuildFile; fileRef = 572033402DCFF8E900D97E3A /* colorMixes.json */; };
 		572033422DCFF8E900D97E3A /* colorMixes.json in Resources */ = {isa = PBXBuildFile; fileRef = 572033402DCFF8E900D97E3A /* colorMixes.json */; };
 		572033432DCFF8E900D97E3A /* colorMixes.json in Resources */ = {isa = PBXBuildFile; fileRef = 572033402DCFF8E900D97E3A /* colorMixes.json */; };
@@ -197,6 +198,7 @@
 		5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPaletteView.swift; sourceTree = "<group>"; };
 		5711D7F52DA6F94700F539AB /* SharePaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePaletteView.swift; sourceTree = "<group>"; };
 		571272972A7DDB1B002F8720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		571692CB2DD67B2F0060E284 /* LifetimeOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifetimeOfferView.swift; sourceTree = "<group>"; };
 		572033402DCFF8E900D97E3A /* colorMixes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colorMixes.json; sourceTree = "<group>"; };
 		572033572DD3881600D97E3A /* PreviewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelpers.swift; sourceTree = "<group>"; };
 		572053FB2A68900F0072DE06 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
@@ -775,6 +777,7 @@
 			isa = PBXGroup;
 			children = (
 				57FF640A2D446B78008BA8C3 /* PaywallView.swift */,
+				571692CB2DD67B2F0060E284 /* LifetimeOfferView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1234,6 +1237,7 @@
 				572053FC2A68900F0072DE06 /* Palette.swift in Sources */,
 				579705202DA9922D009AE8C5 /* Image+Extensions.swift in Sources */,
 				5753016F2A033CF0006A68A5 /* UIColor+ColorCalculation.swift in Sources */,
+				571692CC2DD67B2F0060E284 /* LifetimeOfferView.swift in Sources */,
 				576338C02A099C810034AF9D /* BottomBarView.swift in Sources */,
 				576338D12A09BD340034AF9D /* PaletteListView.swift in Sources */,
 				576338CF2A09BD280034AF9D /* PaletteListViewModel.swift in Sources */,

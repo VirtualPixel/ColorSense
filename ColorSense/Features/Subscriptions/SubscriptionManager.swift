@@ -35,7 +35,23 @@ class SubscriptionsManager: NSObject, ObservableObject {
     @Published var isLoading = false
     @Published var showThankYouAlert = false
     
-    let productIDs = ["colorsenseproplanweekly", "colorsenseproplanannual"]
+    let subscriptionProductIDs = ["colorsenseproplanweekly", "colorsenseproplanannual"]
+    let nonConsumableProductIDs = ["dev.justinwells.ColorSense.lifetime"]
+
+    var allProductIds: [String] {
+        subscriptionProductIDs + nonConsumableProductIDs
+    }
+
+    var lifetimeProduct: Product? {
+        products.first(where: { $0.id == nonConsumableProductIDs.first })
+    }
+
+    var shouldShowLifetimeOffer: Bool {
+        guard let product = lifetimeProduct else { return false }
+        return product.price == 0.0
+    }
+
+    var hasLifetimePurchase: Bool = false
 
     private var purchasedProductIDs: Set<String> = []
     private let entitlementManager: EntitlementManager
@@ -45,6 +61,10 @@ class SubscriptionsManager: NSObject, ObservableObject {
         self.entitlementManager = entitlementManager
         super.init()
         self.transactionListenerTask = observeTransactionUpdates()
+
+        Task {
+            await updatePurchasedProducts()
+        }
     }
     
     deinit {
@@ -65,6 +85,13 @@ class SubscriptionsManager: NSObject, ObservableObject {
     }
 
     private func handleVerifiedTransaction(_ transaction: StoreKit.Transaction) async {
+        if nonConsumableProductIDs.contains(transaction.productID) && transaction.revocationDate == nil {
+            purchasedProductIDs.insert(transaction.productID)
+            hasLifetimePurchase = true
+            entitlementManager.hasPro = true
+            return
+        }
+
         // Process the transaction
         if transaction.revocationDate == nil {
             if let expirationDate = transaction.expirationDate, expirationDate > Date() {
@@ -86,7 +113,7 @@ extension SubscriptionsManager {
         defer { isLoading = false }
         
         do {
-            self.products = try await Product.products(for: productIDs)
+            self.products = try await Product.products(for: allProductIds)
                 .sorted(by: { $0.price < $1.price })
         } catch {
             print("Failed to fetch products! Error: \(error)")
@@ -162,9 +189,17 @@ extension SubscriptionsManager {
 
     private func updatePurchasedProducts() async {
         purchasedProductIDs.removeAll()
+        hasLifetimePurchase = false
 
         for await result in Transaction.currentEntitlements {
             guard case .verified(let transaction) = result else {
+                continue
+            }
+
+            if nonConsumableProductIDs.contains(transaction.productID) && transaction.revocationDate == nil {
+                purchasedProductIDs.insert(transaction.productID)
+                hasLifetimePurchase = true
+                entitlementManager.hasPro = true
                 continue
             }
 
@@ -175,7 +210,6 @@ extension SubscriptionsManager {
             }
         }
 
-        entitlementManager.hasPro = !purchasedProductIDs.isEmpty
+        entitlementManager.hasPro = hasLifetimePurchase || !purchasedProductIDs.isEmpty
     }
-
 }

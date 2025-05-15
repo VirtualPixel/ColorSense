@@ -73,32 +73,43 @@ struct PaywallView: View {
                         featureCarousel(width: geometry.size.width)
                             .padding(.bottom, 15)
 
-                        // Plan selection
-                        planToggleSection
-                            .padding(.horizontal)
-                            .padding(.bottom, 15)
-
-                        // Price display
-                        currentPriceView
-                            .padding(.bottom, 15)
-
-                        // Call to action button
-                        Button {
-                            let product = subscriptionsManager.products.first(where: { $0.id == selectedPlan.productId })
-
-                            if let product = product {
+                        // Lifetime Purchase
+                        if subscriptionsManager.shouldShowLifetimeOffer,
+                           let lifetimeProduct = subscriptionsManager.lifetimeProduct {
+                            LifetimeOfferView(product: lifetimeProduct) { product in
                                 Task {
                                     await subscriptionsManager.buyProduct(product)
                                 }
-                            } else {
-                                showError = true
                             }
-                        } label: {
-                            purchaseButtonLabel
+                            .transition(.scale.combined(with: .opacity))
+                        } else {
+                            // Plan selection
+                            planToggleSection
+                                .padding(.horizontal)
+                                .padding(.bottom, 15)
+
+                            // Price display
+                            currentPriceView
+                                .padding(.bottom, 15)
+
+                            // Call to action button
+                            Button {
+                                let product = subscriptionsManager.products.first(where: { $0.id == selectedPlan.productId })
+
+                                if let product = product {
+                                    Task {
+                                        await subscriptionsManager.buyProduct(product)
+                                    }
+                                } else {
+                                    showError = true
+                                }
+                            } label: {
+                                purchaseButtonLabel
+                            }
+                            .buttonStyle(ScaleButtonStyle())
+                            .padding(.horizontal, 25)
+                            .padding(.bottom, 15)
                         }
-                        .buttonStyle(ScaleButtonStyle())
-                        .padding(.horizontal, 25)
-                        .padding(.bottom, 15)
 
                         // Restore purchases option
                         Button {
@@ -749,14 +760,6 @@ struct PaywallView: View {
 
     // MARK: - Action Buttons
 
-    // Custom button style for purchase button
-    struct ScaleButtonStyle: ButtonStyle {
-        func makeBody(configuration: Configuration) -> some View {
-            configuration.label
-                .scaleEffect(configuration.isPressed ? 0.97 : 1)
-                .animation(.spring(response: 0.3, dampingFraction: 0.7), value: configuration.isPressed)
-        }
-    }
 
     private var purchaseButton: some View {
         let product = subscriptionsManager.products.first(where: { $0.id == selectedPlan.productId })
