@@ -37,12 +37,18 @@ struct ContentView: View {
                 CameraUI()
                 
             }
-            .onAppear {
-                Task {
-                    await subscriptionsManager.loadProducts()
+            .background(Color.black)
+            .task {
+                await camera.start()
+                await subscriptionsManager.loadProducts()
+            }
+            .onDisappear {
+                DispatchQueue.global(qos: .userInitiated).async {
+                    Task {
+                        await camera.stopCamera()
+                    }
                 }
             }
-            .background(Color.black)
         }
         .fullScreenCover(isPresented: .init(
             get: { entitlementManager.shouldShowPaymentSheet },

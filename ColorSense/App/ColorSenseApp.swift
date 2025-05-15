@@ -88,6 +88,7 @@ struct ColorSenseApp: App {
         WishKit.configure(with: EnvironmentValues.wishKitAPIKey)
 
         PhotoProcessor.initialize()
+        ColorMixMatcher.shared.initialize()
 
         let entitlementManager = EntitlementManager()
         let subscriptionsManager = SubscriptionsManager(entitlementManager: entitlementManager)

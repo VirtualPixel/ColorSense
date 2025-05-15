@@ -29,7 +29,7 @@ extension ColorDetailView {
         }
 
         var swiftUI: String {
-            self.color.toColorMix()
+            ColorMixMatcher.shared.getColorMixString(for: color)
         }
 
         var uiKit: String {

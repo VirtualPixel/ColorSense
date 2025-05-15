@@ -4,107 +4,6 @@
     "" : {
       "shouldTranslate" : false
     },
-    "/" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "/"
-          }
-        }
-      }
-    },
     "/week" : {
 
     },
@@ -1133,6 +1032,9 @@
         }
       }
     },
+    "After" : {
+
+    },
     "Apply" : {
       "localizations" : {
         "da" : {
@@ -1432,6 +1334,9 @@
           }
         }
       }
+    },
+    "Before" : {
+
     },
     "Best Value" : {
 
@@ -1739,6 +1644,9 @@
         }
       }
     },
+    "Building your palette" : {
+
+    },
     "Cancel" : {
       "localizations" : {
         "da" : {
@@ -2039,109 +1947,11 @@
         }
       }
     },
-    "Choose Your Plan" : {
+    "Choose a Seed Color" : {
 
     },
-    "Close" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Luk"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schließen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cerrar"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fermer"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fermés"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "बंद करें"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chiudi"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "閉じる"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "닫기"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tutup"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zamknij"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fechar"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Закрыть"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kapat"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "关闭"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "關閉"
-          }
-        }
-      }
+    "Choose Your Plan" : {
+
     },
     "Color" : {
       "extractionState" : "manual",
@@ -5480,6 +5290,21 @@
         }
       }
     },
+    "Finding the perfect colors..." : {
+
+    },
+    "From Scratch" : {
+
+    },
+    "From Seed Color" : {
+
+    },
+    "Generate Palette" : {
+
+    },
+    "Generated Palette" : {
+
+    },
     "Gray" : {
       "comment" : "Color name for gray",
       "localizations" : {
@@ -7603,6 +7428,9 @@
         }
       }
     },
+    "Mode" : {
+
+    },
     "month" : {
       "localizations" : {
         "da" : {
@@ -7906,6 +7734,9 @@
     "Normal" : {
 
     },
+    "Number of Colors: %lld" : {
+
+    },
     "OK" : {
       "localizations" : {
         "da" : {
@@ -8206,6 +8037,9 @@
           }
         }
       }
+    },
+    "Original" : {
+
     },
     "Pair With Colors" : {
       "localizations" : {
@@ -10020,107 +9854,6 @@
     "Save %lld%%" : {
 
     },
-    "Save 33%" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spar 33%"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "33% sparen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ahorra un 33%"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Économisez 33%"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Économisez 33%"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "33% बचाएं"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Risparmia 33%"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "33%節約"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "33% 절약"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jimat 33%"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oszczędź 33%"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Economize 33%"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сэкономить 33%"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%33 Tasarruf Et"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "节省33%"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "節省 33%"
-          }
-        }
-      }
-    },
     "Save Palette?" : {
       "localizations" : {
         "da" : {
@@ -10421,6 +10154,9 @@
         }
       }
     },
+    "Seed Color" : {
+
+    },
     "Select" : {
       "localizations" : {
         "da" : {
@@ -10520,6 +10256,9 @@
           }
         }
       }
+    },
+    "Select Generation Method" : {
+
     },
     "Selected\nColor" : {
       "localizations" : {
@@ -11721,6 +11460,9 @@
         }
       }
     },
+    "Style" : {
+
+    },
     "Tap to Unlock" : {
       "localizations" : {
         "da" : {
@@ -11823,107 +11565,6 @@
     },
     "Terms of Service" : {
 
-    },
-    "Terms of Use" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Betingelser for brug"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nutzungsbedingungen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Condiciones de uso"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conditions d’utilisation"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conditions d’utilisation"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "प्रयोग की शर्तें"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Termini d'uso"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "利用規約"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이용 약관"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Syarat Penggunaan"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Warunki korzystania"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Termos de Uso"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Условия"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kullanım Şartları"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用条款"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用條款"
-          }
-        }
-      }
     },
     "Thank you for subscribing to ColorSense Pro!" : {
       "localizations" : {
@@ -12526,112 +12167,14 @@
         }
       }
     },
+    "Try Again" : {
+
+    },
     "Try Enhancement" : {
 
     },
     "Unable to process your purchase at this time. Please try again later." : {
 
-    },
-    "Unlock advanced color features" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lås op for avancerede farvefunktioner"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erweiterte Farbmerkmale freischalten"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desbloquea funciones avanzadas de color"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Déverrouillez des fonctionnalités avancées de couleur"
-          }
-        },
-        "fr-CA" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Déverrouillez des fonctionnalités avancées de couleur"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "उन्नत रंग सुविधाओं को अनलॉक करें"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sblocca funzionalità avanzate del colore"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "高度なカラー機能をアンロック"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "고급 색상 기능 잠금 해제"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Buka kunci ciri warna lanjutan"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odblokuj zaawansowane funkcje kolorów"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desbloqueie recursos avançados de cores"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Разблокируйте расширенные функции цвета"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gelişmiş renk özelliklerinin kilidini aç"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "解锁高级颜色功能"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "解鎖高級顏色功能"
-          }
-        }
-      }
     },
     "Unlock the full spectrum of professional features" : {
 

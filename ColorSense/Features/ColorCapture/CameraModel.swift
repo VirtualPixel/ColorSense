@@ -267,7 +267,7 @@ final class CameraModel: Camera, ObservableObject {
         await captureService.getCurrentColor()
     }
 
-    func stopCamera() {
+    func stopCamera() async {
         Task {
             await captureService.stopSession()
         }

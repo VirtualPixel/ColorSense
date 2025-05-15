@@ -131,6 +131,7 @@ struct CameraUI: View {
                         Spacer()
                             .frame(width: totalWidth / 2 - 50)
                     }
+                    .drawingGroup()
                 }
                 .onChange(of: modeManager.currentModeIndex) { oldValue, newValue in
                     withAnimation {
@@ -138,7 +139,7 @@ struct CameraUI: View {
                     }
                 }
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    DispatchQueue.main.async {
                         proxy.scrollTo(modeManager.currentModeIndex, anchor: .center)
                     }
                 }

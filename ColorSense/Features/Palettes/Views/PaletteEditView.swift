@@ -20,6 +20,7 @@ struct PaletteEditView: View {
     @State private var showingInvalidHexAlert: Bool = false
     @State private var isShowingDeleteAlert: Bool = false
     @State private var editMode: EditMode
+    @State private var showPaletteGenerator = false
 
     var body: some View {
         NavigationStack {
@@ -77,6 +78,17 @@ struct PaletteEditView: View {
                             Text("Add Color")
                         }
                     }
+
+                    if viewModel.colors.isEmpty {
+                        Button {
+                            showPaletteGenerator = true
+                        } label: {
+                            HStack {
+                                Image(systemName: "wand.and.stars")
+                                Text("Generate Palette")
+                            }
+                        }
+                    }
                 }
 
                 if !viewModel.isNewPalette {
@@ -111,6 +123,27 @@ struct PaletteEditView: View {
                     viewModel.addColor(hex: color.toHex())
                     viewModel.savePalette(context: context)
                 })
+            }
+            .sheet(isPresented: $showPaletteGenerator) {
+                PaletteGeneratorView(
+                    existingColors: viewModel.colors.map { $0.color },
+                    onColorsGenerated: { newColors in
+                        // Handle generated colors based on length
+                        if newColors.count <= viewModel.colors.count {
+                            // Replace existing colors
+                            for (index, color) in newColors.enumerated() {
+                                if index < viewModel.colors.count {
+                                    viewModel.updateColor(at: index, with: color)
+                                }
+                            }
+                        } else {
+                            // Clear and add all colors
+                            viewModel.clearColors()
+                            viewModel.addColors(newColors)
+                        }
+                        viewModel.savePalette(context: context)
+                    }
+                )
             }
             .alert("Invalid Hex Color", isPresented: $showingInvalidHexAlert) {
                 Button("OK", role: .cancel) {

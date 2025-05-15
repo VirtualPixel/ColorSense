@@ -91,5 +91,21 @@ extension PaletteEditView {
 
             try? context.save()
         }
+
+        func updateColor(at index: Int, with color: Color) {
+            if index < colors.count {
+                colors[index].hex = color.toHex().replacingOccurrences(of: "#", with: "")
+            }
+        }
+
+        func clearColors() {
+            colors.removeAll()
+        }
+
+        func addColors(_ newColors: [Color]) {
+            for color in newColors {
+                addColor(hex: color.toHex())
+            }
+        }
     }
 }

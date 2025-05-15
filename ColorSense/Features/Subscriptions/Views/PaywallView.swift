@@ -12,6 +12,7 @@ struct PaywallView: View {
     // Environment objects
     @EnvironmentObject private var entitlementManager: EntitlementManager
     @EnvironmentObject private var subscriptionsManager: SubscriptionsManager
+    @EnvironmentObject private var camera: CameraModel
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
 
@@ -163,6 +164,14 @@ struct PaywallView: View {
 
             Task {
                 await subscriptionsManager.loadProducts()
+            }
+        }
+        .task {
+            await camera.stopCamera()
+        }
+        .onDisappear {
+            Task {
+                await camera.start()
             }
         }
     }
@@ -317,7 +326,7 @@ struct PaywallView: View {
         VStack {
             HStack {
                 Spacer()
-                
+
                 if isShowingCloseButton {
                     Button {
                         dismiss()

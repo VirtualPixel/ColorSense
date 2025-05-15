@@ -1,31 +1,10 @@
 import SwiftUI
 
 // Add a test method to validate UIColor hex parsing
-extension Color {
-    static func testHexParsing() {
-        let testHexes = ["#E58D7C", "#000000", "#FFFFFF", "#FF0000", "#00FF00", "#0000FF"]
-
-        print("Testing hex parsing...")
-        for hex in testHexes {
-            print("Testing hex: \(hex)")
-            if let color = UIColor(hexString: hex) {
-                print("Successfully created UIColor from hex: \(hex)")
-                var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
-                color.getRed(&r, green: &g, blue: &b, alpha: &a)
-                print("Components: r=\(r), g=\(g), b=\(b), a=\(a)")
-            } else {
-                print("FAILED to create UIColor from hex: \(hex)")
-            }
-        }
-    }
-}
 
 extension Color: @retroactive Identifiable {
 
     public var id: UUID { UUID() }
-
-    // Changed from [String: String] to handle nested dictionaries
-    static private var colorMixMap: [String: Any]? = nil
 
     var uiColor: UIColor {
         UIColor(self)
@@ -205,6 +184,10 @@ extension Color: @retroactive Identifiable {
         return "UIColor(red: \(String(format: "%.3f", components.red)), green: \(String(format: "%.3f", components.green)), blue: \(String(format: "%.3f", components.blue)), alpha: \(String(format: "%.3f", components.alpha))"
     }
 
+    func difference(to othercolor: Color) -> CGFloat {
+        UIColor(self).difference(to: UIColor(othercolor))
+    }
+
     func toRGBComponents() -> (red: Double, green: Double, blue: Double, alpha: Double) {
         var r: CGFloat = 0
         var g: CGFloat = 0
@@ -214,43 +197,7 @@ extension Color: @retroactive Identifiable {
         UIColor(self).getRed(&r, green: &g, blue: &b, alpha: &a)
         return (Double(r), Double(g), Double(b), Double(a))
     }
-
-    func toColorMix() -> String {
-        // Test hex parsing before proceeding
-        Color.testHexParsing()
-
-        // Load map if needed
-        Self.loadColorMixMap()
-
-        // Get the hex code for this color
-        let hex = self.toHex()
-
-        // Debug output
-        print("Looking for color mix for hex: \(hex)")
-
-        // First, check for an exact match in the map
-        if let mixDict = Self.colorMixMap?[hex] as? [String: Any] {
-            if let color1 = mixDict["color1"] as? String,
-               let color2 = mixDict["color2"] as? String,
-               let ratio = mixDict["ratio"] as? Double {
-                let result = "Color.blend(\(color1), with: \(color2), ratio: \(ratio))"
-                print("Found exact match: \(result)")
-                return result
-            }
-        }
-
-        // If no exact match, try to find the closest color
-        print("No exact match found, looking for closest match...")
-        if let closestMatch = findClosestColorMix(for: hex) {
-            print("Found closest match: \(closestMatch)")
-            return closestMatch
-        }
-
-        // If nothing is found, fall back to RGB
-        print("No color mix found, falling back to RGB")
-        return self.toSwiftUI()
-    }
-
+    
     static func blend(_ color1: Color, with color2: Color, ratio: CGFloat = 0.5) -> Color {
         let uiColor1 = UIColor(color1)
         let uiColor2 = UIColor(color2)
@@ -267,68 +214,6 @@ extension Color: @retroactive Identifiable {
         let a = a1 * ratio + a2 * (1 - ratio)
 
         return Color(red: Double(r), green: Double(g), blue: Double(b), opacity: Double(a))
-    }
-
-    private func findClosestColorMix(for hex: String) -> String? {
-        guard let mixMap = Self.colorMixMap, !mixMap.isEmpty else {
-            print("Color mix map is empty or nil")
-            return nil
-        }
-
-        // Parse hex to RGB for comparison - pass the full hex string including #
-        guard let thisColor = UIColor(hexString: hex) else {
-            print("Could not create UIColor from hex: \(hex)")
-            return nil
-        }
-
-        var bestMatch: String? = nil
-        var smallestDistance: CGFloat = .greatestFiniteMagnitude
-
-        print("Comparing with \(mixMap.count) colors in the map")
-
-        // Compare with all colors in the map
-        for (mapHex, value) in mixMap {
-            // Pass the full hex string including #
-            guard let mapColor = UIColor(hexString: mapHex) else {
-                print("Could not create UIColor from map hex: \(mapHex)")
-                continue
-            }
-
-            // Calculate color distance
-            let distance = mapColor.difference(to: thisColor)
-
-            // Debug closest matches
-            if distance < 30.0 {
-                print("Potential match: \(mapHex) with distance: \(distance)")
-            }
-
-            // Update best match if this is closer
-            if distance < smallestDistance {
-                smallestDistance = distance
-
-                // Create color mix string from the dictionary values
-                if let mixDict = value as? [String: Any],
-                   let color1 = mixDict["color1"] as? String,
-                   let color2 = mixDict["color2"] as? String,
-                   let ratio = mixDict["ratio"] as? Double {
-                    bestMatch = "Color.blend(\(color1), with: \(color2), ratio: \(ratio))"
-                    print("New best match: \(mapHex) with distance: \(distance)")
-                } else {
-                    print("Found close color \(mapHex) but couldn't extract mix data")
-                }
-            }
-        }
-
-        // Only return matches that are reasonably close
-        // Increased threshold from 5.0 to 30.0 to find more potential matches
-        if smallestDistance < 30.0 {
-            print("Final match with distance: \(smallestDistance)")
-            return bestMatch
-        } else {
-            print("No match found within threshold. Closest was: \(smallestDistance)")
-        }
-
-        return nil
     }
 
     private func removeGamma(_ value: Double) -> Double {
@@ -350,49 +235,15 @@ extension Color: @retroactive Identifiable {
             zip(row, vector).map(*).reduce(0, +)
         }
     }
-
-    static private func loadColorMixMap() {
-        guard colorMixMap == nil else { return }
-
-        if let url = Bundle.main.url(forResource: "colorMixes", withExtension: "json"),
-           let data = try? Data(contentsOf: url) {
-            do {
-                // Use JSONSerialization instead of JSONDecoder for more flexible parsing
-                if let jsonObject = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                    colorMixMap = jsonObject
-                    print("Successfully loaded color mix map with \(jsonObject.count) entries")
-
-                    // Debug: print a few sample entries
-                    if let firstFew = jsonObject.keys.prefix(3).map({ $0 }) as? [String] {
-                        print("Sample keys: \(firstFew)")
-                    }
-                } else {
-                    print("Error: JSON structure is not a dictionary")
-                    colorMixMap = [:]
-                }
-            } catch {
-                print("Error loading color mix map: \(error)")
-                colorMixMap = [:]
-            }
-        } else {
-            print("Warning: colorMixes.json file not found")
-            colorMixMap = [:]
-        }
-    }
 }
 
 // Add this extension since it seems to be referenced but not included
 extension UIColor {
     convenience init?(hexString: String) {
-        // Debug the input
-        print("UIColor init with hexString: \(hexString)")
-
         // Validate hex format
         // Valid formats: "#RRGGBB", "RRGGBB"
         var hexSanitized = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
-
-        print("Sanitized hex: \(hexSanitized)")
 
         // Check length
         guard hexSanitized.count == 6 else {
@@ -414,8 +265,6 @@ extension UIColor {
         let r = CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0
         let g = CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0
         let b = CGFloat(rgbValue & 0x0000FF) / 255.0
-
-        print("Parsed RGB: (\(r), \(g), \(b))")
 
         self.init(red: r, green: g, blue: b, alpha: 1.0)
     }
