@@ -1,3 +1,9 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "Akses kamera diperlukan untuk mengenal pasti dan menganalisis warna secara masa nyata menggunakan kamera peranti anda.";
 
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "Aplikasi ini menyimpan foto ke perpustakaan anda untuk menyimpan tangkapan warna anda dengan penapis yang digunakan.";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Aplikasi ini menyimpan foto ke perpustakaan anda untuk menyimpan tangkapan warna anda dengan penapis yang digunakan.";
+

@@ -1,3 +1,9 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "Cihazınızın kamerasını kullanarak renkleri gerçek zamanlı olarak tanımlamak ve analiz etmek için kamera erişimi gereklidir.";
 
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "Bu uygulama, filtreler uygulanmış renk yakalamalarınızı saklamak için fotoğrafları kütüphanenize kaydeder.";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Bu uygulama, filtreler uygulanmış renk yakalamalarınızı saklamak için fotoğrafları kütüphanenize kaydeder.";
+

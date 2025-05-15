@@ -1,3 +1,9 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "デバイスのカメラを使用してリアルタイムで色を識別および分析するには、カメラへのアクセスが必要です。";
 
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "このアプリは、フィルターを適用した色のキャプチャを保存するために、写真をライブラリに保存します。";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "このアプリは、フィルターを適用した色のキャプチャを保存するために、写真をライブラリに保存します。";
+

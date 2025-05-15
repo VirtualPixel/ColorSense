@@ -1,3 +1,9 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "Se requiere acceso a la cámara para identificar y analizar colores en tiempo real usando la cámara de su dispositivo.";
 
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "Esta aplicación guarda fotos en tu biblioteca para almacenar tus capturas de color con filtros aplicados.";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Esta aplicación guarda fotos en tu biblioteca para almacenar tus capturas de color con filtros aplicados.";
+

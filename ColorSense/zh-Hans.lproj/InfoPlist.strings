@@ -1,3 +1,9 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "需要相机访问权限，以便使用设备的相机实时识别和分析颜色。";
 
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "此应用程序将照片保存到您的图库中，以存储应用了滤镜的颜色捕捉。";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "此应用程序将照片保存到您的图库中，以存储应用了滤镜的颜色捕捉。";
+

@@ -1,3 +1,9 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "Kameraadgang er påkrævet for at identificere og analysere farver i realtid ved hjælp af enhedens kamera.";
 
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "Denne app gemmer fotos i dit bibliotek for at lagre dine farveoptagelser med anvendte filtre.";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Denne app gemmer fotos i dit bibliotek for at lagre dine farveoptagelser med anvendte filtre.";
+

@@ -1,3 +1,9 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "आपके डिवाइस के कैमरे का उपयोग करके रंगों की पहचान और विश्लेषण करने के लिए कैमरा एक्सेस आवश्यक है।";
 
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "यह ऐप आपके पुस्तकालय में फ़ोटो सहेजता है ताकि आपके रंग कैप्चर को फ़िल्टर लागू करके संग्रहीत किया जा सके।";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "यह ऐप आपके पुस्तकालय में फ़ोटो सहेजता है ताकि आपके रंग कैप्चर को फ़िल्टर लागू करके संग्रहीत किया जा सके।";
+

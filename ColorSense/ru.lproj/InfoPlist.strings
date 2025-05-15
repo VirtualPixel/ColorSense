@@ -1,3 +1,9 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "Для идентификации и анализа цветов в реальном времени с помощью камеры вашего устройства требуется доступ к камере.";
 
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "Это приложение сохраняет фотографии в вашу библиотеку, чтобы хранить ваши цветовые снимки с примененными фильтрами.";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "Это приложение сохраняет фотографии в вашу библиотеку, чтобы хранить ваши цветовые снимки с примененными фильтрами.";
+

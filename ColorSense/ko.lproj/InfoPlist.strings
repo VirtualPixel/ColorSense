@@ -1,3 +1,9 @@
 /* Privacy - Camera Usage Description */
 "NSCameraUsageDescription" = "기기의 카메라를 사용하여 실시간으로 색상을 식별하고 분석하기 위해 카메라 접근이 필요합니다.";
 
+/* Privacy - Photo Library Additions Usage Description */
+"NSPhotoLibraryAddUsageDescription" = "이 앱은 필터가 적용된 색상 캡처를 저장하기 위해 사진을 라이브러리에 저장합니다.";
+
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "이 앱은 필터가 적용된 색상 캡처를 저장하기 위해 사진을 라이브러리에 저장합니다.";
+
