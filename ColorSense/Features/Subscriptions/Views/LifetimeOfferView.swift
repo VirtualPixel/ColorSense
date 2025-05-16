@@ -37,7 +37,7 @@ struct LifetimeOfferView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.bottom, 5)
 
-            // Action button - styled exactly like your main button
+            // Action button
             Button {
                 onPurchase(product)
             } label: {
@@ -76,7 +76,6 @@ struct LifetimeOfferView: View {
             }
             .buttonStyle(ScaleButtonStyle())
 
-            // Optional: subtle divider
             Divider()
                 .background(Color.white.opacity(0.2))
                 .padding(.top, 6)
@@ -93,7 +92,6 @@ struct LifetimeOfferView: View {
     }
 }
 
-// Custom button style for purchase button
 struct ScaleButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

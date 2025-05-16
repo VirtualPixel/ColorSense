@@ -18,6 +18,12 @@ struct MetalCameraPreview: UIViewRepresentable {
     func makeUIView(context: Context) -> MetalPreviewView {
         let view = MetalPreviewView()
         source.connect(to: view)
+
+        // Add debug verification similar to regular CameraPreview
+        if let session = (source as? DefaultPreviewSource)?.session {
+            print("Connecting Metal preview to session: \(session)")
+        }
+
         return view
     }
 
@@ -36,8 +42,8 @@ struct MetalCameraPreview: UIViewRepresentable {
 
 class MetalPreviewView: UIView, PreviewTarget {
     // Metal properties
-    private let device: MTLDevice
-    private var metalLayer: CAMetalLayer!
+    private let device: MTLDevice?
+    private var metalLayer: CAMetalLayer?
     private var commandQueue: MTLCommandQueue?
     private var computePipelineState: MTLComputePipelineState?
     private var textureCache: CVMetalTextureCache?
@@ -45,7 +51,7 @@ class MetalPreviewView: UIView, PreviewTarget {
     // Camera properties
     private var session: AVCaptureSession?
     private var videoOutput: AVCaptureVideoDataOutput?
-    private var previewLayer: AVCaptureVideoPreviewLayer!
+    private var previewLayer: AVCaptureVideoPreviewLayer?
 
     // Filter settings
     private var filterType: ColorVisionType = .typical
@@ -63,14 +69,42 @@ class MetalPreviewView: UIView, PreviewTarget {
     }
 
     override init(frame: CGRect) {
-        // Initialize Metal Device
-        guard let device = MTLCreateSystemDefaultDevice() else {
-            fatalError("Metal is not supported on this device")
-        }
-        self.device = device
+        // Initialize Metal Device only if not in simulator
+        #if targetEnvironment(simulator)
+        self.device = nil
+        #else
+        self.device = MTLCreateSystemDefaultDevice()
+        #endif
 
         super.init(frame: frame)
-        setupView()
+
+#if targetEnvironment(simulator)
+        // The capture APIs require running on a real device
+        let imageView = UIImageView(frame: bounds)
+        imageView.image = UIImage(named: "video_mode")
+        imageView.contentMode = .scaleAspectFit  // Change to .scaleAspectFit
+        imageView.backgroundColor = .black       // Add background color
+        addSubview(imageView)
+        print("⚠️ Running in simulator - Metal preview will show a placeholder image")
+
+        // Make sure the image view resizes properly
+        imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        // Don't create the previewLayer in simulator
+        self.previewLayer = nil
+#else
+        if device != nil {
+            setupView()
+        } else {
+            print("⚠️ Metal device could not be created - falling back to standard preview")
+            // Add a fallback view or warning
+            let label = UILabel(frame: bounds)
+            label.text = "Metal rendering not available"
+            label.textAlignment = .center
+            label.textColor = .white
+            addSubview(label)
+        }
+        #endif
     }
 
     required init?(coder: NSCoder) {
@@ -78,50 +112,64 @@ class MetalPreviewView: UIView, PreviewTarget {
     }
 
     private func setupView() {
-        // First create a standard preview layer (even though we won't use it for display)
-        // This is critical to satisfy the architecture's requirements
-        previewLayer = AVCaptureVideoPreviewLayer()
-        previewLayer.videoGravity = .resizeAspectFill
-        previewLayer.frame = bounds
-        layer.addSublayer(previewLayer)
+        guard let device = self.device else {
+            print("⚠️ No Metal device available")
+            return
+        }
 
-        // Create the actual Metal layer we'll use for rendering
+        let newPreviewLayer = AVCaptureVideoPreviewLayer()
+        newPreviewLayer.videoGravity = .resizeAspectFill
+        newPreviewLayer.frame = bounds
+        layer.addSublayer(newPreviewLayer)
+        self.previewLayer = newPreviewLayer
+        print("Added preview layer")
+
+
+        // Create the actual Metal layer
         metalLayer = CAMetalLayer()
-        metalLayer.device = device
-        metalLayer.pixelFormat = .bgra8Unorm
-        metalLayer.framebufferOnly = false
-        metalLayer.frame = bounds
-        layer.addSublayer(metalLayer)
-
-        // Apply rotation transform to the Metal layer
-        metalLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5) // Set anchor point to center
+        metalLayer!.device = device
+        metalLayer!.pixelFormat = .bgra8Unorm
+        metalLayer!.framebufferOnly = false
+        metalLayer!.frame = bounds
+        layer.addSublayer(metalLayer!)
+        print("Added Metal layer")
 
         // Set up Metal components
         commandQueue = device.makeCommandQueue()
+        if commandQueue == nil {
+            print("⚠️ Failed to create Metal command queue")
+        }
+
         setupTextureCache()
         setupComputePipeline()
+        print("Metal setup complete")
     }
 
     func setVideoRotationAngle(_ angle: CGFloat) {
-        previewLayer.connection?.videoRotationAngle = angle
+        previewLayer?.connection?.videoRotationAngle = angle
     }
 
     private func setupMetal() {
+        guard device != nil else {
+            print("⚠️ No Metal device available for processing")
+            return
+        }
+
         // Configure Metal Layer
         metalLayer = self.layer as? CAMetalLayer
-        metalLayer.device = device
-        metalLayer.pixelFormat = .bgra8Unorm
-        metalLayer.framebufferOnly = false
+        metalLayer!.device = device
+        metalLayer!.pixelFormat = .bgra8Unorm
+        metalLayer!.framebufferOnly = false
 
         // Create command queue
-        commandQueue = device.makeCommandQueue()
+        commandQueue = device!.makeCommandQueue()
 
         // Create texture cache
         var textureCache: CVMetalTextureCache?
         let status = CVMetalTextureCacheCreate(
             kCFAllocatorDefault,
             nil,
-            device,
+            device!,
             nil,
             &textureCache
         )
@@ -136,12 +184,21 @@ class MetalPreviewView: UIView, PreviewTarget {
     }
 
     private func setupTextureCache() {
-            var textureCache: CVMetalTextureCache?
-            CVMetalTextureCacheCreate(kCFAllocatorDefault, nil, device, nil, &textureCache)
-            self.textureCache = textureCache
+        guard let device = self.device else {
+            print("⚠️ No Metal device available for texture cache")
+            return
+        }
+        var textureCache: CVMetalTextureCache?
+        CVMetalTextureCacheCreate(kCFAllocatorDefault, nil, device, nil, &textureCache)
+        self.textureCache = textureCache
     }
 
     private func setupComputePipeline() {
+        guard let device = self.device else {
+            print("⚠️ No Metal device available for compute pipeline")
+            return
+        }
+
         guard let library = device.makeDefaultLibrary() else {
             print("Failed to load default Metal library")
             return
@@ -205,21 +262,33 @@ class MetalPreviewView: UIView, PreviewTarget {
         Task { @MainActor in
             self.session = session
 
-            previewLayer.session = session
+            // Safely unwrap the previewLayer
+            if let previewLayer = self.previewLayer {
+                previewLayer.session = session
+                print("Successfully set session on preview layer")
+            }
 
+            #if targetEnvironment(simulator)
+            // Skip setting up video output in the simulator
+            print("Skipping video output setup in simulator")
+            #else
             // Clean up existing output
             if let existingOutput = videoOutput {
                 session.removeOutput(existingOutput)
             }
 
             let output = AVCaptureVideoDataOutput()
-            output.videoSettings = [ kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA ]
+            output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: kCVPixelFormatType_32BGRA]
             output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "com.wells.justin.ColorSense.metalQueue"))
 
             if session.canAddOutput(output) {
                 session.addOutput(output)
                 videoOutput = output
+                print("Added video output to session")
+            } else {
+                print("Could not add video output to session")
             }
+            #endif
         }
     }
 
@@ -234,6 +303,11 @@ class MetalPreviewView: UIView, PreviewTarget {
     override func layoutSubviews() {
         super.layoutSubviews()
 
+        guard metalLayer != nil else {
+            // Skip layout for metal layer when it doesn't exist
+            return
+        }
+
         // Position and size the Metal layer to account for rotation
         let layerFrame = CGRect(
             x: bounds.midX - bounds.height/2,
@@ -242,33 +316,33 @@ class MetalPreviewView: UIView, PreviewTarget {
             height: bounds.width
         )
 
-        metalLayer.frame = layerFrame
+        metalLayer!.frame = layerFrame
 
         // Set drawable size to match the layer size
-        metalLayer.drawableSize = CGSize(
+        metalLayer!.drawableSize = CGSize(
             width: layerFrame.width * UIScreen.main.scale,
             height: layerFrame.height * UIScreen.main.scale
         )
 
         // Apply rotation transform
         let rotation = CATransform3DMakeRotation(CGFloat.pi/2, 0, 0, 1)
-        metalLayer.transform = rotation
+        metalLayer!.transform = rotation
     }
 }
 
 extension MetalPreviewView: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
-            print("Failed ot get pixel buffer from sample buffer")
+            print("Failed to get pixel buffer from sample buffer")
             return
         }
 
-        // Skip metal processing if filter is disabled
         processWithMetal(pixelBuffer: pixelBuffer)
     }
 
     private func processWithMetal(pixelBuffer: CVPixelBuffer) {
-        guard let drawable = metalLayer.nextDrawable(),
+        guard let metalLayer = self.metalLayer,
+              let drawable = metalLayer.nextDrawable(),
               let commandBuffer = commandQueue?.makeCommandBuffer(),
               let computePipelineState = computePipelineState,
               let textureCache = textureCache else {
