@@ -14,6 +14,8 @@
 		5711D7EB2DA6EAB200F539AB /* ShareColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7E92DA6EAB200F539AB /* ShareColor.swift */; };
 		5711D7EE2DA6F82C00F539AB /* SharedPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */; };
 		5711D7F62DA6F94700F539AB /* SharePaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5711D7F52DA6F94700F539AB /* SharePaletteView.swift */; };
+		571692CC2DD67B2F0060E284 /* LifetimeOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571692CB2DD67B2F0060E284 /* LifetimeOfferView.swift */; };
+		571693222DD6F2A00060E284 /* SimulatorPreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571693212DD6F2A00060E284 /* SimulatorPreviewManager.swift */; };
 		572033412DCFF8E900D97E3A /* colorMixes.json in Resources */ = {isa = PBXBuildFile; fileRef = 572033402DCFF8E900D97E3A /* colorMixes.json */; };
 		572033422DCFF8E900D97E3A /* colorMixes.json in Resources */ = {isa = PBXBuildFile; fileRef = 572033402DCFF8E900D97E3A /* colorMixes.json */; };
 		572033432DCFF8E900D97E3A /* colorMixes.json in Resources */ = {isa = PBXBuildFile; fileRef = 572033402DCFF8E900D97E3A /* colorMixes.json */; };
@@ -197,6 +199,8 @@
 		5711D7ED2DA6F82C00F539AB /* SharedPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPaletteView.swift; sourceTree = "<group>"; };
 		5711D7F52DA6F94700F539AB /* SharePaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePaletteView.swift; sourceTree = "<group>"; };
 		571272972A7DDB1B002F8720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		571692CB2DD67B2F0060E284 /* LifetimeOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifetimeOfferView.swift; sourceTree = "<group>"; };
+		571693212DD6F2A00060E284 /* SimulatorPreviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorPreviewManager.swift; sourceTree = "<group>"; };
 		572033402DCFF8E900D97E3A /* colorMixes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colorMixes.json; sourceTree = "<group>"; };
 		572033572DD3881600D97E3A /* PreviewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelpers.swift; sourceTree = "<group>"; };
 		572053FB2A68900F0072DE06 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
@@ -572,6 +576,7 @@
 			children = (
 				576D8EA12A03106A003DE880 /* Preview Assets.xcassets */,
 				5797052D2DAD5DFC009AE8C5 /* PreviewCameraModel.swift */,
+				571693212DD6F2A00060E284 /* SimulatorPreviewManager.swift */,
 				572033572DD3881600D97E3A /* PreviewHelpers.swift */,
 			);
 			path = "Preview Content";
@@ -775,6 +780,7 @@
 			isa = PBXGroup;
 			children = (
 				57FF640A2D446B78008BA8C3 /* PaywallView.swift */,
+				571692CB2DD67B2F0060E284 /* LifetimeOfferView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1234,6 +1240,7 @@
 				572053FC2A68900F0072DE06 /* Palette.swift in Sources */,
 				579705202DA9922D009AE8C5 /* Image+Extensions.swift in Sources */,
 				5753016F2A033CF0006A68A5 /* UIColor+ColorCalculation.swift in Sources */,
+				571692CC2DD67B2F0060E284 /* LifetimeOfferView.swift in Sources */,
 				576338C02A099C810034AF9D /* BottomBarView.swift in Sources */,
 				576338D12A09BD340034AF9D /* PaletteListView.swift in Sources */,
 				576338CF2A09BD280034AF9D /* PaletteListViewModel.swift in Sources */,
@@ -1293,6 +1300,7 @@
 				576EC9182DB6D9A00038E232 /* CameraModeManager.swift in Sources */,
 				579705422DAD95A1009AE8C5 /* AVCamCaptureIntent.swift in Sources */,
 				57C7D4D52DA83C3E0025AE20 /* EnvironmentValues.swift in Sources */,
+				571693222DD6F2A00060E284 /* SimulatorPreviewManager.swift in Sources */,
 				577357592A73153800903F85 /* PaletteDetailViewModel.swift in Sources */,
 				576338C22A099D240034AF9D /* FocusCircleView.swift in Sources */,
 				576EC91B2DB80A7B0038E232 /* MatchModeViewModel.swift in Sources */,

@@ -211,9 +211,9 @@ actor CaptureService {
     }
 
     // The device for the active video input.
-    private var currentDevice: AVCaptureDevice {
+    private var currentDevice: AVCaptureDevice? {
         guard let device = activeVideoInput?.device else {
-            fatalError("No device found for current video input.")
+            return nil
         }
         return device
     }
@@ -322,6 +322,7 @@ actor CaptureService {
     /// The implementation switches between the front and back cameras and, in iPadOS,
     /// connected external cameras.
     func selectNextVideoDevice() {
+        guard let currentDevice = currentDevice else { return }
         // The array of available video capture devices.
         let videoDevices = deviceLookup.cameras
 
@@ -394,6 +395,7 @@ actor CaptureService {
 
     // MARK: - Flash control
     func setTorchEnabled(_ enabled: Bool) {
+        guard let currentDevice = currentDevice else { return }
         let device = currentDevice
 
         // Check if the device has a torch and if it's available
@@ -529,6 +531,7 @@ actor CaptureService {
     private var subjectAreaChangeTask: Task<Void, Never>?
 
     private func focusAndExpose(at devicePoint: CGPoint, isUserInitiated: Bool) throws {
+        guard let currentDevice = currentDevice else { return }
         // Configure the current device.
         let device = currentDevice
 
@@ -574,6 +577,8 @@ actor CaptureService {
 
     /// Sets whether the app captures HDR video.
     func setHDRVideoEnabled(_ isEnabled: Bool) {
+        guard let currentDevice = currentDevice else { return }
+
         // Bracket the following configuration in a begin/commit configuration pair.
         captureSession.beginConfiguration()
         defer { captureSession.commitConfiguration() }
@@ -612,6 +617,8 @@ actor CaptureService {
     /// calls this method to update its configuration and capabilities. The app uses this state to
     /// determine which features to enable in the user interface.
     private func updateCaptureCapabilities() {
+        guard let currentDevice = currentDevice else { return }
+
         // Update the output service configuration.
         outputServices.forEach { $0.updateConfiguration(for: currentDevice) }
         // Set the capture service's capabilities for the selected mode.

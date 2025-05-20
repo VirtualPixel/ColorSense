@@ -7335,6 +7335,12 @@
         }
       }
     },
+    "Get Free Lifetime Access" : {
+
+    },
+    "GLOBAL ACCESSIBILITY AWARENESS MONTH" : {
+
+    },
     "Gray" : {
       "comment" : "Color name for gray",
       "localizations" : {
@@ -7636,6 +7642,9 @@
           }
         }
       }
+    },
+    "In honor of Global Accessibility Awareness Month, we're offering ColorSense Pro lifetime access completely free until the end of May." : {
+
     },
     "Interesting color" : {
       "localizations" : {

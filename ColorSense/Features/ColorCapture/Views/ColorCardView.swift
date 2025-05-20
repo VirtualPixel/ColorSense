@@ -10,8 +10,8 @@ import SwiftUI
 struct ColorCardView: View {
     @EnvironmentObject private var camera: CameraModel
     @State private var isAddingColor = false
-    @State private var simpleName = "The Geothermal blue"
-    @State private var exactName = "Blue"
+    @State private var simpleName = "Brown"
+    @State private var exactName = "Timber Trail"
     let isDisabled: Bool
 
     var body: some View {
@@ -41,7 +41,7 @@ struct ColorCardView: View {
         HStack {
             Spacer()
             Circle()
-                .foregroundStyle(camera.dominantColor ?? .black)
+                .foregroundStyle(camera.dominantColor ?? Color(hex: "#A0735B"))
             Divider()
         }
     }
@@ -112,7 +112,7 @@ struct ColorCardView: View {
                 colorCard()
             } else {
                 NavigationLink {
-                    ColorDetailView(color: camera.dominantColor ?? .blue)
+                    ColorDetailView(color: camera.dominantColor ?? Color(hex: "#A0735B"))
                 } label: {
                     colorCard()
                 }
