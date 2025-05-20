@@ -8,7 +8,7 @@
 import SwiftUI
 import StoreKit
 
-struct PaywallView: View {
+struct PaywallView<CameraModel: PreviewCameraModel>: View {
     // Environment objects
     @EnvironmentObject private var entitlementManager: EntitlementManager
     @EnvironmentObject private var subscriptionsManager: SubscriptionsManager
@@ -178,7 +178,9 @@ struct PaywallView: View {
             }
         }
         .task {
-            await camera.stopCamera()
+            Task {
+                await camera.stopCamera()
+            }
         }
         .onDisappear {
             Task {
@@ -237,8 +239,6 @@ struct PaywallView: View {
     }
 
     // MARK: - UI Components
-
-
 
     // Helper to get correct button text
     private func getSubscribeButtonText() -> String {
@@ -760,7 +760,6 @@ struct PaywallView: View {
 
     // MARK: - Action Buttons
 
-
     private var purchaseButton: some View {
         let product = subscriptionsManager.products.first(where: { $0.id == selectedPlan.productId })
 
@@ -906,4 +905,10 @@ struct PaywallView: View {
             )
         }
     }
+}
+
+#Preview {
+    PaywallView()
+        .environmentObject(EntitlementManager())
+        .environmentObject(SubscriptionsManager(entitlementManager: EntitlementManager()))
 }

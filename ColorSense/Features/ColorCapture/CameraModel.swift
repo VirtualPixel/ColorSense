@@ -18,6 +18,7 @@ import Combine
 ///
 @Observable
 final class CameraModel: Camera, ObservableObject {
+    
     var currentColorVisionType: ColorVisionType = .typical {
         didSet {
             updateColorVisionFilter()

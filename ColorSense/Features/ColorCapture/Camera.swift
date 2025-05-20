@@ -37,6 +37,12 @@ protocol Camera: AnyObject {
     /// Start camera capture pipeline
     func start() async
 
+    // Stop camera capture pipeline
+    func stopCamera() async
+
+    // Restart Camera
+    func restartCamera() async
+
     /// The capture mode, which can be photo or video.
     var captureMode: CaptureMode { get set }
 

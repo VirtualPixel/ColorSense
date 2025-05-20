@@ -64,6 +64,18 @@ class PreviewCameraModel: Camera, ObservableObject {
         }
     }
 
+
+    func stopCamera() async {
+        if status == .running {
+            status = .unknown
+        }
+    }
+
+    func restartCamera() async {
+        await stopCamera()
+        await start()
+    }
+
     func switchVideoDevices() {
         print("Device switching isn't implemented in PreviewCamera.")
     }
