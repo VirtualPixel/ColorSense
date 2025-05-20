@@ -909,6 +909,7 @@ struct PaywallView<CameraModel: PreviewCameraModel>: View {
 
 #Preview {
     PaywallView()
+        .environmentObject(PreviewCameraModel())
         .environmentObject(EntitlementManager())
         .environmentObject(SubscriptionsManager(entitlementManager: EntitlementManager()))
 }

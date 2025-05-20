@@ -66,13 +66,10 @@ class PreviewCameraModel: Camera, ObservableObject {
 
 
     func stopCamera() async {
-        if status == .running {
-            status = .unknown
-        }
+        // Do nothing
     }
 
     func restartCamera() async {
-        await stopCamera()
         await start()
     }
 
