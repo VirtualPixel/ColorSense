@@ -11,16 +11,16 @@ import SwiftData
 /// Manages simulator-specific preview content for screenshots and demos
 class SimulatorPreviewManager {
     static let shared = SimulatorPreviewManager()
-
+    
     /// Whether the app is running in the simulator
     var isSimulator: Bool {
-        #if targetEnvironment(simulator)
+#if targetEnvironment(simulator)
         return true
-        #else
+#else
         return false
-        #endif
+#endif
     }
-
+    
     /// Creates example palettes for the simulator environment
     func createExamplePalettes(in context: ModelContext) {
         // Only create examples in the simulator

@@ -34,6 +34,7 @@
 		5725C5B52A7BCB6E00933331 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572053FB2A68900F0072DE06 /* Palette.swift */; };
 		5725C5B82A7BCB6E00933331 /* ColorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576338D52A09C03A0034AF9D /* ColorData.swift */; };
 		5725C5BD2A7BCB6E00933331 /* pantone-colors.json in Resources */ = {isa = PBXBuildFile; fileRef = 572054002A68961F0072DE06 /* pantone-colors.json */; };
+		57377FBE2DDCE54D00942702 /* SimulatorPreviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571693212DD6F2A00060E284 /* SimulatorPreviewManager.swift */; };
 		575301662A0339C2006A68A5 /* colornames.json in Resources */ = {isa = PBXBuildFile; fileRef = 575301652A0339C2006A68A5 /* colornames.json */; };
 		5753016B2A033C9F006A68A5 /* CIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016A2A033C9F006A68A5 /* CIColor+Extensions.swift */; };
 		5753016D2A033CC6006A68A5 /* CIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5753016C2A033CC6006A68A5 /* CIImage+Extensions.swift */; };
@@ -1201,6 +1202,7 @@
 				57FF640E2D446C90008BA8C3 /* ProFeature.swift in Sources */,
 				576A4F2B2A782EE000452FA5 /* String+Extensions.swift in Sources */,
 				576A4F2C2A782EE000452FA5 /* ColorData.swift in Sources */,
+				57377FBE2DDCE54D00942702 /* SimulatorPreviewManager.swift in Sources */,
 				57B881AF2DD51AE3007FD54A /* HarmonyGenerator.swift in Sources */,
 				576A4F2E2A782EE000452FA5 /* ColorStructure.swift in Sources */,
 				576A4F2F2A782EE000452FA5 /* UIColor+ColorCalculation.swift in Sources */,
@@ -1670,7 +1672,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.ColorSenseiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1713,7 +1715,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wells.justin.ColorSenseiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

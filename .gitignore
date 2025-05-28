@@ -1,4 +1,4 @@
 .env
 *.env
 .env*
-Configuration/.env
+Configuration/.env*.xcuserstate

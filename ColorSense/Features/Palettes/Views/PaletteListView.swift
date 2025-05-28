@@ -72,7 +72,9 @@ struct PaletteListView: View {
             }
             .onAppear {
                 camera.isPausingColorProcessing = true
+#if targetEnvironment(simulator)
                 SimulatorPreviewManager.shared.createExamplePalettes(in: context)
+#endif
             }
         }
     }

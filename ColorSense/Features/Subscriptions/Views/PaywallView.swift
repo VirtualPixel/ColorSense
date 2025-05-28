@@ -8,7 +8,7 @@
 import SwiftUI
 import StoreKit
 
-struct PaywallView<CameraModel: PreviewCameraModel>: View {
+struct PaywallView: View {
     // Environment objects
     @EnvironmentObject private var entitlementManager: EntitlementManager
     @EnvironmentObject private var subscriptionsManager: SubscriptionsManager
@@ -909,7 +909,7 @@ struct PaywallView<CameraModel: PreviewCameraModel>: View {
 
 #Preview {
     PaywallView()
-        .environmentObject(PreviewCameraModel())
+        // .environmentObject(PreviewCameraModel())
         .environmentObject(EntitlementManager())
         .environmentObject(SubscriptionsManager(entitlementManager: EntitlementManager()))
 }
