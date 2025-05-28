@@ -3723,6 +3723,7 @@
       }
     },
     "Colors are being adjusted to help distinguish shades that might appear similar with %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -16362,6 +16363,9 @@
           }
         }
       }
+    },
+    "Works best in good lighting, consider enabling flash.\nColors are being adjusted to help distinguish shades that might appear similar with %@" : {
+
     },
     "Yellow" : {
       "comment" : "Color name for yellow",

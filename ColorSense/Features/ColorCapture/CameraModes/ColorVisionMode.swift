@@ -79,7 +79,7 @@ struct ColorVisionModeView: View {
             Spacer() // Push content to top, controls to bottom
 
             // Bottom controls section
-            Text("Colors are being adjusted to help distinguish shades that might appear similar with \(selectedDeficiency.rawValue)")
+            Text("Works best in good lighting, consider enabling flash.\nColors are being adjusted to help distinguish shades that might appear similar with \(selectedDeficiency.rawValue)")
                 .font(.caption2)
                 .foregroundStyle(.green)
                 .multilineTextAlignment(.center)
